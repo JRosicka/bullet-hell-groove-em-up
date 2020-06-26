@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7550864109957415040}
   - component: {fileID: 8582813908195075123}
   m_Layer: 0
-  m_Name: Fall In the Dark
+  m_Name: BGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
