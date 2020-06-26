@@ -1,0 +1,92 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Fall In The Dark Shortened_data" version="1.3.0" audacityversion="2.4.2" sel0="59.9801197699" sel1="59.9801197699" vpos="0" h="0.0000000000" zoom="16.9816683246" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="YEAR" value="2012"/>
+		<tag name="ALBUM" value="Mágico Catástrofe"/>
+		<tag name="ARTIST" value="ShibayanRecords"/>
+		<tag name="DISCID" value="6F0F1F08"/>
+		<tag name="TITLE" value="Fall In The Dark"/>
+		<tag name="TRACKNUMBER" value="2/8"/>
+	</tags>
+	<wavetrack name="Fall In The Dark" isSelected="1" height="150" minimized="0" channel="0" linked="1" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2645123">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808036.au" len="261039" min="-0.717663" max="0.689257" rms="0.1036"/>
+				</waveblock>
+				<waveblock start="261039">
+					<simpleblockfile filename="e080801a.au" len="262144" min="-0.680729" max="0.817204" rms="0.111508"/>
+				</waveblock>
+				<waveblock start="523183">
+					<simpleblockfile filename="e0808a5b.au" len="262144" min="-0.791385" max="0.813141" rms="0.115347"/>
+				</waveblock>
+				<waveblock start="785327">
+					<simpleblockfile filename="e080861b.au" len="262144" min="-0.919816" max="0.895234" rms="0.120535"/>
+				</waveblock>
+				<waveblock start="1047471">
+					<simpleblockfile filename="e080839e.au" len="262144" min="-1.026886" max="0.967843" rms="0.122097"/>
+				</waveblock>
+				<waveblock start="1309615">
+					<simpleblockfile filename="e0808c05.au" len="262144" min="-0.997529" max="1.010419" rms="0.250516"/>
+				</waveblock>
+				<waveblock start="1571759">
+					<simpleblockfile filename="e0808dd3.au" len="262144" min="-1.004784" max="1.021915" rms="0.268549"/>
+				</waveblock>
+				<waveblock start="1833903">
+					<simpleblockfile filename="e0808424.au" len="262144" min="-1.010968" max="1.005429" rms="0.271845"/>
+				</waveblock>
+				<waveblock start="2096047">
+					<simpleblockfile filename="e080843c.au" len="262144" min="-1.023358" max="1.003825" rms="0.262198"/>
+				</waveblock>
+				<waveblock start="2358191">
+					<simpleblockfile filename="e0808471.au" len="144683" min="-1.011678" max="1.003147" rms="0.262044"/>
+				</waveblock>
+				<waveblock start="2502874">
+					<simpleblockfile filename="e080889e.au" len="142249" min="-1.006042" max="0.99373" rms="0.261101"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Fall In The Dark" isSelected="1" height="150" minimized="0" channel="1" linked="0" mute="0" solo="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2645123">
+				<waveblock start="0">
+					<simpleblockfile filename="e080825b.au" len="261039" min="-0.624676" max="0.702117" rms="0.093182"/>
+				</waveblock>
+				<waveblock start="261039">
+					<simpleblockfile filename="e0808659.au" len="262144" min="-0.742769" max="0.748588" rms="0.101229"/>
+				</waveblock>
+				<waveblock start="523183">
+					<simpleblockfile filename="e0808948.au" len="262144" min="-0.633645" max="0.717399" rms="0.10526"/>
+				</waveblock>
+				<waveblock start="785327">
+					<simpleblockfile filename="e0808b74.au" len="262144" min="-0.867435" max="0.82871" rms="0.108047"/>
+				</waveblock>
+				<waveblock start="1047471">
+					<simpleblockfile filename="e0808204.au" len="262144" min="-0.992022" max="0.989976" rms="0.126291"/>
+				</waveblock>
+				<waveblock start="1309615">
+					<simpleblockfile filename="e0808870.au" len="262144" min="-1.004" max="1.005001" rms="0.274395"/>
+				</waveblock>
+				<waveblock start="1571759">
+					<simpleblockfile filename="e08087f0.au" len="262144" min="-1.002999" max="1.051462" rms="0.289588"/>
+				</waveblock>
+				<waveblock start="1833903">
+					<simpleblockfile filename="e0808bd2.au" len="262144" min="-1.014619" max="1.024286" rms="0.28955"/>
+				</waveblock>
+				<waveblock start="2096047">
+					<simpleblockfile filename="e08087b8.au" len="262144" min="-1.001527" max="1.009151" rms="0.283184"/>
+				</waveblock>
+				<waveblock start="2358191">
+					<simpleblockfile filename="e080801c.au" len="144683" min="-1.026183" max="0.990204" rms="0.294732"/>
+				</waveblock>
+				<waveblock start="2502874">
+					<simpleblockfile filename="e0808e39.au" len="142249" min="-1.022451" max="1.000502" rms="0.296351"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>
