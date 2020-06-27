@@ -1,0 +1,6 @@
+BPM: 128
+BPS: 2.13333
+1 beat: .46875s
+4 beats: 1.875s
+1/8th note: .2344s
+1/16th note: .1172s
