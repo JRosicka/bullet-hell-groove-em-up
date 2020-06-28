@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PianoShot : MonoBehaviour
-{
+public class PianoShot : Shot {
     [Header("Spawns")]
     public Transform Spawner1;
     public Transform Spawner2;
@@ -55,7 +54,7 @@ public class PianoShot : MonoBehaviour
         }
     }
 
-    public void Shoot(Transform spawner, ParticleSystem system) {
+    public override void Shoot(Transform spawner, ParticleSystem system) {
         Vector3 target = playerController.GetPlayerPosition();
         Vector3 origin = spawner.transform.position;
 
