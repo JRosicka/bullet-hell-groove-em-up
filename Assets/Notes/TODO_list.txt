@@ -1,0 +1,43 @@
+Create template shot prefab
+	Visible shot outline
+	Visible shot middle
+	Fire effect outline
+	Fire effect middle
+
+	Sync seeds in editor
+	Make way to sync certain aspects of particle systems
+
+Make collision logic between particles and player
+Make collision logic between particles and game boundary (toggle-able)
+
+Pattern configuration improvements
+	Replace booleans with configurable enums
+	Update PianoPattern
+
+Enemy movement patterns + animation
+	Bass enemy
+	Piano enemy
+
+Art stuff
+	Visible shot outlines
+		Squectangle
+		Squiangle
+		Oval
+		Ovaltine
+		Squircle
+	Visible shot middles
+		Squectangle
+		Squiangle
+		Oval
+		Ovaltine
+		Squircle
+	Fire effect outlines
+		Puffy
+	Fire effect middle	
+		Puffy
+	Bass trail
+	
+	Bass enemy
+	Piano enemy
+
+Improve PianoShot configuration
