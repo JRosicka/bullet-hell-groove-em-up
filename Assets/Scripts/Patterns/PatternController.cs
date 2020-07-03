@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class PatternController : MonoBehaviour {
     public Transform Spawner;
@@ -9,33 +10,25 @@ public class PatternController : MonoBehaviour {
     private GameController gameController;
     private float timeElapsed;
 
-    // TODO: Do we want to get rid of this and instead just put a FireTime value into Shot that is set at instantiation? Probably. 
-    private struct TimedShot {
-        public float FireTime;
-        public Shot Shot;
-
-        public TimedShot(float fireTime, Shot shot) {
-            FireTime = fireTime;
-            Shot = shot;
-        }
-    }
-    // The original list of configured shots configured at start
-    private List<TimedShot> configuredShots;
+    // The original list of configured actions configured at start
+    private List<BaseAction> configuredActions;
     // An updated list originally copied from configuredShots
-    private List<TimedShot> queuedShots;
+    private List<BaseAction> queuedActions;
+
+    private List<Shot> shotInstances = new List<Shot>();
 
     // TODO: We are deciding for now to queue all of the shots when this pattern is instantiated rather than more dynamically determinig when to shoot in the update method. 
     // This is probably fine. 
     private void Start() {
         gameController = FindObjectOfType<GameController>();
 
-        configuredShots = DetermineShotTimings();
+        configuredActions = DetermineShotTimings();
 
-        queuedShots = new List<TimedShot>(configuredShots);
+        queuedActions = new List<BaseAction>(configuredActions);
     }
 
-    private List<TimedShot> DetermineShotTimings() {
-        List<TimedShot> ret = new List<TimedShot>();
+    private List<BaseAction> DetermineShotTimings() {
+        List<BaseAction> ret = new List<BaseAction>();
 
         List<Pattern4Measures> measureGroups = new List<Pattern4Measures>();
         measureGroups.Add(Pattern.MeasureGroup1);
@@ -51,13 +44,28 @@ public class PatternController : MonoBehaviour {
             measures.Add(measureGroup.Measure4);
         }
 
+        // Keep track of each shot we make
+        int shotIndex = -1;
         List<bool> thirtysecondNotes = new List<bool>();
         for (int i = 0; i < measures.Count; i++) {
             for (int j = 0; j < 32; j++) {  // TODO: Magic number
-                if (measures[i].Notes[j]) {
+                int action = measures[i].Notes[j];
+                // 0 means "no action"
+                if (action > 0) {
                     int elapsedThirtySecondNotes = i * 32 + j;
-                    TimedShot timedShot = new TimedShot(gameController.GetThirtysecondNoteTime() * elapsedThirtySecondNotes, measures[i].Shot);
-                    ret.Add(timedShot);
+                    float triggerTime = gameController.GetThirtysecondNoteTime() * elapsedThirtySecondNotes;
+
+                    // 1 means "spawn a bullet"
+                    if (action == 1) {
+                        shotIndex++;
+                        FireShotAction fireShot = new FireShotAction(shotIndex, triggerTime, measures[i].Shot, shotInstances, Spawner);
+                        ret.Add(fireShot);
+                    } else {
+                        // > 1 means "update a shot". Currently, we just update the shot most recently timed to fire before this update
+                        Assert.IsTrue(shotIndex > -1, "Trying to update a shot before we have shot any shots, silly!");
+                        UpdateShotAction updateShot = new UpdateShotAction(shotIndex, triggerTime, measures[i].Shot, shotInstances, action);
+                        ret.Add(updateShot);
+                    }                    
                 }
             }
         }
@@ -69,23 +77,18 @@ public class PatternController : MonoBehaviour {
     private void Update() {
         timeElapsed += Time.deltaTime;
 
-        int shotsFired = 0;
-        for (int i = 0; i < queuedShots.Count; i++) {
-            TimedShot shot = queuedShots[i];
-            if (shot.FireTime < timeElapsed) {
-                // Shoot your shot.Shot, my dude
-                Shoot(shot.Shot);
-                shotsFired++;
+        int actionsCompleted = 0;
+        for (int i = 0; i < queuedActions.Count; i++) {
+            BaseAction action = queuedActions[i];
+            if (action.TriggerTime < timeElapsed) {
+                action.PerformAction();
+                actionsCompleted++;
             } else {
                 // Since we assume that the queuedShots list is ordered by FireTime, we know that none of the remaining shots should be fired yet
                 break;
             }
         }
 
-        queuedShots.RemoveRange(0, shotsFired);
-    }
-
-    private void Shoot(Shot shot) {
-        Instantiate(shot, Spawner);
+        queuedActions.RemoveRange(0, actionsCompleted);
     }
 }

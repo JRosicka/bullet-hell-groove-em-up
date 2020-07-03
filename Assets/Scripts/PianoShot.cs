@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class PianoShot : Shot {
     [Header("Spawns")]
@@ -13,45 +14,12 @@ public class PianoShot : Shot {
     public ParticleSystem System2;
     public ParticleSystem System3;
 
-    [Header("Shot Times")]
-    public float ShotTime1;
-    public float ShotTime2;
-    public float ShotTime3;
-
-    private bool shot1Fired;
-    private bool shot2Fired;
-    private bool shot3Fired;
-
     private PlayerController playerController;
-    private float timeElapsed = 0;
 
     void Start() {
         playerController = FindObjectOfType<PlayerController>();
-    }
-
-    void Update() {
-        timeElapsed += Time.deltaTime;
-
-        if (shot3Fired)
-            return;
-        if (timeElapsed >= ShotTime3) {
-            shot3Fired = true;
-            Shoot(Spawner3, System3);
-        }
-
-        if (shot2Fired)
-            return;
-        if (timeElapsed >= ShotTime2) {
-            shot2Fired = true;
-            Shoot(Spawner2, System2);
-        }
-
-        if (shot1Fired)
-            return;
-        if (timeElapsed >= ShotTime1) {
-            shot1Fired = true;
-            Shoot(Spawner1, System1);
-        }
+        // Fire the first barrage right away
+        Shoot(Spawner1, System1);
     }
 
     public override void Shoot(Transform spawner, ParticleSystem system) {
@@ -60,6 +28,20 @@ public class PianoShot : Shot {
 
         spawner.rotation = CalculateRotation(origin, target);
         system.Play();
+    }
+
+    public override void UpdateShot(int step) {
+        switch (step) {
+            case 2:
+                Shoot(Spawner2, System2);
+                break;
+            case 3:
+                Shoot(Spawner3, System3);
+                break;
+            default:
+                Assert.IsTrue(false);
+                break;
+        }
     }
 
     private Quaternion CalculateRotation(Vector3 origin, Vector3 target) {
