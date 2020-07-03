@@ -1,9 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
 public class PatternController : MonoBehaviour {
+    private const int actionsPerMeasure = 32;
+
     public Transform Spawner;
     public PatternConfiguration Pattern;
 
@@ -15,7 +16,10 @@ public class PatternController : MonoBehaviour {
     // An updated list originally copied from configuredShots
     private List<BaseAction> queuedActions;
 
+
+#pragma warning disable IDE0044 // Add readonly modifier
     private List<Shot> shotInstances = new List<Shot>();
+#pragma warning restore IDE0044 // Add readonly modifier
 
     // TODO: We are deciding for now to queue all of the shots when this pattern is instantiated rather than more dynamically determinig when to shoot in the update method. 
     // This is probably fine. 
@@ -46,31 +50,29 @@ public class PatternController : MonoBehaviour {
 
         // Keep track of each shot we make
         int shotIndex = -1;
-        List<bool> thirtysecondNotes = new List<bool>();
         for (int i = 0; i < measures.Count; i++) {
-            for (int j = 0; j < 32; j++) {  // TODO: Magic number
+            for (int j = 0; j < actionsPerMeasure; j++) {
                 int action = measures[i].Notes[j];
                 // 0 means "no action"
                 if (action > 0) {
-                    int elapsedThirtySecondNotes = i * 32 + j;
+                    int elapsedThirtySecondNotes = i * actionsPerMeasure + j;
                     float triggerTime = gameController.GetThirtysecondNoteTime() * elapsedThirtySecondNotes;
 
                     // 1 means "spawn a bullet"
                     if (action == 1) {
                         shotIndex++;
-                        FireShotAction fireShot = new FireShotAction(shotIndex, triggerTime, measures[i].Shot, shotInstances, Spawner);
+                        FireShotAction fireShot = new FireShotAction(shotIndex, triggerTime, shotInstances, measures[i].Shot, Spawner);
                         ret.Add(fireShot);
                     } else {
                         // > 1 means "update a shot". Currently, we just update the shot most recently timed to fire before this update
                         Assert.IsTrue(shotIndex > -1, "Trying to update a shot before we have shot any shots, silly!");
-                        UpdateShotAction updateShot = new UpdateShotAction(shotIndex, triggerTime, measures[i].Shot, shotInstances, action);
+                        UpdateShotAction updateShot = new UpdateShotAction(shotIndex, triggerTime, shotInstances, action);
                         ret.Add(updateShot);
                     }                    
                 }
             }
         }
 
-        // TODO: Do we need to make sure the return list is ordered by FireTime?
         return ret;
     }
 

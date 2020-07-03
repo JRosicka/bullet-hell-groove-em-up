@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class FireShotAction : BaseAction
 {
-    public Transform Spawner;
-    public Shot ShotInstance;
-    public List<Shot> ShotInstances;
-    public FireShotAction(int index, float triggerTime, Shot shot, List<Shot> shotInstances, Transform spawner) : base(index, triggerTime, shot) {
-        Spawner = spawner;
-        ShotInstances = shotInstances;
+    private Transform spawner;
+    private Shot shotPrefab;
+
+    public FireShotAction(int index, float triggerTime, List<Shot> shotInstances, Shot shotPrefab, Transform spawner) : base(index, triggerTime, shotInstances) {
+        this.spawner = spawner;
+        this.shotPrefab = shotPrefab;
     }
     public override void PerformAction() {
         // Shoot your shot.Shot, my dude
-        ShotInstance = Object.Instantiate(Shot, Spawner) as Shot;
-        ShotInstances.Add(ShotInstance);
+        Shot shotInstance = Object.Instantiate(this.shotPrefab, spawner) as Shot;
+        shotInstances.Add(shotInstance);
     }
 }

@@ -5,13 +5,13 @@ using UnityEngine;
 public abstract class BaseAction {
     public int Index;
     public float TriggerTime;
-    public Shot Shot;
+    protected List<Shot> shotInstances;
 
     // TODO: Some of these, like shot, we don't need for all children
-    public BaseAction(int index, float triggerTime, Shot shot) {
+    public BaseAction(int index, float triggerTime, List<Shot> shotInstances) {
         Index = index;
         TriggerTime = triggerTime;
-        Shot = shot;
+        this.shotInstances = shotInstances;
     }
 
     public abstract void PerformAction();
