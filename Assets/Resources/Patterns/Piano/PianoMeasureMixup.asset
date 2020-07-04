@@ -12,5 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1dd65c84e7535488d11a270a4701de, type: 3}
   m_Name: PianoMeasureMixup
   m_EditorClassIdentifier: 
-  Notes: 0100000000000000000000000000000001000000000000000000000000000000
+  NoteActions:
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
   Shot: {fileID: 7721102815681162636, guid: 83a38f3437e72e244b6c8f630ea0494e, type: 3}

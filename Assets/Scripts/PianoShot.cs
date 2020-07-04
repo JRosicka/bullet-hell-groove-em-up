@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -16,6 +17,21 @@ public class PianoShot : Shot {
 
     private PlayerController playerController;
 
+    public new enum Values {
+        None = Shot.Values.None,
+        FireShot = Shot.Values.FireShot,
+        SecondShot = 100,
+        ThirdShot = 101,
+    }
+
+    public override string[] GetValues() {
+        return Enum.GetNames(typeof(Values));
+    }
+
+    private Values GetValueForString(string name) {
+        return (Values)Enum.Parse(typeof(Values), name);
+    }
+
     void Start() {
         playerController = FindObjectOfType<PlayerController>();
         // Fire the first barrage right away
@@ -30,12 +46,13 @@ public class PianoShot : Shot {
         system.Play();
     }
 
-    public override void UpdateShot(int step) {
-        switch (step) {
-            case 2:
+    public override void UpdateShot(string step) {
+        Values action = GetValueForString(step);
+        switch (action) {
+            case Values.SecondShot:
                 Shoot(Spawner2, System2);
                 break;
-            case 3:
+            case Values.ThirdShot:
                 Shoot(Spawner3, System3);
                 break;
             default:

@@ -7,7 +7,6 @@ public abstract class BaseAction {
     public float TriggerTime;
     protected List<Shot> shotInstances;
 
-    // TODO: Some of these, like shot, we don't need for all children
     public BaseAction(int index, float triggerTime, List<Shot> shotInstances) {
         Index = index;
         TriggerTime = triggerTime;

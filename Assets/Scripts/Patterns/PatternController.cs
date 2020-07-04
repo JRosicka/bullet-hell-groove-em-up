@@ -51,20 +51,19 @@ public class PatternController : MonoBehaviour {
         // Keep track of each shot we make
         int shotIndex = -1;
         for (int i = 0; i < measures.Count; i++) {
-            for (int j = 0; j < actionsPerMeasure; j++) {
-                int action = measures[i].Notes[j];
-                // 0 means "no action"
-                if (action > 0) {
+            for (int j = 0; j < actionsPerMeasure; j++) {                
+                string action = measures[i].NoteActions[j];
+                Shot.Values value = Shot.GetBaseValueForString(action);
+                if (value != Shot.Values.None) {
                     int elapsedThirtySecondNotes = i * actionsPerMeasure + j;
                     float triggerTime = gameController.GetThirtysecondNoteTime() * elapsedThirtySecondNotes;
 
-                    // 1 means "spawn a bullet"
-                    if (action == 1) {
+                    if (value == Shot.Values.FireShot) {
                         shotIndex++;
                         FireShotAction fireShot = new FireShotAction(shotIndex, triggerTime, shotInstances, measures[i].Shot, Spawner);
                         ret.Add(fireShot);
                     } else {
-                        // > 1 means "update a shot". Currently, we just update the shot most recently timed to fire before this update
+                        // TODO: Currently, we just update the shot most recently timed to fire before this update. It would be nice to be able to update specific shots.
                         Assert.IsTrue(shotIndex > -1, "Trying to update a shot before we have shot any shots, silly!");
                         UpdateShotAction updateShot = new UpdateShotAction(shotIndex, triggerTime, shotInstances, action);
                         ret.Add(updateShot);

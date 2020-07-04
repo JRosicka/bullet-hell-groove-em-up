@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class UpdateShotAction : BaseAction {
-    private int step;
+    private string step;
 
-    public UpdateShotAction(int index, float triggerTime, List<Shot> shotInstances, int step) : base(index, triggerTime, shotInstances) {
+    public UpdateShotAction(int index, float triggerTime, List<Shot> shotInstances, string step) : base(index, triggerTime, shotInstances) {
         this.step = step;
     }
     public override void PerformAction() {

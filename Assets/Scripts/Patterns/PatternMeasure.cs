@@ -1,29 +1,54 @@
 ﻿using System;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEditorInternal;
 using UnityEngine;
 
 /// <summary>
 /// Single measure for a pattern
-/// TODO: Force list size to 32nd notes. Also, like, make a better interface to configure stuff like this.
+/// TODO: like, make a better interface to configure stuff like this.
 /// </summary>
 [CreateAssetMenu(fileName = "PatternMeasure", menuName = "Resources/Patterns/PatternMeasure", order = 3)]
 public class PatternMeasure : ScriptableObject {
     private const int SIZE = 32;
 
-    // List of 32nd notes. It's hard to transcribe sheet music to scriptable objects, okay?
-    // 0 indicates for nothing to happen, 1 indicates for a shot to be spawned and do its default thing, 2 is for the previous shot's second thing, 3 for it's third, etc
-    // TODO: Using enums or order pairs (index, enum) would be great, but I can't really do that in the inspector and I'd probably need to make subclasses of an object instead of 
-    // an enum since PatternController would need the parent class and Shot objects would need to shot-specific sub classes. Can't have objects in the inspector either...
+    // List of actions to do for every 32nd note. It's hard to transcribe sheet music to scriptable objects, okay?
     // TODO: Hey this looks kinda neat https://stackoverflow.com/questions/60864308/how-to-make-an-enum-like-unity-inspector-drop-down-menu-from-a-string-array-with
-    // TODO: Functionality for updating a shot that isn't necessarily the most recently fired one
-    [Header("32nd note triggers")]
-    public int[] Notes = new int[SIZE];
+    // TODO: Functionality for updating a shot that isn't necessarily the most recently fired one, maybe. Would require using ordered pairs (index, enum string) rather than just enum strings. 
+    // Would also probably want to use a list per element instead of a single value since we'd want to be able to do multiple actions at once from a single PatternMeasure
+    [HideInInspector]
+    public string[] NoteActions = new string[SIZE];
+    private int[] choiceIndices = new int[SIZE];
 
     public Shot Shot;
 
     private void OnValidate() {
-        if (Notes.Length != SIZE) {
+        if (NoteActions.Length != SIZE) {
             Debug.LogWarning("Don't change the size of 'Notes'!");
-            Array.Resize(ref Notes, SIZE);
+            Array.Resize(ref NoteActions, SIZE);
         }
     }
+
+
+#if UNITY_EDITOR
+    [CustomEditor(typeof(PatternMeasure))]
+    public class PatternMeasureEditor : Editor {
+
+        public override void OnInspectorGUI() {
+            // Draw the default inspector
+            DrawDefaultInspector();
+            var measure = target as PatternMeasure;
+            string[] choices = measure.Shot.GetValues();
+
+            EditorGUILayout.LabelField("32nd note triggers", EditorStyles.boldLabel);
+            for (int i = 0; i < SIZE; i++) {
+                measure.choiceIndices[i] = EditorGUILayout.Popup(i.ToString(), measure.choiceIndices[i], choices);
+                // Update the selected choice in the underlying object
+                measure.NoteActions[i] = choices[measure.choiceIndices[i]];
+            }
+            // Save the changes back to the object
+            EditorUtility.SetDirty(target);
+        }
+    }
+#endif
 }
