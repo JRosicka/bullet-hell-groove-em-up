@@ -11,8 +11,8 @@ Make collision logic between particles and player
 Make collision logic between particles and game boundary (toggle-able)
 
 Pattern configuration improvements
-	Replace booleans with configurable enums
-	Update PianoPattern
+	[DONE] Replace booleans with configurable enums
+	[DONE] Update PianoPattern
 
 Enemy movement patterns + animation
 	Bass enemy

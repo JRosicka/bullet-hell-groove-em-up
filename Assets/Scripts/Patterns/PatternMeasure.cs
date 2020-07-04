@@ -11,6 +11,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PatternMeasure", menuName = "Resources/Patterns/PatternMeasure", order = 3)]
 public class PatternMeasure : ScriptableObject {
     private const int SIZE = 32;
+    private const int ELEMENTS_PER_BEAT = 8;
 
     // List of actions to do for every 32nd note. It's hard to transcribe sheet music to scriptable objects, okay?
     // TODO: Hey this looks kinda neat https://stackoverflow.com/questions/60864308/how-to-make-an-enum-like-unity-inspector-drop-down-menu-from-a-string-array-with
@@ -42,12 +43,19 @@ public class PatternMeasure : ScriptableObject {
 
             EditorGUILayout.LabelField("32nd note triggers", EditorStyles.boldLabel);
             for (int i = 0; i < SIZE; i++) {
-                measure.choiceIndices[i] = EditorGUILayout.Popup(i.ToString(), measure.choiceIndices[i], choices);
+                measure.choiceIndices[i] = EditorGUILayout.Popup(getLabel(i), measure.choiceIndices[i], choices);
                 // Update the selected choice in the underlying object
                 measure.NoteActions[i] = choices[measure.choiceIndices[i]];
+
+                if ((i + 1) % ELEMENTS_PER_BEAT == 0)
+                    EditorGUILayout.Space();
             }
             // Save the changes back to the object
             EditorUtility.SetDirty(target);
+        }
+
+        private string getLabel(int noteIndex) {
+            return ((noteIndex / ELEMENTS_PER_BEAT) + 1).ToString() + " " + ((noteIndex % ELEMENTS_PER_BEAT) + 1).ToString() + "/8";
         }
     }
 #endif
