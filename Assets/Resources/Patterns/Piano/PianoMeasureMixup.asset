@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: PianoMeasureMixup
   m_EditorClassIdentifier: 
   NoteActions:
+  - FireShot
+  - None
+  - None
+  - None
+  - SecondShot
+  - None
+  - ThirdShot
   - None
   - None
   - None
@@ -22,20 +29,13 @@ MonoBehaviour:
   - None
   - None
   - None
+  - FireShot
   - None
   - None
   - None
+  - SecondShot
   - None
-  - None
-  - None
-  - None
-  - None
-  - None
-  - None
-  - None
-  - None
-  - None
-  - None
+  - ThirdShot
   - None
   - None
   - None

@@ -6,6 +6,28 @@ Create template shot prefab
 
 	Sync seeds in editor
 	Make way to sync certain aspects of particle systems
+		Duration
+		Start delay
+		Start lifetime
+		Start speed
+		3d start size
+		Start color
+
+		Emission
+
+		Shape
+
+		Velocity over lifetime
+
+		Color over lifetime
+
+		Rotation over lifetime
+
+		Noise
+
+		Triggers
+
+		Renderer (which parts tho)
 
 Make collision logic between particles and player
 Make collision logic between particles and game boundary (toggle-able)
