@@ -14513,10 +14513,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02133d9760d9c1c44873ee2a6b2ff23c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FireEffectOutline: {fileID: 0}
-  FireEffectMiddle: {fileID: 0}
-  VisibleOutline: {fileID: 0}
-  VisibleMiddle: {fileID: 0}
+  FireEffectOutline: {fileID: 8032540640163922336}
+  FireEffectMiddle: {fileID: 7933368594118379043}
+  VisibleOutline: {fileID: 7721102814874430241}
+  VisibleMiddle: {fileID: 3974740528284657803}
 --- !u!1 &7721102814606004407
 GameObject:
   m_ObjectHideFlags: 0
