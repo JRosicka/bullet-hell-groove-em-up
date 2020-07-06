@@ -23,7 +23,7 @@ public abstract class Shot : MonoBehaviour {
         return Enum.TryParse(name, out Values ret) ? ret : Values.Unset;
     }
 
-    public abstract void Shoot(Transform spawner, ParticleSystem system);
+    public abstract void Shoot(Transform spawner, BulletParticleSystem system);
 
     public abstract void UpdateShot(string step);
 }

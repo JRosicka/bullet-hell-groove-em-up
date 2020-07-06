@@ -13,9 +13,9 @@ public class PianoShot : Shot {
     public Transform Spawner3;
 
     [Header("Particle Systems")]
-    public ParticleSystem System1;
-    public ParticleSystem System2;
-    public ParticleSystem System3;
+    public BulletParticleSystem System1;
+    public BulletParticleSystem System2;
+    public BulletParticleSystem System3;
 
     private PlayerController playerController;
 
@@ -40,12 +40,12 @@ public class PianoShot : Shot {
         Shoot(Spawner1, System1);
     }
 
-    public override void Shoot(Transform spawner, ParticleSystem system) {
+    public override void Shoot(Transform spawner, BulletParticleSystem system) {
         Vector3 target = playerController.GetPlayerPosition();
         Vector3 origin = spawner.transform.position;
 
         spawner.rotation = CalculateRotation(origin, target);
-        system.Play();
+        system.Shoot();
     }
 
     public override void UpdateShot(string step) {
