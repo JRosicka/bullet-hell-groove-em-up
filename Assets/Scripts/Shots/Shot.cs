@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // TODO: Move more things here once we know what we'll want for all shot types
+/// <summary>
+/// A Shot can be spawned into the scene to make bullets appear and generally look pretty and stuff
+/// </summary>
 public abstract class Shot : MonoBehaviour {
     public enum Values {
         Unset = -1,
@@ -18,11 +20,7 @@ public abstract class Shot : MonoBehaviour {
     }
 
     public static Values GetBaseValueForString(string name) {
-        Values ret;
-        if (Enum.TryParse<Values>(name, out ret))
-            return ret;
-        else
-            return Values.Unset;
+        return Enum.TryParse(name, out Values ret) ? ret : Values.Unset;
     }
 
     public abstract void Shoot(Transform spawner, ParticleSystem system);

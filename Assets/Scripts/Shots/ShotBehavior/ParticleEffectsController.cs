@@ -1,8 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+/// <summary>
+/// TODO: Uhhhhhhhh I don't know about this one, chief. Ideally we can use this to test BulletParticleSystems in a test scene. 
+/// </summary>
 public class ParticleEffectsController : MonoBehaviour {
 	private readonly List<ParticleSystem> particleSystems = new List<ParticleSystem>();
 

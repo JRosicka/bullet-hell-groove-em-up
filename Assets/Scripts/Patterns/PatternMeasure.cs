@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEditor;
-using UnityEditorInternal;
 using UnityEngine;
 
 /// <summary>
 /// Single measure for a pattern
-/// TODO: like, make a better interface to configure stuff like this.
 /// </summary>
 [CreateAssetMenu(fileName = "PatternMeasure", menuName = "Resources/Patterns/PatternMeasure", order = 3)]
 public class PatternMeasure : ScriptableObject {
@@ -38,7 +35,8 @@ public class PatternMeasure : ScriptableObject {
         public override void OnInspectorGUI() {
             // Draw the default inspector
             DrawDefaultInspector();
-            var measure = target as PatternMeasure;
+            PatternMeasure measure = target as PatternMeasure;
+            // ReSharper disable once PossibleNullReferenceException
             string[] choices = measure.Shot.GetValues();
 
             EditorGUILayout.LabelField("32nd note triggers", EditorStyles.boldLabel);
@@ -55,7 +53,7 @@ public class PatternMeasure : ScriptableObject {
         }
 
         private string getLabel(int noteIndex) {
-            return ((noteIndex / ELEMENTS_PER_BEAT) + 1).ToString() + " " + ((noteIndex % ELEMENTS_PER_BEAT) + 1).ToString() + "/8";
+            return (noteIndex / ELEMENTS_PER_BEAT + 1) + " " + (noteIndex % ELEMENTS_PER_BEAT + 1) + "/8";
         }
     }
 #endif

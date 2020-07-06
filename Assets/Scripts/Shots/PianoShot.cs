@@ -1,9 +1,11 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
+/// <summary>
+/// The shot that goes "buh, beDAAAA"
+/// Fires three rounds of projectiles that each aim at the player
+/// </summary>
 public class PianoShot : Shot {
     [Header("Spawns")]
     public Transform Spawner1;
@@ -17,7 +19,7 @@ public class PianoShot : Shot {
 
     private PlayerController playerController;
 
-    public new enum Values {
+    private new enum Values {
         None = Shot.Values.None,
         FireShot = Shot.Values.FireShot,
         SecondShot = 100,
@@ -28,7 +30,7 @@ public class PianoShot : Shot {
         return Enum.GetNames(typeof(Values));
     }
 
-    private Values GetValueForString(string name) {
+    private static Values GetValueForString(string name) {
         return (Values)Enum.Parse(typeof(Values), name);
     }
 
@@ -61,9 +63,14 @@ public class PianoShot : Shot {
         }
     }
 
+    /// <summary>
+    /// Figure out which way to face in order to aim at the target
+    /// </summary>
+    /// <param name="origin">Location of the shooter</param>
+    /// <param name="target">Location of the target</param>
     private Quaternion CalculateRotation(Vector3 origin, Vector3 target) {
-        float AngleRad = Mathf.Atan2(target.y - origin.y, target.x - origin.x);
-        float AngleDeg = (180 / Mathf.PI) * AngleRad;
-        return Quaternion.Euler(0, 0, AngleDeg);
+        float angleRad = Mathf.Atan2(target.y - origin.y, target.x - origin.x);
+        float angleDeg = (180 / Mathf.PI) * angleRad;
+        return Quaternion.Euler(0, 0, angleDeg);
     }
 }

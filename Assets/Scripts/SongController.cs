@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class SongControlller : MonoBehaviour {
+/// <summary>
+/// Handler of song playback
+/// </summary>
+public class SongController : MonoBehaviour {
     // Sound that's currently playing. Only one at a time, lads.
     private AudioSource currentlyPlayingBackground;
     public bool soundsToggled = true;

@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
-/// 4 measure group for bullet patterns
+/// 4 measure group for patterns
 /// </summary>
 [CreateAssetMenu(fileName = "Pattern4Measures", menuName = "Resources/Patterns/Pattern4Measures", order = 3)]
 public class Pattern4Measures : ScriptableObject {

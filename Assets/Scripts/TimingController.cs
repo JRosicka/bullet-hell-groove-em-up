@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class GameController : MonoBehaviour {
+/// <summary>
+/// Git yer timing-related stuff here
+/// </summary>
+public class TimingController : MonoBehaviour {
     public int BPM;
     private float BPS => BPM / 60f;
 
