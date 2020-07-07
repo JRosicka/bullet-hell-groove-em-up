@@ -1,38 +1,15 @@
-Create template shot prefab
-	Visible shot outline
-	Visible shot middle
-	Fire effect outline
-	Fire effect middle
+[DONE] Create template shot prefab
+	[DONE] Visible shot outline
+	[DONE] Visible shot middle
+	[DONE] Fire effect outline
+	[DONE] Fire effect middle
 
-	Sync seeds in editor
-	Make way to sync certain aspects of particle systems
-		Duration
-		Start delay
-		Start lifetime
-		Start speed
-		3d start size
-		Start color
-
-		Emission
-
-		Shape
-
-		Velocity over lifetime
-
-		Color over lifetime
-
-		Rotation over lifetime
-
-		Noise
-
-		Triggers
-
-		Renderer (which parts tho)
+	[DONE] Sync seeds in editor
 
 Make collision logic between particles and player
 Make collision logic between particles and game boundary (toggle-able)
 
-Pattern configuration improvements
+[DONE] Pattern configuration improvements
 	[DONE] Replace booleans with configurable enums
 	[DONE] Update PianoPattern
 
@@ -41,22 +18,28 @@ Enemy movement patterns + animation
 	Piano enemy
 
 Art stuff
-	Visible shot outlines
-		Squectangle
-		Squiangle
-		Oval
-		Ovaltine
-		Squircle
-	Visible shot middles
-		Squectangle
-		Squiangle
-		Oval
-		Ovaltine
-		Squircle
+	[DONE] Visible shot outlines
+		[DONE] Squectangle
+		[DONE] Squiangle
+		[DONE] Oval
+		[DONE] Ovaltine
+		[DONE] Squircle
+		[DONE] circle
+		[DONE] triangle
+		[DONE] square
+	[DONE] Visible shot middles
+		[DONE] Squectangle
+		[DONE] Squiangle
+		[DONE] Oval
+		[DONE] Ovaltine
+		[DONE] Squircle
+        [DONE] circle
+		[DONE] triangle
+		[DONE] square
 	Fire effect outlines
-		Puffy
+		Burst
 	Fire effect middle	
-		Puffy
+		Burst
 	Bass trail
 	
 	Bass enemy
