@@ -6,8 +6,9 @@
 public class Player : MonoBehaviour {
 	public Rigidbody2D rb;
 	//public BoundaryEdges boundary;
-	public float speed;
-
+	public float normalSpeed;
+	public float slowSpeed;
+	
 	void Start() {
 		//boundary = GameObject.Find("Boundary").GetComponent<BoundaryEdges>();
 	}
@@ -26,7 +27,7 @@ public class Player : MonoBehaviour {
 //		);
 
 		Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-		
-		rb.velocity = movement * speed;
+		float currentSpeed = normalSpeed;
+		rb.velocity = movement * currentSpeed;
 	}
 }

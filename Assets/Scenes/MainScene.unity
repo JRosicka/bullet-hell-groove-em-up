@@ -240,7 +240,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 684847953}
-  speed: 5
+  normalSpeed: 6
+  slowSpeed: 2.5
 --- !u!50 &684847953
 Rigidbody2D:
   serializedVersion: 4
@@ -357,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca77e4e693936cd489fea036fa2cc3eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundsToggled: 1
+  soundsToggled: 0
   Music: {fileID: 104804478}
 --- !u!4 &1456222060
 Transform:
