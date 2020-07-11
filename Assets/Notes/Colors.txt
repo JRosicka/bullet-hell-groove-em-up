@@ -1,0 +1,5 @@
+Gold: EFF138
+Red: C63F32
+Black: 000000
+White: FFFFFF
+Light gray: B2B2B2

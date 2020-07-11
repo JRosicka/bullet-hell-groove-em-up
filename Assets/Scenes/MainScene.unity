@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca77e4e693936cd489fea036fa2cc3eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundsToggled: 0
+  soundsToggled: 1
   Music: {fileID: 104804478}
 --- !u!4 &1456222060
 Transform:
@@ -629,7 +629,7 @@ PrefabInstance:
     - target: {fileID: 8582813908195075123, guid: 5cf88869103e1994f8c5ad7706ac626d,
         type: 3}
       propertyPath: m_Volume
-      value: 0.481
+      value: 0.271
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cf88869103e1994f8c5ad7706ac626d, type: 3}
