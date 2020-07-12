@@ -18,7 +18,7 @@ public class PatternMeasure : ScriptableObject {
     public string[] NoteActions = new string[SIZE];
     private int[] choiceIndices = new int[SIZE];
 
-    public Shot Shot;
+    public ConfigurationEvent ConfigEvent;
 
     private void OnValidate() {
         if (NoteActions.Length != SIZE) {
@@ -36,8 +36,11 @@ public class PatternMeasure : ScriptableObject {
             // Draw the default inspector
             DrawDefaultInspector();
             PatternMeasure measure = target as PatternMeasure;
-            // ReSharper disable once PossibleNullReferenceException
-            string[] choices = measure.Shot.GetValues();
+            ConfigurationEvent configEvent = measure.ConfigEvent;
+            if (!configEvent)
+                return;
+            
+            string[] choices = configEvent.GetValues();
 
             EditorGUILayout.LabelField("32nd note triggers", EditorStyles.boldLabel);
             for (int i = 0; i < SIZE; i++) {

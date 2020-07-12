@@ -2,15 +2,13 @@
 using System.Collections;
 using UnityEngine;
 
-// TODO: Move more things here once we know what we'll want for all shot types
 /// <summary>
-/// A Shot can be spawned into the scene to make bullets appear and generally look pretty and stuff
+/// An event that we can schedule to perform via a PatternMeasure
 /// </summary>
-public abstract class Shot : MonoBehaviour {
+public abstract class ConfigurationEvent : MonoBehaviour {
     public enum Values {
         Unset = -1,
         None = 0,
-        FireShot = 1
     }
 
     public virtual string[] GetValues() {
@@ -22,8 +20,6 @@ public abstract class Shot : MonoBehaviour {
     public static Values GetBaseValueForString(string name) {
         return Enum.TryParse(name, out Values ret) ? ret : Values.Unset;
     }
-
-    public abstract void Shoot(Transform spawner, BulletParticleSystem system);
-
-    public abstract void UpdateShot(string step);
+    
+    public abstract void UpdateEvent(string step);
 }

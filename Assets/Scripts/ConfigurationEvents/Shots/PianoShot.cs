@@ -48,7 +48,7 @@ public class PianoShot : Shot {
         system.Shoot();
     }
 
-    public override void UpdateShot(string step) {
+    public override void UpdateEvent(string step) {
         Values action = GetValueForString(step);
         switch (action) {
             case Values.SecondShot:

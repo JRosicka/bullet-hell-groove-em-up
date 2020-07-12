@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -9,7 +10,7 @@ using UnityEngine.Assertions;
 public class PatternController : MonoBehaviour {
     private const int ACTIONS_PER_MEASURE = 32;
 
-    public Transform Spawner;
+    public Transform Agent;
     public PatternConfiguration Pattern;
 
     private TimingController timingController;
@@ -53,24 +54,32 @@ public class PatternController : MonoBehaviour {
         int shotIndex = -1;
         for (int i = 0; i < measures.Count; i++) {
             for (int j = 0; j < ACTIONS_PER_MEASURE; j++) {                
-                string action = measures[i].NoteActions[j];
-                Shot.Values value = Shot.GetBaseValueForString(action);
-                if (value == Shot.Values.None) 
+                string actionString = measures[i].NoteActions[j];
+                ConfigurationEvent.Values value = ConfigurationEvent.GetBaseValueForString(actionString);
+                if (value == ConfigurationEvent.Values.None) 
                     continue;
                 
                 int elapsedThirtySecondNotes = i * ACTIONS_PER_MEASURE + j;
                 float triggerTime = timingController.GetThirtysecondNoteTime() * elapsedThirtySecondNotes;
 
-                if (value == Shot.Values.FireShot) {
-                    shotIndex++;
-                    FireShotNoteAction fireShotNote = new FireShotNoteAction(shotIndex, triggerTime, shotInstances, measures[i].Shot, Spawner);
-                    ret.Add(fireShotNote);
-                } else {
-                    // TODO: Currently, we just update the shot most recently timed to fire before this update. It would be nice to be able to update specific shots.
-                    Assert.IsTrue(shotIndex > -1, "Trying to update a shot before we have shot any shots, silly!");
-                    UpdateShotNoteAction updateShotNote = new UpdateShotNoteAction(shotIndex, triggerTime, shotInstances, action);
-                    ret.Add(updateShotNote);
+                // Type configEventType = measures[i].ConfigEvent.GetType();
+                if (measures[i].ConfigEvent is Shot) {
+                    if (actionString == Shot.Values.FireShot.ToString()) {
+                        shotIndex++;
+                        FireShotNoteAction fireShotNote = new FireShotNoteAction(shotIndex, triggerTime, shotInstances,
+                            (Shot)measures[i].ConfigEvent, Agent);
+                        ret.Add(fireShotNote);
+                    } else {
+                        // TODO: Currently, we just update the shot most recently timed to fire before this update. It would be nice to be able to update specific shots.
+                        Assert.IsTrue(shotIndex > -1, "Trying to update a shot before we have shot any shots, silly!");
+                        UpdateShotNoteAction updateShotNote =
+                            new UpdateShotNoteAction(shotIndex, triggerTime, shotInstances, actionString);
+                        ret.Add(updateShotNote);
+                    }
                 }
+
+                // check if it's an animation action
+                
             }
         }
 

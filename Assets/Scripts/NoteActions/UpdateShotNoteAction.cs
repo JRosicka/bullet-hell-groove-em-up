@@ -11,6 +11,6 @@ public class UpdateShotNoteAction : NoteAction {
         this.step = step;
     }
     public override void PerformAction() {
-        ShotInstances[Index].UpdateShot(step);
+        ShotInstances[Index].UpdateEvent(step);
     }
 }

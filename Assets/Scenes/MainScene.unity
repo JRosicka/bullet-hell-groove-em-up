@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40634865fe8156642ab105621e446844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spawner: {fileID: 534086612}
+  Agent: {fileID: 534086612}
   Pattern: {fileID: 11400000, guid: a0d3728aff2f37244a931206d88c262f, type: 2}
 --- !u!82 &104804478 stripped
 AudioSource:
