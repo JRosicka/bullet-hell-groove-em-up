@@ -45,4 +45,5 @@ MonoBehaviour:
   - None
   - None
   - None
-  Shot: {fileID: 7721102815681162636, guid: 83a38f3437e72e244b6c8f630ea0494e, type: 3}
+  ConfigEvent: {fileID: 7721102815681162636, guid: 83a38f3437e72e244b6c8f630ea0494e,
+    type: 3}
