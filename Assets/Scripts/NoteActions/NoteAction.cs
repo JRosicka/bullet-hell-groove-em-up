@@ -7,12 +7,10 @@
 public abstract class NoteAction {
     protected readonly int Index;
     public readonly float TriggerTime;
-    protected readonly List<Shot> ShotInstances;
 
-    protected NoteAction(int index, float triggerTime, List<Shot> shotInstances) {
+    protected NoteAction(int index, float triggerTime) {
         Index = index;
         TriggerTime = triggerTime;
-        ShotInstances = shotInstances;
     }
 
     /// <summary>

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 236bf94ffdcc7064a995775e6f45bc5e, type: 3}
   m_Name: PianoAnimationConfiguration
   m_EditorClassIdentifier: 
-  MeasureGroup1: {fileID: 0}
-  MeasureGroup2: {fileID: 0}
-  MeasureGroup3: {fileID: 0}
-  MeasureGroup4: {fileID: 0}
+  MeasureGroup1: {fileID: 11400000, guid: f26359c06f991c34aadaa01e56345a45, type: 2}
+  MeasureGroup2: {fileID: 11400000, guid: f26359c06f991c34aadaa01e56345a45, type: 2}
+  MeasureGroup3: {fileID: 11400000, guid: f26359c06f991c34aadaa01e56345a45, type: 2}
+  MeasureGroup4: {fileID: 11400000, guid: f26359c06f991c34aadaa01e56345a45, type: 2}

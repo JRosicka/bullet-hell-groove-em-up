@@ -6,11 +6,13 @@
 /// </summary>
 public class UpdateShotNoteAction : NoteAction {
     private string step;
+    private readonly List<ConfigurationEvent> shotInstances;
 
-    public UpdateShotNoteAction(int index, float triggerTime, List<Shot> shotInstances, string step) : base(index, triggerTime, shotInstances) {
+    public UpdateShotNoteAction(int index, float triggerTime, List<ConfigurationEvent> shotInstances, string step) : base(index, triggerTime) {
+        this.shotInstances = shotInstances;
         this.step = step;
     }
     public override void PerformAction() {
-        ShotInstances[Index].UpdateEvent(step);
+        shotInstances[Index].UpdateEvent(step);
     }
 }

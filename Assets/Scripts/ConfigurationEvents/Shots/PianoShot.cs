@@ -30,8 +30,8 @@ public class PianoShot : Shot {
         return Enum.GetNames(typeof(Values));
     }
 
-    private static Values GetValueForString(string name) {
-        return (Values)Enum.Parse(typeof(Values), name);
+    private Values GetValueForString(string stringName) {
+        return (Values)Enum.Parse(typeof(Values), stringName);
     }
 
     void Start() {
