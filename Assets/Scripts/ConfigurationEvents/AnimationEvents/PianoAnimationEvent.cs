@@ -42,6 +42,12 @@ public class PianoAnimationEvent : AnimationEvent {
     public Transform WaypointMiddleLeft;
     public Transform WaypointMiddleRight;
 
+    [Header("Movement")] 
+    public AnimationCurve MovementCurveRegular;
+    public AnimationCurve MovementCurveFudge;
+    // How long it takes to move from one waypoint to another
+    public float TravelTime = 1f;
+
     void Start() {
         playerController = FindObjectOfType<PlayerController>();
         
@@ -65,7 +71,32 @@ public class PianoAnimationEvent : AnimationEvent {
         nonComboWaypoints.Add(WaypointTopLeft);
         nonComboWaypoints.Add(WaypointTopRight);
     }
-    
+
+    private float currentTravelTime = -1;
+    private Vector3 originWaypoint;
+    private Vector3 targetWaypoint;
+    private Vector3 fudgeTargetWaypoint;
+    private bool movedBefore;
+    private void Update() {
+        if (currentTravelTime < 0)
+            return;
+        
+        currentTravelTime += Time.deltaTime;
+        if (currentTravelTime >= TravelTime) {
+            transform.position = targetWaypoint;
+            currentTravelTime = -1;
+            return;
+        }
+
+        float normalTravelProgress = MovementCurveRegular.Evaluate(currentTravelTime / TravelTime);
+        float fudgeTravelProgress = MovementCurveFudge.Evaluate(currentTravelTime / TravelTime);
+
+        Vector3 normalProgress = Vector3.Lerp(originWaypoint, targetWaypoint, normalTravelProgress) - originWaypoint;
+        Vector3 fudgeProgress = Vector3.Lerp(originWaypoint, fudgeTargetWaypoint, fudgeTravelProgress) - originWaypoint;
+        Vector3 totalProgress = normalProgress + fudgeProgress;
+        transform.position = originWaypoint + totalProgress;
+    }
+
     public override void UpdateEvent(string step) {
         Values action = GetValueForString(step);
         switch (action) {
@@ -100,12 +131,22 @@ public class PianoAnimationEvent : AnimationEvent {
     }
 
     private void FireAnimationFlare() {
-        
+        // TODO: Animate
     }
 
     private void MoveToWaypoint(Transform waypoint) {
-        // TODO: Animate
-        transform.position = waypoint.position;
+        Vector3 oldTarget = transform.position;
+        if (movedBefore)
+            oldTarget = targetWaypoint;
+        originWaypoint = oldTarget;
+        targetWaypoint = waypoint.position;
+        Vector3 originalVector = targetWaypoint - originWaypoint;
+        Vector3 rotatedVector = new Vector3(originalVector.y, -1 * (originalVector.x), 0);
+        int direction = Random.Range(0, 2) == 0 ? 1 : -1;
+        fudgeTargetWaypoint = rotatedVector * direction + originWaypoint;
+        currentTravelTime = 0;
+
+        movedBefore = true;
     }
 
     private Transform DetermineTransform(Values moveEvent) {
