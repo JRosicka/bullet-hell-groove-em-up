@@ -1,4 +1,5 @@
-﻿using Rewired;
+﻿using System;
+using Rewired;
 using UnityEngine;
 
 /// <summary>
@@ -58,5 +59,9 @@ public class Player : MonoBehaviour {
 		Vector2 movement = new Vector2(moveHorizontal, moveVertical);
 		
 		rb.velocity = movement * currentSpeed;
+	}
+
+	private void OnParticleCollision(GameObject other) {
+		Debug.Log("Oof! Ouch!");
 	}
 }
