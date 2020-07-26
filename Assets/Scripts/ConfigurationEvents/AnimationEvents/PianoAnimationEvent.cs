@@ -13,7 +13,7 @@ public class PianoAnimationEvent : AnimationEvent {
         NormalMove = 201,
         MoveAway = 202,
         MoveTowards = 203,
-        MoveToMiddle = 204,
+        // MoveToMiddle = 204,
         MoveCombo1 = 205,
         MoveCombo2 = 206,
         MoveCombo3 = 207
@@ -121,9 +121,9 @@ public class PianoAnimationEvent : AnimationEvent {
             case Values.MoveTowards:
                 MoveToWaypoint(DetermineTransform(Values.MoveTowards));
                 break;
-            case Values.MoveToMiddle:
-                MoveToWaypoint(DetermineTransform(Values.MoveToMiddle));
-                break;
+            // case Values.MoveToMiddle:
+            //     MoveToWaypoint(DetermineTransform(Values.MoveToMiddle));
+            //     break;
             default:
                 Assert.IsTrue(false);
                 break;
@@ -184,9 +184,10 @@ public class PianoAnimationEvent : AnimationEvent {
 
                 }
                 break;
-            case Values.MoveToMiddle:
-                ret = middleWaypoints[Random.Range(0, middleWaypoints.Count)];
-                break;
+            // case Values.MoveToMiddle:
+            //     // TODO: We never put anything in here lol ;)
+            //     ret = middleWaypoints[Random.Range(0, middleWaypoints.Count)];
+            //     break;
             default:
                 Assert.IsTrue(false);
                 break;

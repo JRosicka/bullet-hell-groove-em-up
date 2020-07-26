@@ -13,25 +13,6 @@ MonoBehaviour:
   m_Name: PianoAnimationMeasure3
   m_EditorClassIdentifier: 
   NoteActions:
-  - FireAnimationFlare
-  - None
-  - None
-  - None
-  - FireAnimationFlare
-  - None
-  - FireAnimationFlare
-  - None
-  - None
-  - None
-  - None
-  - None
-  - None
-  - None
-  - None
-  - None
-  - None
-  - None
-  - MoveCombo1
   - None
   - None
   - None
@@ -45,5 +26,25 @@ MonoBehaviour:
   - None
   - None
   - None
+  - None
+  - None
+  - None
+  - MoveCombo2
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  - None
+  choiceIndices: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   ConfigEvent: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
     type: 3}

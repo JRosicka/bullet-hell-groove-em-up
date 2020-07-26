@@ -16,6 +16,8 @@ public class PatternMeasure : ScriptableObject {
     // Would also probably want to use a list per element instead of a single value since we'd want to be able to do multiple actions at once from a single PatternMeasure
     [HideInInspector]
     public string[] NoteActions = new string[SIZE];
+    
+    [SerializeField, HideInInspector]
     private int[] choiceIndices = new int[SIZE];
 
     public ConfigurationEvent ConfigEvent;
