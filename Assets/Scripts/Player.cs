@@ -1,6 +1,8 @@
 ﻿using System;
 using Rewired;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 /// <summary>
 /// Handles the movement of the player, ensuring it remains inside the game boundary
@@ -37,6 +39,11 @@ public class Player : MonoBehaviour {
 	/// as long as it remains within the game bounds
 	/// </summary>
 	void FixedUpdate() {
+		if (GameController.Instance.IsResetting()) {
+			rb.velocity = Vector2.zero;
+			return;
+		}
+
 		// float moveHorizontal = Input.GetAxis("Horizontal");
 		// float moveVertical = Input.GetAxis("Vertical");
 		Rewired.Player playerControls = ReInput.players.GetPlayer("SYSTEM");
@@ -64,11 +71,11 @@ public class Player : MonoBehaviour {
 		if (playerControls.GetButton(SLOW_NAME))
 			currentSpeed = slowSpeed;
 
-		if (playerControls.GetButton(PAUSE_NAME))
-			Debug.Log("PAAAAAAAUSE");
-		
-		if (playerControls.GetButton(SHOOT_NAME))
-			Debug.Log("SHOOOOT");
+		// if (playerControls.GetButton(PAUSE_NAME))
+		// 	Debug.Log("PAAAAAAAUSE");
+		//
+		// if (playerControls.GetButton(SHOOT_NAME))
+		// 	Debug.Log("SHOOOOT");
 			
 //		rb.position = new Vector2(
 //			Mathf.Clamp(rb.position.x, boundary.xMinWindow, boundary.xMaxWindow),
@@ -86,7 +93,10 @@ public class Player : MonoBehaviour {
 	}
 
 	private void OnParticleCollision(GameObject other) {
-		Debug.Log("Oof! Ouch!");
+		// Add spin for no reason
+		rb.AddTorque(1f * (Random.Range(0, 2) == 0 ? 1 : -1));
+		
+		GameController.Instance.ResetGame();
 	}
 
 	private void OnCollisionEnter2D(Collision2D other) {

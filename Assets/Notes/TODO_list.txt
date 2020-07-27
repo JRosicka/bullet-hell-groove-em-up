@@ -6,8 +6,8 @@
 
 	[DONE] Sync seeds in editor
 
-Make collision logic between particles and player
-Make collision logic between particles and game boundary (toggle-able)
+[DONE] Make collision logic between particles and player
+[DONE] Make collision logic between particles and game boundary (toggle-able)
 
 [DONE] Pattern configuration improvements
 	[DONE] Replace booleans with configurable enums

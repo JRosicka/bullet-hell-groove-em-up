@@ -96,6 +96,9 @@ public class PatternController : MonoBehaviour {
     /// Perform any queued NoteActions that have triggered
     /// </summary>
     private void Update() {
+        if (GameController.Instance.IsResetting())
+            return;
+        
         timeElapsed += Time.deltaTime;
 
         int actionsCompleted = 0;
