@@ -10,9 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d1dd65c84e7535488d11a270a4701de, type: 3}
-  m_Name: PianoAnimationMeasure2
+  m_Name: PianoMeasureMixuFourShots
   m_EditorClassIdentifier: 
   NoteActions:
+  - FireShot
+  - None
+  - None
+  - None
+  - None
+  - None
+  - ThirdShot
   - None
   - None
   - None
@@ -22,15 +29,13 @@ MonoBehaviour:
   - None
   - None
   - None
+  - FireShot
   - None
   - None
   - None
   - None
   - None
-  - None
-  - None
-  - NormalMove
-  - None
+  - ThirdShot
   - None
   - None
   - None
@@ -40,11 +45,6 @@ MonoBehaviour:
   - None
   - None
   - None
-  - None
-  - None
-  - None
-  - None
-  - None
-  choiceIndices: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  ConfigEvent: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+  choiceIndices: 0100000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000003000000000000000000000000000000000000000000000000000000000000000000000000000000
+  ConfigEvent: {fileID: 7721102815681162636, guid: 83a38f3437e72e244b6c8f630ea0494e,
     type: 3}

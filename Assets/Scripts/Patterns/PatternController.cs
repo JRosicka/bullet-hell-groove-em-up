@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -35,24 +34,13 @@ public class PatternController : MonoBehaviour {
     /// <returns>A list of scheduled NoteActions</returns>
     private List<NoteAction> ScheduleNoteActions() {
         List<NoteAction> ret = new List<NoteAction>();
-
-        List<Pattern4Measures> measureGroups = new List<Pattern4Measures>();
-        measureGroups.Add(Pattern.MeasureGroup1);
-        measureGroups.Add(Pattern.MeasureGroup2);
-        measureGroups.Add(Pattern.MeasureGroup3);
-        measureGroups.Add(Pattern.MeasureGroup4);
-
-        List<PatternMeasure> measures = new List<PatternMeasure>();
-        foreach (Pattern4Measures measureGroup in measureGroups) {
-            measures.Add(measureGroup.Measure1);
-            measures.Add(measureGroup.Measure2);
-            measures.Add(measureGroup.Measure3);
-            measures.Add(measureGroup.Measure4);
-        }
+        List<PatternMeasure> measures = Pattern.Measures;
 
         // Keep track of each shot we make
         int shotIndex = -1;
         for (int i = 0; i < measures.Count; i++) {
+            if (measures[i] == null)
+                continue;
             for (int j = 0; j < ACTIONS_PER_MEASURE; j++) {                
                 string actionString = measures[i].NoteActions[j];
                 ConfigurationEvent.Values value = ConfigurationEvent.GetBaseValueForString(actionString);

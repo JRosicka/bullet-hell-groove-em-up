@@ -12,7 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 236bf94ffdcc7064a995775e6f45bc5e, type: 3}
   m_Name: PianoConfiguration
   m_EditorClassIdentifier: 
-  MeasureGroup1: {fileID: 11400000, guid: c3ad9bc60be722948947ded43bfc8b02, type: 2}
-  MeasureGroup2: {fileID: 11400000, guid: c3ad9bc60be722948947ded43bfc8b02, type: 2}
-  MeasureGroup3: {fileID: 11400000, guid: c3ad9bc60be722948947ded43bfc8b02, type: 2}
-  MeasureGroup4: {fileID: 11400000, guid: c3ad9bc60be722948947ded43bfc8b02, type: 2}
+  StartMeasure: 0
+  Measures:
+  - {fileID: 11400000, guid: 005724fe72c320d47aea7615ae456a68, type: 2}
+  - {fileID: 11400000, guid: 005724fe72c320d47aea7615ae456a68, type: 2}
+  - {fileID: 11400000, guid: 079c67590d287f441887b49b52d2d0f4, type: 2}
+  - {fileID: 11400000, guid: dc7682dece9314e4ca8bf6f761e2c818, type: 2}
+  - {fileID: 11400000, guid: 005724fe72c320d47aea7615ae456a68, type: 2}
+  - {fileID: 11400000, guid: 005724fe72c320d47aea7615ae456a68, type: 2}
+  - {fileID: 11400000, guid: 005724fe72c320d47aea7615ae456a68, type: 2}
+  - {fileID: 11400000, guid: dc7682dece9314e4ca8bf6f761e2c818, type: 2}
+  - {fileID: 11400000, guid: 005724fe72c320d47aea7615ae456a68, type: 2}
+  - {fileID: 11400000, guid: 005724fe72c320d47aea7615ae456a68, type: 2}
+  - {fileID: 11400000, guid: 079c67590d287f441887b49b52d2d0f4, type: 2}
+  - {fileID: 11400000, guid: dc7682dece9314e4ca8bf6f761e2c818, type: 2}
+  - {fileID: 11400000, guid: 079c67590d287f441887b49b52d2d0f4, type: 2}
+  - {fileID: 11400000, guid: 005724fe72c320d47aea7615ae456a68, type: 2}
+  - {fileID: 11400000, guid: 079c67590d287f441887b49b52d2d0f4, type: 2}
+  - {fileID: 11400000, guid: dc7682dece9314e4ca8bf6f761e2c818, type: 2}
