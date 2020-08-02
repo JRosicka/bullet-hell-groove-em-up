@@ -67,6 +67,10 @@ public class BulletParticleSystem : MonoBehaviour {
         }
     }
 
+    public List<ParticleSystem> GetActiveParticleSystems() {
+        return subPSystems;
+    }
+
     private List<BulletParticleSystem> GetImmediateChildrenBulletParticleSystems() {
         return GetComponentsInChildren<BulletParticleSystem>(true).Where(e => (e.transform.parent == transform))
             .ToList();

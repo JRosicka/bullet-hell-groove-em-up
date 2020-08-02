@@ -13,6 +13,8 @@ public class Player : MonoBehaviour {
 	public float normalSpeed;
 	public float slowSpeed;
 
+	public bool Invincible;
+
 	public GameObject WallLeft;
 	public GameObject WallRight;
 	public GameObject WallUp;
@@ -95,11 +97,15 @@ public class Player : MonoBehaviour {
 	private void OnParticleCollision(GameObject other) {
 		// Add spin for no reason
 		rb.AddTorque(1f * (Random.Range(0, 2) == 0 ? 1 : -1));
+
+		if (Invincible)
+			return;
 		
 		GameController.Instance.ResetGame();
 	}
 
 	private void OnCollisionEnter2D(Collision2D other) {
+		// TODO This doesn't actually do anything lol
 		if (other.gameObject == WallLeft) {
 			onWallLeft = true;
 		} else if (other.gameObject == WallRight) {

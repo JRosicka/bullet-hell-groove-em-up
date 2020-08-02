@@ -68,10 +68,18 @@ public class PatternController : MonoBehaviour {
 
                 // check if it's an animation action
                 // TODO: Just find the PianoAnimationEvent in the scene for now, but ideally we'd spawn it in
-                else if (measures[i].ConfigEvent is AnimationEvent) {
+                else if (measures[i].ConfigEvent is PianoAnimationEvent) {
                     PianoAnimationEvent pianoAnimation = FindObjectOfType<PianoAnimationEvent>();
                     // TODO: We aren't using the shotIndex value here, and it is also probably wrong.
                     UpdateAnimationNoteAction updateAnimationNote = new UpdateAnimationNoteAction(shotIndex, triggerTime, pianoAnimation, actionString);
+                    ret.Add(updateAnimationNote);
+                }
+                
+                // Actually disgusting, see above
+                else if (measures[i].ConfigEvent is BassAnimationEvent) {
+                    BassAnimationEvent bassAnimation = FindObjectOfType<BassAnimationEvent>();
+                    // TODO: We aren't using the shotIndex value here, and it is also probably wrong.
+                    UpdateAnimationNoteAction updateAnimationNote = new UpdateAnimationNoteAction(shotIndex, triggerTime, bassAnimation, actionString);
                     ret.Add(updateAnimationNote);
                 }
             }

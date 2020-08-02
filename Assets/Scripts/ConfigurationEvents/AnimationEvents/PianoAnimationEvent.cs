@@ -113,13 +113,13 @@ public class PianoAnimationEvent : AnimationEvent {
                 MoveToWaypoint(IsOnRightSide ? WaypointRightCombo3 : WaypointLeftCombo3);
                 break;
             case Values.NormalMove:
-                MoveToWaypoint(DetermineTransform(Values.NormalMove));
+                MoveToWaypoint(DetermineTargetTransform(Values.NormalMove));
                 break;
             case Values.MoveAway:
-                MoveToWaypoint(DetermineTransform(Values.MoveAway));
+                MoveToWaypoint(DetermineTargetTransform(Values.MoveAway));
                 break;
             case Values.MoveTowards:
-                MoveToWaypoint(DetermineTransform(Values.MoveTowards));
+                MoveToWaypoint(DetermineTargetTransform(Values.MoveTowards));
                 break;
             // case Values.MoveToMiddle:
             //     MoveToWaypoint(DetermineTransform(Values.MoveToMiddle));
@@ -149,7 +149,7 @@ public class PianoAnimationEvent : AnimationEvent {
         movedBefore = true;
     }
 
-    private Transform DetermineTransform(Values moveEvent) {
+    private Transform DetermineTargetTransform(Values moveEvent) {
         Transform ret = null;
         float enemyToPlayer = (transform.position - playerController.GetPlayerPosition()).magnitude;
         List<Transform> sortedWaypoints = GetSortedWaypoints();
