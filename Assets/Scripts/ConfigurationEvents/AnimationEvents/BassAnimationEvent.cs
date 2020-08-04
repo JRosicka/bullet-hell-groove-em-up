@@ -119,7 +119,6 @@ public class BassAnimationEvent : AnimationEvent {
                 Assert.IsTrue(false);
                 break;
         }
-        Debug.Log(ret);
         return ret;
     }
     

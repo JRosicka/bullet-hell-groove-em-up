@@ -709,7 +709,7 @@ MonoBehaviour:
   rb: {fileID: 684847953}
   normalSpeed: 6
   slowSpeed: 2.5
-  Invincible: 1
+  Invincible: 0
   WallLeft: {fileID: 0}
   WallRight: {fileID: 0}
   WallUp: {fileID: 0}
@@ -1346,7 +1346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca77e4e693936cd489fea036fa2cc3eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundsToggled: 0
+  soundsToggled: 1
   Music: {fileID: 104804478}
   VictorySoundEffect: {fileID: 605627379}
 --- !u!4 &1456222060
@@ -2176,7 +2176,7 @@ PrefabInstance:
     - target: {fileID: 2676997595005644571, guid: 2fac89d9f0758b9499f0768d4438be28,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2676997595005644571, guid: 2fac89d9f0758b9499f0768d4438be28,
         type: 3}
@@ -2410,17 +2410,17 @@ PrefabInstance:
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: MovementCurveRegular.m_Curve.Array.data[0].inSlope
-      value: 1
+      value: 2.9670186
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: MovementCurveRegular.m_Curve.Array.data[0].outSlope
-      value: 1
+      value: 2.9670186
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: MovementCurveRegular.m_Curve.Array.data[0].tangentMode
-      value: 34
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
@@ -2435,17 +2435,17 @@ PrefabInstance:
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: MovementCurveRegular.m_Curve.Array.data[1].inSlope
-      value: 1
+      value: 0.24582754
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: MovementCurveRegular.m_Curve.Array.data[1].outSlope
-      value: 1
+      value: 0.24582754
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: MovementCurveRegular.m_Curve.Array.data[1].tangentMode
-      value: 34
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
@@ -2460,27 +2460,27 @@ PrefabInstance:
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: MovementCurveFudge.m_Curve.Array.data[1].time
-      value: 0.2970106
+      value: 0.24680918
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: MovementCurveFudge.m_Curve.Array.data[1].value
-      value: 0.20125785
+      value: 0.1455442
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: MovementCurveFudge.m_Curve.Array.data[1].tangentMode
-      value: 34
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: MovementCurveFudge.m_Curve.Array.data[0].inSlope
-      value: 0.6776117
+      value: 0.5897033
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: MovementCurveFudge.m_Curve.Array.data[0].outSlope
-      value: 0.6776117
+      value: 0.5897033
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
@@ -2490,12 +2490,12 @@ PrefabInstance:
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: MovementCurveFudge.m_Curve.Array.data[1].inSlope
-      value: 0.19566154
+      value: -0.01533985
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: MovementCurveFudge.m_Curve.Array.data[1].outSlope
-      value: 0.19566154
+      value: -0.01533985
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
@@ -2510,7 +2510,7 @@ PrefabInstance:
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: MovementCurveFudge.m_Curve.Array.data[1].outWeight
-      value: 0.33333334
+      value: 0.49026477
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
@@ -2520,22 +2520,22 @@ PrefabInstance:
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: MovementCurveFudge.m_Curve.Array.data[2].tangentMode
-      value: 34
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: MovementCurveFudge.m_Curve.Array.data[2].inWeight
-      value: 0.33333334
+      value: 0.35392067
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: MovementCurveFudge.m_Curve.Array.data[2].inSlope
-      value: -0.28628862
+      value: -0.2646398
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: MovementCurveFudge.m_Curve.Array.data[2].outSlope
-      value: -0.28628862
+      value: -0.2646398
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
@@ -2545,12 +2545,102 @@ PrefabInstance:
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: MovementCurveRegular.m_Curve.Array.data[0].outWeight
-      value: 0.33333334
+      value: 0.19813116
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: MovementCurveRegular.m_Curve.Array.data[1].inWeight
+      value: 0.6232398
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+        type: 3}
+      propertyPath: MovementCurveRegular.m_Curve.Array.data[1].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+        type: 3}
+      propertyPath: MovementCurveRegular.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+        type: 3}
+      propertyPath: MovementCurveRegular.m_Curve.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+        type: 3}
+      propertyPath: MovementCurveRegular.m_Curve.Array.data[2].inSlope
+      value: 0.43783966
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+        type: 3}
+      propertyPath: MovementCurveRegular.m_Curve.Array.data[2].outSlope
+      value: 0.43783966
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+        type: 3}
+      propertyPath: MovementCurveRegular.m_Curve.Array.data[2].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+        type: 3}
+      propertyPath: MovementCurveRegular.m_Curve.Array.data[2].inWeight
       value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+        type: 3}
+      propertyPath: MovementCurveFudge.m_Curve.Array.data[2].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+        type: 3}
+      propertyPath: MovementCurveFudge.m_Curve.Array.data[2].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+        type: 3}
+      propertyPath: MovementCurveFudge.m_Curve.Array.data[3].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+        type: 3}
+      propertyPath: MovementCurveFudge.m_Curve.Array.data[3].inSlope
+      value: -0.029357696
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+        type: 3}
+      propertyPath: MovementCurveFudge.m_Curve.Array.data[3].outSlope
+      value: -0.029357696
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+        type: 3}
+      propertyPath: MovementCurveFudge.m_Curve.Array.data[3].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+        type: 3}
+      propertyPath: MovementCurveFudge.m_Curve.Array.data[3].inWeight
+      value: 0.14847866
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+        type: 3}
+      propertyPath: MovementCurveRegular.m_Curve.Array.data[0].weightedMode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+        type: 3}
+      propertyPath: MovementCurveRegular.m_Curve.Array.data[1].weightedMode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+        type: 3}
+      propertyPath: MovementCurveFudge.m_Curve.Array.data[2].weightedMode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+        type: 3}
+      propertyPath: MovementCurveFudge.m_Curve.Array.data[1].weightedMode
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343753, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
@@ -2590,7 +2680,7 @@ PrefabInstance:
     - target: {fileID: 7224286281906343753, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343753, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
         type: 3}
