@@ -1397,6 +1397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BPM: 128
+  StartDelayBeats: 1
 --- !u!114 &1456222063
 MonoBehaviour:
   m_ObjectHideFlags: 0

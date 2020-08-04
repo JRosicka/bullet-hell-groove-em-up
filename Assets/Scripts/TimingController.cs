@@ -5,6 +5,8 @@
 /// </summary>
 public class TimingController : MonoBehaviour {
     public int BPM;
+    
+    public int StartDelayBeats;
     private float BPS => BPM / 60f;
 
     public float GetWholeNoteTime() {
@@ -29,5 +31,9 @@ public class TimingController : MonoBehaviour {
 
     public float GetThirtysecondNoteTime() {
         return 4f / (32f * BPS);
+    }
+
+    public float GetStartDelay() {
+        return StartDelayBeats * GetQuarterNoteTime();
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 /// <summary>
 /// Handler of song playback
@@ -9,13 +10,20 @@ public class SongController : MonoBehaviour {
     public bool soundsToggled = true;
     public AudioSource Music;
     public AudioSource VictorySoundEffect;
+    private TimingController timingController;
 
     void Start() {
-        PlaySong(Music);
+        timingController = FindObjectOfType<TimingController>();
+        StartCoroutine(QueueSongStart());
     }
 
     public void PlayVictorySoundEffect() {
         PlaySong(VictorySoundEffect);
+    }
+
+    private IEnumerator QueueSongStart() {
+        yield return new WaitForSeconds(timingController.GetStartDelay());
+        PlaySong(Music);
     }
 
     private void PlaySong(AudioSource sound) {

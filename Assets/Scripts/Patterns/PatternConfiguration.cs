@@ -10,7 +10,7 @@ public class PatternConfiguration : ScriptableObject {
     public int StartMeasure;
     
     // Measures. It's hard to transcribe sheet music to scriptable objects, okay?
-    [Header("Measures list")] public List<PatternMeasure> Measures;
-
+    [Header("Measures list")] 
+    public List<PatternMeasure> Measures;
 }
 

@@ -49,7 +49,7 @@ public class PatternController : MonoBehaviour {
                 
                 // Factor in the start measure, which measure we're currently on, and which part of the measure we're currently on
                 int elapsedThirtySecondNotes = Pattern.StartMeasure * ACTIONS_PER_MEASURE + i * ACTIONS_PER_MEASURE + j;
-                float triggerTime = timingController.GetThirtysecondNoteTime() * elapsedThirtySecondNotes;
+                float triggerTime = timingController.GetThirtysecondNoteTime() * elapsedThirtySecondNotes + timingController.GetStartDelay();
 
                 // Type configEventType = measures[i].ConfigEvent.GetType();
                 if (measures[i].ConfigEvent is Shot) {
