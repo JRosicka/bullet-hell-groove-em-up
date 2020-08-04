@@ -709,7 +709,7 @@ MonoBehaviour:
   rb: {fileID: 684847953}
   normalSpeed: 6
   slowSpeed: 2.5
-  Invincible: 0
+  Invincible: 1
   WallLeft: {fileID: 0}
   WallRight: {fileID: 0}
   WallUp: {fileID: 0}
@@ -1346,7 +1346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca77e4e693936cd489fea036fa2cc3eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundsToggled: 1
+  soundsToggled: 0
   Music: {fileID: 104804478}
   VictorySoundEffect: {fileID: 605627379}
 --- !u!4 &1456222060
@@ -2033,6 +2033,51 @@ PrefabInstance:
       propertyPath: MovementCurveRegular.m_Curve.Array.data[2].outWeight
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
+        type: 3}
+      propertyPath: MovementCurveFudge.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
+        type: 3}
+      propertyPath: MovementCurveFudge.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
+        type: 3}
+      propertyPath: MovementCurveFudge.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
+        type: 3}
+      propertyPath: MovementCurveFudge.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
+        type: 3}
+      propertyPath: MovementCurveFudge.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
+        type: 3}
+      propertyPath: MovementCurveFudge.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
+        type: 3}
+      propertyPath: MovementCurveFudge.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
+        type: 3}
+      propertyPath: MovementCurveFudge.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
+        type: 3}
+      propertyPath: TravelTime
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2676997595005644570, guid: 2fac89d9f0758b9499f0768d4438be28,
         type: 3}
       propertyPath: WaypointLeftCombo1
@@ -2096,7 +2141,7 @@ PrefabInstance:
     - target: {fileID: 2676997595005644571, guid: 2fac89d9f0758b9499f0768d4438be28,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2676997595005644571, guid: 2fac89d9f0758b9499f0768d4438be28,
         type: 3}

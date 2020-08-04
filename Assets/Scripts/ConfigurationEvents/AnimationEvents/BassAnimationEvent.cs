@@ -4,6 +4,15 @@ using UnityEngine.Assertions;
 using Random = UnityEngine.Random;
 
 public class BassAnimationEvent : AnimationEvent {
+    private static readonly Vector2 Origin = new Vector2(0, 3);
+    private static readonly float MaxDirectionalDistanceFromOrigin = .8f;
+    private static readonly float MaxDirectionalMovementPerMove = .7f;
+    private static readonly float MinDirectionalMovementPerMove = .2f;
+    float xMin => Origin.x - MaxDirectionalDistanceFromOrigin;
+    float xMax => Origin.x + MaxDirectionalDistanceFromOrigin;
+    float yMin => Origin.y - MaxDirectionalDistanceFromOrigin;
+    float yMax => Origin.y + MaxDirectionalDistanceFromOrigin;
+
     public new enum Values {
         Unset = ConfigurationEvent.Values.Unset,
         None = ConfigurationEvent.Values.None,
@@ -83,17 +92,34 @@ public class BassAnimationEvent : AnimationEvent {
     private Vector3 DetermineTargetTransform(Values moveEvent) {
         Vector3 ret = Vector3.zero;
         Vector3 currentPosition = transform.position;
+        float xTravel;
+        float yTravel;
+        
+        // We want to pick a random travel distance out of the legal range. That way, the agent will tend to pick 
+        // movements that go towards the origin
         switch (moveEvent) {
             case Values.MoveLeft:
-                ret = new Vector3(currentPosition.x - .5f, currentPosition.y);
+                xTravel =
+                    Random.Range(Mathf.Max(-MinDirectionalMovementPerMove, xMin - currentPosition.x),
+                        Mathf.Min(-MaxDirectionalMovementPerMove, -MinDirectionalMovementPerMove));
+                yTravel =
+                    Random.Range(Mathf.Max(-MaxDirectionalMovementPerMove, yMin - currentPosition.y),
+                        Mathf.Min(MaxDirectionalMovementPerMove, yMax - currentPosition.y));
+                ret = new Vector3(currentPosition.x + xTravel, currentPosition.y + yTravel);
                 break;
             case Values.MoveRight:
-                ret = new Vector3(currentPosition.x + .5f, currentPosition.y);
+                xTravel =
+                    Random.Range(Mathf.Max(MinDirectionalMovementPerMove, MinDirectionalMovementPerMove), Mathf.Min(MaxDirectionalMovementPerMove, xMax - currentPosition.x));
+                yTravel =
+                    Random.Range(Mathf.Max(-MaxDirectionalMovementPerMove, yMin - currentPosition.y),
+                        Mathf.Min(MaxDirectionalMovementPerMove, yMax - currentPosition.y));
+                ret = new Vector3(currentPosition.x + xTravel, currentPosition.y + yTravel);
                 break;
             default:
                 Assert.IsTrue(false);
                 break;
         }
+        Debug.Log(ret);
         return ret;
     }
     
