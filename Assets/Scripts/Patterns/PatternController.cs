@@ -47,7 +47,8 @@ public class PatternController : MonoBehaviour {
                 if (value == ConfigurationEvent.Values.None) 
                     continue;
                 
-                int elapsedThirtySecondNotes = i * ACTIONS_PER_MEASURE + j;
+                // Factor in the start measure, which measure we're currently on, and which part of the measure we're currently on
+                int elapsedThirtySecondNotes = Pattern.StartMeasure * ACTIONS_PER_MEASURE + i * ACTIONS_PER_MEASURE + j;
                 float triggerTime = timingController.GetThirtysecondNoteTime() * elapsedThirtySecondNotes;
 
                 // Type configEventType = measures[i].ConfigEvent.GetType();
@@ -81,6 +82,11 @@ public class PatternController : MonoBehaviour {
                     // TODO: We aren't using the shotIndex value here, and it is also probably wrong.
                     UpdateAnimationNoteAction updateAnimationNote = new UpdateAnimationNoteAction(shotIndex, triggerTime, bassAnimation, actionString);
                     ret.Add(updateAnimationNote);
+                }
+                
+                else if (measures[i].ConfigEvent is GameOverEvent) {
+                    GameOverNoteAction gameOverNote = new GameOverNoteAction(shotIndex, triggerTime, (GameOverEvent)measures[i].ConfigEvent, GameController.Instance.transform);
+                    ret.Add(gameOverNote);
                 }
             }
         }

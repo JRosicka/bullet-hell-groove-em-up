@@ -45,7 +45,7 @@ Art stuff
 	Bass enemy
 	Piano enemy
 
-Improve PianoShot configuration
+[DONE] Improve PianoShot configuration
 
 Game start logic (just add a little delay since that will probably help with getting stuff initialized)
-Game win logic ("woooooooooooow!", restart)
+[DONE] Game win logic ("woooooooooooow!", restart)

@@ -33,8 +33,6 @@ public class SynthResponseShot : Shot {
     public override void Shoot(Transform spawner, BulletParticleSystem system) {
         if (!ClockWise) {
             BSystem.GetActiveParticleSystems().ForEach(e => e.transform.Rotate(180, 0, 0));
-            // transform.Rotate(0, 0, 180);
-            Debug.Log("Flipping");
         }
         system.Shoot();
     }

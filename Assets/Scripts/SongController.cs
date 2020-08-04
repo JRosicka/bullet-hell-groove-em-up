@@ -8,9 +8,14 @@ public class SongController : MonoBehaviour {
     private AudioSource currentlyPlayingBackground;
     public bool soundsToggled = true;
     public AudioSource Music;
+    public AudioSource VictorySoundEffect;
 
     void Start() {
         PlaySong(Music);
+    }
+
+    public void PlayVictorySoundEffect() {
+        PlaySong(VictorySoundEffect);
     }
 
     private void PlaySong(AudioSource sound) {

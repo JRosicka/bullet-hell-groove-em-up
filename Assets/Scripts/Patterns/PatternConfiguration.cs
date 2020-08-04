@@ -6,7 +6,7 @@ using UnityEngine;
 /// </summary>
 [CreateAssetMenu(fileName = "PatternConfiguration", menuName = "Resources/Patterns/PatternConfiguration", order = 3)]
 public class PatternConfiguration : ScriptableObject {
-    // Amount of measures to delay before starting the pattern // TODO set this up in PatternController
+    // Amount of measures to delay before starting the pattern
     public int StartMeasure;
     
     // Measures. It's hard to transcribe sheet music to scriptable objects, okay?

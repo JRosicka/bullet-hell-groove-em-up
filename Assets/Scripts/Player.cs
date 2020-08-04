@@ -101,7 +101,7 @@ public class Player : MonoBehaviour {
 		if (Invincible)
 			return;
 		
-		GameController.Instance.ResetGame();
+		GameController.Instance.ResetGame(false);
 	}
 
 	private void OnCollisionEnter2D(Collision2D other) {

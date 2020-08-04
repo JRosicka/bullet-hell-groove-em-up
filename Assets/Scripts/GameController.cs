@@ -7,14 +7,17 @@ public class GameController : MonoBehaviour {
 
     public SongController SongController;
     public TextMesh RestartText;
+    public TextMesh SuccessText;
     public float DelayBeforeAllowedToRestart = 2f;
     
     public static GameController Instance;
 
     private bool resettingGame;
     private float elapsedTime;
+    private bool won;
+    private bool playedVictorySound;
     
-    private void Start() {
+    private void Awake() {
         Instance = this;
     }
 
@@ -24,22 +27,33 @@ public class GameController : MonoBehaviour {
 
         // Fade out the music
         SongController.Music.volume -= .001f;
-
         
         elapsedTime += Time.deltaTime;
         if (!(elapsedTime > DelayBeforeAllowedToRestart)) 
             return;
-        
-        RestartText.gameObject.SetActive(true);
+
+        if (won) {
+            SuccessText.gameObject.SetActive(true);
+            if (!playedVictorySound) {
+                SongController.PlayVictorySoundEffect();
+                playedVictorySound = true;
+            }
+        } else {
+            RestartText.gameObject.SetActive(true);
+        }
 
         Rewired.Player playerControls = ReInput.players.GetPlayer("SYSTEM");
         if (playerControls.GetButton(RESTART_NAME))
             SceneManager.LoadScene("MainScene");
     }
 
-    public void ResetGame() {
+    public void ResetGame(bool won) {
+        if (resettingGame)
+            return;
+        
         resettingGame = true;
         elapsedTime = 0;
+        this.won = won;
     }
 
     public bool IsResetting() {
