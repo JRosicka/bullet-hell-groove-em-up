@@ -37,6 +37,7 @@ public class BulletParticleSystem : MonoBehaviour {
         subPSystems = GetComponentsInChildren<ParticleSystem>(false).ToList();
     }
     
+    #if UNITY_EDITOR
     public void SyncParticleSystems() {
         ParticleSystem templatePSystem = GetComponent<ParticleSystem>();
         Assert.IsNotNull(templatePSystem, "Need to attach a ParticleSystem component!");
@@ -51,6 +52,7 @@ public class BulletParticleSystem : MonoBehaviour {
             bSystem.SetParticleSeed(particleSeed);
         }
     }
+    #endif
 
     // Trigger all of the particle systems to start
     public void Shoot() {
