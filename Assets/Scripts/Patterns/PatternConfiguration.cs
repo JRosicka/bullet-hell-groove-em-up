@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 /// <summary>
@@ -6,11 +7,30 @@ using UnityEngine;
 /// </summary>
 [CreateAssetMenu(fileName = "PatternConfiguration", menuName = "Resources/Patterns/PatternConfiguration", order = 3)]
 public class PatternConfiguration : ScriptableObject {
+    public Pattern Pattern;
+    
     // Amount of measures to delay before starting the pattern
     public int StartMeasure;
     
     // Measures. It's hard to transcribe sheet music to scriptable objects, okay?
     [Header("Measures list")] 
     public List<PatternMeasure> Measures;
-}
+    
+#if UNITY_EDITOR
+    [CustomEditor(typeof(PatternConfiguration))]
+    public class PatternConfigurationEditor : Editor {
+        public override void OnInspectorGUI() {
+            // Draw the default inspector
+            DrawDefaultInspector();
+            PatternConfiguration config = target as PatternConfiguration;
+            Pattern pattern = config.Pattern;
+            if (!pattern)
+                return;
 
+            foreach (PatternMeasure measure in config.Measures) {
+                measure.SetPattern(pattern);
+            }
+        }
+    }
+#endif
+}

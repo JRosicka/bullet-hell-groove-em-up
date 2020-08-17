@@ -44,6 +44,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c86aff6fc17f3d4c92b8a8bd244e6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PatternActions:
+  - ActionName: Flare
+    OnPatternAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1750994280144202701}
+          m_MethodName: FireAnimationFlare
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - ActionName: MoveLeft
+    OnPatternAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1750994280144202701}
+          m_MethodName: MoveLeft
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - ActionName: MoveRight
+    OnPatternAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1750994280144202701}
+          m_MethodName: MoveRight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   MovementCurveRegular:
     serializedVersion: 2
     m_Curve:

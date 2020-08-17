@@ -5,21 +5,21 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using Random = UnityEngine.Random;
 
-public class PianoAnimationEvent : AnimationEvent {
-    public new enum Values {
-        Unset = ConfigurationEvent.Values.Unset,
-        None = ConfigurationEvent.Values.None,
-        FireAnimationFlare = 200,
-        NormalMove = 201,
-        MoveAway = 202,
-        MoveTowards = 203,
-        // MoveToMiddle = 204,
-        MoveCombo1 = 205,
-        MoveCombo2 = 206,
-        MoveCombo3 = 207
-    }
-    
+/// <summary>
+/// The shot that goes "buh, beDAAAA"
+/// Fires three rounds of projectiles that each aim at the player
+/// </summary>
+public class PianoPattern : Pattern {
+
+    private GameController gameController;
     private PlayerController playerController;
+    private WaypointManager waypointManager;
+
+    private enum MoveType {
+        NormalMove,
+        MoveAway,
+        MoveTowards
+    }
 
     private List<Transform> waypoints = new List<Transform>();
     private List<Transform> nonComboWaypoints = new List<Transform>();
@@ -28,48 +28,57 @@ public class PianoAnimationEvent : AnimationEvent {
     private bool IsOnRightSide => transform.position.x > 0;
     private bool IsPlayerOnRightSide => playerController.GetPlayerPosition().x > 0;
 
-    [Header("Spawns")]
-    public Transform WaypointLeftCombo1;
-    public Transform WaypointLeftCombo2;
-    public Transform WaypointLeftCombo3;
-    public Transform WaypointRightCombo1;
-    public Transform WaypointRightCombo2;
-    public Transform WaypointRightCombo3;
-    public Transform WaypointTopLeft;
-    public Transform WaypointTopRight;
-    public Transform WaypointBottomLeft;
-    public Transform WaypointBottomRight;
-    public Transform WaypointMiddleLeft;
-    public Transform WaypointMiddleRight;
-
     [Header("Movement")] 
     public AnimationCurve MovementCurveRegular;
     public AnimationCurve MovementCurveFudge;
     // How long it takes to move from one waypoint to another
     public float TravelTime = 1f;
 
+    public PianoShot ShotPrefab;
+    private PianoShot lastShotInstance;
+
     void Start() {
+        gameController = GameController.Instance;
+        waypointManager = gameController.WaypointManager;
         playerController = FindObjectOfType<PlayerController>();
         
-        waypoints.Add(WaypointBottomLeft);
-        waypoints.Add(WaypointBottomRight);
-        waypoints.Add(WaypointLeftCombo1);
-        waypoints.Add(WaypointLeftCombo2);
-        waypoints.Add(WaypointLeftCombo3);
-        waypoints.Add(WaypointMiddleLeft);
-        waypoints.Add(WaypointMiddleRight);
-        waypoints.Add(WaypointRightCombo1);
-        waypoints.Add(WaypointRightCombo2);
-        waypoints.Add(WaypointRightCombo3);
-        waypoints.Add(WaypointTopLeft);
-        waypoints.Add(WaypointTopRight);
+        waypoints.Add(waypointManager.BottomLeft);
+        waypoints.Add(waypointManager.BottomRight);
+        waypoints.Add(waypointManager.MiddleLeft);
+        waypoints.Add(waypointManager.MiddleRight);
+        waypoints.Add(waypointManager.TopLeft);
+        waypoints.Add(waypointManager.TopRight);
+        waypoints.Add(waypointManager.LeftCombo1);
+        waypoints.Add(waypointManager.LeftCombo2);
+        waypoints.Add(waypointManager.LeftCombo3);
+        waypoints.Add(waypointManager.RightCombo1);
+        waypoints.Add(waypointManager.RightCombo2);
+        waypoints.Add(waypointManager.RightCombo3);
         
-        nonComboWaypoints.Add(WaypointBottomLeft);
-        nonComboWaypoints.Add(WaypointBottomRight);
-        nonComboWaypoints.Add(WaypointMiddleLeft);
-        nonComboWaypoints.Add(WaypointMiddleRight);
-        nonComboWaypoints.Add(WaypointTopLeft);
-        nonComboWaypoints.Add(WaypointTopRight);
+        nonComboWaypoints.Add(waypointManager.BottomLeft);
+        nonComboWaypoints.Add(waypointManager.BottomRight);
+        nonComboWaypoints.Add(waypointManager.MiddleLeft);
+        nonComboWaypoints.Add(waypointManager.MiddleRight);
+        nonComboWaypoints.Add(waypointManager.TopLeft);
+        nonComboWaypoints.Add(waypointManager.TopRight);
+    }
+    
+    // ReSharper disable once UnusedMember.Global
+    public void FirstShot() {
+        Transform t = transform;
+        lastShotInstance = Instantiate(ShotPrefab, t.position, t.rotation,
+            PlayerController.Instance.ShotBucket);
+        lastShotInstance.FirstShot();
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    public void SecondShot() {
+        lastShotInstance.SecondShot();
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    public void ThirdShot() {
+        lastShotInstance.ThirdShot();
     }
 
     private float currentTravelTime = -1;
@@ -97,43 +106,41 @@ public class PianoAnimationEvent : AnimationEvent {
         transform.position = originWaypoint + totalProgress;
     }
 
-    public override void UpdateEvent(string step) {
-        Values action = GetValueForString(step);
-        switch (action) {
-            case Values.FireAnimationFlare:
-                FireAnimationFlare();
-                break;
-            case Values.MoveCombo1:
-                MoveToWaypoint(IsOnRightSide ? WaypointLeftCombo1 : WaypointRightCombo1);
-                break;
-            case Values.MoveCombo2:
-                MoveToWaypoint(IsOnRightSide ? WaypointRightCombo2 : WaypointLeftCombo2);
-                break;
-            case Values.MoveCombo3:
-                MoveToWaypoint(IsOnRightSide ? WaypointRightCombo3 : WaypointLeftCombo3);
-                break;
-            case Values.NormalMove:
-                MoveToWaypoint(DetermineTargetTransform(Values.NormalMove));
-                break;
-            case Values.MoveAway:
-                MoveToWaypoint(DetermineTargetTransform(Values.MoveAway));
-                break;
-            case Values.MoveTowards:
-                MoveToWaypoint(DetermineTargetTransform(Values.MoveTowards));
-                break;
-            // case Values.MoveToMiddle:
-            //     MoveToWaypoint(DetermineTransform(Values.MoveToMiddle));
-            //     break;
-            default:
-                Assert.IsTrue(false);
-                break;
-        }
-    }
-
-    private void FireAnimationFlare() {
+    // ReSharper disable once UnusedMember.Global
+    public void FireAnimationFlare() {
         // TODO: Animate
     }
 
+    // ReSharper disable once UnusedMember.Global
+    public void NormalMove() {
+        MoveToWaypoint(DetermineTargetTransform(MoveType.NormalMove));
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    public void MoveAway() {
+        MoveToWaypoint(DetermineTargetTransform(MoveType.MoveAway));
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    public void MoveTowards() {
+        MoveToWaypoint(DetermineTargetTransform(MoveType.MoveTowards));
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    public void MoveCombo1() {
+        MoveToWaypoint(IsOnRightSide ? waypointManager.RightCombo1 : waypointManager.LeftCombo1);
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    public void MoveCombo2() {
+        MoveToWaypoint(IsOnRightSide ? waypointManager.LeftCombo2 : waypointManager.RightCombo2);
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    public void MoveCombo3() {
+        MoveToWaypoint(IsOnRightSide ? waypointManager.LeftCombo3 : waypointManager.RightCombo3);
+    }
+    
     private void MoveToWaypoint(Transform waypoint) {
         Vector3 oldTarget = transform.position;
         if (movedBefore)
@@ -149,15 +156,15 @@ public class PianoAnimationEvent : AnimationEvent {
         movedBefore = true;
     }
 
-    private Transform DetermineTargetTransform(Values moveEvent) {
+    private Transform DetermineTargetTransform(MoveType moveEvent) {
         Transform ret = null;
         float enemyToPlayer = (transform.position - playerController.GetPlayerPosition()).magnitude;
         List<Transform> sortedWaypoints = GetSortedWaypoints();
         switch (moveEvent) {
-            case Values.NormalMove:
+            case MoveType.NormalMove:
                 ret = sortedWaypoints[Random.Range(0, 2)];
                 break;
-            case Values.MoveTowards:
+            case MoveType.MoveTowards:
                 List<Transform> sortedWayPointsCloserToPlayer = sortedWaypoints.Where(e =>
                     (e.position - playerController.GetPlayerPosition()).magnitude <= enemyToPlayer).ToList();
                 if (sortedWayPointsCloserToPlayer.Count <= 0) {
@@ -170,7 +177,7 @@ public class PianoAnimationEvent : AnimationEvent {
                         Random.Range(0, Math.Min(2, sortedWayPointsCloserToPlayer.Count))];
                 }
                 break;
-            case Values.MoveAway:
+            case MoveType.MoveAway:
                 List<Transform> sortedWayPointsFartherToPlayer = sortedWaypoints.Where(e =>
                     (e.position - playerController.GetPlayerPosition()).magnitude >= enemyToPlayer).ToList();
                 if (sortedWayPointsFartherToPlayer.Count <= 0) {
@@ -204,13 +211,5 @@ public class PianoAnimationEvent : AnimationEvent {
     private List<Transform> GetSortedWaypoints() {
         return nonComboWaypoints.Where(e => e.transform.position != transform.position)
             .OrderBy(e => (e.position - transform.position).magnitude).ToList();
-    }
-    
-    public override string[] GetValues() {
-        return Enum.GetNames(typeof(Values));
-    }
-
-    private Values GetValueForString(string stringName) {
-        return (Values)Enum.Parse(typeof(Values), stringName);
     }
 }

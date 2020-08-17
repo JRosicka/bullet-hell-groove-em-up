@@ -1,20 +1,22 @@
-﻿using System.Collections.Generic;
-
-/// <summary>
+﻿/// <summary>
 /// A NoteAction is a thing that is triggered from a pattern. It is created upon initialization of the pattern and assigned a TriggerTime
 /// value for when to trigger. 
 /// </summary>
-public abstract class NoteAction {
-    protected readonly int Index;
+public class NoteAction {
     public readonly float TriggerTime;
+    private Pattern.PatternAction patternAction;
+    private Pattern patternInstance;
 
-    protected NoteAction(int index, float triggerTime) {
-        Index = index;
+    public NoteAction(float triggerTime, Pattern.PatternAction patternAction, Pattern patternInstance) {
         TriggerTime = triggerTime;
+        this.patternAction = patternAction;
+        this.patternInstance = patternInstance;
     }
 
     /// <summary>
     /// Generic "Do the thing" method called when the TriggerTime expires
     /// </summary>
-    public abstract void PerformAction();
+    public void PerformAction() {
+        patternInstance.InvokePatternAction(patternAction.ID);
+    }
 }

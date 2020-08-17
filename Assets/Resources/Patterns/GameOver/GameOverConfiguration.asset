@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 236bf94ffdcc7064a995775e6f45bc5e, type: 3}
   m_Name: GameOverConfiguration
   m_EditorClassIdentifier: 
+  Pattern: {fileID: 5479237732316806916, guid: e25fbc22a7a1328478aaa146c9e69b89, type: 3}
   StartMeasure: 16
   Measures:
   - {fileID: 11400000, guid: 425f2cd119bac424eaa3ed3bcf15f8ed, type: 2}

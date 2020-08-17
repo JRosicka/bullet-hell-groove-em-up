@@ -1,9 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Assertions;
 using Random = UnityEngine.Random;
 
-public class BassAnimationEvent : AnimationEvent {
+public class BassPattern : Pattern {
     private static readonly Vector2 Origin = new Vector2(0, 3);
     private static readonly float MaxDirectionalDistanceFromOrigin = .8f;
     private static readonly float MaxDirectionalMovementPerMove = .7f;
@@ -13,10 +12,7 @@ public class BassAnimationEvent : AnimationEvent {
     float yMin => Origin.y - MaxDirectionalDistanceFromOrigin;
     float yMax => Origin.y + MaxDirectionalDistanceFromOrigin;
 
-    public new enum Values {
-        Unset = ConfigurationEvent.Values.Unset,
-        None = ConfigurationEvent.Values.None,
-        FireAnimationFlare = 200,
+    private enum MoveDirections {
         MoveLeft = 201,
         MoveRight = 202,
     }
@@ -52,26 +48,19 @@ public class BassAnimationEvent : AnimationEvent {
         transform.position = originWaypoint + totalProgress;
     }
 
-    public override void UpdateEvent(string step) {
-        Values action = GetValueForString(step);
-        switch (action) {
-            case Values.FireAnimationFlare:
-                FireAnimationFlare();
-                break;
-            case Values.MoveLeft:
-                MoveToWaypoint(DetermineTargetTransform(Values.MoveLeft));
-                break;
-            case Values.MoveRight:
-                MoveToWaypoint(DetermineTargetTransform(Values.MoveRight));
-                break;
-            default:
-                Assert.IsTrue(false);
-                break;
-        }
+    // ReSharper disable once UnusedMember.Global
+    public void FireAnimationFlare() {
+        // TODO: Animate
     }
 
-    private void FireAnimationFlare() {
-        // TODO: Animate
+    // ReSharper disable once UnusedMember.Global
+    public void MoveLeft() {
+        MoveToWaypoint(DetermineTargetTransform(MoveDirections.MoveLeft));
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    public void MoveRight() {
+        MoveToWaypoint(DetermineTargetTransform(MoveDirections.MoveRight));
     }
 
     private void MoveToWaypoint(Vector3 waypoint) {
@@ -89,7 +78,7 @@ public class BassAnimationEvent : AnimationEvent {
         movedBefore = true;
     }
 
-    private Vector3 DetermineTargetTransform(Values moveEvent) {
+    private Vector3 DetermineTargetTransform(MoveDirections moveEvent) {
         Vector3 ret = Vector3.zero;
         Vector3 currentPosition = transform.position;
         float xTravel;
@@ -98,7 +87,7 @@ public class BassAnimationEvent : AnimationEvent {
         // We want to pick a random travel distance out of the legal range. That way, the agent will tend to pick 
         // movements that go towards the origin
         switch (moveEvent) {
-            case Values.MoveLeft:
+            case MoveDirections.MoveLeft:
                 xTravel =
                     Random.Range(Mathf.Max(-MinDirectionalMovementPerMove, xMin - currentPosition.x),
                         Mathf.Min(-MaxDirectionalMovementPerMove, -MinDirectionalMovementPerMove));
@@ -107,7 +96,7 @@ public class BassAnimationEvent : AnimationEvent {
                         Mathf.Min(MaxDirectionalMovementPerMove, yMax - currentPosition.y));
                 ret = new Vector3(currentPosition.x + xTravel, currentPosition.y + yTravel);
                 break;
-            case Values.MoveRight:
+            case MoveDirections.MoveRight:
                 xTravel =
                     Random.Range(Mathf.Max(MinDirectionalMovementPerMove, MinDirectionalMovementPerMove), Mathf.Min(MaxDirectionalMovementPerMove, xMax - currentPosition.x));
                 yTravel =
@@ -120,13 +109,5 @@ public class BassAnimationEvent : AnimationEvent {
                 break;
         }
         return ret;
-    }
-    
-    public override string[] GetValues() {
-        return Enum.GetNames(typeof(Values));
-    }
-
-    private Values GetValueForString(string stringName) {
-        return (Values)Enum.Parse(typeof(Values), stringName);
     }
 }

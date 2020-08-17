@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 /// <summary>
 /// Parses through a PatternConfiguration and generates NoteActions based on the configured timings and action types.
@@ -9,8 +8,7 @@ using UnityEngine.Assertions;
 public class PatternController : MonoBehaviour {
     private const int ACTIONS_PER_MEASURE = 32;
 
-    public Transform Agent;
-    public PatternConfiguration Pattern;
+    public PatternConfiguration Config;
 
     private TimingController timingController;
     private float timeElapsed;
@@ -20,10 +18,17 @@ public class PatternController : MonoBehaviour {
     // An updated list originally copied from configuredShots
     private List<NoteAction> queuedActions;
     // Shot instances are added here when they spawn. We pass this to UpdateNoteActions so that they can access the Shot instances. 
-    private List<ConfigurationEvent> eventInstances = new List<ConfigurationEvent>();
+    private Pattern patternInstance;
 
+    private GameController gameController;
+    
     private void Start() {
+        gameController = GameController.Instance;
         timingController = FindObjectOfType<TimingController>();
+        
+        // TODO: Better spawning logic pls. Like, actually have it be configurable. It would be real great to not have to spawn this before scheduling note actions
+        Transform spawner = gameController.EnemyManager.transform;
+        patternInstance = Instantiate(Config.Pattern, Vector2.zero, Quaternion.identity, spawner);
         configuredActions = ScheduleNoteActions();
         queuedActions = new List<NoteAction>(configuredActions);
     }
@@ -34,60 +39,25 @@ public class PatternController : MonoBehaviour {
     /// <returns>A list of scheduled NoteActions</returns>
     private List<NoteAction> ScheduleNoteActions() {
         List<NoteAction> ret = new List<NoteAction>();
-        List<PatternMeasure> measures = Pattern.Measures;
+        List<PatternMeasure> measures = Config.Measures;
 
         // Keep track of each shot we make
-        int shotIndex = -1;
         for (int i = 0; i < measures.Count; i++) {
             if (measures[i] == null)
                 continue;
             for (int j = 0; j < ACTIONS_PER_MEASURE; j++) {                
-                string actionString = measures[i].NoteActions[j];
-                ConfigurationEvent.Values value = ConfigurationEvent.GetBaseValueForString(actionString);
-                if (value == ConfigurationEvent.Values.None) 
+                Pattern.PatternAction patternAction = measures[i].PatternActions[j];
+                
+                // If the action is "None", ignore it
+                if (patternAction.ActionName.Equals(Pattern.NoneString))
                     continue;
                 
                 // Factor in the start measure, which measure we're currently on, and which part of the measure we're currently on
-                int elapsedThirtySecondNotes = Pattern.StartMeasure * ACTIONS_PER_MEASURE + i * ACTIONS_PER_MEASURE + j;
+                int elapsedThirtySecondNotes = Config.StartMeasure * ACTIONS_PER_MEASURE + i * ACTIONS_PER_MEASURE + j;
                 float triggerTime = timingController.GetThirtysecondNoteTime() * elapsedThirtySecondNotes + timingController.GetStartDelay();
 
-                // Type configEventType = measures[i].ConfigEvent.GetType();
-                if (measures[i].ConfigEvent is Shot) {
-                    if (actionString == Shot.Values.FireShot.ToString()) {
-                        shotIndex++;
-                        FireShotNoteAction fireShotNote = new FireShotNoteAction(shotIndex, triggerTime, eventInstances,
-                            (Shot)measures[i].ConfigEvent, Agent);
-                        ret.Add(fireShotNote);
-                    } else {
-                        // TODO: Currently, we just update the shot most recently timed to fire before this update. It would be nice to be able to update specific shots.
-                        Assert.IsTrue(shotIndex > -1, "Trying to update a shot before we have shot any shots, silly!");
-                        UpdateShotNoteAction updateShotNote =
-                            new UpdateShotNoteAction(shotIndex, triggerTime, eventInstances, actionString);
-                        ret.Add(updateShotNote);
-                    }
-                }
-
-                // check if it's an animation action
-                // TODO: Just find the PianoAnimationEvent in the scene for now, but ideally we'd spawn it in
-                else if (measures[i].ConfigEvent is PianoAnimationEvent) {
-                    PianoAnimationEvent pianoAnimation = FindObjectOfType<PianoAnimationEvent>();
-                    // TODO: We aren't using the shotIndex value here, and it is also probably wrong.
-                    UpdateAnimationNoteAction updateAnimationNote = new UpdateAnimationNoteAction(shotIndex, triggerTime, pianoAnimation, actionString);
-                    ret.Add(updateAnimationNote);
-                }
-                
-                // Actually disgusting, see above
-                else if (measures[i].ConfigEvent is BassAnimationEvent) {
-                    BassAnimationEvent bassAnimation = FindObjectOfType<BassAnimationEvent>();
-                    // TODO: We aren't using the shotIndex value here, and it is also probably wrong.
-                    UpdateAnimationNoteAction updateAnimationNote = new UpdateAnimationNoteAction(shotIndex, triggerTime, bassAnimation, actionString);
-                    ret.Add(updateAnimationNote);
-                }
-                
-                else if (measures[i].ConfigEvent is GameOverEvent) {
-                    GameOverNoteAction gameOverNote = new GameOverNoteAction(shotIndex, triggerTime, (GameOverEvent)measures[i].ConfigEvent, GameController.Instance.transform);
-                    ret.Add(gameOverNote);
-                }
+                NoteAction noteAction = new NoteAction(triggerTime, patternAction, patternInstance);
+                ret.Add(noteAction);
             }
         }
 

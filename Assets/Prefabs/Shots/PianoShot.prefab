@@ -105,8 +105,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7721102815681162639}
   - component: {fileID: 7721102815681162638}
-  - component: {fileID: 7721102815681162636}
   - component: {fileID: 5193424012709297097}
+  - component: {fileID: 8939922885222053294}
   m_Layer: 0
   m_Name: PianoShot
   m_TagString: Untagged
@@ -146,24 +146,6 @@ MonoBehaviour:
   StopMakingNew: 0
   Pause: 0
   Clear: 0
---- !u!114 &7721102815681162636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7721102815681162633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a4ba521f8ea2f143b5f3e04d729951a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Spawner1: {fileID: 7721102815528837303}
-  Spawner2: {fileID: 7721102815364593437}
-  Spawner3: {fileID: 7721102814606004404}
-  System1: {fileID: 3749708146647799954}
-  System2: {fileID: 6731977583288958159}
-  System3: {fileID: 5195563387894549935}
 --- !u!114 &5193424012709297097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +159,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setSeedParticles: []
+--- !u!114 &8939922885222053294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721102815681162633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bda19af0b48ea4b4c8c85668e3fd8bfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Spawner1: {fileID: 7721102815528837303}
+  Spawner2: {fileID: 7721102815364593437}
+  Spawner3: {fileID: 7721102814606004404}
+  System1: {fileID: 3749708146647799954}
+  System2: {fileID: 6731977583288958159}
+  System3: {fileID: 5195563387894549935}
 --- !u!1001 &2903546842550339956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -202,7 +202,7 @@ PrefabInstance:
     - target: {fileID: 896476084481680952, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1483773401
+      value: 2139956117
       objectReference: {fileID: 0}
     - target: {fileID: 896476084481680952, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
@@ -467,7 +467,7 @@ PrefabInstance:
     - target: {fileID: 4314649060724308441, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1483773401
+      value: 2139956117
       objectReference: {fileID: 0}
     - target: {fileID: 4314649060724308441, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
@@ -642,7 +642,7 @@ PrefabInstance:
     - target: {fileID: 5619334212647432089, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1483773401
+      value: 2139956117
       objectReference: {fileID: 0}
     - target: {fileID: 5619334212647432089, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
@@ -692,7 +692,7 @@ PrefabInstance:
     - target: {fileID: 5800406892852503954, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1483773401
+      value: 2139956117
       objectReference: {fileID: 0}
     - target: {fileID: 5800406892852503954, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
@@ -817,7 +817,7 @@ PrefabInstance:
     - target: {fileID: 6062021480520388371, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1483773401
+      value: 2139956117
       objectReference: {fileID: 0}
     - target: {fileID: 6062021480520388371, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
@@ -1007,7 +1007,7 @@ PrefabInstance:
     - target: {fileID: 6143206726977063056, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1483773401
+      value: 2139956117
       objectReference: {fileID: 0}
     - target: {fileID: 6143206726977063056, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
@@ -1147,7 +1147,7 @@ PrefabInstance:
     - target: {fileID: 7278927953067300130, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1483773401
+      value: 2139956117
       objectReference: {fileID: 0}
     - target: {fileID: 7278927953067300130, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
@@ -1314,7 +1314,7 @@ PrefabInstance:
     - target: {fileID: 896476084481680952, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1209135150
+      value: 504296251
       objectReference: {fileID: 0}
     - target: {fileID: 896476084481680952, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
@@ -1724,7 +1724,7 @@ PrefabInstance:
     - target: {fileID: 4314649060724308441, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1209135150
+      value: 504296251
       objectReference: {fileID: 0}
     - target: {fileID: 4314649060724308441, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
@@ -2119,7 +2119,7 @@ PrefabInstance:
     - target: {fileID: 5619334212647432089, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1209135150
+      value: 504296251
       objectReference: {fileID: 0}
     - target: {fileID: 5619334212647432089, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
@@ -2409,7 +2409,7 @@ PrefabInstance:
     - target: {fileID: 5800406892852503954, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1209135150
+      value: 504296251
       objectReference: {fileID: 0}
     - target: {fileID: 5800406892852503954, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
@@ -2779,7 +2779,7 @@ PrefabInstance:
     - target: {fileID: 6062021480520388371, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1209135150
+      value: 504296251
       objectReference: {fileID: 0}
     - target: {fileID: 6062021480520388371, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
@@ -3159,7 +3159,7 @@ PrefabInstance:
     - target: {fileID: 6143206726977063056, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1209135150
+      value: 504296251
       objectReference: {fileID: 0}
     - target: {fileID: 6143206726977063056, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
@@ -3534,7 +3534,7 @@ PrefabInstance:
     - target: {fileID: 7278927953067300130, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1209135150
+      value: 504296251
       objectReference: {fileID: 0}
     - target: {fileID: 7278927953067300130, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
@@ -3901,7 +3901,7 @@ PrefabInstance:
     - target: {fileID: 896476084481680952, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1636836319
+      value: 635879866
       objectReference: {fileID: 0}
     - target: {fileID: 896476084481680952, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
@@ -4316,7 +4316,7 @@ PrefabInstance:
     - target: {fileID: 4314649060724308441, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1636836319
+      value: 635879866
       objectReference: {fileID: 0}
     - target: {fileID: 4314649060724308441, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
@@ -4711,7 +4711,7 @@ PrefabInstance:
     - target: {fileID: 5619334212647432089, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1636836319
+      value: 635879866
       objectReference: {fileID: 0}
     - target: {fileID: 5619334212647432089, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
@@ -4991,7 +4991,7 @@ PrefabInstance:
     - target: {fileID: 5800406892852503954, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1636836319
+      value: 635879866
       objectReference: {fileID: 0}
     - target: {fileID: 5800406892852503954, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
@@ -5336,7 +5336,7 @@ PrefabInstance:
     - target: {fileID: 6062021480520388371, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1636836319
+      value: 635879866
       objectReference: {fileID: 0}
     - target: {fileID: 6062021480520388371, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
@@ -5716,7 +5716,7 @@ PrefabInstance:
     - target: {fileID: 6143206726977063056, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1636836319
+      value: 635879866
       objectReference: {fileID: 0}
     - target: {fileID: 6143206726977063056, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
@@ -6091,7 +6091,7 @@ PrefabInstance:
     - target: {fileID: 7278927953067300130, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}
       propertyPath: randomSeed
-      value: 1636836319
+      value: 635879866
       objectReference: {fileID: 0}
     - target: {fileID: 7278927953067300130, guid: 9aab9693671824442a5c9a04d0fe1a55,
         type: 3}

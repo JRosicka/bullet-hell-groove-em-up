@@ -6,6 +6,8 @@ public class GameController : MonoBehaviour {
     private const string RESTART_NAME = "ctr_slow";
 
     public SongController SongController;
+    public EnemyManager EnemyManager;
+    public WaypointManager WaypointManager;
     public TextMesh RestartText;
     public TextMesh SuccessText;
     public float DelayBeforeAllowedToRestart = 2f;

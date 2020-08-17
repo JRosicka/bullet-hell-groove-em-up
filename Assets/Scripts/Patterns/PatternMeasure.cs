@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -15,18 +16,22 @@ public class PatternMeasure : ScriptableObject {
     // TODO: Functionality for updating a shot that isn't necessarily the most recently fired one, maybe. Would require using ordered pairs (index, enum string) rather than just enum strings. 
     // Would also probably want to use a list per element instead of a single value since we'd want to be able to do multiple actions at once from a single PatternMeasure
     [HideInInspector]
-    public string[] NoteActions = new string[SIZE];
+    public Pattern.PatternAction[] PatternActions = new Pattern.PatternAction[SIZE];
     
     [SerializeField, HideInInspector]
     private int[] choiceIndices = new int[SIZE];
 
-    public ConfigurationEvent ConfigEvent;
+    public Pattern Pattern;
 
     private void OnValidate() {
-        if (NoteActions.Length != SIZE) {
+        if (PatternActions.Length != SIZE) {
             Debug.LogWarning("Don't change the size of 'Notes'!");
-            Array.Resize(ref NoteActions, SIZE);
+            Array.Resize(ref PatternActions, SIZE);
         }
+    }
+
+    public void SetPattern(Pattern p) {
+        Pattern = p;
     }
 
 
@@ -38,17 +43,18 @@ public class PatternMeasure : ScriptableObject {
             // Draw the default inspector
             DrawDefaultInspector();
             PatternMeasure measure = target as PatternMeasure;
-            ConfigurationEvent configEvent = measure.ConfigEvent;
-            if (!configEvent)
+            Pattern pattern = measure.Pattern;
+            if (!pattern)
                 return;
             
-            string[] choices = configEvent.GetValues();
+            Pattern.PatternAction[] choices = pattern.GetAllPatternActions();
 
             EditorGUILayout.LabelField("32nd note triggers", EditorStyles.boldLabel);
             for (int i = 0; i < SIZE; i++) {
-                measure.choiceIndices[i] = EditorGUILayout.Popup(getLabel(i), measure.choiceIndices[i], choices);
+                measure.choiceIndices[i] = EditorGUILayout.Popup(getLabel(i), measure.choiceIndices[i],
+                    choices.Select(e => e.ActionName).ToArray());
                 // Update the selected choice in the underlying object
-                measure.NoteActions[i] = choices[measure.choiceIndices[i]];
+                measure.PatternActions[i] = choices[measure.choiceIndices[i]];
 
                 if ((i + 1) % ELEMENTS_PER_BEAT == 0)
                     EditorGUILayout.Space();
