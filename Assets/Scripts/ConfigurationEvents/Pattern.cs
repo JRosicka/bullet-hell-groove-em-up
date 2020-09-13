@@ -17,18 +17,28 @@ public abstract class Pattern : MonoBehaviour {
         public string ActionName;
         public UnityEvent OnPatternAction;
     }
+
+    public class VectorPatternAction : PatternAction {
+        public Vector2 Vector;
+    }
     
     public static readonly string NoneString = "None";
     private static PatternAction NoneAction = new PatternAction {
         ActionName = NoneString, OnPatternAction = null
     };
-    // private PatternAction SpawnAction = new PatternAction {
-    //     ActionName = "Spawn", OnPatternAction  = new UnityEvent().AddListener(delegate { SpawnPattern(); })
+    public static readonly string SpawnString = "Spawn";
+    // private VectorPatternAction SpawnAction = new VectorPatternAction {
+    //     ActionName = SpawnString, OnPatternAction  = new UnityEvent().AddListener(delegate { SpawnPattern(Vector); })
     // };
     
     [SerializeField]
     private List<PatternAction> PatternActions;
 
+    public void Spawn(Vector2 position) {
+        Transform spawner = GameController.Instance.EnemyManager.transform;
+        Instantiate(this, position, Quaternion.identity, spawner);
+    }
+    
     public void InvokePatternAction(int id) {
         PatternActions.First(e => e.ID == id).OnPatternAction.Invoke();
     }
@@ -36,6 +46,7 @@ public abstract class Pattern : MonoBehaviour {
     public PatternAction[] GetAllPatternActions() {
         List<PatternAction> allPatternActions = new List<PatternAction>(PatternActions); 
         allPatternActions.Insert(0, NoneAction);
+        // allPatternActions.Insert(0, SpawnAction);
         return allPatternActions.ToArray();
     }
     

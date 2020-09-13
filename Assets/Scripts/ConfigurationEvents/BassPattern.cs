@@ -16,6 +16,8 @@ public class BassPattern : Pattern {
         MoveLeft = 201,
         MoveRight = 202,
     }
+
+    public SynthResponseShot SynthShotPrefab;
     
     [Header("Movement")] 
     public AnimationCurve MovementCurveRegular;
@@ -51,6 +53,23 @@ public class BassPattern : Pattern {
     // ReSharper disable once UnusedMember.Global
     public void FireAnimationFlare() {
         // TODO: Animate
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    public void FireSynthShotClockwise() {
+        FireSynthShot(true);
+    }
+    
+    // ReSharper disable once UnusedMember.Global
+    public void FireSynthShotCounterClockwise() {
+        FireSynthShot(false);
+    }
+
+    private void FireSynthShot(bool clockwise) {
+        Transform t = transform;
+        SynthResponseShot shot = Instantiate(SynthShotPrefab, t.position, t.rotation,
+            PlayerController.Instance.ShotBucket);
+        shot.Shoot(clockwise);
     }
 
     // ReSharper disable once UnusedMember.Global

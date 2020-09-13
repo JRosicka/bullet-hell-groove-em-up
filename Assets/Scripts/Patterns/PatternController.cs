@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 /// <summary>
 /// Parses through a PatternConfiguration and generates NoteActions based on the configured timings and action types.
@@ -39,29 +40,44 @@ public class PatternController : MonoBehaviour {
     /// <returns>A list of scheduled NoteActions</returns>
     private List<NoteAction> ScheduleNoteActions() {
         List<NoteAction> ret = new List<NoteAction>();
-        List<PatternMeasure> measures = Config.Measures;
+        List<PatternMeasureList> measures = Config.MeasuresList;
 
         // Keep track of each shot we make
         for (int i = 0; i < measures.Count; i++) {
             if (measures[i] == null)
                 continue;
-            for (int j = 0; j < ACTIONS_PER_MEASURE; j++) {                
-                Pattern.PatternAction patternAction = measures[i].PatternActions[j];
-                
-                // If the action is "None", ignore it
-                if (patternAction.ActionName.Equals(Pattern.NoneString))
+            for (int j = 0; j < measures[i].Measures.Count; j++) {
+                if (measures[i].Measures[j] == null)
                     continue;
-                
-                // Factor in the start measure, which measure we're currently on, and which part of the measure we're currently on
-                int elapsedThirtySecondNotes = Config.StartMeasure * ACTIONS_PER_MEASURE + i * ACTIONS_PER_MEASURE + j;
-                float triggerTime = timingController.GetThirtysecondNoteTime() * elapsedThirtySecondNotes + timingController.GetStartDelay();
+                for (int k = 0; k < ACTIONS_PER_MEASURE; k++) {
+                    Pattern.PatternAction patternAction = measures[i].Measures[j].PatternActions[k];
 
-                NoteAction noteAction = new NoteAction(triggerTime, patternAction, patternInstance);
-                ret.Add(noteAction);
+                    // If the action is "None", ignore it
+                    if (patternAction.ActionName.Equals(Pattern.NoneString))
+                        continue;
+
+                    // Factor in the start measure, which measure we're currently on, and which part of the measure we're currently on
+                    int elapsedThirtySecondNotes =
+                        Config.StartMeasure * ACTIONS_PER_MEASURE + i * ACTIONS_PER_MEASURE + k;
+                    float triggerTime = timingController.GetThirtysecondNoteTime() * elapsedThirtySecondNotes
+                                        + timingController.GetStartDelay();
+
+                    NoteAction noteAction = new NoteAction(triggerTime, patternAction, GetPatternInstance);
+                    ret.Add(noteAction);
+                }
             }
         }
 
         return ret;
+    }
+
+    /// <summary>
+    /// Guaranteed to be non-null (and by guaranteed, I mean that it will throw an exception otherwise)
+    /// </summary>
+    /// <returns></returns>
+    private Pattern GetPatternInstance() {
+        Assert.IsNotNull(patternInstance);
+        return patternInstance;
     }
 
     /// <summary>

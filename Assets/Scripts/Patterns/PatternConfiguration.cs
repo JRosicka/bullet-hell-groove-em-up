@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -14,7 +15,7 @@ public class PatternConfiguration : ScriptableObject {
     
     // Measures. It's hard to transcribe sheet music to scriptable objects, okay?
     [Header("Measures list")] 
-    public List<PatternMeasure> Measures;
+    public List<PatternMeasureList> MeasuresList;
     
 #if UNITY_EDITOR
     [CustomEditor(typeof(PatternConfiguration))]
@@ -27,10 +28,16 @@ public class PatternConfiguration : ScriptableObject {
             if (!pattern)
                 return;
 
-            foreach (PatternMeasure measure in config.Measures) {
-                measure.SetPattern(pattern);
+            foreach (PatternMeasureList measures in config.MeasuresList) {
+                foreach (PatternMeasure measure in measures.Measures)
+                    measure.SetPattern(pattern);
             }
         }
     }
 #endif
+}
+
+[Serializable]
+public class PatternMeasureList {
+    public List<PatternMeasure> Measures;
 }

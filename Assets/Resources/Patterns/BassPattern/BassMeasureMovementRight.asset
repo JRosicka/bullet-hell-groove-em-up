@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d1dd65c84e7535488d11a270a4701de, type: 3}
-  m_Name: BassAnimationMeasureLeft
+  m_Name: BassMeasureMovementRight
   m_EditorClassIdentifier: 
   PatternActions:
   - ID: 0
@@ -73,14 +73,14 @@ MonoBehaviour:
     OnPatternAction:
       m_PersistentCalls:
         m_Calls: []
-  - ID: 1
-    ActionName: MoveLeft
+  - ID: 2
+    ActionName: MoveRight
     OnPatternAction:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
             type: 3}
-          m_MethodName: MoveLeft
+          m_MethodName: MoveRight
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -185,5 +185,5 @@ MonoBehaviour:
     OnPatternAction:
       m_PersistentCalls:
         m_Calls: []
-  choiceIndices: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  choiceIndices: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Pattern: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28, type: 3}

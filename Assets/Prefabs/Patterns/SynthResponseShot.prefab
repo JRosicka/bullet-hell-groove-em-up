@@ -108,7 +108,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 9899124
+  randomSeed: 460295965
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4938,7 +4938,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 9899124
+  randomSeed: 460295965
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -9783,7 +9783,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 9899124
+  randomSeed: 460295965
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -14628,7 +14628,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 9899124
+  randomSeed: 460295965
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -19458,7 +19458,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 9899124
+  randomSeed: 460295965
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -24191,7 +24191,7 @@ GameObject:
   - component: {fileID: 7721102815681162639}
   - component: {fileID: 6218925459055046543}
   m_Layer: 0
-  m_Name: SynthResponsePatternClockwise
+  m_Name: SynthResponseShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24224,24 +24224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b537a692ea4ce2c4bba883fbb0236d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PatternActions:
-  - ActionName: Shoot
-    OnPatternAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6218925459055046543}
-          m_MethodName: FireShot
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
   BSystem: {fileID: 587937640790838223}
-  ClockWise: 1
 --- !u!1 &8160218414741773621
 GameObject:
   m_ObjectHideFlags: 0
@@ -24365,7 +24348,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 9899124
+  randomSeed: 460295965
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -29195,7 +29178,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 9899124
+  randomSeed: 460295965
   InitialModule:
     serializedVersion: 3
     enabled: 1
