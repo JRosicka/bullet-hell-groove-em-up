@@ -1074,12 +1074,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072176357}
-  m_Text: 'You defeated!
+  m_Text: 'You win!
 
-    Press the "slow" button to restart.
-
-    Also, if you
-    didn''t know, there''s a "slow" button.'
+    Press shift/select/slow to restart.'
   m_OffsetZ: 0
   m_CharacterSize: 0.2
   m_LineSpacing: 1
@@ -1244,10 +1241,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253254409}
-  m_Text: 'Press the "slow" button to restart.
+  m_Text: 'Ya done got hit!
 
-    Also, if you didn''t know, there''s
-    a "slow" button.'
+    Press shift/select/slow to restart.'
   m_OffsetZ: 0
   m_CharacterSize: 0.2
   m_LineSpacing: 1
@@ -1346,7 +1342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca77e4e693936cd489fea036fa2cc3eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundsToggled: 1
+  soundsToggled: 0
   Music: {fileID: 104804478}
   VictorySoundEffect: {fileID: 605627379}
 --- !u!4 &1456222060
