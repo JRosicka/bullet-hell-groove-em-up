@@ -16,7 +16,7 @@ public class PatternMeasure : ScriptableObject {
     // TODO: Functionality for updating a shot that isn't necessarily the most recently fired one, maybe. Would require using ordered pairs (index, enum string) rather than just enum strings. 
     // Would also probably want to use a list per element instead of a single value since we'd want to be able to do multiple actions at once from a single PatternMeasure
     [HideInInspector]
-    public Pattern.PatternAction[] PatternActions = new Pattern.PatternAction[SIZE];
+    public PatternAction[] PatternActions = new PatternAction[SIZE];
     
     [SerializeField, HideInInspector]
     private int[] choiceIndices = new int[SIZE];
@@ -47,7 +47,7 @@ public class PatternMeasure : ScriptableObject {
             if (!pattern)
                 return;
             
-            Pattern.PatternAction[] choices = pattern.GetAllPatternActions();
+            PatternAction[] choices = pattern.GetAllPatternActions();
 
             EditorGUILayout.LabelField("32nd note triggers", EditorStyles.boldLabel);
             for (int i = 0; i < SIZE; i++) {

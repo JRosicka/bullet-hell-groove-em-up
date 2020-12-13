@@ -6,10 +6,10 @@
 /// </summary>
 public class NoteAction {
     public readonly float TriggerTime;
-    private Pattern.PatternAction patternAction;
+    private PatternAction patternAction;
     private Func<Pattern> patternInstanceGetter;
 
-    public NoteAction(float triggerTime, Pattern.PatternAction patternAction, Func<Pattern> patternInstanceGetter) {
+    public NoteAction(float triggerTime, PatternAction patternAction, Func<Pattern> patternInstanceGetter) {
         TriggerTime = triggerTime;
         this.patternAction = patternAction;
         this.patternInstanceGetter = patternInstanceGetter;

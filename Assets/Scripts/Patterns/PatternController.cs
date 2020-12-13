@@ -50,10 +50,10 @@ public class PatternController : MonoBehaviour {
                 if (measures[i].Measures[j] == null)
                     continue;
                 for (int k = 0; k < ACTIONS_PER_MEASURE; k++) {
-                    Pattern.PatternAction patternAction = measures[i].Measures[j].PatternActions[k];
+                    PatternAction patternAction = measures[i].Measures[j].PatternActions[k];
 
                     // If the action is "None", ignore it
-                    if (patternAction.ActionName.Equals(Pattern.NoneString))
+                    if (patternAction.ActionName.Equals(PatternAction.NoneString))
                         continue;
 
                     // Factor in the start measure, which measure we're currently on, and which part of the measure we're currently on

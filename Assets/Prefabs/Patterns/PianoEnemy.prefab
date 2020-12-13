@@ -128,7 +128,7 @@ MonoBehaviour:
   PatternActions:
   - type: 0
     ID: 0
-    ActionName: 
+    ActionName: None
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -140,30 +140,7 @@ MonoBehaviour:
           m_Calls: []
   - type: 2
     ID: 1
-    ActionName: fg
-    Basic:
-      OnPatternAction:
-        m_PersistentCalls:
-          m_Calls: []
-    Vector:
-      Vector: {x: 5, y: 0}
-      OnPatternAction:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 7224286281906343752}
-            m_MethodName: MoveCombo3
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-  - type: 2
-    ID: 2
-    ActionName: joeesdf
+    ActionName: None
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -173,9 +150,9 @@ MonoBehaviour:
       OnPatternAction:
         m_PersistentCalls:
           m_Calls: []
-  - type: 1
-    ID: 3
-    ActionName: 
+  - type: 2
+    ID: 2
+    ActionName: None
     Basic:
       OnPatternAction:
         m_PersistentCalls:
