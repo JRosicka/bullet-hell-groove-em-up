@@ -45,102 +45,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PatternActions:
-  - ID: 0
-    ActionName: Flare
-    OnPatternAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1750994280144202701}
-          m_MethodName: FireAnimationFlare
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - ID: 1
-    ActionName: MoveLeft
-    OnPatternAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1750994280144202701}
-          m_MethodName: MoveLeft
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - ID: 2
-    ActionName: MoveRight
-    OnPatternAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1750994280144202701}
-          m_MethodName: MoveRight
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - ID: 3
-    ActionName: SynthShotClockwise
-    OnPatternAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1750994280144202701}
-          m_MethodName: FireSynthShotClockwise
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - ID: 4
-    ActionName: SynthShotCounterClockwise
-    OnPatternAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1750994280144202701}
-          m_MethodName: FireSynthShotCounterClockwise
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - ID: 5
-    ActionName: SpawnBass
-    OnPatternAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1750994280144202701}
-          m_MethodName: FireSynthShotCounterClockwise
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  - type: 0
+    ID: 0
+    ActionName: 
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Vector:
+      Vector: {x: 0, y: 0}
   SynthShotPrefab: {fileID: 6218925459055046543, guid: c9409bc94a304f94abc4aee3871176a1,
     type: 3}
   MovementCurveRegular:

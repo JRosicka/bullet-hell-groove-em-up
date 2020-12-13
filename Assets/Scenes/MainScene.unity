@@ -236,7 +236,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1456222060}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &175260493
 MonoBehaviour:
@@ -917,12 +917,12 @@ GameObject:
   - component: {fileID: 957468165}
   - component: {fileID: 957468166}
   m_Layer: 0
-  m_Name: BassAnimationPattern
+  m_Name: BassPattern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &957468165
 Transform:
   m_ObjectHideFlags: 0
@@ -935,7 +935,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1456222060}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &957468166
 MonoBehaviour:
@@ -949,7 +949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40634865fe8156642ab105621e446844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Config: {fileID: 0}
+  Config: {fileID: 11400000, guid: e35f73fc210bb4c49a41257c52a17fba, type: 2}
 --- !u!1 &981004613
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,50 +980,6 @@ Transform:
   m_Father: {fileID: 1091893432}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1041218441
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1041218442}
-  - component: {fileID: 1041218443}
-  m_Layer: 0
-  m_Name: PianoAnimationPattern
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1041218442
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1041218441}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1456222060}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1041218443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1041218441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40634865fe8156642ab105621e446844, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Config: {fileID: 11400000, guid: e35f73fc210bb4c49a41257c52a17fba, type: 2}
 --- !u!1 &1069964168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,9 +1377,7 @@ Transform:
   - {fileID: 104804479}
   - {fileID: 605627380}
   - {fileID: 90048878}
-  - {fileID: 1041218442}
   - {fileID: 957468165}
-  - {fileID: 1739578978}
   - {fileID: 175260492}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -1614,50 +1568,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.5, y: 1}
   m_EdgeRadius: 0
---- !u!1 &1739578977
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1739578978}
-  - component: {fileID: 1739578979}
-  m_Layer: 0
-  m_Name: SynthResponseShotPattern
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1739578978
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739578977}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1456222060}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1739578979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739578977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40634865fe8156642ab105621e446844, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Config: {fileID: 0}
 --- !u!1 &1814595235
 GameObject:
   m_ObjectHideFlags: 0
