@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using UnityEditor;
+using UnityEditor.Events;
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// An event that we can schedule to perform via a PatternMeasure.
@@ -12,6 +15,7 @@ public abstract class Pattern : MonoBehaviour {
     [SerializeField]
     private List<PatternAction> PatternActions;
 
+    [PatternActionAttribute]
     public void Spawn(Vector2 position) {
         Transform spawner = GameController.Instance.EnemyManager.transform;
         Instantiate(this, position, Quaternion.identity, spawner);
@@ -40,17 +44,27 @@ public abstract class Pattern : MonoBehaviour {
                 return;
             }
 
+            if (GUILayout.Button("Set pattern actions")) {
+                SetPatternActions(pattern);
+            }
+        }
+
+        private void SetPatternActions(Pattern pattern) {
             dirtied = false;
 
+            pattern.PatternActions.Clear();
+            
             // Add the null PatternAction if it is not present
             if (pattern.PatternActions.Count == 0) {
                 pattern.PatternActions.Add(PatternAction.CreateNullPatternAction());
-                MarkDirty();
+                // MarkDirty();
             }
             
             // Do inspector GUI of our list of PatternActions
-            ListGUI("PatternActions", ref pattern.PatternActions);
+            // ListGUI("PatternActions", ref pattern.PatternActions);
             
+            GeneratePatternActions(pattern);
+
             if (dirtied) {
                 // Synchronize the IDs in case any entries were added/removed/reordered
                 for (int i = 0; i < pattern.PatternActions.Count; i++) {
@@ -175,7 +189,74 @@ public abstract class Pattern : MonoBehaviour {
         private void MarkDirty() {
             dirtied = true;
         }
-        
+
+        private void GeneratePatternActions(Pattern pattern) {
+            MethodInfo[] methods = pattern.GetType()
+                .GetMethods()
+                .Where(t => t.GetCustomAttributes(typeof(PatternActionAttribute), false).Length > 0)
+                .ToArray();
+            foreach (MethodInfo method in methods) {
+                ParameterInfo[] parameters = method.GetParameters();
+                if (parameters.Length >= 2) {
+                    Debug.LogError("Too many parameters for method " + method.Name + ". Methods with the [PatternActionAttribute] can only have one parameter.");
+                    continue;
+                }
+
+                Type subPatternActionType;
+                if (parameters.Length == 0) {
+                    // No parameters, so use a BasicSubPatternAction
+                    subPatternActionType = typeof(PatternAction.BasicSubPatternAction);
+                } else {
+                    Type parameterType = parameters[0].ParameterType;
+                    subPatternActionType = PatternAction.GetPatternActionType(parameterType);
+                    if (subPatternActionType == null) {
+                        Debug.LogError("No SubPatternAction type assigned to typesDict for parameter type: " + parameterType);
+                        continue;
+                    }
+                }
+
+                PatternAction.PatternActionType newType;
+                PatternAction newPatternAction;
+                if (subPatternActionType == typeof(PatternAction.BasicSubPatternAction)) {
+                    newType = PatternAction.PatternActionType.Basic;
+                    newPatternAction = PatternAction.CreatePatternAction(newType);
+                    UnityEvent newEvent = new UnityEvent();
+
+                    UnityAction action = (UnityAction) method.CreateDelegate(typeof(UnityAction), pattern);
+
+                    // newEvent.AddListener(action);
+                    
+                    UnityEventTools.AddPersistentListener(newEvent, action);
+                    
+                    newPatternAction.Basic.OnPatternAction = newEvent;
+                } else if (subPatternActionType == typeof(PatternAction.VectorSubPatternAction)) {
+                    newType = PatternAction.PatternActionType.Vector;
+                    newPatternAction = PatternAction.CreatePatternAction(newType);
+                    PatternAction.VectorEvent newEvent = new PatternAction.VectorEvent();
+                    
+                    UnityAction<Vector2> action = (UnityAction<Vector2>)method.CreateDelegate(typeof(UnityAction<Vector2>), pattern);
+
+                    UnityEventTools.AddPersistentListener(newEvent, action);
+                    
+                    newPatternAction.Vector.OnPatternAction = newEvent;
+                } else {
+                    newType = PatternAction.PatternActionType.None;
+                    newPatternAction = PatternAction.CreatePatternAction(newType);
+                }
+
+                newPatternAction.ActionName = method.Name;
+
+                pattern.PatternActions.Add(newPatternAction);
+                Debug.Log("Found method with PatternActionAttribute: " + method.Name + ". Matching subPatternActionType: " + subPatternActionType);
+            }
+            
+            // Synchronize the IDs in case any entries were added/removed/reordered
+            for (int i = 0; i < pattern.PatternActions.Count; i++) {
+                pattern.PatternActions[i].ID = i;
+            }
+            EditorUtility.SetDirty(target);
+
+        }
     }
 #endif
 }

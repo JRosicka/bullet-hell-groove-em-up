@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,6 +11,16 @@ public class PatternAction {
         Vector
     }
 
+    private static Dictionary<Type, Type> typesDict = new Dictionary<Type, Type>() {
+        { typeof(Vector2), typeof(VectorSubPatternAction) }
+    };
+    public static Type GetPatternActionType(Type keyType) {
+        Type ret;
+        // The default value of Type is null, so we return null if we do not have a matching Type for keyType
+        typesDict.TryGetValue(keyType, out ret);
+        return ret;
+    }
+    
     public static readonly string NoneString = "None";
     
     [HideInInspector]

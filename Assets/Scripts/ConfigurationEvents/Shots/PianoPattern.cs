@@ -64,6 +64,7 @@ public class PianoPattern : Pattern {
     }
     
     // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
     public void FirstShot() {
         Transform t = transform;
         lastShotInstance = Instantiate(ShotPrefab, t.position, t.rotation,
