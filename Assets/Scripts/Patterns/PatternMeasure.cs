@@ -38,6 +38,7 @@ public class PatternMeasure : ScriptableObject {
 #if UNITY_EDITOR
     [CustomEditor(typeof(PatternMeasure))]
     public class PatternMeasureEditor : Editor {
+        private bool dirtied = true;
 
         public override void OnInspectorGUI() {
             // Draw the default inspector
@@ -46,6 +47,15 @@ public class PatternMeasure : ScriptableObject {
             Pattern pattern = measure.Pattern;
             if (!pattern)
                 return;
+
+            // The only way this would generate a different result from last time is if the assembly was recompiled, 
+            // which would result in this dirtied flag getting reset to its default value (true). If this has happened, 
+            // regenerate the PatternActions for this PatternMeasure's pattern
+            if (dirtied) {
+                Debug.Log("Generating pattern actions for Pattern: " + pattern);
+                pattern.GeneratePatternActions();
+                dirtied = false;
+            }
             
             PatternAction[] choices = pattern.GetAllPatternActions();
 
