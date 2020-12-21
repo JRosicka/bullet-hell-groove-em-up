@@ -60,6 +60,9 @@ public class PatternMeasure : ScriptableObject {
             PatternAction[] choices = pattern.GetAllPatternActions();
 
             EditorGUILayout.LabelField("32nd note triggers", EditorStyles.boldLabel);
+            
+            // Display the choices and any configurable parameters for this pattern's available PatternActions, and update
+            // with any changes we make
             for (int i = 0; i < SIZE; i++) {
                 measure.choiceIndices[i] = EditorGUILayout.Popup(getLabel(i), measure.choiceIndices[i],
                     choices.Select(e => e.ActionName).ToArray());

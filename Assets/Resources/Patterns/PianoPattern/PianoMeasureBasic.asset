@@ -15,7 +15,7 @@ MonoBehaviour:
   PatternActions:
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -27,7 +27,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -39,7 +39,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -51,7 +51,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -63,7 +63,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -75,7 +75,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -87,7 +87,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 2
     ActionName: SecondShot
-    type: 1
+    type: 2
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -111,7 +111,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -123,7 +123,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -135,7 +135,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -147,7 +147,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -159,7 +159,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -171,7 +171,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -183,7 +183,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -195,7 +195,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -207,7 +207,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -219,7 +219,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -231,7 +231,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -243,7 +243,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -255,7 +255,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -267,7 +267,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -279,7 +279,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -291,7 +291,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -303,7 +303,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -315,7 +315,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -327,7 +327,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -339,7 +339,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -351,7 +351,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -363,7 +363,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -375,7 +375,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -387,7 +387,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -399,7 +399,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:

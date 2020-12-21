@@ -3,24 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using UnityEditor;
-using UnityEditor.Events;
 using UnityEngine;
-using UnityEngine.Events;
 
 /// <summary>
-/// An event that we can schedule to perform via a PatternMeasure.
-/// Has defined behaviors for its collection of PatternActions. 
+/// An entity that we can schedule operations to be performed on via <see cref="PatternMeasure"/>.
+/// This keeps a collection of <see cref="PatternActions"/> that it creates based on its methods tagged with
+/// <see cref="PatternActionAttribute"/>. This is for ease of use so that entity-specific behaviors can be defined
+/// in child classes to be easily invoked via <see cref="PatternMeasure"/>s.
 /// </summary>
 public abstract class Pattern : MonoBehaviour {
-    [SerializeField]
+    [SerializeField, HideInInspector]
     private List<PatternAction> PatternActions;
 
+    /// <summary>
+    /// Instantiate this pattern in the scene at a specified position
+    /// </summary>
     [PatternActionAttribute]
     public void Spawn(Vector2 position) {
         Transform spawner = GameController.Instance.EnemyManager.transform;
         Instantiate(this, position, Quaternion.identity, spawner);
     }
     
+    /// <summary>
+    /// Perform the <see cref="PatternAction"/> that was scheduled
+    /// </summary>
+    /// <param name="id"></param>
     public void InvokePatternAction(int id) {
         PatternActions.First(e => e.ID == id).InvokePatternAction();
     }
@@ -32,6 +39,14 @@ public abstract class Pattern : MonoBehaviour {
     
     #if UNITY_EDITOR
     
+    /// <summary>
+    /// Delete whatever data we have in <see cref="PatternActions"/> and recreate it.
+    /// - The first PatternAction in the list is a NullPatternAction
+    /// - Additional entries are created and added for each method in this script with a
+    ///   <see cref="PatternActionAttribute"/> tag.
+    ///
+    /// Also sets the int IDs of each PatternAction
+    /// </summary>
     public void GeneratePatternActions() {
         PatternActions.Clear();
             
@@ -43,58 +58,7 @@ public abstract class Pattern : MonoBehaviour {
             .Where(t => t.GetCustomAttributes(typeof(PatternActionAttribute), false).Length > 0)
             .ToArray();
         foreach (MethodInfo method in methods) {
-            ParameterInfo[] parameters = method.GetParameters();
-            if (parameters.Length >= 2) {
-                Debug.LogError("Too many parameters for method " + method.Name + ". Methods with the [PatternActionAttribute] can only have one parameter.");
-                continue;
-            }
-
-            Type subPatternActionType;
-            if (parameters.Length == 0) {
-                // No parameters, so use a BasicSubPatternAction
-                subPatternActionType = typeof(PatternAction.BasicSubPatternAction);
-            } else {
-                Type parameterType = parameters[0].ParameterType;
-                subPatternActionType = PatternAction.GetPatternActionType(parameterType);
-                if (subPatternActionType == null) {
-                    Debug.LogError("No SubPatternAction type assigned to typesDict for parameter type: " + parameterType);
-                    continue;
-                }
-            }
-
-            PatternAction.PatternActionType newType;
-            PatternAction newPatternAction;
-            if (subPatternActionType == typeof(PatternAction.BasicSubPatternAction)) {
-                newType = PatternAction.PatternActionType.Basic;
-                newPatternAction = PatternAction.CreatePatternAction(newType);
-                UnityEvent newEvent = new UnityEvent();
-
-                UnityAction action = (UnityAction) method.CreateDelegate(typeof(UnityAction), this);
-
-                // newEvent.AddListener(action);
-                
-                UnityEventTools.AddPersistentListener(newEvent, action);
-                
-                newPatternAction.Basic.OnPatternAction = newEvent;
-            } else if (subPatternActionType == typeof(PatternAction.VectorSubPatternAction)) {
-                newType = PatternAction.PatternActionType.Vector;
-                newPatternAction = PatternAction.CreatePatternAction(newType);
-                PatternAction.VectorEvent newEvent = new PatternAction.VectorEvent();
-                
-                UnityAction<Vector2> action = (UnityAction<Vector2>)method.CreateDelegate(typeof(UnityAction<Vector2>), this);
-
-                UnityEventTools.AddPersistentListener(newEvent, action);
-                
-                newPatternAction.Vector.OnPatternAction = newEvent;
-            } else {
-                newType = PatternAction.PatternActionType.None;
-                newPatternAction = PatternAction.CreatePatternAction(newType);
-            }
-
-            newPatternAction.ActionName = method.Name;
-
-            PatternActions.Add(newPatternAction);
-            Debug.Log("Found method with PatternActionAttribute: " + method.Name + ". Matching subPatternActionType: " + subPatternActionType);
+            GeneratePatternActionForMethod(method);
         }
         
         // Synchronize the IDs in case any entries were added/removed/reordered
@@ -102,6 +66,43 @@ public abstract class Pattern : MonoBehaviour {
             PatternActions[i].ID = i;
         }
         EditorUtility.SetDirty(this);
+    }
+
+    /// <summary>
+    /// Create a pattern action for a single method. This determines what type of SubPatternAction to use based on the
+    /// type of the method's parameter. Only accepts methods with a single parameter or no parameters.
+    /// Creates the new PatternAction and adds it to <see cref="PatternActions"/>.
+    /// </summary>
+    private void GeneratePatternActionForMethod(MethodInfo method) {
+        ParameterInfo[] parameters = method.GetParameters();
+        
+        // Only accept methods with zero or one parameter
+        if (parameters.Length >= 2) {
+            Debug.LogError("Too many parameters for method " + method.Name + ". Methods with the [PatternActionAttribute] can only have one parameter.");
+            return;
+        }
+
+        PatternAction.PatternActionType actionType;
+        if (parameters.Length == 0) {
+            // No parameters, so use a BasicSubPatternAction
+            actionType = PatternAction.PatternActionType.Basic;
+        } else {
+            // Exactly one parameter. Get its mapped PatternAction type.
+            Type parameterType = parameters[0].ParameterType;
+            actionType = PatternAction.GetPatternActionType(parameterType);
+            if (actionType == PatternAction.PatternActionType.Undefined) {
+                Debug.LogError("No SubPatternAction type assigned to typesDict for parameter type: " + parameterType);
+                return;
+            }
+        }
+
+        // Create the PatternAction based on the per-SubPatternAction definition
+        PatternAction patternAction = PatternAction.CreatePatternAction(actionType);
+        patternAction.ActionName = method.Name;
+        patternAction.GeneratePatternActionEvent(method, this);
+        
+        PatternActions.Add(patternAction);
+        Debug.Log("Found method with PatternActionAttribute: " + method.Name + ". Matching PatternActionType: " + actionType);
     }
 
     #region CustomEditor

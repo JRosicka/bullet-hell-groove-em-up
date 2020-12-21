@@ -1,23 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
+using UnityEditor.Events;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// A container used to assign a UnityEvent to be invoked later with optional specified parameters to invoke it with.
+///
+/// This contains a field of each type of <see cref="ISubPatternAction"/> in order to simulate polymorphism without
+/// actually using polymorphism. Only one of these fields is relevant and is specified by the <see cref="type"/> value.
+/// The reason for this is because the Unity editor does not work well with serializing collections of polymorphic data. 
+/// </summary>
 [Serializable]
 public class PatternAction {
-    public enum PatternActionType {
-        None,
-        Basic,
-        Vector
-    }
-
-    private static Dictionary<Type, Type> typesDict = new Dictionary<Type, Type>() {
-        { typeof(Vector2), typeof(VectorSubPatternAction) }
-    };
-    public static Type GetPatternActionType(Type keyType) {
-        Type ret;
+    public static PatternActionType GetPatternActionType(Type keyType) {
+        PatternActionType ret;
         // The default value of Type is null, so we return null if we do not have a matching Type for keyType
-        typesDict.TryGetValue(keyType, out ret);
+        _typesDict.TryGetValue(keyType, out ret);
         return ret;
     }
     
@@ -28,10 +28,25 @@ public class PatternAction {
     public string ActionName = NoneString;
     public PatternActionType type = PatternActionType.None;
 
-    // Name must match its enum type. TODO enforce this
+    #region Type-specific definitions
+    
+    public enum PatternActionType {
+        Undefined, // Default type
+        None,
+        Basic,
+        Vector
+    }
+
+    private static Dictionary<Type, PatternActionType> _typesDict = new Dictionary<Type, PatternActionType> {
+        { typeof(Vector2), PatternActionType.Vector }
+    };
+
+    /// <summary>
+    /// New <see cref="ISubPatternAction"/> fields be defined here.
+    /// The field names must match their enum types. TODO enforce this.
+    /// </summary>
     public BasicSubPatternAction Basic;
     public VectorSubPatternAction Vector;
-    // TODO: More PatternAction types go here
     
     public void InvokePatternAction() {
         switch (type) {
@@ -43,6 +58,19 @@ public class PatternAction {
                 break;
             case PatternActionType.None:
                 throw new Exception("Somehow, someway, we're attempting to invoke a base PatternAction :(");
+        }
+    }
+
+    public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
+        switch (type) {
+            case PatternActionType.Basic:
+                Basic.GeneratePatternActionEvent(method, target);
+                break;
+            case PatternActionType.Vector:
+                Vector.GeneratePatternActionEvent(method, target);
+                break;
+            case PatternActionType.None:
+                break;
         }
     }
 
@@ -74,8 +102,13 @@ public class PatternAction {
         return act;
     }
     
+    #endregion
+
+    #region SubPatternActions
+    
     interface ISubPatternAction {
         void InvokePatternAction();
+        void GeneratePatternActionEvent(MethodInfo method, Pattern target);
     }
 
     [Serializable]
@@ -84,6 +117,14 @@ public class PatternAction {
 
         public void InvokePatternAction() {
             OnPatternAction.Invoke();
+        }
+
+        public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
+            UnityEvent newEvent = new UnityEvent();
+            UnityAction action = (UnityAction) method.CreateDelegate(typeof(UnityAction), target);
+            UnityEventTools.AddPersistentListener(newEvent, action);
+            
+            OnPatternAction = newEvent;
         }
     }
 
@@ -98,5 +139,15 @@ public class PatternAction {
         public void InvokePatternAction() {
             OnPatternAction.Invoke(Vector);
         }
+
+        public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
+            VectorEvent newEvent = new VectorEvent();
+            UnityAction<Vector2> action = (UnityAction<Vector2>)method.CreateDelegate(typeof(UnityAction<Vector2>), target);
+            UnityEventTools.AddPersistentListener(newEvent, action);
+            
+            OnPatternAction = newEvent;
+        }
     }
+    
+    #endregion
 }

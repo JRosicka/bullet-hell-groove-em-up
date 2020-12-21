@@ -128,7 +128,7 @@ MonoBehaviour:
   PatternActions:
   - ID: 0
     ActionName: None
-    type: 0
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -140,7 +140,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 1
     ActionName: FirstShot
-    type: 1
+    type: 2
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -163,7 +163,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 2
     ActionName: SecondShot
-    type: 1
+    type: 2
     Basic:
       OnPatternAction:
         m_PersistentCalls:
@@ -186,7 +186,7 @@ MonoBehaviour:
           m_Calls: []
   - ID: 3
     ActionName: Spawn
-    type: 2
+    type: 3
     Basic:
       OnPatternAction:
         m_PersistentCalls:
