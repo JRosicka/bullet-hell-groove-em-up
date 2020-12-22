@@ -31,9 +31,10 @@ public abstract class Pattern : MonoBehaviour {
         PatternActions.First(e => e.ID == id).GetSubPatternAction()?.InvokePatternAction(serializedParameter);
     }
 
-    public PatternAction[] GetAllPatternActions() {
+    public List<PatternAction> GetAllPatternActions() {
         List<PatternAction> allPatternActions = new List<PatternAction>(PatternActions); 
-        return allPatternActions.ToArray();
+        
+        return allPatternActions;
     }
     
     #if UNITY_EDITOR
@@ -60,7 +61,7 @@ public abstract class Pattern : MonoBehaviour {
             GeneratePatternActionForMethod(method);
         }
         
-        // Synchronize the IDs in case any entries were added/removed/reordered
+        // Update the IDs in case any entries were added/removed/reordered
         for (int i = 0; i < PatternActions.Count; i++) {
             PatternActions[i].ID = i;
         }

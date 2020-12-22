@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -17,10 +18,8 @@ public class PatternMeasure : ScriptableObject {
     // Would also probably want to use a list per element instead of a single value since we'd want to be able to do multiple actions at once from a single PatternMeasure
     [HideInInspector]
     public PatternAction[] PatternActions = new PatternAction[SIZE];
-    
-    [SerializeField, HideInInspector]
-    private int[] choiceIndices = new int[SIZE];
-    
+    // Collection of values to pass into the PatternActions' parameters, serialized as strings in order to allow for different types
+    [HideInInspector]
     public string[] choiceParameters = new string[SIZE];
 
     public Pattern Pattern;
@@ -59,26 +58,17 @@ public class PatternMeasure : ScriptableObject {
                 dirtied = false;
             }
             
-            PatternAction[] choices = pattern.GetAllPatternActions();
+            List<PatternAction> choices = pattern.GetAllPatternActions();
 
             EditorGUILayout.LabelField("32nd note triggers", EditorStyles.boldLabel);
             EditorGUIUtility.labelWidth = 80;
             EditorGUIUtility.fieldWidth = 150;
+            
             // Display the choices and any configurable parameters for this pattern's available PatternActions, and update
             // with any changes we make
             for (int i = 0; i < SIZE; i++) {
                 EditorGUILayout.BeginHorizontal();
-                
-                measure.choiceIndices[i] = EditorGUILayout.Popup(GetLabel(i), measure.choiceIndices[i],
-                    choices.Select(e => e.ActionName).ToArray());
-                // Update the selected choice in the underlying object
-                measure.PatternActions[i] = choices[measure.choiceIndices[i]];
-
-                Type parameterType = measure.PatternActions[i].GetSubPatternAction()?.GetParameterType();
-                if (parameterType != null) {
-                    DrawParameterField(measure, i);
-                }
-                
+                DrawPatternActionField(choices, measure, i);
                 EditorGUILayout.EndHorizontal();
 
                 if ((i + 1) % ELEMENTS_PER_BEAT == 0)
@@ -86,14 +76,52 @@ public class PatternMeasure : ScriptableObject {
             }
             EditorGUIUtility.labelWidth = 0;
             EditorGUIUtility.fieldWidth = 0;
+            
             // Save the changes back to the object
             EditorUtility.SetDirty(target);
         }
 
+        /// <summary>
+        /// Display the choices and any configurable parameters for this pattern's available PatternActions, and update
+        /// with any changes we make
+        /// </summary>
+        private void DrawPatternActionField(List<PatternAction> choices, PatternMeasure measure, int index) {
+            // Get the name of the currently selected PatternAction
+            string currentName = measure.PatternActions[index].ActionName;
+                
+            // Get all of the PatternAction names
+            List<string> choiceNames = choices.Select(e => e.ActionName).ToList();
+                
+            // If the currently chosen PatternAction no longer exists, replace it with a NullAction
+            if (!choiceNames.Contains(currentName))
+                currentName = PatternAction.NoneString;
+                
+            // Get the ID of the currently selected PatternAction
+            int currentIndex = choices.First(e => e.ActionName.Equals(currentName)).ID;
+                
+            // Present the PatternActions by a list of names and allow us to select a new one
+            int chosenIndex = EditorGUILayout.Popup(GetLabel(index), currentIndex,
+                choices.Select(e => e.ActionName).ToArray());
+                
+            // Update the selected choice
+            measure.PatternActions[index] = choices[chosenIndex];
+
+            // Handle presenting and updating the parameter value for the selected PatternAction
+            Type parameterType = measure.PatternActions[index].GetSubPatternAction()?.GetParameterType();
+            if (parameterType != null) {
+                DrawParameterField(measure, index);
+            }
+        }
+
+        /// <summary>
+        /// Handles deserializing, displaying, and re-serializing parameter data for the specified PatternAction
+        /// </summary>
         private void DrawParameterField(PatternMeasure measure, int index) {
             PatternAction patternAction = measure.PatternActions[index];
             string parameter = measure.choiceParameters[index];
             
+            // TODO: Might want to use some sort of JSON Serialization if this gets more complicated. 
+            // http://wiki.unity3d.com/index.php/SimpleJSON
             switch (patternAction.type) {
                 case PatternAction.PatternActionType.Vector:
                     parameter = PatternAction.VectorSubPatternAction.SerializeVector2(
@@ -106,6 +134,10 @@ public class PatternMeasure : ScriptableObject {
             measure.choiceParameters[index] = parameter;
         }
         
+        
+        /// <summary>
+        /// Returns the label to display in the inspector for a note
+        /// </summary>
         private static string GetLabel(int noteIndex) {
             return (noteIndex / ELEMENTS_PER_BEAT + 1) + " " + (noteIndex % ELEMENTS_PER_BEAT + 1) + "/8";
         }

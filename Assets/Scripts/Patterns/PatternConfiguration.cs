@@ -29,8 +29,11 @@ public class PatternConfiguration : ScriptableObject {
                 return;
 
             foreach (PatternMeasureList measures in config.MeasuresList) {
-                foreach (PatternMeasure measure in measures.Measures)
+                foreach (PatternMeasure measure in measures.Measures) {
+                    if (measure == null)
+                        continue;
                     measure.SetPattern(pattern);
+                }
             }
         }
     }

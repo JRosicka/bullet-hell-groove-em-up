@@ -63,25 +63,6 @@ public class PianoPattern : Pattern {
         nonComboWaypoints.Add(waypointManager.TopRight);
     }
     
-    // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
-    public void FirstShot() {
-        Transform t = transform;
-        lastShotInstance = Instantiate(ShotPrefab, t.position, t.rotation,
-            PlayerController.Instance.ShotBucket);
-        lastShotInstance.FirstShot();
-    }
-
-    // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
-    public void SecondShot() {
-        lastShotInstance.SecondShot();
-    }
-
-    // ReSharper disable once UnusedMember.Global
-    public void ThirdShot() {
-        lastShotInstance.ThirdShot();
-    }
 
     private float currentTravelTime = -1;
     private Vector3 originWaypoint;
@@ -107,41 +88,73 @@ public class PianoPattern : Pattern {
         Vector3 totalProgress = normalProgress + fudgeProgress;
         transform.position = originWaypoint + totalProgress;
     }
+    
+    #region PatternActions
+    
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void FirstShot() {
+        Transform t = transform;
+        lastShotInstance = Instantiate(ShotPrefab, t.position, t.rotation,
+            PlayerController.Instance.ShotBucket);
+        lastShotInstance.FirstShot();
+    }
 
     // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void SecondShot() {
+        lastShotInstance.SecondShot();
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void ThirdShot() {
+        lastShotInstance.ThirdShot();
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
     public void FireAnimationFlare() {
         // TODO: Animate
     }
 
     // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
     public void NormalMove() {
         MoveToWaypoint(DetermineTargetTransform(MoveType.NormalMove));
     }
 
     // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
     public void MoveAway() {
         MoveToWaypoint(DetermineTargetTransform(MoveType.MoveAway));
     }
 
     // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
     public void MoveTowards() {
         MoveToWaypoint(DetermineTargetTransform(MoveType.MoveTowards));
     }
 
     // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
     public void MoveCombo1() {
         MoveToWaypoint(IsOnRightSide ? waypointManager.RightCombo1 : waypointManager.LeftCombo1);
     }
 
     // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
     public void MoveCombo2() {
         MoveToWaypoint(IsOnRightSide ? waypointManager.LeftCombo2 : waypointManager.RightCombo2);
     }
 
     // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
     public void MoveCombo3() {
         MoveToWaypoint(IsOnRightSide ? waypointManager.LeftCombo3 : waypointManager.RightCombo3);
     }
+    
+    #endregion
     
     private void MoveToWaypoint(Transform waypoint) {
         Vector3 oldTarget = transform.position;

@@ -49,39 +49,48 @@ public class BassPattern : Pattern {
         Vector3 totalProgress = normalProgress + fudgeProgress;
         transform.position = originWaypoint + totalProgress;
     }
+    
+    #region PatternActions
 
     // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
     public void FireAnimationFlare() {
         // TODO: Animate
     }
 
     // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
     public void FireSynthShotClockwise() {
         FireSynthShot(true);
     }
     
     // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
     public void FireSynthShotCounterClockwise() {
         FireSynthShot(false);
     }
 
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void MoveLeft() {
+        MoveToWaypoint(DetermineTargetTransform(MoveDirections.MoveLeft));
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void MoveRight() {
+        MoveToWaypoint(DetermineTargetTransform(MoveDirections.MoveRight));
+    }
+    
+    #endregion
+    
     private void FireSynthShot(bool clockwise) {
         Transform t = transform;
         SynthResponseShot shot = Instantiate(SynthShotPrefab, t.position, t.rotation,
             PlayerController.Instance.ShotBucket);
         shot.Shoot(clockwise);
     }
-
-    // ReSharper disable once UnusedMember.Global
-    public void MoveLeft() {
-        MoveToWaypoint(DetermineTargetTransform(MoveDirections.MoveLeft));
-    }
-
-    // ReSharper disable once UnusedMember.Global
-    public void MoveRight() {
-        MoveToWaypoint(DetermineTargetTransform(MoveDirections.MoveRight));
-    }
-
+    
     private void MoveToWaypoint(Vector3 waypoint) {
         Vector3 oldTarget = transform.position;
         if (movedBefore)
