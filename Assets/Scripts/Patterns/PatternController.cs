@@ -51,6 +51,8 @@ public class PatternController : MonoBehaviour {
                     continue;
                 for (int k = 0; k < ACTIONS_PER_MEASURE; k++) {
                     PatternAction patternAction = measures[i].Measures[j].PatternActions[k];
+                    // Get the serialized parameter to pass into the PatternAction when it comes time to invoke it
+                    string parameter = measures[i].Measures[j].choiceParameters[k];
 
                     // If the action is "None", ignore it
                     if (patternAction.ActionName.Equals(PatternAction.NoneString))
@@ -61,8 +63,8 @@ public class PatternController : MonoBehaviour {
                         Config.StartMeasure * ACTIONS_PER_MEASURE + i * ACTIONS_PER_MEASURE + k;
                     float triggerTime = timingController.GetThirtysecondNoteTime() * elapsedThirtySecondNotes
                                         + timingController.GetStartDelay();
-
-                    NoteAction noteAction = new NoteAction(triggerTime, patternAction, GetPatternInstance);
+                    
+                    NoteAction noteAction = new NoteAction(triggerTime, patternAction, GetPatternInstance, parameter);
                     ret.Add(noteAction);
                 }
             }

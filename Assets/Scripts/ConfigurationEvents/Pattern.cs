@@ -27,9 +27,8 @@ public abstract class Pattern : MonoBehaviour {
     /// <summary>
     /// Perform the <see cref="PatternAction"/> that was scheduled
     /// </summary>
-    /// <param name="id"></param>
-    public void InvokePatternAction(int id) {
-        PatternActions.First(e => e.ID == id).InvokePatternAction();
+    public void InvokePatternAction(int id, string serializedParameter) {
+        PatternActions.First(e => e.ID == id).GetSubPatternAction()?.InvokePatternAction(serializedParameter);
     }
 
     public PatternAction[] GetAllPatternActions() {
@@ -99,7 +98,7 @@ public abstract class Pattern : MonoBehaviour {
         // Create the PatternAction based on the per-SubPatternAction definition
         PatternAction patternAction = PatternAction.CreatePatternAction(actionType);
         patternAction.ActionName = method.Name;
-        patternAction.GeneratePatternActionEvent(method, this);
+        patternAction.GetSubPatternAction()?.GeneratePatternActionEvent(method, this);
         
         PatternActions.Add(patternAction);
         Debug.Log("Found method with PatternActionAttribute: " + method.Name + ". Matching PatternActionType: " + actionType);

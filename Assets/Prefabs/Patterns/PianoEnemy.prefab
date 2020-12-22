@@ -134,7 +134,6 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
     Vector:
-      Vector: {x: 0, y: 0}
       OnPatternAction:
         m_PersistentCalls:
           m_Calls: []
@@ -157,7 +156,6 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      Vector: {x: 0, y: 0}
       OnPatternAction:
         m_PersistentCalls:
           m_Calls: []
@@ -180,7 +178,6 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      Vector: {x: 0, y: 0}
       OnPatternAction:
         m_PersistentCalls:
           m_Calls: []
@@ -192,7 +189,6 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
     Vector:
-      Vector: {x: 0, y: 0}
       OnPatternAction:
         m_PersistentCalls:
           m_Calls:

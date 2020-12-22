@@ -8,11 +8,13 @@ public class NoteAction {
     public readonly float TriggerTime;
     private PatternAction patternAction;
     private Func<Pattern> patternInstanceGetter;
+    private string serializedParameter;
 
-    public NoteAction(float triggerTime, PatternAction patternAction, Func<Pattern> patternInstanceGetter) {
+    public NoteAction(float triggerTime, PatternAction patternAction, Func<Pattern> patternInstanceGetter, string serializedParameter) {
         TriggerTime = triggerTime;
         this.patternAction = patternAction;
         this.patternInstanceGetter = patternInstanceGetter;
+        this.serializedParameter = serializedParameter;
     }
 
     /// <summary>
@@ -20,6 +22,6 @@ public class NoteAction {
     /// </summary>
     public void PerformAction() {
         Pattern patternInstance = patternInstanceGetter.Invoke();
-        patternInstance.InvokePatternAction(patternAction.ID);
+        patternInstance.InvokePatternAction(patternAction.ID, serializedParameter);
     }
 }

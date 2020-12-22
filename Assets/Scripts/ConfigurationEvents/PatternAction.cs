@@ -48,29 +48,16 @@ public class PatternAction {
     public BasicSubPatternAction Basic;
     public VectorSubPatternAction Vector;
     
-    public void InvokePatternAction() {
+    public ISubPatternAction GetSubPatternAction() {
         switch (type) {
             case PatternActionType.Basic:
-                Basic.InvokePatternAction();
-                break;
+                return Basic;
             case PatternActionType.Vector:
-                Vector.InvokePatternAction();
-                break;
+                return Vector;
             case PatternActionType.None:
-                throw new Exception("Somehow, someway, we're attempting to invoke a base PatternAction :(");
-        }
-    }
-
-    public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
-        switch (type) {
-            case PatternActionType.Basic:
-                Basic.GeneratePatternActionEvent(method, target);
-                break;
-            case PatternActionType.Vector:
-                Vector.GeneratePatternActionEvent(method, target);
-                break;
-            case PatternActionType.None:
-                break;
+                return null;
+            default:
+                throw new Exception("PatternAction type is Undefined");
         }
     }
 
@@ -106,16 +93,17 @@ public class PatternAction {
 
     #region SubPatternActions
     
-    interface ISubPatternAction {
-        void InvokePatternAction();
+    public interface ISubPatternAction {
+        void InvokePatternAction(string serializedParameter);
         void GeneratePatternActionEvent(MethodInfo method, Pattern target);
+        Type GetParameterType();
     }
 
     [Serializable]
     public class BasicSubPatternAction : ISubPatternAction {
         public UnityEvent OnPatternAction;
 
-        public void InvokePatternAction() {
+        public void InvokePatternAction(string serializedParameter) {
             OnPatternAction.Invoke();
         }
 
@@ -126,6 +114,10 @@ public class PatternAction {
             
             OnPatternAction = newEvent;
         }
+        
+        public Type GetParameterType() {
+            return null;
+        }
     }
 
     // TODO apparently this isn't necessary in Unity 2020.1 since you can serialize generics there
@@ -134,10 +126,9 @@ public class PatternAction {
 
     [Serializable]
     public class VectorSubPatternAction : ISubPatternAction {
-        public Vector2 Vector;
         public VectorEvent OnPatternAction;
-        public void InvokePatternAction() {
-            OnPatternAction.Invoke(Vector);
+        public void InvokePatternAction(string serializedParameter) {
+            OnPatternAction.Invoke(DeserializeVector2(serializedParameter));
         }
 
         public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
@@ -147,6 +138,24 @@ public class PatternAction {
             
             OnPatternAction = newEvent;
         }
+        
+        public Type GetParameterType() {
+            return typeof(Vector2);
+        }
+        
+        public static string SerializeVector2(Vector2 vector) {
+            return $"{vector.x} {vector.y}";
+        }
+        
+        public static Vector2 DeserializeVector2(string serializedVector) {
+            if (serializedVector == null || serializedVector.Equals(""))
+                return default;
+            string[] vectorComponents = serializedVector.Split(' ');
+            float x = float.Parse(vectorComponents[0]);
+            float y = float.Parse(vectorComponents[1]);
+            return new Vector2(x, y);
+        } 
+
     }
     
     #endregion

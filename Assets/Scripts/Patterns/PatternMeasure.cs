@@ -20,6 +20,8 @@ public class PatternMeasure : ScriptableObject {
     
     [SerializeField, HideInInspector]
     private int[] choiceIndices = new int[SIZE];
+    
+    public string[] choiceParameters = new string[SIZE];
 
     public Pattern Pattern;
 
@@ -60,23 +62,51 @@ public class PatternMeasure : ScriptableObject {
             PatternAction[] choices = pattern.GetAllPatternActions();
 
             EditorGUILayout.LabelField("32nd note triggers", EditorStyles.boldLabel);
-            
+            EditorGUIUtility.labelWidth = 80;
+            EditorGUIUtility.fieldWidth = 150;
             // Display the choices and any configurable parameters for this pattern's available PatternActions, and update
             // with any changes we make
             for (int i = 0; i < SIZE; i++) {
-                measure.choiceIndices[i] = EditorGUILayout.Popup(getLabel(i), measure.choiceIndices[i],
+                EditorGUILayout.BeginHorizontal();
+                
+                measure.choiceIndices[i] = EditorGUILayout.Popup(GetLabel(i), measure.choiceIndices[i],
                     choices.Select(e => e.ActionName).ToArray());
                 // Update the selected choice in the underlying object
                 measure.PatternActions[i] = choices[measure.choiceIndices[i]];
 
+                Type parameterType = measure.PatternActions[i].GetSubPatternAction()?.GetParameterType();
+                if (parameterType != null) {
+                    DrawParameterField(measure, i);
+                }
+                
+                EditorGUILayout.EndHorizontal();
+
                 if ((i + 1) % ELEMENTS_PER_BEAT == 0)
                     EditorGUILayout.Space();
             }
+            EditorGUIUtility.labelWidth = 0;
+            EditorGUIUtility.fieldWidth = 0;
             // Save the changes back to the object
             EditorUtility.SetDirty(target);
         }
 
-        private string getLabel(int noteIndex) {
+        private void DrawParameterField(PatternMeasure measure, int index) {
+            PatternAction patternAction = measure.PatternActions[index];
+            string parameter = measure.choiceParameters[index];
+            
+            switch (patternAction.type) {
+                case PatternAction.PatternActionType.Vector:
+                    parameter = PatternAction.VectorSubPatternAction.SerializeVector2(
+                        EditorGUILayout.Vector2Field("Parameter:", PatternAction.VectorSubPatternAction.DeserializeVector2(parameter)));
+                    break;
+                default:
+                    throw new Exception("Did not properly account for patternAction of type " + patternAction.type);
+            }
+
+            measure.choiceParameters[index] = parameter;
+        }
+        
+        private static string GetLabel(int noteIndex) {
             return (noteIndex / ELEMENTS_PER_BEAT + 1) + " " + (noteIndex % ELEMENTS_PER_BEAT + 1) + "/8";
         }
     }
