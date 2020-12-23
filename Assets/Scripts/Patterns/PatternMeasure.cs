@@ -17,17 +17,17 @@ public class PatternMeasure : ScriptableObject {
     // TODO: Functionality for updating a shot that isn't necessarily the most recently fired one, maybe. Would require using ordered pairs (index, enum string) rather than just enum strings. 
     // Would also probably want to use a list per element instead of a single value since we'd want to be able to do multiple actions at once from a single PatternMeasure
     [HideInInspector]
-    public PatternAction[] PatternActions = new PatternAction[SIZE];
+    public PatternActionList[] PatternActionLists = new PatternActionList[SIZE];
     // Collection of values to pass into the PatternActions' parameters, serialized as strings in order to allow for different types
     [HideInInspector]
-    public string[] choiceParameters = new string[SIZE];
+    public ChoiceParameterList[] ChoiceParameterLists = new ChoiceParameterList[SIZE];
 
     public Pattern Pattern;
 
     private void OnValidate() {
-        if (PatternActions.Length != SIZE) {
+        if (PatternActionLists.Length != SIZE) {
             Debug.LogWarning("Don't change the size of 'Notes'!");
-            Array.Resize(ref PatternActions, SIZE);
+            Array.Resize(ref PatternActionLists, SIZE);
         }
     }
 
@@ -63,16 +63,55 @@ public class PatternMeasure : ScriptableObject {
             EditorGUILayout.LabelField("32nd note triggers", EditorStyles.boldLabel);
             EditorGUIUtility.labelWidth = 80;
             EditorGUIUtility.fieldWidth = 150;
+            Color defColor = GUI.color;
             
-            // Display the choices and any configurable parameters for this pattern's available PatternActions, and update
-            // with any changes we make
+            // Handle each group of PatternActions to be scheduled for this instant in time
             for (int i = 0; i < SIZE; i++) {
+                if (measure.PatternActionLists[i] == null)
+                    measure.PatternActionLists[i] = new PatternActionList();
+
                 EditorGUILayout.BeginHorizontal();
-                DrawPatternActionField(choices, measure, i);
+                List<PatternAction> patternActionList = measure.PatternActionLists[i].PatternActions;
+                List<string> choiceParameterList = measure.ChoiceParameterLists[i].ChoiceParameters;
+                
+                // Button to add a new PatternAction
+                GUI.color = Color.green;
+                if (GUILayout.Button("+", GUILayout.Width(30))) {
+                    patternActionList.Add(new PatternAction());
+                    choiceParameterList.Add(null);
+                }
+
+                // Button to remove the last PatternAction in the list
+                GUI.color = Color.red;
+                if (GUILayout.Button("-", GUILayout.Width(30)) && patternActionList.Count > 0) {
+                    patternActionList.RemoveAt(patternActionList.Count - 1);
+                    choiceParameterList.RemoveAt(choiceParameterList.Count - 1);
+                }
+
+                GUI.color = defColor;
+                GUILayout.Label(GetLabel(i), GUILayout.Width(50));
+                
+                // Handle each individual PatternAction
+                for (int j = 0; j < patternActionList.Count; j++) {
+                    // Formatting
+                    if (j > 0) {
+                        EditorGUILayout.EndHorizontal();
+                        EditorGUILayout.BeginHorizontal();
+                        GUILayout.Label("", GUILayout.Width(117));
+                    }
+
+                    // Draw the PatternAction field
+                    PatternAction updatedPatternAction = patternActionList[j];
+                    string updatedChoiceParameter = choiceParameterList[j];
+                    DrawPatternActionField(choices, measure, ref updatedPatternAction, ref updatedChoiceParameter);
+                    patternActionList[j] = updatedPatternAction;
+                    choiceParameterList[j] = updatedChoiceParameter;
+                }
+
                 EditorGUILayout.EndHorizontal();
 
-                if ((i + 1) % ELEMENTS_PER_BEAT == 0)
-                    EditorGUILayout.Space();
+                if ((i + 1) % ELEMENTS_PER_BEAT == 0 && i < (SIZE - 1))
+                    HorizontalLine();
             }
             EditorGUIUtility.labelWidth = 0;
             EditorGUIUtility.fieldWidth = 0;
@@ -85,9 +124,9 @@ public class PatternMeasure : ScriptableObject {
         /// Display the choices and any configurable parameters for this pattern's available PatternActions, and update
         /// with any changes we make
         /// </summary>
-        private void DrawPatternActionField(List<PatternAction> choices, PatternMeasure measure, int index) {
+        private void DrawPatternActionField(List<PatternAction> choices, PatternMeasure measure, ref PatternAction patternAction, ref string choiceParameter) {
             // Get the name of the currently selected PatternAction
-            string currentName = measure.PatternActions[index].ActionName;
+            string currentName = patternAction.ActionName;
                 
             // Get all of the PatternAction names
             List<string> choiceNames = choices.Select(e => e.ActionName).ToList();
@@ -100,39 +139,34 @@ public class PatternMeasure : ScriptableObject {
             int currentIndex = choices.First(e => e.ActionName.Equals(currentName)).ID;
                 
             // Present the PatternActions by a list of names and allow us to select a new one
-            int chosenIndex = EditorGUILayout.Popup(GetLabel(index), currentIndex,
-                choices.Select(e => e.ActionName).ToArray());
-                
+            int chosenIndex = EditorGUILayout.Popup(currentIndex, 
+                    choices.Select(e => e.ActionName).ToArray());
+            
             // Update the selected choice
-            measure.PatternActions[index] = choices[chosenIndex];
+            patternAction = choices[chosenIndex];
 
             // Handle presenting and updating the parameter value for the selected PatternAction
-            Type parameterType = measure.PatternActions[index].GetSubPatternAction()?.GetParameterType();
+            Type parameterType = patternAction.GetSubPatternAction()?.GetParameterType();
             if (parameterType != null) {
-                DrawParameterField(measure, index);
+                DrawParameterField(measure, patternAction, ref choiceParameter);
             }
         }
 
         /// <summary>
         /// Handles deserializing, displaying, and re-serializing parameter data for the specified PatternAction
         /// </summary>
-        private void DrawParameterField(PatternMeasure measure, int index) {
-            PatternAction patternAction = measure.PatternActions[index];
-            string parameter = measure.choiceParameters[index];
-            
+        private void DrawParameterField(PatternMeasure measure, PatternAction patternAction, ref string choiceParameter) {
             // TODO: Might want to use some sort of JSON Serialization if this gets more complicated. 
             // http://wiki.unity3d.com/index.php/SimpleJSON
             switch (patternAction.type) {
                 case PatternAction.PatternActionType.Vector:
-                    parameter = PatternAction.VectorSubPatternAction.SerializeVector2(
-                        EditorGUILayout.Vector2Field("Parameter:", PatternAction.VectorSubPatternAction.DeserializeVector2(parameter)));
+                    choiceParameter = PatternAction.VectorSubPatternAction.SerializeVector2(
+                        EditorGUILayout.Vector2Field("Parameter:", PatternAction.VectorSubPatternAction.DeserializeVector2(choiceParameter)));
                     break;
                 default:
                     throw new Exception("Did not properly account for patternAction of type " + patternAction.type);
             }
-
-            measure.choiceParameters[index] = parameter;
-        }
+        } 
         
         
         /// <summary>
@@ -141,6 +175,31 @@ public class PatternMeasure : ScriptableObject {
         private static string GetLabel(int noteIndex) {
             return (noteIndex / ELEMENTS_PER_BEAT + 1) + " " + (noteIndex % ELEMENTS_PER_BEAT + 1) + "/8";
         }
+
+        /// <summary>
+        /// Makes a slick grey horizontal line in the inspector
+        /// </summary>
+        private static void HorizontalLine() {
+            GUIStyle horizontalLine = new GUIStyle();
+            horizontalLine.normal.background = EditorGUIUtility.whiteTexture;
+            horizontalLine.margin = new RectOffset(0, 0, 4, 4);
+            horizontalLine.fixedHeight = 1;
+
+            var c = GUI.color;
+            GUI.color = Color.grey;
+            GUILayout.Box(GUIContent.none, horizontalLine);
+            GUI.color = c;
+        }
     }
 #endif
+}
+
+[Serializable]
+public class PatternActionList {
+    public List<PatternAction> PatternActions = new List<PatternAction>();
+}
+
+[Serializable]
+public class ChoiceParameterList {
+    public List<string> ChoiceParameters = new List<string>();
 }

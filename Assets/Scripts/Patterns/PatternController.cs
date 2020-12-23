@@ -40,32 +40,48 @@ public class PatternController : MonoBehaviour {
     /// <returns>A list of scheduled NoteActions</returns>
     private List<NoteAction> ScheduleNoteActions() {
         List<NoteAction> ret = new List<NoteAction>();
-        List<PatternMeasureList> measures = Config.MeasuresList;
-
-        // Keep track of each shot we make
-        for (int i = 0; i < measures.Count; i++) {
-            if (measures[i] == null)
+        List<PatternMeasureList> measureLists = Config.MeasuresList;
+        
+        // Iterate through each PatternMeasureList
+        for (int i = 0; i < measureLists.Count; i++) {
+            if (measureLists[i] == null)
                 continue;
-            for (int j = 0; j < measures[i].Measures.Count; j++) {
-                if (measures[i].Measures[j] == null)
+            
+            // Iterate through each measure
+            List<PatternMeasure> measureList = measureLists[i].Measures;
+            for (int j = 0; j < measureList.Count; j++) {
+                if (measureLists[i].Measures[j] == null)
                     continue;
+                
+                // Iterate through each instant (32nd note) in the measure
                 for (int k = 0; k < ACTIONS_PER_MEASURE; k++) {
-                    PatternAction patternAction = measures[i].Measures[j].PatternActions[k];
-                    // Get the serialized parameter to pass into the PatternAction when it comes time to invoke it
-                    string parameter = measures[i].Measures[j].choiceParameters[k];
-
-                    // If the action is "None", ignore it
-                    if (patternAction.ActionName.Equals(PatternAction.NoneString))
+                    PatternActionList[] patternActionLists = measureList[j].PatternActionLists;
+                    ChoiceParameterList[] choiceParameterLists = measureList[j].ChoiceParameterLists;
+                    if (patternActionLists[k] == null)
                         continue;
-
-                    // Factor in the start measure, which measure we're currently on, and which part of the measure we're currently on
-                    int elapsedThirtySecondNotes =
-                        Config.StartMeasure * ACTIONS_PER_MEASURE + i * ACTIONS_PER_MEASURE + k;
-                    float triggerTime = timingController.GetThirtysecondNoteTime() * elapsedThirtySecondNotes
-                                        + timingController.GetStartDelay();
                     
-                    NoteAction noteAction = new NoteAction(triggerTime, patternAction, GetPatternInstance, parameter);
-                    ret.Add(noteAction);
+                    // Iterate through each PatternAction assigned to this instant
+                    List<PatternAction> patternActions = patternActionLists[k].PatternActions;
+                    List<string> choiceParameters = choiceParameterLists[k].ChoiceParameters;
+                    for (int l = 0; l < patternActions.Count; l++) {
+                        PatternAction patternAction = patternActions[l];
+                        // Get the serialized parameter to pass into the PatternAction when it comes time to invoke it
+                        string parameter = choiceParameters[l];
+
+                        // If the action is "None", ignore it
+                        if (patternAction.ActionName.Equals(PatternAction.NoneString))
+                            continue;
+
+                        // Factor in the start measure, which measure we're currently on, and which part of the measure we're currently on
+                        int elapsedThirtySecondNotes =
+                            Config.StartMeasure * ACTIONS_PER_MEASURE + i * ACTIONS_PER_MEASURE + k;
+                        float triggerTime = timingController.GetThirtysecondNoteTime() * elapsedThirtySecondNotes
+                                            + timingController.GetStartDelay();
+
+                        NoteAction noteAction =
+                            new NoteAction(triggerTime, patternAction, GetPatternInstance, parameter);
+                        ret.Add(noteAction);
+                    }
                 }
             }
         }

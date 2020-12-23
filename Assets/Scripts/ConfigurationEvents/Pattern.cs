@@ -102,7 +102,6 @@ public abstract class Pattern : MonoBehaviour {
         patternAction.GetSubPatternAction()?.GeneratePatternActionEvent(method, this);
         
         PatternActions.Add(patternAction);
-        Debug.Log("Found method with PatternActionAttribute: " + method.Name + ". Matching PatternActionType: " + actionType);
     }
 #endif
 }

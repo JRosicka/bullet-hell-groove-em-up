@@ -1360,7 +1360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca77e4e693936cd489fea036fa2cc3eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundsToggled: 1
+  soundsToggled: 0
   Music: {fileID: 104804478}
   VictorySoundEffect: {fileID: 605627379}
 --- !u!4 &1456222060
