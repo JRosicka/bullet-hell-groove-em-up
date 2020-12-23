@@ -30,6 +30,7 @@ public class PatternController : MonoBehaviour {
         // TODO: Better spawning logic pls. Like, actually have it be configurable. It would be real great to not have to spawn this before scheduling note actions
         Transform spawner = gameController.EnemyManager.transform;
         patternInstance = Instantiate(Config.Pattern, Vector2.zero, Quaternion.identity, spawner);
+        patternInstance.gameObject.SetActive(false);
         configuredActions = ScheduleNoteActions();
         queuedActions = new List<NoteAction>(configuredActions);
     }

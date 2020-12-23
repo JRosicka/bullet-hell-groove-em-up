@@ -16,12 +16,15 @@ public abstract class Pattern : MonoBehaviour {
     private List<PatternAction> PatternActions;
 
     /// <summary>
-    /// Instantiate this pattern in the scene at a specified position
+    /// Spawn this pattern in the scene at the specified position.
+    /// Note that this pattern will already have been instantiated at game start time for scheduling purposes. This
+    /// method unhides it and sets its position.
     /// </summary>
     [PatternActionAttribute]
+    // ReSharper disable once UnusedMember.Global
     public void Spawn(Vector2 position) {
-        Transform spawner = GameController.Instance.EnemyManager.transform;
-        Instantiate(this, position, Quaternion.identity, spawner);
+        transform.position = position;
+        gameObject.SetActive(true);
     }
     
     /// <summary>
