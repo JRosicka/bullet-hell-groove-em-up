@@ -86,6 +86,9 @@ public class PatternController : MonoBehaviour {
                 }
             }
         }
+        
+        // Sort by TriggerTimes
+        ret.Sort((act1, act2) => act1.TriggerTime.CompareTo(act2.TriggerTime));
 
         return ret;
     }
