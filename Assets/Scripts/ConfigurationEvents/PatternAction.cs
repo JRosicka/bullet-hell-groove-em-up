@@ -34,11 +34,19 @@ public class PatternAction {
         Undefined, // Default type
         None,
         Basic,
-        Vector
+        Vector,
+        Bool,
+        Int,
+        Float,
+        String
     }
 
     private static Dictionary<Type, PatternActionType> _typesDict = new Dictionary<Type, PatternActionType> {
-        { typeof(Vector2), PatternActionType.Vector }
+        { typeof(Vector2), PatternActionType.Vector },
+        { typeof(bool), PatternActionType.Bool },
+        { typeof(int), PatternActionType.Int },
+        { typeof(float), PatternActionType.Float },
+        { typeof(string), PatternActionType.String }
     };
 
     /// <summary>
@@ -47,6 +55,10 @@ public class PatternAction {
     /// </summary>
     public BasicSubPatternAction Basic;
     public VectorSubPatternAction Vector;
+    public BoolSubPatternAction Bool;
+    public IntSubPatternAction Int;
+    public FloatSubPatternAction Float;
+    public StringSubPatternAction String;
     
     public ISubPatternAction GetSubPatternAction() {
         switch (type) {
@@ -54,6 +66,14 @@ public class PatternAction {
                 return Basic;
             case PatternActionType.Vector:
                 return Vector;
+            case PatternActionType.Bool:
+                return Bool;
+            case PatternActionType.Int:
+                return Int;
+            case PatternActionType.Float:
+                return Float;
+            case PatternActionType.String:
+                return String;
             case PatternActionType.None:
                 return null;
             default:
@@ -67,6 +87,14 @@ public class PatternAction {
                 return CreateBasicPatternAction();
             case PatternActionType.Vector:
                 return CreateVectorPatternAction();
+            case PatternActionType.Bool:
+                return CreateBoolPatternAction();
+            case PatternActionType.Int:
+                return CreateIntPatternAction();
+            case PatternActionType.Float:
+                return CreateFloatPatternAction();
+            case PatternActionType.String:
+                return CreateStringPatternAction();
             case PatternActionType.None:
                 return CreateNullPatternAction();
             default:
@@ -81,6 +109,26 @@ public class PatternAction {
 
     private static PatternAction CreateVectorPatternAction() {
         PatternAction act = new PatternAction {type = PatternActionType.Vector, Vector = new VectorSubPatternAction()};
+        return act;
+    }
+
+    private static PatternAction CreateBoolPatternAction() {
+        PatternAction act = new PatternAction {type = PatternActionType.Bool, Bool = new BoolSubPatternAction()};
+        return act;
+    }
+
+    private static PatternAction CreateIntPatternAction() {
+        PatternAction act = new PatternAction {type = PatternActionType.Int, Int = new IntSubPatternAction()};
+        return act;
+    }
+
+    private static PatternAction CreateFloatPatternAction() {
+        PatternAction act = new PatternAction {type = PatternActionType.Float, Float = new FloatSubPatternAction()};
+        return act;
+    }
+
+    private static PatternAction CreateStringPatternAction() {
+        PatternAction act = new PatternAction {type = PatternActionType.String, String = new StringSubPatternAction()};
         return act;
     }
 
@@ -119,16 +167,153 @@ public class PatternAction {
             return null;
         }
     }
-
+    
     // TODO apparently this isn't necessary in Unity 2020.1 since you can serialize generics there
     [Serializable]
-    public class VectorEvent : UnityEvent<Vector2> { }
+    public class BoolEvent : UnityEvent<bool> { }
+    [Serializable]
+    public class BoolSubPatternAction : ISubPatternAction {
+        public BoolEvent OnPatternAction;
+        public void InvokePatternAction(string serializedParameter) {
+            OnPatternAction.Invoke(DeserializeParameter(serializedParameter));
+        }
 
+        public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
+            BoolEvent newEvent = new BoolEvent();
+            UnityAction<bool> action = (UnityAction<bool>) method.CreateDelegate(typeof(UnityAction<bool>), target);
+            UnityEventTools.AddPersistentListener(newEvent, action);
+            
+            OnPatternAction = newEvent;
+        }
+
+        public Type GetParameterType() {
+            return typeof(bool);
+        }
+
+        public static string SerializeParameter(bool b) {
+            return b.ToString();
+        }
+
+        public static bool DeserializeParameter(string serializedParameter) {
+            if (serializedParameter == null || serializedParameter.Equals(""))
+                return default;
+            if (serializedParameter.Equals("True"))
+                return true;
+            if (serializedParameter.Equals("False"))
+                return false;
+            throw new Exception("BoolSubPatternAction: Unexpected serialized parameter value '" + serializedParameter + "'");
+        }
+    }
+    
+    [Serializable]
+    public class IntEvent : UnityEvent<int> { }
+    [Serializable]
+    public class IntSubPatternAction : ISubPatternAction {
+        public IntEvent OnPatternAction;
+        public void InvokePatternAction(string serializedParameter) {
+            OnPatternAction.Invoke(DeserializeParameter(serializedParameter));
+        }
+
+        public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
+            IntEvent newEvent = new IntEvent();
+            UnityAction<int> action = (UnityAction<int>) method.CreateDelegate(typeof(UnityAction<int>), target);
+            UnityEventTools.AddPersistentListener(newEvent, action);
+            
+            OnPatternAction = newEvent;
+        }
+
+        public Type GetParameterType() {
+            return typeof(int);
+        }
+
+        public static string SerializeParameter(int b) {
+            return b.ToString();
+        }
+
+        public static int DeserializeParameter(string serializedParameter) {
+            if (serializedParameter == null || serializedParameter.Equals(""))
+                return default;
+            int ret;
+            if (int.TryParse(serializedParameter, out ret))
+                return ret;
+            throw new Exception("IntSubPatternAction: Unexpected serialized parameter value '" + serializedParameter + "'");
+        }
+    }
+    
+    [Serializable]
+    public class FloatEvent : UnityEvent<float> { }
+    [Serializable]
+    public class FloatSubPatternAction : ISubPatternAction {
+        public FloatEvent OnPatternAction;
+        public void InvokePatternAction(string serializedParameter) {
+            OnPatternAction.Invoke(DeserializeParameter(serializedParameter));
+        }
+
+        public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
+            FloatEvent newEvent = new FloatEvent();
+            UnityAction<float> action = (UnityAction<float>) method.CreateDelegate(typeof(UnityAction<float>), target);
+            UnityEventTools.AddPersistentListener(newEvent, action);
+            
+            OnPatternAction = newEvent;
+        }
+
+        public Type GetParameterType() {
+            return typeof(float);
+        }
+
+        public static string SerializeParameter(float b) {
+            return $"{b:N4}";    // 4 decimal places
+        }
+
+        public static float DeserializeParameter(string serializedParameter) {
+            if (serializedParameter == null || serializedParameter.Equals(""))
+                return default;
+            float ret;
+            if (float.TryParse(serializedParameter, out ret))
+                return ret;
+            throw new Exception("FloatSubPatternAction: Unexpected serialized parameter value '" + serializedParameter + "'");
+        }
+    }
+    
+    [Serializable]
+    public class StringEvent : UnityEvent<string> { }
+    [Serializable]
+    public class StringSubPatternAction : ISubPatternAction {
+        public StringEvent OnPatternAction;
+        public void InvokePatternAction(string serializedParameter) {
+            OnPatternAction.Invoke(DeserializeParameter(serializedParameter));
+        }
+
+        public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
+            StringEvent newEvent = new StringEvent();
+            UnityAction<string> action = (UnityAction<string>) method.CreateDelegate(typeof(UnityAction<string>), target);
+            UnityEventTools.AddPersistentListener(newEvent, action);
+            
+            OnPatternAction = newEvent;
+        }
+
+        public Type GetParameterType() {
+            return typeof(string);
+        }
+
+        public static string SerializeParameter(string b) {
+            return b;
+        }
+
+        public static string DeserializeParameter(string serializedParameter) {
+            if (serializedParameter == null || serializedParameter.Equals(""))
+                return default;
+            return serializedParameter;
+        }
+    }
+    
+    [Serializable]
+    public class VectorEvent : UnityEvent<Vector2> { }
     [Serializable]
     public class VectorSubPatternAction : ISubPatternAction {
         public VectorEvent OnPatternAction;
         public void InvokePatternAction(string serializedParameter) {
-            OnPatternAction.Invoke(DeserializeVector2(serializedParameter));
+            OnPatternAction.Invoke(DeserializeParameter(serializedParameter));
         }
 
         public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
@@ -143,14 +328,14 @@ public class PatternAction {
             return typeof(Vector2);
         }
         
-        public static string SerializeVector2(Vector2 vector) {
+        public static string SerializeParameter(Vector2 vector) {
             return $"{vector.x} {vector.y}";
         }
         
-        public static Vector2 DeserializeVector2(string serializedVector) {
-            if (serializedVector == null || serializedVector.Equals(""))
+        public static Vector2 DeserializeParameter(string serializedParameter) {
+            if (serializedParameter == null || serializedParameter.Equals(""))
                 return default;
-            string[] vectorComponents = serializedVector.Split(' ');
+            string[] vectorComponents = serializedParameter.Split(' ');
             float x = float.Parse(vectorComponents[0]);
             float y = float.Parse(vectorComponents[1]);
             return new Vector2(x, y);

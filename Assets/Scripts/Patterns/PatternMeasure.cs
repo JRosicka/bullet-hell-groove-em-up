@@ -103,7 +103,7 @@ public class PatternMeasure : ScriptableObject {
                     // Draw the PatternAction field
                     PatternAction updatedPatternAction = patternActionList[j];
                     string updatedChoiceParameter = choiceParameterList[j];
-                    DrawPatternActionField(choices, measure, ref updatedPatternAction, ref updatedChoiceParameter);
+                    DrawPatternActionField(choices, ref updatedPatternAction, ref updatedChoiceParameter);
                     patternActionList[j] = updatedPatternAction;
                     choiceParameterList[j] = updatedChoiceParameter;
                 }
@@ -124,9 +124,10 @@ public class PatternMeasure : ScriptableObject {
         /// Display the choices and any configurable parameters for this pattern's available PatternActions, and update
         /// with any changes we make
         /// </summary>
-        private void DrawPatternActionField(List<PatternAction> choices, PatternMeasure measure, ref PatternAction patternAction, ref string choiceParameter) {
+        private void DrawPatternActionField(List<PatternAction> choices, ref PatternAction patternAction, ref string choiceParameter) {
             // Get the name of the currently selected PatternAction
             string currentName = patternAction.ActionName;
+            Type currentType = patternAction.GetSubPatternAction()?.GetParameterType();
                 
             // Get all of the PatternAction names
             List<string> choiceNames = choices.Select(e => e.ActionName).ToList();
@@ -148,20 +149,40 @@ public class PatternMeasure : ScriptableObject {
             // Handle presenting and updating the parameter value for the selected PatternAction
             Type parameterType = patternAction.GetSubPatternAction()?.GetParameterType();
             if (parameterType != null) {
-                DrawParameterField(measure, patternAction, ref choiceParameter);
+                // If we changed the parameter type, then set the choice parameter value back to null to avoid type weirdness
+                if (parameterType != currentType)
+                    choiceParameter = null;
+
+                DrawParameterField(patternAction, ref choiceParameter);
             }
         }
 
         /// <summary>
         /// Handles deserializing, displaying, and re-serializing parameter data for the specified PatternAction
         /// </summary>
-        private void DrawParameterField(PatternMeasure measure, PatternAction patternAction, ref string choiceParameter) {
+        private void DrawParameterField(PatternAction patternAction, ref string choiceParameter) {
             // TODO: Might want to use some sort of JSON Serialization if this gets more complicated. 
             // http://wiki.unity3d.com/index.php/SimpleJSON
             switch (patternAction.type) {
                 case PatternAction.PatternActionType.Vector:
-                    choiceParameter = PatternAction.VectorSubPatternAction.SerializeVector2(
-                        EditorGUILayout.Vector2Field("Parameter:", PatternAction.VectorSubPatternAction.DeserializeVector2(choiceParameter)));
+                    choiceParameter = PatternAction.VectorSubPatternAction.SerializeParameter(
+                        EditorGUILayout.Vector2Field("Parameter:", PatternAction.VectorSubPatternAction.DeserializeParameter(choiceParameter)));
+                    break;
+                case PatternAction.PatternActionType.Bool:
+                    choiceParameter = PatternAction.BoolSubPatternAction.SerializeParameter(
+                        EditorGUILayout.Toggle("Parameter:", PatternAction.BoolSubPatternAction.DeserializeParameter(choiceParameter)));
+                    break;
+                case PatternAction.PatternActionType.Int:
+                    choiceParameter = PatternAction.IntSubPatternAction.SerializeParameter(
+                        EditorGUILayout.IntField("Parameter:", PatternAction.IntSubPatternAction.DeserializeParameter(choiceParameter)));
+                    break;
+                case PatternAction.PatternActionType.Float:
+                    choiceParameter = PatternAction.FloatSubPatternAction.SerializeParameter(
+                        EditorGUILayout.FloatField("Parameter:", PatternAction.FloatSubPatternAction.DeserializeParameter(choiceParameter)));
+                    break;
+                case PatternAction.PatternActionType.String:
+                    choiceParameter = PatternAction.StringSubPatternAction.SerializeParameter(
+                        EditorGUILayout.TextField("Parameter:", PatternAction.StringSubPatternAction.DeserializeParameter(choiceParameter)));
                     break;
                 default:
                     throw new Exception("Did not properly account for patternAction of type " + patternAction.type);

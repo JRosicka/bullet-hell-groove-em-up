@@ -137,6 +137,22 @@ MonoBehaviour:
       OnPatternAction:
         m_PersistentCalls:
           m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
   - ID: 1
     ActionName: FirstShot
     type: 2
@@ -156,6 +172,22 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
       OnPatternAction:
         m_PersistentCalls:
           m_Calls: []
@@ -181,6 +213,22 @@ MonoBehaviour:
       OnPatternAction:
         m_PersistentCalls:
           m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
   - ID: 3
     ActionName: ThirdShot
     type: 2
@@ -203,10 +251,46 @@ MonoBehaviour:
       OnPatternAction:
         m_PersistentCalls:
           m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
   - ID: 4
     ActionName: FireAnimationFlare
-    type: 2
+    type: 7
     Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
       OnPatternAction:
         m_PersistentCalls:
           m_Calls:
@@ -221,10 +305,6 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-    Vector:
-      OnPatternAction:
-        m_PersistentCalls:
-          m_Calls: []
   - ID: 5
     ActionName: NormalMove
     type: 2
@@ -247,10 +327,38 @@ MonoBehaviour:
       OnPatternAction:
         m_PersistentCalls:
           m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
   - ID: 6
     ActionName: MoveAway
-    type: 2
+    type: 5
     Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
       OnPatternAction:
         m_PersistentCalls:
           m_Calls:
@@ -265,14 +373,34 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-    Vector:
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
       OnPatternAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 7
     ActionName: MoveTowards
-    type: 2
+    type: 6
     Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
       OnPatternAction:
         m_PersistentCalls:
           m_Calls:
@@ -287,14 +415,22 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-    Vector:
+    String:
       OnPatternAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 8
     ActionName: MoveCombo1
-    type: 2
+    type: 4
     Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
       OnPatternAction:
         m_PersistentCalls:
           m_Calls:
@@ -309,7 +445,15 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-    Vector:
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
       OnPatternAction:
         m_PersistentCalls:
           m_Calls: []
@@ -335,6 +479,22 @@ MonoBehaviour:
       OnPatternAction:
         m_PersistentCalls:
           m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
   - ID: 10
     ActionName: MoveCombo3
     type: 2
@@ -354,6 +514,22 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
       OnPatternAction:
         m_PersistentCalls:
           m_Calls: []
@@ -379,6 +555,22 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
   MovementCurveRegular:
     serializedVersion: 2
     m_Curve:
