@@ -45,15 +45,261 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PatternActions:
-  - type: 0
-    ID: 0
-    ActionName: 
+  - ID: 0
+    ActionName: None
+    type: 1
     Basic:
       OnPatternAction:
         m_PersistentCalls:
           m_Calls: []
     Vector:
-      Vector: {x: 0, y: 0}
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 1
+    ActionName: FireAnimationFlare
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: FireAnimationFlare
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 2
+    ActionName: FireSynthShotClockwise
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: FireSynthShotClockwise
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 3
+    ActionName: FireSynthShotCounterClockwise
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: FireSynthShotCounterClockwise
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 4
+    ActionName: MoveLeft
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: MoveLeft
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 5
+    ActionName: MoveRight
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: MoveRight
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 6
+    ActionName: Spawn
+    type: 3
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: Spawn
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
   SynthShotPrefab: {fileID: 6218925459055046543, guid: c9409bc94a304f94abc4aee3871176a1,
     type: 3}
   MovementCurveRegular:
@@ -61,21 +307,30 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
+      value: 0
+      inSlope: 2.9038105
+      outSlope: 3.9929144
+      tangentMode: 1
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.10361271
+    - serializedVersion: 3
+      time: 0.2532918
+      value: 0.89291847
+      inSlope: 0.5514323
+      outSlope: 0.5514323
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.18962027
+      outWeight: 0.13709132
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
+      inSlope: 0.043843314
       outSlope: 0
-      tangentMode: 34
+      tangentMode: 1
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.06460021
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -84,19 +339,28 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.003704071
-      value: 0.0008506775
-      inSlope: 0.0006314177
-      outSlope: 0.0006314177
+      time: -0.00033569336
+      value: -0.0000038146973
+      inSlope: 0.102371395
+      outSlope: 0.102371395
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.99450684
-      value: 0.0014762878
-      inSlope: 0.0006314177
-      outSlope: 0.0006314177
+      time: 0.48508915
+      value: 0.049689803
+      inSlope: 0.061550617
+      outSlope: 0.061550617
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9882202
+      value: 0.06011963
+      inSlope: 0.02072984
+      outSlope: 0.02072984
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d1dd65c84e7535488d11a270a4701de, type: 3}
-  m_Name: GameOverMeasure
+  m_Name: Spawn
   m_EditorClassIdentifier: 
   PatternActionLists:
   - PatternActions:
-    - ID: 2
+    - ID: 6
       ActionName: Spawn
       type: 3
       Basic:
@@ -25,7 +25,7 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls:
-            - m_Target: {fileID: 5479237732316806916, guid: e25fbc22a7a1328478aaa146c9e69b89,
+            - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
                 type: 3}
               m_MethodName: Spawn
               m_Mode: 0
@@ -37,45 +37,6 @@ MonoBehaviour:
                 m_StringArgument: 
                 m_BoolArgument: 0
               m_CallState: 2
-      Bool:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Int:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Float:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-    - ID: 1
-      ActionName: GameOver
-      type: 2
-      Basic:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls:
-            - m_Target: {fileID: 5479237732316806916, guid: e25fbc22a7a1328478aaa146c9e69b89,
-                type: 3}
-              m_MethodName: GameOver
-              m_Mode: 0
-              m_Arguments:
-                m_ObjectArgument: {fileID: 0}
-                m_ObjectArgumentAssemblyTypeName: 
-                m_IntArgument: 0
-                m_FloatArgument: 0
-                m_StringArgument: 
-                m_BoolArgument: 0
-              m_CallState: 2
-      Vector:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
       Bool:
         OnPatternAction:
           m_PersistentCalls:
@@ -125,8 +86,7 @@ MonoBehaviour:
   - PatternActions: []
   ChoiceParameterLists:
   - ChoiceParameters:
-    - 0 0
-    - 
+    - 0.6 3
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
@@ -158,4 +118,4 @@ MonoBehaviour:
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
-  Pattern: {fileID: 5479237732316806916, guid: e25fbc22a7a1328478aaa146c9e69b89, type: 3}
+  Pattern: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28, type: 3}

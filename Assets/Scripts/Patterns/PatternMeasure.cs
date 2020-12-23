@@ -53,7 +53,6 @@ public class PatternMeasure : ScriptableObject {
             // which would result in this dirtied flag getting reset to its default value (true). If this has happened, 
             // regenerate the PatternActions for this PatternMeasure's pattern
             if (dirtied) {
-                Debug.Log("Generating pattern actions for Pattern: " + pattern);
                 pattern.GeneratePatternActions();
                 dirtied = false;
             }
