@@ -1,4 +1,4 @@
 ﻿using System;
 
 [AttributeUsage(AttributeTargets.Method)]
-public class PatternActionAttribute : Attribute { }
+public class Emission : Attribute { }

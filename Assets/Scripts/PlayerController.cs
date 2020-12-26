@@ -5,7 +5,6 @@
 /// </summary>
 public class PlayerController : MonoBehaviour {
     public Player Player;
-    public Transform ShotBucket;
 
     public static PlayerController Instance;
 

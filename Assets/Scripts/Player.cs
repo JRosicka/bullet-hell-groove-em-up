@@ -95,25 +95,19 @@ public class Player : MonoBehaviour {
 	}
 
 	private void OnParticleCollision(GameObject other) {
-		// Add spin for no reason
-		rb.AddTorque(1f * (Random.Range(0, 2) == 0 ? 1 : -1));
 
-		if (Invincible)
-			return;
 		
 		GameController.Instance.ResetGame(false);
 	}
+	
+	private void OnTriggerEnter2D(Collider2D other) {
+		if (Invincible)
+			return;
 
-	private void OnCollisionEnter2D(Collision2D other) {
-		// TODO This doesn't actually do anything lol
-		if (other.gameObject == WallLeft) {
-			onWallLeft = true;
-		} else if (other.gameObject == WallRight) {
-			onWallRight = true;
-		} else if (other.gameObject == WallUp) {
-			onWallUp = true;
-		} else if (other.gameObject == WallDown) {
-			onWallDown = true;
+		if (other.gameObject.CompareTag("Bullet")) {
+			// Add spin for no reason
+			rb.AddTorque(1f * (Random.Range(0, 2) == 0 ? 1 : -1));
+			GameController.Instance.ResetGame(false);
 		}
 	}
 }

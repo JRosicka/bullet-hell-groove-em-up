@@ -96,7 +96,7 @@ public class PianoPattern : Pattern {
     public void FirstShot() {
         Transform t = transform;
         lastShotInstance = Instantiate(ShotPrefab, t.position, t.rotation,
-            PlayerController.Instance.ShotBucket);
+            GameController.Instance.ShotBucket);
         lastShotInstance.FirstShot();
     }
 

@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour {
 
     public SongController SongController;
     public EnemyManager EnemyManager;
+    public Transform ShotBucket;
     public WaypointManager WaypointManager;
     public TextMesh RestartText;
     public TextMesh SuccessText;
@@ -35,12 +36,13 @@ public class GameController : MonoBehaviour {
             return;
 
         if (won) {
-            SuccessText.gameObject.SetActive(true);
+            if (SuccessText != null)
+                SuccessText.gameObject.SetActive(true);
             if (!playedVictorySound) {
                 SongController.PlayVictorySoundEffect();
                 playedVictorySound = true;
             }
-        } else {
+        } else if (RestartText != null) {
             RestartText.gameObject.SetActive(true);
         }
 

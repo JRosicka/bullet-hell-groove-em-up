@@ -87,7 +87,7 @@ public class BassPattern : Pattern {
     private void FireSynthShot(bool clockwise) {
         Transform t = transform;
         SynthResponseShot shot = Instantiate(SynthShotPrefab, t.position, t.rotation,
-            PlayerController.Instance.ShotBucket);
+            GameController.Instance.ShotBucket);
         shot.Shoot(clockwise);
     }
     
