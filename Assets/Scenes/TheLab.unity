@@ -233,9 +233,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnedBullets: []
   BulletPrefab: {fileID: 8886523688647499918, guid: d9914692fb39bb348a31b1d4e249510a,
     type: 3}
-  SpawnedBullets: []
+  NumberOfShots: 8
+  TimeBetweenShot: 0.14
+  DelayBeforeFirstShot: 0
+  RotationArc: 0
+  StartRotation: 0
+  HowFarForward: 0
 --- !u!1001 &963117745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -598,6 +604,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2818877977326224435, guid: f186c163eb7eb6843a01861288b5575a,
+        type: 3}
+      propertyPath: Invincible
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2818877977326224438, guid: f186c163eb7eb6843a01861288b5575a,
         type: 3}
