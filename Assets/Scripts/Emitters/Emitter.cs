@@ -10,11 +10,62 @@ using UnityEngine;
 /// </summary>
 public class Emitter : MonoBehaviour {
     public List<Bullet> SpawnedBullets = new List<Bullet>();
+
+    /// <summary>
+    /// All of the details needed for firing a group of bullets, to be configured in the inspector. These config
+    /// details are used to set up individual <see cref="BulletConfig"/>s.
+    /// </summary>
+    [Serializable]
+    public struct EmissionConfig {
+        /// <summary>
+        /// The Bullet prefab to spawn
+        /// </summary>
+        public Bullet BulletPrefab;
+        /// <summary>
+        /// How many bullets to fire
+        /// </summary>
+        [Range(0, 100)]
+        public int NumberOfShots;
+        /// <summary>
+        /// How much time between each bullet
+        /// </summary>
+        [Range(0, 2)]
+        public float TimeBetweenShot;
+        /// <summary>
+        /// How long to wait before firing the first bullet
+        /// </summary>
+        [Range(0, 2)]
+        public float DelayBeforeFirstShot;
+        /// <summary>
+        /// The start rotation, in degrees, to initially aim at
+        /// </summary>
+        [Range(-360, 360)]
+        public int StartRotation;
+        /// <summary>
+        /// How wide of a rotation, in degrees, to fire bullets
+        /// </summary>
+        [Range(0, 1800)]
+        public int RotationArc;
+        /// <summary>
+        /// If true, rotate clockwise. If False, rotate counterclockwise.
+        /// </summary>
+        public bool RotateClockwise; 
+        /// <summary>
+        /// If true, the rotation arc is based around the StartRotation symmetricall around each side.
+        /// If false, the rotation arc starts at the StartRotation and continues clockwise or counterclockwise.
+        /// </summary>
+        public bool RotateFromCenter;
+        /// <summary>
+        /// How far from the emitter's location to fire the bullets
+        /// </summary>
+        [Range(-10, 10)] 
+        public float Radius; 
+    }
     
     /// <summary>
     /// All of the details needed for the firing of a single bullet
     /// </summary>
-    protected struct EmissionConfig {
+    protected struct BulletConfig {
         public Bullet Bullet;
         public List<BulletLogic> Logic;
         public Vector3 LocalPosition;
@@ -24,7 +75,7 @@ public class Emitter : MonoBehaviour {
     }
 
     // TODO: Keep this private, we want to control things being added here by subclasses so that we can enforce ordering
-    private List<EmissionConfig> queuedEmissions = new List<EmissionConfig>();
+    private List<BulletConfig> queuedBullets = new List<BulletConfig>();
     private float timeElapsed;
     
     /// <summary>
@@ -37,10 +88,10 @@ public class Emitter : MonoBehaviour {
         timeElapsed += Time.deltaTime;
 
         int actionsCompleted = 0;
-        for (int i = 0; i < queuedEmissions.Count; i++) {
-            EmissionConfig emissionConfig = queuedEmissions[i];
-            if (emissionConfig.EmissionTime < timeElapsed) {
-                Shoot(emissionConfig);
+        for (int i = 0; i < queuedBullets.Count; i++) {
+            BulletConfig bulletConfig = queuedBullets[i];
+            if (bulletConfig.EmissionTime <= timeElapsed) {
+                Shoot(bulletConfig);
                 actionsCompleted++;
             } else {
                 // Since we assume that the queuedShots list is ordered by FireTime, we know that none of the remaining shots should be fired yet
@@ -48,20 +99,20 @@ public class Emitter : MonoBehaviour {
             }
         }
 
-        queuedEmissions.RemoveRange(0, actionsCompleted);
+        queuedBullets.RemoveRange(0, actionsCompleted);
     }
 
-    protected void ScheduleEmission(EmissionConfig config) {
-        ScheduleEmissions(new List<EmissionConfig>() {config});
+    protected void ScheduleBullet(BulletConfig config) {
+        ScheduleBullets(new List<BulletConfig>() {config});
     }
 
-    protected void ScheduleEmissions(List<EmissionConfig> configs) {
-        queuedEmissions.AddRange(configs);
-        queuedEmissions = queuedEmissions.OrderBy(e => e.EmissionTime).ToList();
+    protected void ScheduleBullets(List<BulletConfig> configs) {
+        queuedBullets.AddRange(configs);
+        queuedBullets = queuedBullets.OrderBy(e => e.EmissionTime).ToList();
     }
 
-    protected void Shoot(EmissionConfig emissionConfig) {
-        Shoot(emissionConfig.Bullet, emissionConfig.Logic, emissionConfig.LocalPosition, emissionConfig.LocalRotation);
+    protected void Shoot(BulletConfig bulletConfig) {
+        Shoot(bulletConfig.Bullet, bulletConfig.Logic, bulletConfig.LocalPosition, bulletConfig.LocalRotation);
     }
 
     /// <summary>
@@ -86,76 +137,41 @@ public class Emitter : MonoBehaviour {
         SpawnedBullets.Add(spawnedBullet);
         spawnedBullet.AssignBulletLogic(logic);
     }
-
-    // protected void ShootGroup(Bullet bullet, List<BulletLogic> logic, int numberOfShots,
-    //     Vector3 localPosition = default) {
-    //     for (int i = 0; i < numberOfShots; i++) {
-    //         Shoot(bullet, logic, localPosition, localRotation);
-    //     }
-    // }
-
-    protected void ShootGroup(Bullet bullet, List<BulletLogic> logic, int numberOfShots, 
-                            float timeBetweenShot, float delayBeforeFirstShot = 0.0f, 
-                            float startRotationDegrees = 0, float endRotationDegrees = 0, 
-                            Vector3 localPosition = default) {
-        if (timeBetweenShot < 0)
-            throw new Exception("Cannot have a negative amount of time between each shot, silly");
-        if (delayBeforeFirstShot < 0)
-            throw new Exception("Cannot have a negative delay before first shot, silly");
-        if (numberOfShots < 0)
-            throw new Exception("Cannot have a negative number of shots to fire, silly");
+    
+    protected void ScheduleEmission(EmissionConfig config) {
+        // Determine rotations
+        float startRotationDegrees;
+        float endRotationDegrees;
+        int direction = config.RotateClockwise ? -1 : 1;
+        if (config.RotateFromCenter) {
+            startRotationDegrees = config.StartRotation - direction * config.RotationArc / 2.0f;
+            endRotationDegrees = config.StartRotation + direction * config.RotationArc / 2.0f;
+        } else {
+            startRotationDegrees = config.StartRotation;
+            endRotationDegrees = config.StartRotation + direction * config.RotationArc;
+        }
         
-        // Fire all the shots now if we don't have to wait to fire any shots
-        // if (delayBeforeFirstShot <= 0 && timeBetweenShot <= 0) {
-        //     ShootGroup(bullet, logic, numberOfShots, localPosition);
-        //     return;
-        // }
-
-        List<EmissionConfig> emissions = new List<EmissionConfig>();
-        for (int i = 0; i < numberOfShots; i++) {
-            float lerpValue = (float) i / (numberOfShots - 1);
-            emissions.Add(new EmissionConfig {
-                Bullet = bullet,
-                Logic = logic,
-                LocalPosition = localPosition,
+        List<BulletConfig> bullets = new List<BulletConfig>();
+        for (int i = 0; i < config.NumberOfShots; i++) {
+            float lerpValue = (float) i / (config.NumberOfShots - 1);
+            bullets.Add(new BulletConfig {
+                Bullet = config.BulletPrefab,
+                Logic = null,    // TODO
+                LocalPosition = new Vector3(config.Radius, 0),
                 LocalRotation = Quaternion.AngleAxis(Mathf.Lerp(startRotationDegrees, endRotationDegrees, lerpValue), Vector3.forward),
                 
-                EmissionTime = timeElapsed + delayBeforeFirstShot + i * timeBetweenShot
+                EmissionTime = timeElapsed + config.DelayBeforeFirstShot + i * config.TimeBetweenShot
             });
         }
-        ScheduleEmissions(emissions);
+        ScheduleBullets(bullets);
     }
-
-    protected void ShootGroupSymmetricalArc(Bullet bullet, List<BulletLogic> logic, int numberOfShots,
-                        float timeBetweenShot, float delayBeforeFirstShot = 0.0f,
-                        float rotationDegreesRange = 0, float startRotationDegrees = 0,
-                        Vector3 localPosition = default) {
-        ShootGroup(bullet, logic, numberOfShots, timeBetweenShot, delayBeforeFirstShot, startRotationDegrees - rotationDegreesRange / 2, startRotationDegrees + rotationDegreesRange / 2, localPosition);
-    }
-
+    
     // TODO: Enforce somewhere that things tagged with [Emission] cannot have any parameters
-    [Emission]
-    public void ShootBasicShot() {
-        Shoot(BulletPrefab, null);
-    }
-
     // TODO: Dummy examples, the BulletPrefab(s) and Shoot logic should be defined in subclasses of Emitter
-    public Bullet BulletPrefab;
-    [Range(0, 100)]
-    public int NumberOfShots;
-    [Range(0, 5)]
-    public float TimeBetweenShot;
-    [Range(0, 5)]
-    public float DelayBeforeFirstShot;
-    [Range(0, 900)]
-    public int RotationArc;
-    [Range(-900, 900)]
-    public int StartRotation;
-    [Range(-10, 10)] 
-    public float HowFarForward;
+    public EmissionConfig FarMoreComplexConfig;
     [Emission]
     public void ShootAFarMoreComplexShot() {
-        ShootGroupSymmetricalArc(BulletPrefab, null, NumberOfShots, TimeBetweenShot, DelayBeforeFirstShot, RotationArc, StartRotation, new Vector3(HowFarForward, 0));
+        ScheduleEmission(FarMoreComplexConfig);
     }
     
     #if UNITY_EDITOR
