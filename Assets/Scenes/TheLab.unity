@@ -214,13 +214,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317995782}
-  m_LocalRotation: {x: -0, y: -0, z: -0.3777949, w: 0.9258894}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1833020463}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -44.394}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &317995784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,14 +237,18 @@ MonoBehaviour:
   FarMoreComplexConfig:
     BulletPrefab: {fileID: 8886523688647499918, guid: d9914692fb39bb348a31b1d4e249510a,
       type: 3}
-    NumberOfShots: 8
-    TimeBetweenShot: 0.138
-    DelayBeforeFirstShot: 0.088
-    StartRotation: 43
-    RotationArc: 80
+    NumberOfShots: 53
+    TimeBetweenShot: 0
+    DelayBeforeFirstShot: 0
+    StartRotation: 90
+    RotationArc: 360
     RotateClockwise: 0
     RotateFromCenter: 0
-    Radius: 0
+    Radius: 0.29
+    AnimationPrefab: {fileID: 7284957164868078736, guid: 7537a5d5486013b4bb27ab6b997f381c,
+      type: 3}
+    UseWhiteShaderForAnimateIn: 1
+    BulletStartSpeed: 3.35
 --- !u!1001 &963117745
 PrefabInstance:
   m_ObjectHideFlags: 0
