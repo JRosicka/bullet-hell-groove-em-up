@@ -30,6 +30,7 @@ public class BulletParticleSystem : MonoBehaviour {
         if (IsRootBulletParticleSystem())
             SyncParticleSeeds(true);
         
+        // We do not want to keep this template particle system active at runtime
         if (Application.isPlaying)
             Destroy(GetComponent<ParticleSystem>());
 

@@ -622,7 +622,8 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2818877977326224439, guid: f186c163eb7eb6843a01861288b5575a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f186c163eb7eb6843a01861288b5575a, type: 3}
 --- !u!114 &1852109891 stripped
 MonoBehaviour:
