@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using SplineMesh;
 using UnityEditor;
 using UnityEngine;
 
@@ -75,6 +76,9 @@ public class Emitter : MonoBehaviour {
         /// </summary>
         [Range(0, 10)]
         public float BulletStartSpeed;
+        public bool UseSpline;
+        public Spline Spline;
+        public float SplineTravelDurationSeconds;
     }
     
     /// <summary>
@@ -167,15 +171,22 @@ public class Emitter : MonoBehaviour {
             endRotationDegrees = config.StartRotation + direction * config.RotationArc;
         }
         
-        // Add BulletLogic
-        List<BulletLogic> logic = new List<BulletLogic>();
-        if (config.AnimationPrefab != null)
-            logic.Add(new AnimateInBulletLogic(config.AnimationPrefab, config.UseWhiteShaderForAnimateIn));
-        logic.Add(new StartingSpeedBulletLogic(config.BulletStartSpeed));
-        
         List<BulletConfig> bullets = new List<BulletConfig>();
         for (int i = 0; i < config.NumberOfShots; i++) {
-            float lerpValue = (float) i / (config.NumberOfShots - 1);
+            float lerpValue;
+            if (config.NumberOfShots == 1)
+                lerpValue = 0;
+            else
+                lerpValue = (float) i / (config.NumberOfShots - 1);
+            
+            // Add BulletLogic
+            List<BulletLogic> logic = new List<BulletLogic>();
+            if (config.AnimationPrefab != null)
+                logic.Add(new AnimateInBulletLogic(config.AnimationPrefab, config.UseWhiteShaderForAnimateIn));
+            logic.Add(new StartingSpeedBulletLogic(config.BulletStartSpeed));
+            if (config.UseSpline)
+                logic.Add(new MoveAlongSplineBulletLogic(config.Spline, config.SplineTravelDurationSeconds, false));
+
             bullets.Add(new BulletConfig {
                 Bullet = config.BulletPrefab,
                 Logic = logic,

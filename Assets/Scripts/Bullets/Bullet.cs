@@ -11,7 +11,11 @@ public class Bullet : MonoBehaviour {
     private List<BulletLogic> bulletLogic;
     
     void Update() {
-        transform.Translate(Vector3.right * (speed * Time.deltaTime));
+        float deltaTime = Time.deltaTime;
+        transform.Translate(Vector3.right * (speed * deltaTime));    // TODO: Move this to its own logic probs
+        foreach (BulletLogic logicEntry in bulletLogic) {
+            logicEntry.BulletLogicUpdate(deltaTime);
+        }
     }
 
     public void AssignBulletLogic(List<BulletLogic> logic) {

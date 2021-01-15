@@ -32,4 +32,8 @@ public class AnimateInBulletLogic : BulletLogic {
             spawnedRenderer.color = Color.white;
         }
     }
+
+    public override void BulletLogicUpdate(float deltaTime) {
+        // Nothing to do here
+    }
 }

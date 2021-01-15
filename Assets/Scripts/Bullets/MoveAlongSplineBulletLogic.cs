@@ -1,102 +1,65 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using SplineMesh;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
+using Object = UnityEngine.Object;
 
 /// <summary>
 /// Moves a Bullet along a spline over time
 /// </summary>
-[ExecuteInEditMode]
-[RequireComponent(typeof(Spline))]
-public class MoveAlongSplineBulletLogic : MonoBehaviour {
+public class MoveAlongSplineBulletLogic : BulletLogic {
+    private Spline originalSpline;
     private Spline spline;
-    private float progress = 0;
+    private float progress;
     private bool isInPlayMode;
     private bool done;
     private float bulletSpeed;
 
     public Bullet FollowerPrefab;
     private Bullet follower;
-    public float DurationInSeconds;
-    public bool RespawnBulletWhenDone;
-
-    #if UNITY_EDITOR
-    // public bool MoveInEditMode;    // Probably won't work since we need the bullet to move in play mode so that we can access controllers and stuff
-    #endif
+    private float durationInSeconds;
+    private bool restartBulletWhenDone;
     
-    private void OnEnable() {
-        progress = 0;
-        spline = GetComponent<Spline>();
+    public MoveAlongSplineBulletLogic(Spline originalSpline, float durationInSeconds, bool restartBulletWhenDone) {
+        // if (Application.IsPlaying(this))
+        //     isInPlayMode = true;
+
+        this.originalSpline = originalSpline;
+        this.durationInSeconds = durationInSeconds;
+        this.restartBulletWhenDone = restartBulletWhenDone;
+    }
+    
+    public override void OnBulletSpawned(Bullet bullet) {
+        follower = bullet;
         if (follower == null)
-            return;
-#if UNITY_EDITOR
-        EditorApplication.update += EditorUpdate;
-#endif
-    }
-
-    private void Start() {
-        if (Application.IsPlaying(this))
-            isInPlayMode = true;
-
-        SpawnBullet();
-    }
-
-    private void OnDisable() {
-#if UNITY_EDITOR
-        EditorApplication.update -= EditorUpdate;
-#endif
-    }
-
-    void EditorUpdate() {
-        // if (spline == null || Follower == null)
-        //     return;
-
-        // if (!MoveInEditMode)
-        return;
-            
-        DoUpdate();
-    }
-
-    void Update() {
+            throw new Exception("Follow is null, silly. This needs a bullet to move along the spline.");
         
-        // if (spline == null || Follower == null) {
-        //     return;
-        //     // string excString = spline == null ? "Spline is null!" : "";
-        //     // excString += Follower == null ? " Follower is null!" : "";
-        //     // throw new Exception(excString);
-        // }
-        if (isInPlayMode)
-            DoUpdate();
+        follower.speed = 0;    // TODO: We will definitely want some error handling here. We should not have any other bullet logic assigned to the bullet that adjusts its speed. 
+        progress = 0;
+        
+        // Make a copy of the original spline and assign it as a child to the bullet GameObject so that its transform is 
+        // changed accordingly
+        var bulletTransform = bullet.transform;
+        spline = Object.Instantiate(originalSpline, bulletTransform.position, bulletTransform.rotation, GameController.Instance.ShotBucket);
+        bullet.transform.SetParent(spline.transform);
     }
     
-    private void DoUpdate() {
+    public override void BulletLogicUpdate(float deltaTime) {
         if (done)
             return;
         
-        if (DurationInSeconds <= 0)
+        if (durationInSeconds <= 0)
             return;
         
-        progress += Time.deltaTime / DurationInSeconds;
+        progress += deltaTime / durationInSeconds;
         if (progress > 1) {
             progress--;
 
-            if (RespawnBulletWhenDone) {
-                if (follower == null)
-                    follower = Instantiate(FollowerPrefab, transform);
-            } else {
+            if (!restartBulletWhenDone && follower != null) {
                 ReleaseBullet();
             }
         }
 
-        MoveFollower(Time.deltaTime);
-    }
-
-    private void SpawnBullet() {
-        follower = Instantiate(FollowerPrefab, transform);
-        follower.speed = 0;
+        MoveFollower(deltaTime);
     }
     
     /// <summary>
@@ -113,21 +76,15 @@ public class MoveAlongSplineBulletLogic : MonoBehaviour {
         if (spline == null || follower == null)
             return;
 
-        // CurveSample lengthSample = spline.GetSampleAtDistance(progress * spline.Length);
-        CurveSample lengthSample = spline.GetSample(progress * (spline.nodes.Count - 1));    // For getting the sample weighted by nodes
-        var transform1 = follower.transform;
-        var localPosition = transform1.localPosition;
-        
-        Vector3 initialPosition = localPosition;
-        localPosition = lengthSample.location;
-        transform1.localPosition = localPosition;
-        transform1.localRotation = lengthSample.Rotation;
+        CurveSample lengthSample = spline.GetSampleAtDistance(progress * spline.Length);
+        // CurveSample lengthSample = spline.GetSample(progress * (spline.nodes.Count - 1));    // For getting the sample weighted by nodes
 
-        float deltaPosition = (localPosition - initialPosition).magnitude;
+        Vector3 initialPosition = follower.transform.localPosition;
+        follower.transform.localPosition = lengthSample.location;
+        follower.transform.localPosition = follower.transform.localPosition;
+        follower.transform.localRotation = lengthSample.Rotation;
+
+        float deltaPosition = (follower.transform.localPosition - initialPosition).magnitude;
         bulletSpeed = deltaPosition / deltaTime;
     }
-
-    // public override void OnBulletSpawned(Bullet bullet) {
-    //     throw new System.NotImplementedException();
-    // }
 }

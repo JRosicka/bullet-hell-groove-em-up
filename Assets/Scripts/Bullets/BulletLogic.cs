@@ -7,4 +7,5 @@
 /// </summary>
 public abstract class BulletLogic {
     public abstract void OnBulletSpawned(Bullet bullet);
+    public abstract void BulletLogicUpdate(float deltaTime);
 }
