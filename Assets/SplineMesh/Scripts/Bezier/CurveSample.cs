@@ -27,7 +27,11 @@ namespace SplineMesh {
             get {
                 if (rotation == Quaternion.identity) {
                     var upVector = Vector3.Cross(tangent, Vector3.Cross(Quaternion.AngleAxis(roll, Vector3.forward) * up, tangent).normalized);
-                    rotation = Quaternion.LookRotation(tangent, upVector);
+                    // Modification for 2D GAMING. Since we always want the bullet to be aligned with the z axis so that 
+                    // it faces the player rather than being a little flippy napkin pancake blowing in the wind. 
+                    // So, just figure out the direction to face. 
+                    Vector3 forward = tangent.x > 0 ? Vector3.forward : Vector3.back;
+                    rotation = Quaternion.LookRotation(forward, upVector);
                 }
                 return rotation;
             }

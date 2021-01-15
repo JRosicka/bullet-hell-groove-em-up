@@ -229,8 +229,9 @@ namespace SplineMesh {
             }
             if (GUILayout.Button("Delete selected node")) {
                 Undo.RecordObject(spline, "delete spline node");
+                var index = spline.nodes.IndexOf(selection);
                 spline.RemoveNode(selection);
-                selection = null;
+                selection = spline.nodes[index];
                 serializedObject.Update();
             }
             GUI.enabled = true;
@@ -240,19 +241,6 @@ namespace SplineMesh {
 
             // nodes
             EditorGUILayout.PropertyField(nodesProp);
-            EditorGUI.indentLevel++;
-            if (nodesProp.isExpanded) {
-                for (int i = 0; i < nodesProp.arraySize; i++) {
-                    SerializedProperty nodeProp = nodesProp.GetArrayElementAtIndex(i);
-                    EditorGUILayout.PropertyField(nodeProp);
-                    EditorGUI.indentLevel++;
-                    if (nodeProp.isExpanded) {
-                        drawNodeData(nodeProp, spline.nodes[i]);
-                    }
-                    EditorGUI.indentLevel--;
-                }
-            }
-            EditorGUI.indentLevel--;
 
             if (selection != null) {
                 int index = spline.nodes.IndexOf(selection);
