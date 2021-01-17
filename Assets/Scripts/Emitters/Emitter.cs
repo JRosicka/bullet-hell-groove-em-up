@@ -5,6 +5,7 @@ using System.Reflection;
 using SplineMesh;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// Emits <see cref="Bullet"/>s and gives them behaviors (bezier curves to follow, specific properties, etc)
@@ -74,11 +75,23 @@ public class Emitter : MonoBehaviour {
         /// <summary>
         /// The start speed for each bullet spawned
         /// </summary>
-        [Range(0, 10)]
+        [Range(0, 30)]
         public float BulletStartSpeed;
+        public AnimationCurve BulletSpeedOverTime;
         public bool UseSpline;
         public Spline Spline;
+        [Range(0, 10)]
         public float SplineTravelDurationSeconds;
+        public bool AdjustColorOverTime;
+        public bool OnlyAdjustAlpha;
+        public Color InitialColor;
+        public Color EndColor;
+        [Range(0, 10)]
+        public float ColorAdjustmentDuration;
+        public AnimationCurve BulletColorOverTime;
+        public bool DestroyBulletAfterDuration;
+        [Range(0, 30)]
+        public float DestructionTime;
     }
     
     /// <summary>
@@ -181,12 +194,18 @@ public class Emitter : MonoBehaviour {
             
             // Add BulletLogic
             List<BulletLogic> logic = new List<BulletLogic>();
+            if (config.AdjustColorOverTime) {
+                logic.Add(new ColorOverTimeBulletLogic(config.InitialColor, config.EndColor, 
+                    config.BulletColorOverTime, config.ColorAdjustmentDuration, config.OnlyAdjustAlpha));
+            }
             if (config.AnimationPrefab != null)
                 logic.Add(new AnimateInBulletLogic(config.AnimationPrefab, config.UseWhiteShaderForAnimateIn));
-            logic.Add(new StartingSpeedBulletLogic(config.BulletStartSpeed));
+            logic.Add(new SpeedOverTimeBulletLogic(config.BulletStartSpeed, config.BulletSpeedOverTime));
             if (config.UseSpline)
                 logic.Add(new MoveAlongSplineBulletLogic(config.Spline, config.SplineTravelDurationSeconds, false));
-
+            if (config.DestroyBulletAfterDuration)
+                logic.Add(new DestroyAfterDurationBulletLogic(config.DestructionTime));
+            
             bullets.Add(new BulletConfig {
                 Bullet = config.BulletPrefab,
                 Logic = logic,
@@ -201,11 +220,12 @@ public class Emitter : MonoBehaviour {
     
     // TODO: Enforce somewhere that things tagged with [Emission] cannot have any parameters
     // TODO: Dummy examples, the BulletPrefab(s) and Shoot logic should be defined in subclasses of Emitter
-    public EmissionConfig FarMoreComplexConfig;
+    [FormerlySerializedAs("FarMoreComplexConfig")] 
+    public EmissionConfig Config;
     [Emission]
     // ReSharper disable once UnusedMember.Global
-    public void ShootAFarMoreComplexShot() {
-        ScheduleEmission(FarMoreComplexConfig);
+    public void Emit() {
+        ScheduleEmission(Config);
     }
     
     #if UNITY_EDITOR

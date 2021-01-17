@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class Bullet : MonoBehaviour {
     public float speed;
-    public GameObject Sprite;
+    public List<GameObject> Sprites;
 
     // TODO: How do we apply this? Do we get any update info from each entry on Update(), or do we do something to apply
     // the logic right when it is assigned?
@@ -12,9 +12,8 @@ public class Bullet : MonoBehaviour {
     
     void Update() {
         float deltaTime = Time.deltaTime;
-        transform.Translate(Vector3.right * (speed * deltaTime));    // TODO: Move this to its own logic probs
         foreach (BulletLogic logicEntry in bulletLogic) {
-            logicEntry.BulletLogicUpdate(deltaTime);
+            logicEntry.BulletLogicUpdate(this, deltaTime);
         }
     }
 

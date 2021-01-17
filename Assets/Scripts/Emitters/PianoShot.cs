@@ -11,6 +11,11 @@ public class PianoShot : MonoBehaviour {
     public BulletParticleSystem System2;
     public BulletParticleSystem System3;
 
+    [Header("Emitters")] 
+    public Emitter Emitter1;
+    public Emitter Emitter2;
+    public Emitter Emitter3;
+    
     private PlayerController playerController;
     
     void Awake() {
@@ -18,21 +23,21 @@ public class PianoShot : MonoBehaviour {
     }
     
     public void FirstShot() {
-        Shoot(Spawner1, System1);
+        Shoot(Spawner1, Emitter1);
     }
     public void SecondShot() {
-        Shoot(Spawner2, System2);
+        Shoot(Spawner2, Emitter2);
     }
     public void ThirdShot() {
-        Shoot(Spawner3, System3);
+        Shoot(Spawner3, Emitter3);
     }
     
-    private void Shoot(Transform spawner, BulletParticleSystem system) {
+    private void Shoot(Transform spawner, Emitter emitter) {
         Vector3 target = playerController.GetPlayerPosition();
         Vector3 origin = spawner.transform.position;
 
         spawner.rotation = CalculateRotation(origin, target);
-        system.Shoot();
+        emitter.Emit();
     }
     
     /// <summary>

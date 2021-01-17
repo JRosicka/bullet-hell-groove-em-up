@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  Sprite: {fileID: 8886523688881418140}
+  Sprites:
+  - {fileID: 8886523688881418140}
 --- !u!70 &8886523688647499919
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

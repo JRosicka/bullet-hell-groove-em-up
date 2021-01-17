@@ -1311,7 +1311,7 @@ PrefabInstance:
     - target: {fileID: 2818877977326224435, guid: f186c163eb7eb6843a01861288b5575a,
         type: 3}
       propertyPath: Invincible
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f186c163eb7eb6843a01861288b5575a, type: 3}
@@ -1397,6 +1397,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6121429862932770822, guid: 31427befc6d90614d9068da59e56bb7b,
+        type: 3}
+      propertyPath: ShotBucket
+      value: 
+      objectReference: {fileID: 1873630698}
     - target: {fileID: 6121429862932770822, guid: 31427befc6d90614d9068da59e56bb7b,
         type: 3}
       propertyPath: RestartText

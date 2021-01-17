@@ -16,24 +16,28 @@ public class AnimateInBulletLogic : BulletLogic {
     }
     
     public override void OnBulletSpawned(Bullet bullet) {
-        // Spawn the view
-        view = Object.Instantiate(viewPrefab, bullet.transform);
+        foreach (GameObject spriteObject in bullet.Sprites) {
+            // Spawn the view
+            view = Object.Instantiate(viewPrefab, bullet.transform);
         
-        // Set the view's sprite local scale to match that of the bullet's sprite
-        view.Sprite.transform.localScale = bullet.Sprite.transform.localScale;
+            // Set the view's sprite local scale to match that of the bullet's sprite
+            view.Sprite.transform.localScale = spriteObject.transform.lossyScale;
         
-        // Set the view's sprite to match that of the bullet's sprite
-        SpriteRenderer spawnedRenderer = view.Sprite.GetComponent<SpriteRenderer>();
-        spawnedRenderer.sprite = bullet.Sprite.GetComponent<SpriteRenderer>().sprite;
+            // Set the view's sprite to match that of the bullet's sprite
+            SpriteRenderer spawnedRenderer = view.Sprite.GetComponent<SpriteRenderer>();
+            spawnedRenderer.sprite = spriteObject.GetComponent<SpriteRenderer>().sprite;
 
-        if (useWhiteShader) {
-            // Set the view's sprite's shader to be white
-            spawnedRenderer.material.shader = BulletAnimationUtil.ShaderGUIText;
-            spawnedRenderer.color = Color.white;
+            if (useWhiteShader) {
+                // Set the view's sprite's shader to be white
+                spawnedRenderer.material.shader = BulletAnimationUtil.ShaderGUIText;
+                spawnedRenderer.color = Color.white;
+            } else {
+                spawnedRenderer.color = spriteObject.GetComponent<SpriteRenderer>().color;
+            }
         }
     }
 
-    public override void BulletLogicUpdate(float deltaTime) {
+    public override void BulletLogicUpdate(Bullet bullet, float deltaTime) {
         // Nothing to do here
     }
 }

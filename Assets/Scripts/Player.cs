@@ -1,7 +1,5 @@
-﻿using System;
-using Rewired;
+﻿using Rewired;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 /// <summary>
@@ -93,18 +91,14 @@ public class Player : MonoBehaviour {
 		onWallDown = false;
 
 	}
-
-	private void OnParticleCollision(GameObject other) {
-
-		
-		GameController.Instance.ResetGame(false);
-	}
 	
 	private void OnTriggerEnter2D(Collider2D other) {
 		if (Invincible)
 			return;
 
 		if (other.gameObject.CompareTag("Bullet")) {
+			Destroy(other.gameObject);
+			
 			// Add spin for no reason
 			rb.AddTorque(1f * (Random.Range(0, 2) == 0 ? 1 : -1));
 			GameController.Instance.ResetGame(false);

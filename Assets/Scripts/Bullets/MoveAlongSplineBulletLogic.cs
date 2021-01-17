@@ -43,7 +43,7 @@ public class MoveAlongSplineBulletLogic : BulletLogic {
         bullet.transform.SetParent(spline.transform);
     }
     
-    public override void BulletLogicUpdate(float deltaTime) {
+    public override void BulletLogicUpdate(Bullet bullet, float deltaTime) {
         if (done)
             return;
         
