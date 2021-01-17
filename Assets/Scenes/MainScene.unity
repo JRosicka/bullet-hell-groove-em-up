@@ -1311,7 +1311,7 @@ PrefabInstance:
     - target: {fileID: 2818877977326224435, guid: f186c163eb7eb6843a01861288b5575a,
         type: 3}
       propertyPath: Invincible
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f186c163eb7eb6843a01861288b5575a, type: 3}
@@ -1325,7 +1325,7 @@ PrefabInstance:
     - target: {fileID: 6121429862932770818, guid: 31427befc6d90614d9068da59e56bb7b,
         type: 3}
       propertyPath: soundsToggled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6121429862932770819, guid: 31427befc6d90614d9068da59e56bb7b,
         type: 3}
