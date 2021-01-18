@@ -92,6 +92,8 @@ public class Emitter : MonoBehaviour {
         public bool DestroyBulletAfterDuration;
         [Range(0, 30)]
         public float DestructionTime;
+        public bool UseTrail;
+        public TrailRendererWith2DCollider Trail;
     }
     
     /// <summary>
@@ -205,6 +207,8 @@ public class Emitter : MonoBehaviour {
                 logic.Add(new MoveAlongSplineBulletLogic(config.Spline, config.SplineTravelDurationSeconds, false));
             if (config.DestroyBulletAfterDuration)
                 logic.Add(new DestroyAfterDurationBulletLogic(config.DestructionTime));
+            if (config.UseTrail)
+                logic.Add(new TrailBulletLogic(config.Trail));
             
             bullets.Add(new BulletConfig {
                 Bullet = config.BulletPrefab,

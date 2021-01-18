@@ -25,7 +25,7 @@ MonoBehaviour:
   - PatternActions: []
   - PatternActions: []
   - PatternActions:
-    - ID: 9
+    - ID: 11
       ActionName: MoveCombo2
       type: 2
       Basic:
@@ -68,10 +68,46 @@ MonoBehaviour:
   - PatternActions: []
   - PatternActions: []
   - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
+  - PatternActions:
+    - ID: 6
+      ActionName: SpinAnimation
+      type: 2
+      Basic:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+                type: 3}
+              m_MethodName: SpinAnimation
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Vector:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
   - PatternActions: []
   - PatternActions: []
   - PatternActions: []
@@ -80,7 +116,49 @@ MonoBehaviour:
   - PatternActions: []
   - PatternActions: []
   - PatternActions:
-    - ID: 10
+    - ID: 6
+      ActionName: SpinAnimation
+      type: 2
+      Basic:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+                type: 3}
+              m_MethodName: SpinAnimation
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Vector:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+  - PatternActions: []
+  - PatternActions: []
+  - PatternActions:
+    - ID: 12
       ActionName: MoveCombo3
       type: 2
       Basic:
@@ -141,6 +219,8 @@ MonoBehaviour:
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
+  - ChoiceParameters:
+    - 
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
@@ -148,8 +228,8 @@ MonoBehaviour:
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
+  - ChoiceParameters:
+    - 
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
