@@ -10,7 +10,9 @@ using Random = UnityEngine.Random;
 /// Fires three rounds of projectiles that each aim at the player
 /// </summary>
 public class PianoPattern : Pattern {
-
+    public Animator OuterSegments;
+    public Animator InnerSegments;
+    
     private GameController gameController;
     private PlayerController playerController;
     private WaypointManager waypointManager;
@@ -69,6 +71,9 @@ public class PianoPattern : Pattern {
     private Vector3 targetWaypoint;
     private Vector3 fudgeTargetWaypoint;
     private bool movedBefore;
+    private static readonly int MoveOut = Animator.StringToHash("MoveOut");
+    private static readonly int Spin = Animator.StringToHash("Spin");
+
     private void Update() {
         if (currentTravelTime < 0)
             return;
@@ -115,7 +120,21 @@ public class PianoPattern : Pattern {
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void FireAnimationFlare() {
-        // TODO: Animate
+        OuterSegments.SetTrigger(MoveOut);
+    }
+    
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void FireSecondaryAnimationFlare() {
+        OuterSegments.SetTrigger(MoveOut);
+        InnerSegments.SetTrigger(MoveOut);
+    }
+    
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void SpinAnimation() {
+        OuterSegments.SetTrigger(Spin);
+        InnerSegments.SetTrigger(Spin);
     }
 
     // ReSharper disable once UnusedMember.Global
