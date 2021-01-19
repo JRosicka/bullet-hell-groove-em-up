@@ -53,4 +53,4 @@ MonoBehaviour:
   colliderIsTrigger: 1
   colliderEnabled: 1
   pausing: 0
-  TrailTag: Bullet
+  TrailTag: BulletTrail

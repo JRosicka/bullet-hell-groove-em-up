@@ -55,13 +55,19 @@ public class Player : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D other) {
 		if (Invincible)
 			return;
-
+		
 		if (other.gameObject.CompareTag("Bullet")) {
+			other.gameObject.SendMessage("DestroyBullet");
+			KillPlayer();
+		} else if (other.gameObject.CompareTag("BulletTrail")) {
 			Destroy(other.gameObject);
-			
-			// Add spin for no reason
-			rb.AddTorque(1f * (Random.Range(0, 2) == 0 ? 1 : -1));
-			GameController.Instance.ResetGame(false);
+			KillPlayer();
 		}
+	}
+
+	private void KillPlayer() {
+		// Add spin for no reason
+		rb.AddTorque(1f * (Random.Range(0, 2) == 0 ? 1 : -1));
+		GameController.Instance.ResetGame(false);
 	}
 }

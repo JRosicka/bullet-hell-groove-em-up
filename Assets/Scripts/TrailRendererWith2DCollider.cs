@@ -90,7 +90,7 @@ public class TrailRendererWith2DCollider : MonoBehaviour {
         trail.GetComponent<Renderer>().material = trailMaterial;
 
         if (TrailTag != String.Empty)
-            gameObject.tag = TrailTag;
+            trail.tag = TrailTag;
         
         //get and set the polygon collider on this trail.
         collider = trail.GetComponent<PolygonCollider2D>();
