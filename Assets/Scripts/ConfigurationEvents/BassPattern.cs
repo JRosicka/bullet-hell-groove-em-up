@@ -24,7 +24,27 @@ public class BassPattern : Pattern {
     public AnimationCurve MovementCurveFudge;
     // How long it takes to move from one waypoint to another
     public float TravelTime = 1f;
+    
+    
+    public Emitter EmitterM1B1N1;
+    public Emitter EmitterM1B1N2;
+    public Emitter EmitterM1B1N3;
+    public Emitter EmitterM1B3N1;
+    public Emitter EmitterM1B3N2;
+    public Emitter EmitterM1B3N3;
+    public Emitter EmitterM1B3N4;
+    public Emitter EmitterM2B1N1;
+    public Emitter EmitterM2B1N2;
+    public Emitter EmitterM2B1N3;
+    public Emitter EmitterM2B3N1;
+    public Emitter EmitterM2B3N2;
+    public Emitter EmitterM2B3N3;
+    public Emitter EmitterM2B3N4;
+    public Emitter EmitterM2B3N5;
+    public Emitter EmitterM2B3N6;
+    public Emitter EmitterM4B3N1;
 
+    
     private float currentTravelTime = -1;
     private Vector3 originWaypoint;
     private Vector3 targetWaypoint;
@@ -81,7 +101,109 @@ public class BassPattern : Pattern {
     public void MoveRight() {
         MoveToWaypoint(DetermineTargetTransform(MoveDirections.MoveRight));
     }
-    
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void BassShotM1B1N1() {
+        EmitterM1B1N1.Emit();
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void BassShotM1B1N2() {
+        EmitterM1B1N2.Emit();
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void BassShotM1B1N3() {
+        EmitterM1B1N3.Emit();
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void BassShotM1B3N1() {
+        EmitterM1B3N1.Emit();
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void BassShotM1B3N2() {
+        EmitterM1B3N2.Emit();
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void BassShotM1B3N3() {
+        EmitterM1B3N3.Emit();
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void BassShotM1B3N4() {
+        EmitterM1B3N4.Emit();
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void BassShotM2B1N1() {
+        EmitterM2B1N1.Emit();
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void BassShotM2B1N2() {
+        EmitterM2B1N2.Emit();
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void BassShotM2B1N3() {
+        EmitterM2B1N3.Emit();
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void BassShotM2B3N1() {
+        EmitterM2B3N1.Emit();
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void BassShotM2B3N2() {
+        EmitterM2B3N2.Emit();
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void BassShotM2B3N3() {
+        EmitterM2B3N3.Emit();
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void BassShotM2B3N4() {
+        EmitterM2B3N4.Emit();
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void BassShotM2B3N5() {
+        EmitterM2B3N5.Emit();
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void BassShotM2B3N6() {
+        EmitterM2B3N6.Emit();
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void BassShotM4B3N1() {
+        EmitterM4B3N1.Emit();
+    }
+
     #endregion
     
     private void FireSynthShot(bool clockwise) {

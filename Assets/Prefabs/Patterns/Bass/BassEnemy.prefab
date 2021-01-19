@@ -29,6 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4731960718420356964}
+  - {fileID: 7570076599585588651}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -263,6 +264,652 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
   - ID: 6
+    ActionName: BassShotM1B1N1
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: BassShotM1B1N1
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 7
+    ActionName: BassShotM1B1N2
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: BassShotM1B1N2
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 8
+    ActionName: BassShotM1B1N3
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: BassShotM1B1N3
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 9
+    ActionName: BassShotM1B3N1
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: BassShotM1B3N1
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 10
+    ActionName: BassShotM1B3N2
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: BassShotM1B3N2
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 11
+    ActionName: BassShotM1B3N3
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: BassShotM1B3N3
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 12
+    ActionName: BassShotM1B3N4
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: BassShotM1B3N4
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 13
+    ActionName: BassShotM2B1N1
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: BassShotM2B1N1
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 14
+    ActionName: BassShotM2B1N2
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: BassShotM2B1N2
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 15
+    ActionName: BassShotM2B1N3
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: BassShotM2B1N3
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 16
+    ActionName: BassShotM2B3N1
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: BassShotM2B3N1
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 17
+    ActionName: BassShotM2B3N2
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: BassShotM2B3N2
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 18
+    ActionName: BassShotM2B3N3
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: BassShotM2B3N3
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 19
+    ActionName: BassShotM2B3N4
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: BassShotM2B3N4
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 20
+    ActionName: BassShotM2B3N5
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: BassShotM2B3N5
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 21
+    ActionName: BassShotM2B3N6
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: BassShotM2B3N6
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 22
+    ActionName: BassShotM4B3N1
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: BassShotM4B3N1
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 23
     ActionName: Spawn
     type: 3
     Basic:
@@ -369,6 +1016,23 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   TravelTime: 1
+  EmitterM1B1N1: {fileID: 4273509000469432503}
+  EmitterM1B1N2: {fileID: 7359159612326630371}
+  EmitterM1B1N3: {fileID: 8726688801504245168}
+  EmitterM1B3N1: {fileID: 4064909868522625305}
+  EmitterM1B3N2: {fileID: 4064909868929574574}
+  EmitterM1B3N3: {fileID: 4064909869739975290}
+  EmitterM1B3N4: {fileID: 4064909869054616001}
+  EmitterM2B1N1: {fileID: 8637879950117451303}
+  EmitterM2B1N2: {fileID: 3076410903805242739}
+  EmitterM2B1N3: {fileID: 3857908113434233632}
+  EmitterM2B3N1: {fileID: 3705185255390554258}
+  EmitterM2B3N2: {fileID: 6673719008009137254}
+  EmitterM2B3N3: {fileID: 6617265821527985203}
+  EmitterM2B3N4: {fileID: 3705185255390554258}
+  EmitterM2B3N5: {fileID: 6673719008009137254}
+  EmitterM2B3N6: {fileID: 6157000840464258417}
+  EmitterM4B3N1: {fileID: 7299270347712510674}
 --- !u!1 &5822353167857512505
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,3 +1114,593 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7797447881977363311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7570076599585588651}
+  m_Layer: 0
+  m_Name: Emitters
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7570076599585588651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7797447881977363311}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4273509001083259151}
+  - {fileID: 4064909868182459188}
+  - {fileID: 8637879950941288351}
+  - {fileID: 3705185254267371053}
+  - {fileID: 6751134014194063449}
+  m_Father: {fileID: 2676997595005644571}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &982131510100350599
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7570076599585588651}
+    m_Modifications:
+    - target: {fileID: 3958583450625073032, guid: fb4fa872c24e71d4a82825e52aa090eb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958583450625073032, guid: fb4fa872c24e71d4a82825e52aa090eb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958583450625073032, guid: fb4fa872c24e71d4a82825e52aa090eb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958583450625073032, guid: fb4fa872c24e71d4a82825e52aa090eb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958583450625073032, guid: fb4fa872c24e71d4a82825e52aa090eb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958583450625073032, guid: fb4fa872c24e71d4a82825e52aa090eb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958583450625073032, guid: fb4fa872c24e71d4a82825e52aa090eb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958583450625073032, guid: fb4fa872c24e71d4a82825e52aa090eb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958583450625073032, guid: fb4fa872c24e71d4a82825e52aa090eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958583450625073032, guid: fb4fa872c24e71d4a82825e52aa090eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958583450625073032, guid: fb4fa872c24e71d4a82825e52aa090eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958583450625073033, guid: fb4fa872c24e71d4a82825e52aa090eb,
+        type: 3}
+      propertyPath: m_Name
+      value: Bass Emitters 1 Beat 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb4fa872c24e71d4a82825e52aa090eb, type: 3}
+--- !u!4 &4273509001083259151 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3958583450625073032, guid: fb4fa872c24e71d4a82825e52aa090eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 982131510100350599}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4273509000469432503 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3958583449938665008, guid: fb4fa872c24e71d4a82825e52aa090eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 982131510100350599}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7359159612326630371 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7746692508412708196, guid: fb4fa872c24e71d4a82825e52aa090eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 982131510100350599}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8726688801504245168 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8411130212459602743, guid: fb4fa872c24e71d4a82825e52aa090eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 982131510100350599}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &1535694772006769768
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7570076599585588651}
+    m_Modifications:
+    - target: {fileID: 7102185747501917174, guid: de4e8f35356eaf24fa3e638c811accca,
+        type: 3}
+      propertyPath: m_Name
+      value: Bass Emitters 2 Beat 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102185747501917175, guid: de4e8f35356eaf24fa3e638c811accca,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102185747501917175, guid: de4e8f35356eaf24fa3e638c811accca,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102185747501917175, guid: de4e8f35356eaf24fa3e638c811accca,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102185747501917175, guid: de4e8f35356eaf24fa3e638c811accca,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102185747501917175, guid: de4e8f35356eaf24fa3e638c811accca,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102185747501917175, guid: de4e8f35356eaf24fa3e638c811accca,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102185747501917175, guid: de4e8f35356eaf24fa3e638c811accca,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102185747501917175, guid: de4e8f35356eaf24fa3e638c811accca,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102185747501917175, guid: de4e8f35356eaf24fa3e638c811accca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102185747501917175, guid: de4e8f35356eaf24fa3e638c811accca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102185747501917175, guid: de4e8f35356eaf24fa3e638c811accca,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: de4e8f35356eaf24fa3e638c811accca, type: 3}
+--- !u!4 &8637879950941288351 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7102185747501917175, guid: de4e8f35356eaf24fa3e638c811accca,
+    type: 3}
+  m_PrefabInstance: {fileID: 1535694772006769768}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8637879950117451303 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7102185746414133839, guid: de4e8f35356eaf24fa3e638c811accca,
+    type: 3}
+  m_PrefabInstance: {fileID: 1535694772006769768}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3076410903805242739 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4611256284812966171, guid: de4e8f35356eaf24fa3e638c811accca,
+    type: 3}
+  m_PrefabInstance: {fileID: 1535694772006769768}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3857908113434233632 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2361549486892457800, guid: de4e8f35356eaf24fa3e638c811accca,
+    type: 3}
+  m_PrefabInstance: {fileID: 1535694772006769768}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &4638867538235962219
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7570076599585588651}
+    m_Modifications:
+    - target: {fileID: 8649695865400451166, guid: 9cf45c547e4a6c64495560951126157a,
+        type: 3}
+      propertyPath: m_Name
+      value: Bass Emitters M1 B3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8649695865400451167, guid: 9cf45c547e4a6c64495560951126157a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8649695865400451167, guid: 9cf45c547e4a6c64495560951126157a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8649695865400451167, guid: 9cf45c547e4a6c64495560951126157a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8649695865400451167, guid: 9cf45c547e4a6c64495560951126157a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8649695865400451167, guid: 9cf45c547e4a6c64495560951126157a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8649695865400451167, guid: 9cf45c547e4a6c64495560951126157a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8649695865400451167, guid: 9cf45c547e4a6c64495560951126157a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8649695865400451167, guid: 9cf45c547e4a6c64495560951126157a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8649695865400451167, guid: 9cf45c547e4a6c64495560951126157a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8649695865400451167, guid: 9cf45c547e4a6c64495560951126157a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8649695865400451167, guid: 9cf45c547e4a6c64495560951126157a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9cf45c547e4a6c64495560951126157a, type: 3}
+--- !u!114 &4064909868929574574 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8649695866151753157, guid: 9cf45c547e4a6c64495560951126157a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4638867538235962219}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4064909869739975290 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8649695864814670097, guid: 9cf45c547e4a6c64495560951126157a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4638867538235962219}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4064909869054616001 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8649695866273125034, guid: 9cf45c547e4a6c64495560951126157a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4638867538235962219}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &4064909868182459188 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8649695865400451167, guid: 9cf45c547e4a6c64495560951126157a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4638867538235962219}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4064909868522625305 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8649695865761458802, guid: 9cf45c547e4a6c64495560951126157a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4638867538235962219}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &4697435465066611632
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7570076599585588651}
+    m_Modifications:
+    - target: {fileID: 8240411876824006044, guid: 18af69c75fecfd446bf71037fc6b1072,
+        type: 3}
+      propertyPath: m_Name
+      value: Bass Emitters M2 B3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240411876824006045, guid: 18af69c75fecfd446bf71037fc6b1072,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240411876824006045, guid: 18af69c75fecfd446bf71037fc6b1072,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240411876824006045, guid: 18af69c75fecfd446bf71037fc6b1072,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240411876824006045, guid: 18af69c75fecfd446bf71037fc6b1072,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240411876824006045, guid: 18af69c75fecfd446bf71037fc6b1072,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240411876824006045, guid: 18af69c75fecfd446bf71037fc6b1072,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240411876824006045, guid: 18af69c75fecfd446bf71037fc6b1072,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240411876824006045, guid: 18af69c75fecfd446bf71037fc6b1072,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240411876824006045, guid: 18af69c75fecfd446bf71037fc6b1072,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240411876824006045, guid: 18af69c75fecfd446bf71037fc6b1072,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240411876824006045, guid: 18af69c75fecfd446bf71037fc6b1072,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 18af69c75fecfd446bf71037fc6b1072, type: 3}
+--- !u!114 &6673719008009137254 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2138493761384493014, guid: 18af69c75fecfd446bf71037fc6b1072,
+    type: 3}
+  m_PrefabInstance: {fileID: 4697435465066611632}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6157000840464258417 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1459917307772491457, guid: 18af69c75fecfd446bf71037fc6b1072,
+    type: 3}
+  m_PrefabInstance: {fileID: 4697435465066611632}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &3705185254267371053 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8240411876824006045, guid: 18af69c75fecfd446bf71037fc6b1072,
+    type: 3}
+  m_PrefabInstance: {fileID: 4697435465066611632}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3705185255390554258 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8240411875801541410, guid: 18af69c75fecfd446bf71037fc6b1072,
+    type: 3}
+  m_PrefabInstance: {fileID: 4697435465066611632}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6617265821527985203 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1938206584829923203, guid: 18af69c75fecfd446bf71037fc6b1072,
+    type: 3}
+  m_PrefabInstance: {fileID: 4697435465066611632}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &9079455138565663198
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7570076599585588651}
+    m_Modifications:
+    - target: {fileID: 2571675002526314887, guid: 806acb1630af7a24698e812d540c5b63,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571675002526314887, guid: 806acb1630af7a24698e812d540c5b63,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571675002526314887, guid: 806acb1630af7a24698e812d540c5b63,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571675002526314887, guid: 806acb1630af7a24698e812d540c5b63,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571675002526314887, guid: 806acb1630af7a24698e812d540c5b63,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571675002526314887, guid: 806acb1630af7a24698e812d540c5b63,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571675002526314887, guid: 806acb1630af7a24698e812d540c5b63,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571675002526314887, guid: 806acb1630af7a24698e812d540c5b63,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571675002526314887, guid: 806acb1630af7a24698e812d540c5b63,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571675002526314887, guid: 806acb1630af7a24698e812d540c5b63,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571675002526314887, guid: 806acb1630af7a24698e812d540c5b63,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571675002526314888, guid: 806acb1630af7a24698e812d540c5b63,
+        type: 3}
+      propertyPath: m_Name
+      value: Bass Emitters M4 B3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 806acb1630af7a24698e812d540c5b63, type: 3}
+--- !u!4 &6751134014194063449 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2571675002526314887, guid: 806acb1630af7a24698e812d540c5b63,
+    type: 3}
+  m_PrefabInstance: {fileID: 9079455138565663198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7299270347712510674 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1967092146938778380, guid: 806acb1630af7a24698e812d540c5b63,
+    type: 3}
+  m_PrefabInstance: {fileID: 9079455138565663198}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
