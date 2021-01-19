@@ -320,7 +320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 385578026}
   m_Layer: 0
-  m_Name: Boundary Down
+  m_Name: Player Boundary Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,7 +334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385578025}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -5, z: 0}
+  m_LocalPosition: {x: 0, y: -4.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1905754402}
@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 431815487}
   - component: {fileID: 431815488}
   m_Layer: 0
-  m_Name: Boundary Right
+  m_Name: Bullet Boundary Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 509256499}
   - component: {fileID: 509256500}
   m_Layer: 0
-  m_Name: Boundary Left
+  m_Name: Bullet Boundary Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -649,7 +649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 758908065}
   m_Layer: 0
-  m_Name: Boundary Right
+  m_Name: Player Boundary Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -663,7 +663,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758908064}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.2, y: 0, z: 0}
+  m_LocalPosition: {x: 4.05, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1905754402}
@@ -709,7 +709,7 @@ GameObject:
   m_Component:
   - component: {fileID: 959178983}
   m_Layer: 0
-  m_Name: Boundary Up
+  m_Name: Player Boundary Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -723,7 +723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959178982}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 4.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1905754402}
@@ -772,7 +772,7 @@ GameObject:
   - component: {fileID: 1069964171}
   - component: {fileID: 1069964172}
   m_Layer: 0
-  m_Name: Boundary Up
+  m_Name: Bullet Boundary Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1152,7 +1152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1379642625}
   m_Layer: 0
-  m_Name: Boundary Left
+  m_Name: Player Boundary Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1166,7 +1166,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379642624}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.2, y: 0, z: 0}
+  m_LocalPosition: {x: -4.05, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1905754402}
@@ -1302,7 +1302,7 @@ GameObject:
   - component: {fileID: 1635213241}
   - component: {fileID: 1635213242}
   m_Layer: 0
-  m_Name: Boundary Down
+  m_Name: Bullet Boundary Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1651,7 +1651,7 @@ PrefabInstance:
     - target: {fileID: 6121429862932770818, guid: 31427befc6d90614d9068da59e56bb7b,
         type: 3}
       propertyPath: soundsToggled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6121429862932770819, guid: 31427befc6d90614d9068da59e56bb7b,
         type: 3}

@@ -1,4 +1,5 @@
-﻿using Rewired;
+﻿using System;
+using Rewired;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -77,10 +78,17 @@ public class GameController : MonoBehaviour {
         return resettingGame;
     }
 
-    public Vector2 EvaluateMove(Vector2 originalMove) {
-        Vector2 finalMove = new Vector2();
-        finalMove.y = Mathf.Min(Mathf.Max(originalMove.y, yMin), yMax);
-        finalMove.x = Mathf.Min(Mathf.Max(originalMove.x, xMin), xMax);
+    public Vector2 EvaluateMove(Vector2 originalMove, Vector2 currentPosition) {
+        Vector2 finalMove = originalMove;
+        if (currentPosition.y <= yMin)
+            finalMove.y = Math.Max(originalMove.y, 0);
+        else if (currentPosition.y >= yMax)
+            finalMove.y = Math.Min(originalMove.y, 0);
+        if (currentPosition.x <= xMin)
+            finalMove.x = Math.Max(originalMove.x, 0);
+        else if (currentPosition.x >= xMax)
+            finalMove.x = Math.Min(originalMove.x, 0);
+            
         return finalMove;
     }
 }

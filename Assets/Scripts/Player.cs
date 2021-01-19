@@ -43,7 +43,7 @@ public class Player : MonoBehaviour {
 		
 		float moveHorizontal = playerControls.GetAxis(HORIZONTAL_MOVEMENT_NAME);
 		float moveVertical = playerControls.GetAxis(VERTICAL_MOVEMENT_NAME);
-		Vector2 movement = GameController.Instance.EvaluateMove(new Vector2(moveHorizontal, moveVertical));
+		Vector2 movement = GameController.Instance.EvaluateMove(new Vector2(moveHorizontal, moveVertical), transform.position);
 
 		float currentSpeed = normalSpeed;
 		if (playerControls.GetButton(SLOW_NAME))
