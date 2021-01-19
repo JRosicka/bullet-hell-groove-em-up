@@ -60,8 +60,9 @@ public class Emitter : MonoBehaviour {
         /// <summary>
         /// How far from the emitter's location to fire the bullets
         /// </summary>
-        [Range(-10, 10)] 
-        public float Radius;
+        // [Range(-10, 10)] 
+        // public float Radius;    // TODO: This isn't useful anymore since we now have StartPositionOffset
+        public Vector2 StartPositionOffset;
         /// <summary>
         /// If not null, adds an AnimateInBulletLogic script with this particular animation prefab to each bullet
         /// once it spawns
@@ -92,6 +93,7 @@ public class Emitter : MonoBehaviour {
         public float DestructionTime;
         public bool UseTrail;
         public TrailRendererWith2DCollider Trail;
+        public bool Reverse;
     }
     
     /// <summary>
@@ -176,12 +178,18 @@ public class Emitter : MonoBehaviour {
         float startRotationDegrees;
         float endRotationDegrees;
         int direction = config.RotateClockwise ? -1 : 1;
+        float startRotation = config.StartRotation;
+        if (config.Reverse) {
+            direction *= -1;
+            startRotation *= -1;
+        }
+
         if (config.RotateFromCenter) {
-            startRotationDegrees = config.StartRotation - direction * config.RotationArc / 2.0f;
-            endRotationDegrees = config.StartRotation + direction * config.RotationArc / 2.0f;
+            startRotationDegrees = startRotation - direction * config.RotationArc / 2.0f;
+            endRotationDegrees = startRotation + direction * config.RotationArc / 2.0f;
         } else {
-            startRotationDegrees = config.StartRotation;
-            endRotationDegrees = config.StartRotation + direction * config.RotationArc;
+            startRotationDegrees = startRotation;
+            endRotationDegrees = startRotation + direction * config.RotationArc;
         }
         
         List<BulletConfig> bullets = new List<BulletConfig>();
@@ -201,17 +209,23 @@ public class Emitter : MonoBehaviour {
             if (config.AnimationPrefab != null)
                 logic.Add(new AnimateInBulletLogic(config.AnimationPrefab, config.UseWhiteShaderForAnimateIn));
             logic.Add(new SpeedOverTimeBulletLogic(config.BulletStartSpeed, config.BulletSpeedOverTime));
-            if (config.UseSpline)
-                logic.Add(new MoveAlongSplineBulletLogic(config.Spline, false));
+            if (config.UseSpline) {
+                logic.Add(new MoveAlongSplineBulletLogic(config.Spline, false, config.Reverse));
+            }
+
             if (config.DestroyBulletAfterDuration)
                 logic.Add(new DestroyAfterDurationBulletLogic(config.DestructionTime));
             if (config.UseTrail)
                 logic.Add(new TrailBulletLogic(config.Trail));
+
+            Vector2 startPositionOffset = config.StartPositionOffset;
+            if (config.Reverse)
+                startPositionOffset.y *= -1;
             
             bullets.Add(new BulletConfig {
                 Bullet = config.BulletPrefab,
                 Logic = logic,
-                LocalPosition = new Vector3(config.Radius, 0),
+                LocalPosition = startPositionOffset,
                 LocalRotation = Quaternion.AngleAxis(Mathf.Lerp(startRotationDegrees, endRotationDegrees, lerpValue), Vector3.forward),
                 
                 EmissionTime = timeElapsed + config.DelayBeforeFirstShot + i * config.TimeBetweenShot

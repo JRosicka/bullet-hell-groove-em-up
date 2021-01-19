@@ -9,6 +9,8 @@ using Object = UnityEngine.Object;
 public class MoveAlongSplineBulletLogic : BulletLogic {
     private Spline originalSpline;
     private Spline spline;
+    private bool reverse;
+    
     private bool isInPlayMode;
     private bool done;
 
@@ -17,9 +19,10 @@ public class MoveAlongSplineBulletLogic : BulletLogic {
     private bool restartBulletWhenDone;
     private float currentDistanceAlongSpline;
     
-    public MoveAlongSplineBulletLogic(Spline originalSpline, bool restartBulletWhenDone) {
+    public MoveAlongSplineBulletLogic(Spline originalSpline, bool restartBulletWhenDone, bool reverse) {
         this.originalSpline = originalSpline;
         this.restartBulletWhenDone = restartBulletWhenDone;
+        this.reverse = reverse;
     }
     
     public override void OnBulletSpawned(Bullet bullet) {
@@ -33,6 +36,12 @@ public class MoveAlongSplineBulletLogic : BulletLogic {
         // changed accordingly
         var bulletTransform = bullet.transform;
         spline = Object.Instantiate(originalSpline, bulletTransform.position, bulletTransform.rotation, GameController.Instance.ShotBucket);
+        if (reverse) {
+            var transform1 = spline.transform;
+            Vector3 splineScale = transform1.localScale;
+            splineScale.y *= -1;
+            transform1.localScale = splineScale;
+        }
         bullet.transform.SetParent(spline.transform);
     }
     
