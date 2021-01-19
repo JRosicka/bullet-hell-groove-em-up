@@ -10,7 +10,7 @@ public class TrailRendererWith2DCollider : MonoBehaviour {
     // Fields
     //  
     //************
- 
+    
     public Material trailMaterial;                  //the material of the trail.  Changing this during runtime will have no effect.
     public float lifeTime = 1.0f;                   //the amount of time in seconds that the trail lasts
     public float changeTime = 0.5f;                 //time point when the trail begins changing its width (if widthStart != widthEnd)
@@ -32,6 +32,12 @@ public class TrailRendererWith2DCollider : MonoBehaviour {
     private LinkedList<Vertex> rightVertices;       //the right vertices derived from the center positions
 
     private bool initialized;
+
+    private GameObject trail;
+
+    public GameObject GetTrail() {
+        return trail;
+    }
     
     //************
     //
@@ -74,7 +80,7 @@ public class TrailRendererWith2DCollider : MonoBehaviour {
         // meshRenderer.material = trailMaterial;
         // mesh = gameObject.AddComponent<MeshFilter>().mesh;
         // collider = gameObject.AddComponent<PolygonCollider2D>();
-        GameObject trail = new GameObject("GeneratedTrail", new[] { typeof(MeshRenderer), typeof(MeshFilter), typeof(PolygonCollider2D) } );
+        trail = new GameObject("GeneratedTrail", new[] { typeof(MeshRenderer), typeof(MeshFilter), typeof(PolygonCollider2D) } );
         trail.transform.SetParent(GameController.Instance.ShotBucket);
         // TODO: Ughh this is groooooss. Grooooooss. Ideally we would not spawn this stupid "GeneratedTrail" gameobject and instead just 
         // use this one. Currently, we attach this object to the spawned bullet but it doesn't do anything except spawn and manage 

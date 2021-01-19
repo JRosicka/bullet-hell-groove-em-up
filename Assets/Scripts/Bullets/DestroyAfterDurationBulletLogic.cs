@@ -15,7 +15,11 @@ public class DestroyAfterDurationBulletLogic : BulletLogic {
     public override void BulletLogicUpdate(Bullet bullet, float deltaTime) {
         elapsedTime += deltaTime;
         if (elapsedTime > destroyTime) {
-            Object.Destroy(bullet.gameObject);
+            bullet.DestroyBullet();
         }
+    }
+    
+    public override void OnBulletDestroyed(Bullet bullet) {
+        // Nothing to do here
     }
 }

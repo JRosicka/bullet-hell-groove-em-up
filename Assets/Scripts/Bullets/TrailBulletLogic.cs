@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TrailBulletLogic : BulletLogic {
     private TrailRendererWith2DCollider originalTrail;
@@ -20,5 +18,11 @@ public class TrailBulletLogic : BulletLogic {
 
     public override void BulletLogicUpdate(Bullet bullet, float deltaTime) {
         // Nothing to do
+    }
+    
+    public override void OnBulletDestroyed(Bullet bullet) {
+        if (trail != null) {
+            Object.Destroy(trail.GetTrail());
+        }
     }
 }

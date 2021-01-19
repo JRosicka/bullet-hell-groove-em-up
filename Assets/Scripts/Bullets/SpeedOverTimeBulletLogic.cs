@@ -25,4 +25,8 @@ public class SpeedOverTimeBulletLogic : BulletLogic {
         if (!bullet.IsFollowingSpline)
             bullet.transform.Translate(Vector3.right * (bullet.speed * deltaTime));
     }
+    
+    public override void OnBulletDestroyed(Bullet bullet) {
+        // Nothing to do here
+    }
 }

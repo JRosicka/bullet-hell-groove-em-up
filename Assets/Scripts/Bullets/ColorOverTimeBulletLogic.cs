@@ -43,4 +43,8 @@ public class ColorOverTimeBulletLogic : BulletLogic {
             renderer.color = newColor;
         }
     }
+
+    public override void OnBulletDestroyed(Bullet bullet) {
+        // Nothing to do here
+    }
 }

@@ -40,4 +40,8 @@ public class AnimateInBulletLogic : BulletLogic {
     public override void BulletLogicUpdate(Bullet bullet, float deltaTime) {
         // Nothing to do here
     }
+
+    public override void OnBulletDestroyed(Bullet bullet) {
+        // Nothing to do here
+    }
 }

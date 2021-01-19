@@ -66,6 +66,10 @@ public class MoveAlongSplineBulletLogic : BulletLogic {
         MoveFollower(currentDistanceAlongSpline);
     }
     
+    public override void OnBulletDestroyed(Bullet bullet) {
+        Object.Destroy(spline.gameObject);
+    }
+    
     /// <summary>
     /// Detach <see cref="follower"/> from the spline and send it free-floating at its current velocity
     /// </summary>

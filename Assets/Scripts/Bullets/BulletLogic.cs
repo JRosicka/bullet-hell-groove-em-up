@@ -8,4 +8,5 @@
 public abstract class BulletLogic {
     public abstract void OnBulletSpawned(Bullet bullet);
     public abstract void BulletLogicUpdate(Bullet bullet, float deltaTime);
+    public abstract void OnBulletDestroyed(Bullet bullet);
 }

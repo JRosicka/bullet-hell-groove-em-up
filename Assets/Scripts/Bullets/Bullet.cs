@@ -24,4 +24,11 @@ public class Bullet : MonoBehaviour {
             log.OnBulletSpawned(this);
         }
     }
+
+    public void DestroyBullet() {
+        foreach (BulletLogic log in bulletLogic) {
+            log.OnBulletDestroyed(this);
+        }
+        Destroy(gameObject);
+    }
 }
