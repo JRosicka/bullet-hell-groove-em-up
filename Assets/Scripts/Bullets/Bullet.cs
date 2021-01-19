@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour {
     public float speed;
     public List<GameObject> Sprites;
+    public bool IsFollowingSpline;
 
     // TODO: How do we apply this? Do we get any update info from each entry on Update(), or do we do something to apply
     // the logic right when it is assigned?

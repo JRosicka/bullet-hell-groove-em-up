@@ -650,7 +650,7 @@ MonoBehaviour:
     Radius: 0
     AnimationPrefab: {fileID: 0}
     UseWhiteShaderForAnimateIn: 0
-    BulletStartSpeed: 2.33
+    BulletStartSpeed: 4.74
     BulletSpeedOverTime:
       serializedVersion: 2
       m_Curve:
@@ -677,7 +677,6 @@ MonoBehaviour:
       m_RotationOrder: 4
     UseSpline: 1
     Spline: {fileID: 1478247524}
-    SplineTravelDurationSeconds: 0.6
     AdjustColorOverTime: 0
     OnlyAdjustAlpha: 0
     InitialColor: {r: 0, g: 0, b: 0, a: 0}

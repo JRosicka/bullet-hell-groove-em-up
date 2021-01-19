@@ -9,22 +9,16 @@ using Object = UnityEngine.Object;
 public class MoveAlongSplineBulletLogic : BulletLogic {
     private Spline originalSpline;
     private Spline spline;
-    private float progress;
     private bool isInPlayMode;
     private bool done;
-    private float bulletSpeed;
 
     public Bullet FollowerPrefab;
     private Bullet follower;
-    private float durationInSeconds;
     private bool restartBulletWhenDone;
+    private float currentDistanceAlongSpline;
     
-    public MoveAlongSplineBulletLogic(Spline originalSpline, float durationInSeconds, bool restartBulletWhenDone) {
-        // if (Application.IsPlaying(this))
-        //     isInPlayMode = true;
-
+    public MoveAlongSplineBulletLogic(Spline originalSpline, bool restartBulletWhenDone) {
         this.originalSpline = originalSpline;
-        this.durationInSeconds = durationInSeconds;
         this.restartBulletWhenDone = restartBulletWhenDone;
     }
     
@@ -32,9 +26,8 @@ public class MoveAlongSplineBulletLogic : BulletLogic {
         follower = bullet;
         if (follower == null)
             throw new Exception("Follow is null, silly. This needs a bullet to move along the spline.");
-        
-        follower.speed = 0;    // TODO: We will definitely want some error handling here. We should not have any other bullet logic assigned to the bullet that adjusts its speed. 
-        progress = 0;
+
+        follower.IsFollowingSpline = true;
         
         // Make a copy of the original spline and assign it as a child to the bullet GameObject so that its transform is 
         // changed accordingly
@@ -47,19 +40,21 @@ public class MoveAlongSplineBulletLogic : BulletLogic {
         if (done)
             return;
         
-        if (durationInSeconds <= 0)
+        if (currentDistanceAlongSpline < 0)
             return;
         
-        progress += deltaTime / durationInSeconds;
-        if (progress > 1) {
-            progress--;
+        currentDistanceAlongSpline += deltaTime * follower.speed;
+        
+        if (currentDistanceAlongSpline > spline.Length) {
+            currentDistanceAlongSpline -= spline.Length;
 
             if (!restartBulletWhenDone && follower != null) {
                 ReleaseBullet();
+                return;
             }
         }
 
-        MoveFollower(deltaTime);
+        MoveFollower(currentDistanceAlongSpline);
     }
     
     /// <summary>
@@ -67,24 +62,21 @@ public class MoveAlongSplineBulletLogic : BulletLogic {
     /// </summary>
     private void ReleaseBullet() {
         follower.transform.SetParent(GameController.Instance.ShotBucket, true);
-        follower.speed = bulletSpeed;
+        follower.IsFollowingSpline = false;
         follower = null;
         done = true;
     }
 
-    private void MoveFollower(float deltaTime) {
+    private void MoveFollower(float newDistanceAlongSpline) {
         if (spline == null || follower == null)
             return;
 
-        CurveSample lengthSample = spline.GetSampleAtDistance(progress * spline.Length);
+        CurveSample lengthSample = spline.GetSampleAtDistance(newDistanceAlongSpline);
         // CurveSample lengthSample = spline.GetSample(progress * (spline.nodes.Count - 1));    // For getting the sample weighted by nodes
 
-        Vector3 initialPosition = follower.transform.localPosition;
-        follower.transform.localPosition = lengthSample.location;
-        follower.transform.localPosition = follower.transform.localPosition;
-        follower.transform.localRotation = lengthSample.Rotation;
-
-        float deltaPosition = (follower.transform.localPosition - initialPosition).magnitude;
-        bulletSpeed = deltaPosition / deltaTime;
+        var transform = follower.transform;
+        Vector3 localPosition = lengthSample.location;
+        transform.localPosition = localPosition;
+        transform.localRotation = lengthSample.Rotation;
     }
 }

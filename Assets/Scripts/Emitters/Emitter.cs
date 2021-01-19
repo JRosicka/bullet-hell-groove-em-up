@@ -80,8 +80,6 @@ public class Emitter : MonoBehaviour {
         public AnimationCurve BulletSpeedOverTime;
         public bool UseSpline;
         public Spline Spline;
-        [Range(0, 10)]
-        public float SplineTravelDurationSeconds;
         public bool AdjustColorOverTime;
         public bool OnlyAdjustAlpha;
         public Color InitialColor;
@@ -204,7 +202,7 @@ public class Emitter : MonoBehaviour {
                 logic.Add(new AnimateInBulletLogic(config.AnimationPrefab, config.UseWhiteShaderForAnimateIn));
             logic.Add(new SpeedOverTimeBulletLogic(config.BulletStartSpeed, config.BulletSpeedOverTime));
             if (config.UseSpline)
-                logic.Add(new MoveAlongSplineBulletLogic(config.Spline, config.SplineTravelDurationSeconds, false));
+                logic.Add(new MoveAlongSplineBulletLogic(config.Spline, false));
             if (config.DestroyBulletAfterDuration)
                 logic.Add(new DestroyAfterDurationBulletLogic(config.DestructionTime));
             if (config.UseTrail)

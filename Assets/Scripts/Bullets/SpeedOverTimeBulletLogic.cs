@@ -22,6 +22,7 @@ public class SpeedOverTimeBulletLogic : BulletLogic {
             bullet.speed = speedCurve.Evaluate(elapsedTimeSinceSpawn) * StartingSpeed;
         
         // Move the bullet with its updated speed
-        bullet.transform.Translate(Vector3.right * (bullet.speed * deltaTime));
+        if (!bullet.IsFollowingSpline)
+            bullet.transform.Translate(Vector3.right * (bullet.speed * deltaTime));
     }
 }

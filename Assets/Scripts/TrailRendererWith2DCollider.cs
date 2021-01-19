@@ -74,8 +74,11 @@ public class TrailRendererWith2DCollider : MonoBehaviour {
         // meshRenderer.material = trailMaterial;
         // mesh = gameObject.AddComponent<MeshFilter>().mesh;
         // collider = gameObject.AddComponent<PolygonCollider2D>();
-        GameObject trail = new GameObject("Trail", new[] { typeof(MeshRenderer), typeof(MeshFilter), typeof(PolygonCollider2D) } );
-        // trail.transform.SetParent(transform);
+        GameObject trail = new GameObject("GeneratedTrail", new[] { typeof(MeshRenderer), typeof(MeshFilter), typeof(PolygonCollider2D) } );
+        trail.transform.SetParent(GameController.Instance.ShotBucket);
+        // TODO: Ughh this is groooooss. Grooooooss. Ideally we would not spawn this stupid "GeneratedTrail" gameobject and instead just 
+        // use this one. Currently, we attach this object to the spawned bullet but it doesn't do anything except spawn and manage 
+        // the created "GeneratedTrail" gameobject. Grooooooss. 
         
         mesh = trail.GetComponent<MeshFilter>().mesh = new Mesh();
         trail.GetComponent<Renderer>().material = trailMaterial;
