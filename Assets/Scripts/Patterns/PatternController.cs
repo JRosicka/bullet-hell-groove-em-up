@@ -27,7 +27,8 @@ public class PatternController : MonoBehaviour {
         gameController = GameController.Instance;
         timingController = FindObjectOfType<TimingController>();
         
-        // TODO: Better spawning logic pls. Like, actually have it be configurable. It would be real great to not have to spawn this before scheduling note actions
+        // We spawn the pattern instance right away but deactivate it. The pattern is responsible for setting it active 
+        // again at its scheduled "spawn" time.
         Transform spawner = gameController.EnemyManager.transform;
         patternInstance = Instantiate(Config.Pattern, Vector2.zero, Quaternion.identity, spawner);
         patternInstance.gameObject.SetActive(false);
@@ -76,8 +77,7 @@ public class PatternController : MonoBehaviour {
                         // Factor in the start measure, which measure we're currently on, and which part of the measure we're currently on
                         int elapsedThirtySecondNotes =
                             Config.StartMeasure * ACTIONS_PER_MEASURE + i * ACTIONS_PER_MEASURE + k;
-                        float triggerTime = timingController.GetThirtysecondNoteTime() * elapsedThirtySecondNotes
-                                            + timingController.GetStartDelay();
+                        float triggerTime = timingController.GetThirtysecondNoteTime() * elapsedThirtySecondNotes;
 
                         NoteAction noteAction =
                             new NoteAction(triggerTime, patternAction, GetPatternInstance, parameter);
@@ -107,6 +107,9 @@ public class PatternController : MonoBehaviour {
     /// </summary>
     private void Update() {
         if (GameController.Instance.IsResetting())
+            return;
+
+        if (GameController.Instance.IsWaitingForStart())
             return;
         
         timeElapsed += Time.deltaTime;

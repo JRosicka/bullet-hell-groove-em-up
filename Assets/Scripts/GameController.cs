@@ -12,7 +12,8 @@ public class GameController : MonoBehaviour {
     public WaypointManager WaypointManager;
     public TextMesh RestartText;
     public TextMesh SuccessText;
-    public float DelayBeforeAllowedToRestart = 2f;
+    public TimingController TimingController;
+    public float DelaySecondsBeforeAllowedToRestart = 2f;
     
     public static GameController Instance;
 
@@ -25,12 +26,17 @@ public class GameController : MonoBehaviour {
     private float xMax, xMin, yMax, yMin;
 
     private bool resettingGame;
-    private float elapsedTime;
+    private float delaySecondsBeforeStart;
+    private float elapsedStartDelayTime;
+    private float elapsedResetTime;
     private bool won;
     private bool playedVictorySound;
+    private bool started;
     
     private void Awake() {
         Instance = this;
+
+        delaySecondsBeforeStart = TimingController.GetStartDelay();
 
         xMax = BoundaryRight.position.x;
         xMin = BoundaryLeft.position.x;
@@ -39,14 +45,24 @@ public class GameController : MonoBehaviour {
     }
 
     private void Update() {
-        if (!resettingGame)
-            return;
+        if (resettingGame)
+            HandleReset();
+        else if (!started && elapsedStartDelayTime <= delaySecondsBeforeStart)
+            elapsedStartDelayTime += Time.deltaTime;
+        else if (!started) {
+            started = true;
+            SongController.PlaySong(); // TODO: Gross. Make this a pattern we schedule
+        }
+            
+    }
+
+    private void HandleReset() {
+        elapsedResetTime += Time.deltaTime;
 
         // Fade out the music
         SongController.Music.volume -= .001f;
         
-        elapsedTime += Time.deltaTime;
-        if (!(elapsedTime > DelayBeforeAllowedToRestart)) 
+        if (!(elapsedResetTime > DelaySecondsBeforeAllowedToRestart)) 
             return;
 
         if (won) {
@@ -70,12 +86,16 @@ public class GameController : MonoBehaviour {
             return;
         
         resettingGame = true;
-        elapsedTime = 0;
+        elapsedResetTime = 0;
         this.won = won;
     }
 
     public bool IsResetting() {
         return resettingGame;
+    }
+
+    public bool IsWaitingForStart() {
+        return elapsedStartDelayTime < delaySecondsBeforeStart;
     }
 
     public Vector2 EvaluateMove(Vector2 originalMove, Vector2 currentPosition) {

@@ -113,8 +113,6 @@ public class TrailRendererWith2DCollider : MonoBehaviour {
     private void Update() {
         if (!initialized)
             return;
-        if (collider == null)
-            Debug.Log("Collider is kill");
         if (!pausing) {
             //set the mesh and adjust widths if vertices were added or removed
             if (TryAddVertices() | TryRemoveVertices() ) {

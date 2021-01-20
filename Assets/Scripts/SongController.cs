@@ -14,11 +14,14 @@ public class SongController : MonoBehaviour {
 
     void Start() {
         timingController = FindObjectOfType<TimingController>();
-        StartCoroutine(QueueSongStart());
     }
 
     public void PlayVictorySoundEffect() {
         PlaySong(VictorySoundEffect);
+    }
+
+    public void PlaySong() {
+        PlaySong(Music);
     }
 
     private IEnumerator QueueSongStart() {
