@@ -877,19 +877,19 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072176357}
-  m_Text: 'You defeated!
+  m_Text: 'You win!
 
-    Press the "slow" button to restart.
+    Press the SLOW button to restart.
 
-    Also, if you
-    didn''t know, there''s a "slow" button.'
+    SLOW button is SHIFT
+    (keyboard) or A (most controllers).'
   m_OffsetZ: 0
   m_CharacterSize: 0.2
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 110
   m_FontStyle: 1
   m_RichText: 1
   m_Font: {fileID: 0}
@@ -944,7 +944,7 @@ Transform:
   m_GameObject: {fileID: 1072176357}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -1072,17 +1072,17 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253254409}
-  m_Text: 'Press the "slow" button to restart.
+  m_Text: 'Press the SLOW button to restart.
 
-    Also, if you didn''t know, there''s
-    a "slow" button.'
+    SLOW button is SHIFT (keyboard)
+    or A (most controllers).'
   m_OffsetZ: 0
   m_CharacterSize: 0.2
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 110
   m_FontStyle: 1
   m_RichText: 1
   m_Font: {fileID: 0}
@@ -1137,7 +1137,7 @@ Transform:
   m_GameObject: {fileID: 1253254409}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -1648,6 +1648,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2589560723251188194, guid: 31427befc6d90614d9068da59e56bb7b,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6121429862932770818, guid: 31427befc6d90614d9068da59e56bb7b,
         type: 3}
       propertyPath: soundsToggled

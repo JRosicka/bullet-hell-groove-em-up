@@ -400,10 +400,10 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920705518}
-  m_Text: 'Press the SLOW button to begin grooving
+  m_Text: 'Press the SLOW button to begin grooving.
 
     SLOW button is SHIFT (keyboard)
-    or A (most controllers)'
+    or A (most controllers).'
   m_OffsetZ: 0
   m_CharacterSize: 0.2
   m_LineSpacing: 1
@@ -739,7 +739,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100396237}
-  m_Text: Yep, this sure is the title screen
+  m_Text: Yep, this sure is the title screen.
   m_OffsetZ: 0
   m_CharacterSize: 0.2
   m_LineSpacing: 1
