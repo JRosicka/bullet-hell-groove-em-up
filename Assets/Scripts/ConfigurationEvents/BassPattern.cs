@@ -44,6 +44,10 @@ public class BassPattern : Pattern {
     public Emitter EmitterM2B3N6;
     public Emitter EmitterM4B3N1;
 
+
+    public Emitter SynthEmitterClockwise;
+    public Emitter SynthEmitterCounterclockwise;
+
     
     private float currentTravelTime = -1;
     private Vector3 originWaypoint;
@@ -207,10 +211,10 @@ public class BassPattern : Pattern {
     #endregion
     
     private void FireSynthShot(bool clockwise) {
-        Transform t = transform;
-        SynthResponseShot shot = Instantiate(SynthShotPrefab, t.position, t.rotation,
-            GameController.Instance.ShotBucket);
-        shot.Shoot(clockwise);
+        if (clockwise)
+            SynthEmitterClockwise.Emit();
+        else
+            SynthEmitterCounterclockwise.Emit();
     }
     
     private void MoveToWaypoint(Vector3 waypoint) {

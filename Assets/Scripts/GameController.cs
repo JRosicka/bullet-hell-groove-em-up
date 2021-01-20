@@ -38,10 +38,14 @@ public class GameController : MonoBehaviour {
 
         delaySecondsBeforeStart = TimingController.GetStartDelay();
 
-        xMax = BoundaryRight.position.x;
-        xMin = BoundaryLeft.position.x;
-        yMax = BoundaryUp.position.y;
-        yMin = BoundaryDown.position.y;
+        if (BoundaryRight != null)
+            xMax = BoundaryRight.position.x;
+        if (BoundaryLeft != null)
+            xMin = BoundaryLeft.position.x;
+        if (BoundaryUp != null)
+            yMax = BoundaryUp.position.y;
+        if (BoundaryDown != null)
+            yMin = BoundaryDown.position.y;
     }
 
     private void Update() {
