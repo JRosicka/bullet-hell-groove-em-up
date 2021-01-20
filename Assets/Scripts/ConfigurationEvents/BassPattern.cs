@@ -109,6 +109,7 @@ public class BassPattern : Pattern {
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void BassShotM1B1N1() {
+        RandomRotate();
         EmitterM1B1N1.Emit();
     }
 
@@ -127,6 +128,7 @@ public class BassPattern : Pattern {
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void BassShotM1B3N1() {
+        RandomRotate();
         EmitterM1B3N1.Emit();
     }
 
@@ -151,6 +153,7 @@ public class BassPattern : Pattern {
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void BassShotM2B1N1() {
+        RandomRotate();
         EmitterM2B1N1.Emit();
     }
 
@@ -169,6 +172,7 @@ public class BassPattern : Pattern {
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void BassShotM2B3N1() {
+        RandomRotate();
         EmitterM2B3N1.Emit();
     }
 
@@ -205,6 +209,7 @@ public class BassPattern : Pattern {
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void BassShotM4B3N1() {
+        RotateToDefault();
         EmitterM4B3N1.Emit();
     }
 
@@ -215,6 +220,14 @@ public class BassPattern : Pattern {
             SynthEmitterClockwise.Emit();
         else
             SynthEmitterCounterclockwise.Emit();
+    }
+
+    private void RandomRotate() {
+        transform.Rotate(0, 0, Random.Range(0, 360));
+    }
+
+    private void RotateToDefault() {
+        transform.localRotation = Quaternion.identity;
     }
     
     private void MoveToWaypoint(Vector3 waypoint) {
