@@ -158,19 +158,19 @@ public class PianoPattern : Pattern {
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void MoveCombo1() {
-        MoveToWaypoint(IsOnRightSide ? waypointManager.RightCombo1 : waypointManager.LeftCombo1);
+        MoveToWaypoint(IsOnRightSide ? waypointManager.LeftCombo1 : waypointManager.RightCombo1);
     }
 
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void MoveCombo2() {
-        MoveToWaypoint(IsOnRightSide ? waypointManager.LeftCombo2 : waypointManager.RightCombo2);
+        MoveToWaypoint(IsOnRightSide ? waypointManager.RightCombo2 : waypointManager.LeftCombo2);
     }
 
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void MoveCombo3() {
-        MoveToWaypoint(IsOnRightSide ? waypointManager.LeftCombo3 : waypointManager.RightCombo3);
+        MoveToWaypoint(IsOnRightSide ? waypointManager.RightCombo3 : waypointManager.LeftCombo3);
     }
     
     #endregion
