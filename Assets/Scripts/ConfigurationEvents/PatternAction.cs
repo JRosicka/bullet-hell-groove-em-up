@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using UnityEditor.Events;
 using UnityEngine;
 using UnityEngine.Events;
+
+#if UNITY_EDITOR
+using UnityEditor.Events;
+#endif
 
 /// <summary>
 /// A container used to assign a UnityEvent to be invoked later with optional specified parameters to invoke it with.
@@ -156,13 +159,15 @@ public class PatternAction {
         }
 
         public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
+#if UNITY_EDITOR
             UnityEvent newEvent = new UnityEvent();
             UnityAction action = (UnityAction) method.CreateDelegate(typeof(UnityAction), target);
             UnityEventTools.AddPersistentListener(newEvent, action);
-            
+
             OnPatternAction = newEvent;
+#endif
         }
-        
+
         public Type GetParameterType() {
             return null;
         }
@@ -179,11 +184,13 @@ public class PatternAction {
         }
 
         public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
+#if UNITY_EDITOR
             BoolEvent newEvent = new BoolEvent();
             UnityAction<bool> action = (UnityAction<bool>) method.CreateDelegate(typeof(UnityAction<bool>), target);
             UnityEventTools.AddPersistentListener(newEvent, action);
-            
+
             OnPatternAction = newEvent;
+#endif
         }
 
         public Type GetParameterType() {
@@ -215,11 +222,13 @@ public class PatternAction {
         }
 
         public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
+#if UNITY_EDITOR
             IntEvent newEvent = new IntEvent();
             UnityAction<int> action = (UnityAction<int>) method.CreateDelegate(typeof(UnityAction<int>), target);
             UnityEventTools.AddPersistentListener(newEvent, action);
-            
+
             OnPatternAction = newEvent;
+#endif
         }
 
         public Type GetParameterType() {
@@ -250,11 +259,13 @@ public class PatternAction {
         }
 
         public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
+#if UNITY_EDITOR
             FloatEvent newEvent = new FloatEvent();
             UnityAction<float> action = (UnityAction<float>) method.CreateDelegate(typeof(UnityAction<float>), target);
             UnityEventTools.AddPersistentListener(newEvent, action);
-            
+
             OnPatternAction = newEvent;
+#endif
         }
 
         public Type GetParameterType() {
@@ -285,11 +296,14 @@ public class PatternAction {
         }
 
         public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
+#if UNITY_EDITOR
             StringEvent newEvent = new StringEvent();
-            UnityAction<string> action = (UnityAction<string>) method.CreateDelegate(typeof(UnityAction<string>), target);
+            UnityAction<string> action =
+                (UnityAction<string>) method.CreateDelegate(typeof(UnityAction<string>), target);
             UnityEventTools.AddPersistentListener(newEvent, action);
-            
+
             OnPatternAction = newEvent;
+#endif
         }
 
         public Type GetParameterType() {
@@ -317,13 +331,16 @@ public class PatternAction {
         }
 
         public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
+#if UNITY_EDITOR
             VectorEvent newEvent = new VectorEvent();
-            UnityAction<Vector2> action = (UnityAction<Vector2>)method.CreateDelegate(typeof(UnityAction<Vector2>), target);
+            UnityAction<Vector2> action =
+                (UnityAction<Vector2>) method.CreateDelegate(typeof(UnityAction<Vector2>), target);
             UnityEventTools.AddPersistentListener(newEvent, action);
-            
+
             OnPatternAction = newEvent;
+#endif
         }
-        
+
         public Type GetParameterType() {
             return typeof(Vector2);
         }
