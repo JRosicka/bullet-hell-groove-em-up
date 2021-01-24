@@ -1180,6 +1180,44 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
   - ID: 24
+    ActionName: BulletSlowdownEffect
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: BulletSlowdownEffect
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 25
     ActionName: Spawn
     type: 3
     Basic:
@@ -1308,6 +1346,49 @@ MonoBehaviour:
   EmitterM4B3N1: {fileID: 7299270347712510674}
   SynthEmitterClockwise: {fileID: 6271384687894162844}
   SynthEmitterCounterclockwise: {fileID: 6491095624491904324}
+  speedInterruptionStartingSpeed: 6
+  speedInterruptionCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 2
+      inSlope: -0.41806367
+      outSlope: -0.41806367
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 0.71056217
+    - serializedVersion: 3
+      time: 0.24804631
+      value: 0.5018921
+      inSlope: -0.0021018866
+      outSlope: -0.0021018866
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.33333334
+      outWeight: 0.25236973
+    - serializedVersion: 3
+      time: 0.45243943
+      value: 10
+      inSlope: 0.11798521
+      outSlope: 0.11798521
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.46689826
+      outWeight: 0.6560897
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -0.09129547
+      outSlope: -0.09129547
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.35576925
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3771703123254324345
 GameObject:
   m_ObjectHideFlags: 0

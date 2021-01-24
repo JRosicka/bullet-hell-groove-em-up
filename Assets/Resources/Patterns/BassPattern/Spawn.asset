@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PatternActionLists:
   - PatternActions:
-    - ID: 24
+    - ID: 25
       ActionName: Spawn
       type: 3
       Basic:

@@ -155,7 +155,7 @@ public class PatternAction {
         public UnityEvent OnPatternAction;
 
         public void InvokePatternAction(string serializedParameter) {
-            OnPatternAction.Invoke();
+            OnPatternAction.Invoke();    // TODO: Not the most relevant place to put this, BUT when we have a PatternConfiguration configured and then later add in a new pattern action type for that pattern, we currently need to look at all of the scripts in order to update the IDs to the correct values. This can be tough to catch sometimes. We should fix this so that the values are updated for everything whenever we add new pattern action methods (or whatever they're called)
         }
 
         public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {

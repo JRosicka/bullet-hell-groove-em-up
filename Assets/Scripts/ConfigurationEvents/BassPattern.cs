@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Assertions;
 using Random = UnityEngine.Random;
 
@@ -59,6 +61,30 @@ public class BassPattern : Pattern {
     private Vector3 fudgeTargetWaypoint;
     private bool movedBefore;
     private static readonly int MoveOut = Animator.StringToHash("MoveOut");
+    
+    private SpeedSubscriptionObject speedSubscriptionObject;
+    public float speedInterruptionStartingSpeed;
+    public AnimationCurve speedInterruptionCurve;
+
+    private void Awake() {
+        if (speedSubscriptionObject == null)
+            speedSubscriptionObject = new SpeedSubscriptionObject(speedInterruptionStartingSpeed, speedInterruptionCurve);
+    }
+
+    private void Start() {
+        speedSubscriptionObject = new SpeedSubscriptionObject(speedInterruptionStartingSpeed, speedInterruptionCurve);
+        
+        // Leave out EmitterM4B3N1 since that already does a *bweah- BWAH*
+        List<Emitter> emittersToSubscribeToSpeedController = new List<Emitter>() {
+            EmitterM1B1N1, EmitterM1B1N2, EmitterM1B1N3, EmitterM1B3N1, EmitterM1B3N2, EmitterM1B3N3, 
+            EmitterM1B3N4, EmitterM2B1N1, EmitterM2B1N2, EmitterM2B1N3, EmitterM2B3N1, EmitterM2B3N2, 
+            EmitterM2B3N3, EmitterM2B3N4, EmitterM2B3N5, EmitterM2B3N6
+        };
+
+        foreach (Emitter emitter in emittersToSubscribeToSpeedController) {
+            emitter.AssignSpeedSubscriptionObject(speedSubscriptionObject);
+        }
+    }
 
     private void Update() {
         if (currentTravelTime < 0)
@@ -86,16 +112,14 @@ public class BassPattern : Pattern {
     [PatternActionAttribute]
     public void FireAnimationFlareHorizontal() {
         HorizontalSegments.SetTrigger(MoveOut);
-        Debug.Log("Horizontal");
     }
     
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void FireAnimationFlareVertical() {
         VerticalSegments.SetTrigger(MoveOut);
-        Debug.Log("Vertical");
     }
-
+    
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void FireSynthShotClockwise() {
@@ -225,6 +249,12 @@ public class BassPattern : Pattern {
     public void BassShotM4B3N1() {
         RotateToDefault();
         EmitterM4B3N1.Emit();
+    }
+    
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void BulletSlowdownEffect() {
+        speedSubscriptionObject.TriggerSpeedCurve();
     }
 
     #endregion

@@ -111,6 +111,9 @@ public class Emitter : MonoBehaviour {
     // TODO: Keep this private, we want to control things being added here by subclasses so that we can enforce ordering
     private List<BulletConfig> queuedBullets = new List<BulletConfig>();
     private float timeElapsed;
+
+    private bool hasScheduledAnyEmissions;
+    private SpeedSubscriptionObject subscriptionObject;
     
     /// <summary>
     /// Perform any queued NoteActions that have triggered
@@ -222,6 +225,9 @@ public class Emitter : MonoBehaviour {
             if (config.Reverse)
                 startPositionOffset.y *= -1;
             
+            if (subscriptionObject != null)
+                logic.Add(new SubscribeToSpeedControllerBulletLogic(subscriptionObject));
+            
             bullets.Add(new BulletConfig {
                 Bullet = config.BulletPrefab,
                 Logic = logic,
@@ -232,6 +238,15 @@ public class Emitter : MonoBehaviour {
             });
         }
         ScheduleBullets(bullets);
+
+        hasScheduledAnyEmissions = true;
+    }
+
+    public void AssignSpeedSubscriptionObject(SpeedSubscriptionObject subscriptionObject) {
+        // if (hasScheduledAnyEmissions)
+        //     throw new Exception("We assigned a SpeedSubscriptionObject too late, emissions were already scheduled! Gotta get on that AP train!");
+        
+        this.subscriptionObject = subscriptionObject;
     }
     
     // TODO: Enforce somewhere that things tagged with [Emission] cannot have any parameters

@@ -18,7 +18,8 @@ public class SpeedOverTimeBulletLogic : BulletLogic {
     public override void BulletLogicUpdate(Bullet bullet, float deltaTime) {
         // Update the bullet's current speed
         elapsedTimeSinceSpawn += deltaTime;
-        if (speedCurve != null)
+        
+        if (!bullet.IsSpeedLogicInterrupted && speedCurve != null)
             bullet.speed = speedCurve.Evaluate(elapsedTimeSinceSpawn) * StartingSpeed;
         
         // Move the bullet with its updated speed
