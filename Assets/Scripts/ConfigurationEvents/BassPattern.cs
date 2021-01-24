@@ -19,6 +19,10 @@ public class BassPattern : Pattern {
 
     public SynthResponseShot SynthShotPrefab;
     
+    public Transform Emitters;
+    public Animator HorizontalSegments;
+    public Animator VerticalSegments;
+    
     [Header("Movement")] 
     public AnimationCurve MovementCurveRegular;
     public AnimationCurve MovementCurveFudge;
@@ -54,6 +58,8 @@ public class BassPattern : Pattern {
     private Vector3 targetWaypoint;
     private Vector3 fudgeTargetWaypoint;
     private bool movedBefore;
+    private static readonly int MoveOut = Animator.StringToHash("MoveOut");
+
     private void Update() {
         if (currentTravelTime < 0)
             return;
@@ -78,8 +84,16 @@ public class BassPattern : Pattern {
 
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
-    public void FireAnimationFlare() {
-        // TODO: Animate
+    public void FireAnimationFlareHorizontal() {
+        HorizontalSegments.SetTrigger(MoveOut);
+        Debug.Log("Horizontal");
+    }
+    
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void FireAnimationFlareVertical() {
+        VerticalSegments.SetTrigger(MoveOut);
+        Debug.Log("Vertical");
     }
 
     // ReSharper disable once UnusedMember.Global
@@ -223,11 +237,11 @@ public class BassPattern : Pattern {
     }
 
     private void RandomRotate() {
-        transform.Rotate(0, 0, Random.Range(0, 360));
+        Emitters.Rotate(0, 0, Random.Range(0, 360));
     }
 
     private void RotateToDefault() {
-        transform.localRotation = Quaternion.identity;
+        Emitters.localRotation = Quaternion.identity;
     }
     
     private void MoveToWaypoint(Vector3 waypoint) {
