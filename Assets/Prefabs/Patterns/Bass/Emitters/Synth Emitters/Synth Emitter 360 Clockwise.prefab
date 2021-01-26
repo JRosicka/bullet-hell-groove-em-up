@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7732486205012621703}
   - component: {fileID: 7732486205012621702}
   m_Layer: 0
-  m_Name: Synth Emitter Clockwise
+  m_Name: Synth Emitter 360 Clockwise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

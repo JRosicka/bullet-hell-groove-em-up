@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 7732486205012621720, guid: 1874ccc792c376b44b7ce81b19efa55e,
         type: 3}
       propertyPath: m_Name
-      value: Synth Emitter Counterclockwise
+      value: Synth Emitter 360 Counterclockwise Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1874ccc792c376b44b7ce81b19efa55e, type: 3}
