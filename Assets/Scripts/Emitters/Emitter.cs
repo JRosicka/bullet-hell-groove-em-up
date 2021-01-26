@@ -11,7 +11,7 @@ using UnityEngine.Serialization;
 /// Emits <see cref="Bullet"/>s and gives them behaviors (bezier curves to follow, specific properties, etc)
 /// </summary>
 public class Emitter : MonoBehaviour {
-    public List<Bullet> SpawnedBullets = new List<Bullet>();
+    public List<Bullet> SpawnedBullets;
 
     /// <summary>
     /// All of the details needed for firing a group of bullets, to be configured in the inspector. These config
@@ -114,7 +114,11 @@ public class Emitter : MonoBehaviour {
 
     private bool hasScheduledAnyEmissions;
     private SpeedSubscriptionObject subscriptionObject;
-    
+
+    public void Awake() {
+        SpawnedBullets = new List<Bullet>();
+    }
+
     /// <summary>
     /// Perform any queued NoteActions that have triggered
     /// </summary>
