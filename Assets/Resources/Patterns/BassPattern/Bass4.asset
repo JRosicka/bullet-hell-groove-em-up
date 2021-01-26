@@ -342,6 +342,45 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
+    - ID: 24
+      ActionName: BulletSlowdownEffect
+      type: 2
+      Basic:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
+                type: 3}
+              m_MethodName: BulletSlowdownEffect
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Vector:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
   - PatternActions: []
   - PatternActions: []
   - PatternActions: []
@@ -428,45 +467,6 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-    - ID: 24
-      ActionName: BulletSlowdownEffect
-      type: 2
-      Basic:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls:
-            - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
-                type: 3}
-              m_MethodName: BulletSlowdownEffect
-              m_Mode: 0
-              m_Arguments:
-                m_ObjectArgument: {fileID: 0}
-                m_ObjectArgumentAssemblyTypeName: 
-                m_IntArgument: 0
-                m_FloatArgument: 0
-                m_StringArgument: 
-                m_BoolArgument: 0
-              m_CallState: 2
-      Vector:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Bool:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Int:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Float:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
   - PatternActions: []
   - PatternActions: []
   - PatternActions: []
@@ -500,6 +500,7 @@ MonoBehaviour:
     - 
     - 
     - 
+    - 
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
@@ -508,7 +509,6 @@ MonoBehaviour:
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 
     - 
     - 
   - ChoiceParameters: []

@@ -1346,31 +1346,31 @@ MonoBehaviour:
   EmitterM4B3N1: {fileID: 7299270347712510674}
   SynthEmitterClockwise: {fileID: 6271384687894162844}
   SynthEmitterCounterclockwise: {fileID: 6491095624491904324}
-  speedInterruptionStartingSpeed: 6
+  speedInterruptionStartingSpeed: 4
   speedInterruptionCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 2
-      inSlope: -0.41806367
-      outSlope: -0.41806367
+      value: 1
+      inSlope: -14.199328
+      outSlope: -14.199328
       tangentMode: 0
       weightedMode: 3
       inWeight: 0
-      outWeight: 0.71056217
+      outWeight: 0.13674799
     - serializedVersion: 3
-      time: 0.24804631
-      value: 0.5018921
-      inSlope: -0.0021018866
-      outSlope: -0.0021018866
+      time: 0.39861184
+      value: 0.28975242
+      inSlope: 0.73769665
+      outSlope: 0.73769665
       tangentMode: 0
       weightedMode: 3
-      inWeight: 0.33333334
+      inWeight: 0.32635045
       outWeight: 0.25236973
     - serializedVersion: 3
-      time: 0.45243943
-      value: 10
+      time: 0.5070354
+      value: 2.964754
       inSlope: 0.11798521
       outSlope: 0.11798521
       tangentMode: 0
@@ -1378,7 +1378,7 @@ MonoBehaviour:
       inWeight: 0.46689826
       outWeight: 0.6560897
     - serializedVersion: 3
-      time: 1
+      time: 0.6920166
       value: 1
       inSlope: -0.09129547
       outSlope: -0.09129547
