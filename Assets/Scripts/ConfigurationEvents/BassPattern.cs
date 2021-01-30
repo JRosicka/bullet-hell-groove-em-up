@@ -31,7 +31,6 @@ public class BassPattern : Pattern {
     // How long it takes to move from one waypoint to another
     public float TravelTime = 1f;
     
-    
     public Emitter EmitterM1B1N1;
     public Emitter EmitterM1B1N2;
     public Emitter EmitterM1B1N3;
@@ -50,6 +49,10 @@ public class BassPattern : Pattern {
     public Emitter EmitterM2B3N6;
     public Emitter EmitterM4B3N1;
 
+
+    public Emitter SynthEmitterIntroClockwiseSmol;
+    public Emitter SynthEmitterIntroClockwise;
+    public Emitter SynthEmitterIntroCounterClockwise;
 
     public Emitter SynthEmitterClockwise;
     public Emitter SynthEmitterCounterclockwise;
@@ -260,25 +263,25 @@ public class BassPattern : Pattern {
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void SynthShotSmolClockwise() {
-        
+        SynthEmitterIntroClockwiseSmol.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void SynthShotIntroClockwise() {
-        
+        SynthEmitterIntroClockwise.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void SynthShotIntroCounterClockwise() {
-        
+        SynthEmitterIntroCounterClockwise.Emit();
     }
     
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void HookFlare() {
-        
+        //TODO
     }
 
     #endregion

@@ -5,16 +5,12 @@ public class PianoShot : MonoBehaviour {
     public Transform Spawner1;
     public Transform Spawner2;
     public Transform Spawner3;
-
-    [Header("Particle Systems")]
-    public BulletParticleSystem System1;
-    public BulletParticleSystem System2;
-    public BulletParticleSystem System3;
-
+    
     [Header("Emitters")] 
     public Emitter Emitter1;
     public Emitter Emitter2;
     public Emitter Emitter3;
+    public Emitter EmitterFirework;
     
     private PlayerController playerController;
     
@@ -30,6 +26,10 @@ public class PianoShot : MonoBehaviour {
     }
     public void ThirdShot() {
         Shoot(Spawner3, Emitter3);
+    }
+
+    public void FireworkShot() {
+        Shoot(Spawner2, EmitterFirework);
     }
     
     private void Shoot(Transform spawner, Emitter emitter) {

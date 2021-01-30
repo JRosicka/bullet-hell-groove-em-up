@@ -39,6 +39,10 @@ public class PianoPattern : Pattern {
     public PianoShot ShotPrefab;
     private PianoShot lastShotInstance;
 
+    public Emitter EmitterSmolOut;
+    public Emitter EmitterSmolOutRotated;
+    public Emitter EmitterLargeOut;
+    
     void Start() {
         gameController = GameController.Instance;
         waypointManager = gameController.WaypointManager;
@@ -176,25 +180,25 @@ public class PianoPattern : Pattern {
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void SmolShotOut() {
-        
+        EmitterSmolOut.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void SmolShotOutRotated() {
-        
+        EmitterSmolOutRotated.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void LargeShotOut() {
-        
+        EmitterLargeOut.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void FireworkShot() {
-        
+        lastShotInstance.FireworkShot();
     }
     
     // ReSharper disable once UnusedMember.Global
