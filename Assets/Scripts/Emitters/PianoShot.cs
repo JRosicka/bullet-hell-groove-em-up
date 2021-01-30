@@ -13,6 +13,8 @@ public class PianoShot : MonoBehaviour {
     public Emitter EmitterFirework;
     
     private PlayerController playerController;
+
+    private bool lastShotWasFirework;
     
     void Awake() {
         playerController = FindObjectOfType<PlayerController>();
@@ -20,16 +22,25 @@ public class PianoShot : MonoBehaviour {
     
     public void FirstShot() {
         Shoot(Spawner1, Emitter1);
+        lastShotWasFirework = false;
     }
     public void SecondShot() {
         Shoot(Spawner2, Emitter2);
+        lastShotWasFirework = false;
     }
     public void ThirdShot() {
+        if (lastShotWasFirework)
+            Spawner3.localPosition = new Vector2(3.1f, 0);
+        else {
+            Spawner3.localPosition = new Vector2(.75f, 0);
+        }
         Shoot(Spawner3, Emitter3);
+        lastShotWasFirework = false;
     }
 
     public void FireworkShot() {
         Shoot(Spawner2, EmitterFirework);
+        lastShotWasFirework = true;
     }
     
     private void Shoot(Transform spawner, Emitter emitter) {

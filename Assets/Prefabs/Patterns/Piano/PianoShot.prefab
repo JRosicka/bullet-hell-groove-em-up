@@ -175,9 +175,6 @@ MonoBehaviour:
   Spawner1: {fileID: 7721102815528837303}
   Spawner2: {fileID: 7721102815364593437}
   Spawner3: {fileID: 7721102814606004404}
-  System1: {fileID: 0}
-  System2: {fileID: 0}
-  System3: {fileID: 0}
   Emitter1: {fileID: 8069468582643613171}
   Emitter2: {fileID: 4102825346716649629}
   Emitter3: {fileID: 1124631739686303773}

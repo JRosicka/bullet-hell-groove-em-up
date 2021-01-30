@@ -6,6 +6,7 @@ using SplineMesh;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = System.Random;
 
 /// <summary>
 /// Emits <see cref="Bullet"/>s and gives them behaviors (bezier curves to follow, specific properties, etc)
@@ -44,6 +45,11 @@ public class Emitter : MonoBehaviour {
         [Range(-360, 360)]
         public int StartRotation;
         /// <summary>
+        /// How wide of a range of variance for the start rotation. A value of 10 gives each individual shot
+        /// a start range of StartRotation +- 5.
+        /// </summary>
+        public int StartRotationVariance;
+        /// <summary>
         /// How wide of a rotation, in degrees, to fire bullets
         /// </summary>
         [Range(0, 1800)]
@@ -63,6 +69,11 @@ public class Emitter : MonoBehaviour {
         // [Range(-10, 10)] 
         // public float Radius;    // TODO: This isn't useful anymore since we now have StartPositionOffset
         public Vector2 StartPositionOffset;
+        /// <summary>
+        /// How wide of a range of variance for the start position. A value of (10, 10) give each individual shot a
+        /// start position offset of (StartPositionOffset.x +- 5, StartPositionOffset.y +- 5).
+        /// </summary>
+        public Vector2 StartPositionVariance;
         /// <summary>
         /// If not null, adds an AnimateInBulletLogic script with this particular animation prefab to each bullet
         /// once it spawns
@@ -226,8 +237,19 @@ public class Emitter : MonoBehaviour {
                 logic.Add(new TrailBulletLogic(config.Trail));
 
             Vector2 startPositionOffset = config.StartPositionOffset;
+            startPositionOffset.x +=
+                UnityEngine.Random.Range(-config.StartPositionVariance.x / 2, config.StartPositionVariance.x / 2);
+            startPositionOffset.y +=
+                UnityEngine.Random.Range(-config.StartPositionVariance.y / 2, config.StartPositionVariance.y / 2);
             if (config.Reverse)
                 startPositionOffset.y *= -1;
+
+            Quaternion localRotation =
+                Quaternion.AngleAxis(Mathf.Lerp(startRotationDegrees, endRotationDegrees, lerpValue), Vector3.forward);
+            Vector3 eulerAngles = localRotation.eulerAngles;
+            eulerAngles.z +=
+                UnityEngine.Random.Range(-config.StartRotationVariance / 2, config.StartRotationVariance / 2);
+            localRotation.eulerAngles = eulerAngles;
             
             if (subscriptionObject != null)
                 logic.Add(new SubscribeToSpeedControllerBulletLogic(subscriptionObject));
@@ -236,7 +258,7 @@ public class Emitter : MonoBehaviour {
                 Bullet = config.BulletPrefab,
                 Logic = logic,
                 LocalPosition = startPositionOffset,
-                LocalRotation = Quaternion.AngleAxis(Mathf.Lerp(startRotationDegrees, endRotationDegrees, lerpValue), Vector3.forward),
+                LocalRotation = localRotation,
                 
                 EmissionTime = timeElapsed + config.DelayBeforeFirstShot + i * config.TimeBetweenShot
             });
