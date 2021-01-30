@@ -256,6 +256,30 @@ public class BassPattern : Pattern {
     public void BulletSlowdownEffect() {
         speedSubscriptionObject.TriggerSpeedCurve();
     }
+    
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void SynthShotSmolClockwise() {
+        
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void SynthShotIntroClockwise() {
+        
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void SynthShotIntroCounterClockwise() {
+        
+    }
+    
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void HookFlare() {
+        
+    }
 
     #endregion
     

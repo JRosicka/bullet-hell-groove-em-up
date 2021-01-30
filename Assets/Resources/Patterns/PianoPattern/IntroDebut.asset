@@ -10,24 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d1dd65c84e7535488d11a270a4701de, type: 3}
-  m_Name: Spawn
+  m_Name: IntroDebut
   m_EditorClassIdentifier: 
   PatternActionLists:
   - PatternActions:
-    - ID: 18
-      ActionName: Spawn
-      type: 3
+    - ID: 15
+      ActionName: LargeShotOut
+      type: 2
       Basic:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Vector:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls:
             - m_Target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
                 type: 3}
-              m_MethodName: Spawn
+              m_MethodName: LargeShotOut
               m_Mode: 0
               m_Arguments:
                 m_ObjectArgument: {fileID: 0}
@@ -37,6 +33,49 @@ MonoBehaviour:
                 m_StringArgument: 
                 m_BoolArgument: 0
               m_CallState: 2
+      Vector:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+    - ID: 4
+      ActionName: FireAnimationFlare
+      type: 2
+      Basic:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
+                type: 3}
+              m_MethodName: FireAnimationFlare
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Vector:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
       Bool:
         OnPatternAction:
           m_PersistentCalls:
@@ -86,7 +125,8 @@ MonoBehaviour:
   - PatternActions: []
   ChoiceParameterLists:
   - ChoiceParameters:
-    - 0 2
+    - 
+    - 
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []

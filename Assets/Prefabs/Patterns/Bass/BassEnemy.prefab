@@ -1221,6 +1221,158 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
   - ID: 25
+    ActionName: SynthShotSmolClockwise
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: SynthShotSmolClockwise
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 26
+    ActionName: SynthShotIntroClockwise
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: SynthShotIntroClockwise
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 27
+    ActionName: SynthShotIntroCounterClockwise
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: SynthShotIntroCounterClockwise
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 28
+    ActionName: HookFlare
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1750994280144202701}
+            m_MethodName: HookFlare
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 29
     ActionName: Spawn
     type: 3
     Basic:

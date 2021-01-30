@@ -10,94 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d1dd65c84e7535488d11a270a4701de, type: 3}
-  m_Name: Bass1
+  m_Name: SynthIntroClockwise
   m_EditorClassIdentifier: 
   PatternActionLists:
-  - PatternActions:
-    - ID: 7
-      ActionName: BassShotM1B1N1
-      type: 2
-      Basic:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls:
-            - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
-                type: 3}
-              m_MethodName: BassShotM1B1N1
-              m_Mode: 0
-              m_Arguments:
-                m_ObjectArgument: {fileID: 0}
-                m_ObjectArgumentAssemblyTypeName: 
-                m_IntArgument: 0
-                m_FloatArgument: 0
-                m_StringArgument: 
-                m_BoolArgument: 0
-              m_CallState: 2
-      Vector:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Bool:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Int:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Float:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-    - ID: 1
-      ActionName: FireAnimationFlareHorizontal
-      type: 2
-      Basic:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls:
-            - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
-                type: 3}
-              m_MethodName: FireAnimationFlareHorizontal
-              m_Mode: 0
-              m_Arguments:
-                m_ObjectArgument: {fileID: 0}
-                m_ObjectArgumentAssemblyTypeName: 
-                m_IntArgument: 0
-                m_FloatArgument: 0
-                m_StringArgument: 
-                m_BoolArgument: 0
-              m_CallState: 2
-      Vector:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Bool:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Int:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Float:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
+  - PatternActions: []
+  - PatternActions: []
+  - PatternActions: []
+  - PatternActions: []
+  - PatternActions: []
+  - PatternActions: []
+  - PatternActions: []
+  - PatternActions: []
+  - PatternActions: []
   - PatternActions: []
   - PatternActions: []
   - PatternActions: []
   - PatternActions:
-    - ID: 8
-      ActionName: BassShotM1B1N2
+    - ID: 5
+      ActionName: MoveLeft
       type: 2
       Basic:
         OnPatternAction:
@@ -105,7 +35,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
                 type: 3}
-              m_MethodName: BassShotM1B1N2
+              m_MethodName: MoveLeft
               m_Mode: 0
               m_Arguments:
                 m_ObjectArgument: {fileID: 0}
@@ -137,8 +67,8 @@ MonoBehaviour:
             m_Calls: []
   - PatternActions: []
   - PatternActions:
-    - ID: 9
-      ActionName: BassShotM1B1N3
+    - ID: 26
+      ActionName: SynthShotIntroClockwise
       type: 2
       Basic:
         OnPatternAction:
@@ -146,7 +76,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
                 type: 3}
-              m_MethodName: BassShotM1B1N3
+              m_MethodName: SynthShotIntroClockwise
               m_Mode: 0
               m_Arguments:
                 m_ObjectArgument: {fileID: 0}
@@ -177,9 +107,11 @@ MonoBehaviour:
           m_PersistentCalls:
             m_Calls: []
   - PatternActions: []
+  - PatternActions: []
+  - PatternActions: []
   - PatternActions:
-    - ID: 2
-      ActionName: FireAnimationFlareVertical
+    - ID: 26
+      ActionName: SynthShotIntroClockwise
       type: 2
       Basic:
         OnPatternAction:
@@ -187,7 +119,50 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
                 type: 3}
-              m_MethodName: FireAnimationFlareVertical
+              m_MethodName: SynthShotIntroClockwise
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Vector:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
+  - PatternActions: []
+  - PatternActions: []
+  - PatternActions: []
+  - PatternActions:
+    - ID: 26
+      ActionName: SynthShotIntroClockwise
+      type: 2
+      Basic:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
+                type: 3}
+              m_MethodName: SynthShotIntroClockwise
               m_Mode: 0
               m_Arguments:
                 m_ObjectArgument: {fileID: 0}
@@ -223,8 +198,8 @@ MonoBehaviour:
   - PatternActions: []
   - PatternActions: []
   - PatternActions:
-    - ID: 10
-      ActionName: BassShotM1B3N1
+    - ID: 26
+      ActionName: SynthShotIntroClockwise
       type: 2
       Basic:
         OnPatternAction:
@@ -232,7 +207,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
                 type: 3}
-              m_MethodName: BassShotM1B3N1
+              m_MethodName: SynthShotIntroClockwise
               m_Mode: 0
               m_Arguments:
                 m_ObjectArgument: {fileID: 0}
@@ -264,8 +239,8 @@ MonoBehaviour:
             m_Calls: []
   - PatternActions: []
   - PatternActions:
-    - ID: 1
-      ActionName: FireAnimationFlareHorizontal
+    - ID: 26
+      ActionName: SynthShotIntroClockwise
       type: 2
       Basic:
         OnPatternAction:
@@ -273,7 +248,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
                 type: 3}
-              m_MethodName: FireAnimationFlareHorizontal
+              m_MethodName: SynthShotIntroClockwise
               m_Mode: 0
               m_Arguments:
                 m_ObjectArgument: {fileID: 0}
@@ -303,199 +278,19 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions:
-    - ID: 11
-      ActionName: BassShotM1B3N2
-      type: 2
-      Basic:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls:
-            - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
-                type: 3}
-              m_MethodName: BassShotM1B3N2
-              m_Mode: 0
-              m_Arguments:
-                m_ObjectArgument: {fileID: 0}
-                m_ObjectArgumentAssemblyTypeName: 
-                m_IntArgument: 0
-                m_FloatArgument: 0
-                m_StringArgument: 
-                m_BoolArgument: 0
-              m_CallState: 2
-      Vector:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Bool:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Int:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Float:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions:
-    - ID: 12
-      ActionName: BassShotM1B3N3
-      type: 2
-      Basic:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls:
-            - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
-                type: 3}
-              m_MethodName: BassShotM1B3N3
-              m_Mode: 0
-              m_Arguments:
-                m_ObjectArgument: {fileID: 0}
-                m_ObjectArgumentAssemblyTypeName: 
-                m_IntArgument: 0
-                m_FloatArgument: 0
-                m_StringArgument: 
-                m_BoolArgument: 0
-              m_CallState: 2
-      Vector:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Bool:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Int:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Float:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-  - PatternActions: []
-  - PatternActions:
-    - ID: 13
-      ActionName: BassShotM1B3N4
-      type: 2
-      Basic:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls:
-            - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
-                type: 3}
-              m_MethodName: BassShotM1B3N4
-              m_Mode: 0
-              m_Arguments:
-                m_ObjectArgument: {fileID: 0}
-                m_ObjectArgumentAssemblyTypeName: 
-                m_IntArgument: 0
-                m_FloatArgument: 0
-                m_StringArgument: 
-                m_BoolArgument: 0
-              m_CallState: 2
-      Vector:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Bool:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Int:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Float:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-    - ID: 2
-      ActionName: FireAnimationFlareVertical
-      type: 2
-      Basic:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls:
-            - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
-                type: 3}
-              m_MethodName: FireAnimationFlareVertical
-              m_Mode: 0
-              m_Arguments:
-                m_ObjectArgument: {fileID: 0}
-                m_ObjectArgumentAssemblyTypeName: 
-                m_IntArgument: 0
-                m_FloatArgument: 0
-                m_StringArgument: 
-                m_BoolArgument: 0
-              m_CallState: 2
-      Vector:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Bool:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Int:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Float:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnPatternAction:
-          m_PersistentCalls:
-            m_Calls: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
   - PatternActions: []
   ChoiceParameterLists:
-  - ChoiceParameters:
-    - 
-    - 
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters:
-    - 
-  - ChoiceParameters: []
-  - ChoiceParameters:
-    - 
-  - ChoiceParameters: []
-  - ChoiceParameters:
-    - 
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
-  - ChoiceParameters:
-    - 
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
     - 
@@ -508,14 +303,19 @@ MonoBehaviour:
   - ChoiceParameters:
     - 
   - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
   - ChoiceParameters:
     - 
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters:
     - 
   - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
+  - ChoiceParameters:
+    - 
   - ChoiceParameters: []
   Pattern: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28, type: 3}

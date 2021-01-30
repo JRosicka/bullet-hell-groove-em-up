@@ -173,6 +173,36 @@ public class PianoPattern : Pattern {
         MoveToWaypoint(IsOnRightSide ? waypointManager.RightCombo3 : waypointManager.LeftCombo3);
     }
     
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void SmolShotOut() {
+        
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void SmolShotOutRotated() {
+        
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void LargeShotOut() {
+        
+    }
+
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void FireworkShot() {
+        
+    }
+    
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void HookFlare() {
+        
+    }
+
     #endregion
     
     private void MoveToWaypoint(Transform waypoint) {

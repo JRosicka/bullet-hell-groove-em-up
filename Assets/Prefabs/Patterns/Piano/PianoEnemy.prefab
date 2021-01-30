@@ -6527,6 +6527,196 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
   - ID: 13
+    ActionName: SmolShotOut
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 7224286281906343752}
+            m_MethodName: SmolShotOut
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 14
+    ActionName: SmolShotOutRotated
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 7224286281906343752}
+            m_MethodName: SmolShotOutRotated
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 15
+    ActionName: LargeShotOut
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 7224286281906343752}
+            m_MethodName: LargeShotOut
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 16
+    ActionName: FireworkShot
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 7224286281906343752}
+            m_MethodName: FireworkShot
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 17
+    ActionName: HookFlare
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 7224286281906343752}
+            m_MethodName: HookFlare
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 18
     ActionName: Spawn
     type: 3
     Basic:
