@@ -68,6 +68,7 @@ public class BassPattern : Pattern {
     private SpeedSubscriptionObject speedSubscriptionObject;
     public float speedInterruptionStartingSpeed;
     public AnimationCurve speedInterruptionCurve;
+    private static readonly int Hook = Animator.StringToHash("Hook");
 
     private void Awake() {
         if (speedSubscriptionObject == null)
@@ -281,7 +282,10 @@ public class BassPattern : Pattern {
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void HookFlare() {
-        //TODO
+        HorizontalSegments.SetTrigger(Hook);
+        HorizontalSegments.ResetTrigger(MoveOut);
+        VerticalSegments.SetTrigger(Hook);
+        VerticalSegments.ResetTrigger(MoveOut);
     }
 
     #endregion

@@ -77,6 +77,7 @@ public class PianoPattern : Pattern {
     private bool movedBefore;
     private static readonly int MoveOut = Animator.StringToHash("MoveOut");
     private static readonly int Spin = Animator.StringToHash("Spin");
+    private static readonly int Hook = Animator.StringToHash("Hook");
 
     private void Update() {
         if (currentTravelTime < 0)
@@ -204,7 +205,8 @@ public class PianoPattern : Pattern {
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void HookFlare() {
-        
+        OuterSegments.SetTrigger(Hook);
+        OuterSegments.ResetTrigger(Spin);
     }
 
     #endregion
