@@ -164,30 +164,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   Config:
     BulletPrefab: {fileID: 450011613308136013, guid: 5f28acd2ece0fd440a22c885667074aa,
       type: 3}
@@ -195,10 +171,12 @@ MonoBehaviour:
     TimeBetweenShot: 0
     DelayBeforeFirstShot: 0
     StartRotation: 0
+    StartRotationVariance: 0
     RotationArc: 330
     RotateClockwise: 0
     RotateFromCenter: 0
     StartPositionOffset: {x: 0, y: 0}
+    StartPositionVariance: {x: 0, y: 0}
     AnimationPrefab: {fileID: 7284957164868078736, guid: 7537a5d5486013b4bb27ab6b997f381c,
       type: 3}
     UseWhiteShaderForAnimateIn: 1
@@ -209,20 +187,20 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 1
-        inSlope: -0.7344199
-        outSlope: -0.7344199
+        inSlope: -1.0043384
+        outSlope: -1.0043384
         tangentMode: 0
         weightedMode: 3
         inWeight: 0
-        outWeight: 0.48949632
+        outWeight: 0.24768521
       - serializedVersion: 3
-        time: 1.4967041
-        value: 0.20074463
-        inSlope: 0.0016741245
-        outSlope: 0.0016741245
+        time: 2.4978087
+        value: 0.1553207
+        inSlope: -0.09143327
+        outSlope: -0.09143327
         tangentMode: 0
         weightedMode: 3
-        inWeight: 0.3539595
+        inWeight: 0.46582654
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -240,26 +218,26 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 0
-        outSlope: 0
+        inSlope: 0.0114702685
+        outSlope: 0.0114702685
         tangentMode: 0
         weightedMode: 3
         inWeight: 0
-        outWeight: 0.33333334
+        outWeight: 0.554452
       - serializedVersion: 3
-        time: 2
+        time: 3
         value: 1
-        inSlope: 8.83446
-        outSlope: 8.83446
+        inSlope: 11.839785
+        outSlope: 11.839785
         tangentMode: 0
         weightedMode: 3
-        inWeight: 0.051653147
+        inWeight: 0.024146399
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     DestroyBulletAfterDuration: 1
-    DestructionTime: 2
+    DestructionTime: 3
     UseTrail: 0
     Trail: {fileID: 0}
     Reverse: 0
