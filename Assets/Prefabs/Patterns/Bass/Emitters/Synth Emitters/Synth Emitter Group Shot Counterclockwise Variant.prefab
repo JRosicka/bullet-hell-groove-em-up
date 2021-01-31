@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 1611314642851816800, guid: dbd6aa1c2d4faab4e8845eaad20cf74d,
         type: 3}
       propertyPath: Config.StartRotation
-      value: -8
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 1611314642851816800, guid: dbd6aa1c2d4faab4e8845eaad20cf74d,
         type: 3}
@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 1611314642851816830, guid: dbd6aa1c2d4faab4e8845eaad20cf74d,
         type: 3}
       propertyPath: m_Name
-      value: Synth Emitter Group Shot Clockwise (1)
+      value: Synth Emitter Group Shot Counterclockwise Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbd6aa1c2d4faab4e8845eaad20cf74d, type: 3}

@@ -53,10 +53,12 @@ MonoBehaviour:
     TimeBetweenShot: 0
     DelayBeforeFirstShot: 0
     StartRotation: 0
+    StartRotationVariance: 0
     RotationArc: 240
     RotateClockwise: 0
     RotateFromCenter: 0
     StartPositionOffset: {x: 0, y: -0.2}
+    StartPositionVariance: {x: 0, y: 0}
     AnimationPrefab: {fileID: 0}
     UseWhiteShaderForAnimateIn: 0
     BulletStartSpeed: 7.5
@@ -151,13 +153,13 @@ MonoBehaviour:
     up: {x: 0, y: 1, z: 0}
     scale: {x: 1, y: 1}
     roll: 0
-  - position: {x: 1.469736, y: -0.8173039, z: 0}
-    direction: {x: 1.940932, y: -0.9775071, z: 0}
+  - position: {x: 1.0465453, y: -0.6517074, z: 0}
+    direction: {x: 1.5821398, y: -0.719913, z: 0}
     up: {x: 0, y: 1, z: 0}
     scale: {x: 1, y: 1}
     roll: 0
-  - position: {x: 2.942565, y: -0.24297738, z: 0}
-    direction: {x: 3.8478026, y: -0.09156132, z: 0}
+  - position: {x: 2.399778, y: 0.5022054, z: 0}
+    direction: {x: 3.0659254, y: 0.35827547, z: 0}
     up: {x: 0, y: 1, z: 0}
     scale: {x: 1, y: 1}
     roll: 0
@@ -169,8 +171,8 @@ MonoBehaviour:
       scale: {x: 1, y: 1}
       roll: 0
     n2:
-      position: {x: 1.469736, y: -0.8173039, z: 0}
-      direction: {x: 1.940932, y: -0.9775071, z: 0}
+      position: {x: 1.0465453, y: -0.6517074, z: 0}
+      direction: {x: 1.5821398, y: -0.719913, z: 0}
       up: {x: 0, y: 1, z: 0}
       scale: {x: 1, y: 1}
       roll: 0
@@ -178,21 +180,21 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - n1:
-      position: {x: 1.469736, y: -0.8173039, z: 0}
-      direction: {x: 1.940932, y: -0.9775071, z: 0}
+      position: {x: 1.0465453, y: -0.6517074, z: 0}
+      direction: {x: 1.5821398, y: -0.719913, z: 0}
       up: {x: 0, y: 1, z: 0}
       scale: {x: 1, y: 1}
       roll: 0
     n2:
-      position: {x: 2.942565, y: -0.24297738, z: 0}
-      direction: {x: 3.8478026, y: -0.09156132, z: 0}
+      position: {x: 2.399778, y: 0.5022054, z: 0}
+      direction: {x: 3.0659254, y: 0.35827547, z: 0}
       up: {x: 0, y: 1, z: 0}
       scale: {x: 1, y: 1}
       roll: 0
     Changed:
       m_PersistentCalls:
         m_Calls: []
-  Length: 3.31829
+  Length: 3.1617856
   isLoop: 0
   CurveChanged:
     m_PersistentCalls:

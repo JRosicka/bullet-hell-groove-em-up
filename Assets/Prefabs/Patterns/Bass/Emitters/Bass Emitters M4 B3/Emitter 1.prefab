@@ -148,10 +148,12 @@ MonoBehaviour:
     TimeBetweenShot: 0
     DelayBeforeFirstShot: 0
     StartRotation: 0
+    StartRotationVariance: 0
     RotationArc: 20
     RotateClockwise: 0
     RotateFromCenter: 0
     StartPositionOffset: {x: 0, y: -0.2}
+    StartPositionVariance: {x: 0, y: 0}
     AnimationPrefab: {fileID: 0}
     UseWhiteShaderForAnimateIn: 0
     BulletStartSpeed: 6
@@ -168,8 +170,8 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0.6674486
       - serializedVersion: 3
-        time: 0.25149855
-        value: 0.49675336
+        time: 0.25445876
+        value: 0.29747358
         inSlope: -0.20026502
         outSlope: -0.20026502
         tangentMode: 0
@@ -179,15 +181,15 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0.46055534
         value: 1.998224
-        inSlope: 0.03416756
-        outSlope: 0.03416756
+        inSlope: 0.034762107
+        outSlope: 0.034762107
         tangentMode: 0
         weightedMode: 3
-        inWeight: 0.57780397
-        outWeight: 0.6652666
+        inWeight: 0.74335927
+        outWeight: 0.67213315
       - serializedVersion: 3
-        time: 1
-        value: 1
+        time: 1.1984937
+        value: 0.98937315
         inSlope: -0.6125329
         outSlope: -0.6125329
         tangentMode: 0

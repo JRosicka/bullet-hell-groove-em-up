@@ -6899,8 +6899,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.13674799
     - serializedVersion: 3
-      time: 0.39861184
-      value: 0.28975242
+      time: 0.34618917
+      value: 0.20838602
       inSlope: 0.73769665
       outSlope: 0.73769665
       tangentMode: 0
@@ -6909,7 +6909,7 @@ MonoBehaviour:
       outWeight: 0.25236973
     - serializedVersion: 3
       time: 0.5070354
-      value: 2.964754
+      value: 4.00941
       inSlope: 0.11798521
       outSlope: 0.11798521
       tangentMode: 0
@@ -7437,7 +7437,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.4
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -7606,7 +7606,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2

@@ -10,24 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d1dd65c84e7535488d11a270a4701de, type: 3}
-  m_Name: Spawn
+  m_Name: IntroExtra360Shot
   m_EditorClassIdentifier: 
   PatternActionLists:
+  - PatternActions: []
+  - PatternActions: []
+  - PatternActions: []
+  - PatternActions: []
+  - PatternActions: []
+  - PatternActions: []
   - PatternActions:
-    - ID: 31
-      ActionName: Spawn
-      type: 3
+    - ID: 16
+      ActionName: LargeShotOut
+      type: 2
       Basic:
         OnPatternAction:
           m_PersistentCalls:
-            m_Calls: []
-      Vector:
-        OnPatternAction:
-          m_PersistentCalls:
             m_Calls:
-            - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
+            - m_Target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
                 type: 3}
-              m_MethodName: Spawn
+              m_MethodName: LargeShotOut
               m_Mode: 0
               m_Arguments:
                 m_ObjectArgument: {fileID: 0}
@@ -37,6 +39,10 @@ MonoBehaviour:
                 m_StringArgument: 
                 m_BoolArgument: 0
               m_CallState: 2
+      Vector:
+        OnPatternAction:
+          m_PersistentCalls:
+            m_Calls: []
       Bool:
         OnPatternAction:
           m_PersistentCalls:
@@ -78,15 +84,15 @@ MonoBehaviour:
   - PatternActions: []
   - PatternActions: []
   - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
   ChoiceParameterLists:
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
   - ChoiceParameters:
-    - 0.3 3.25
+    - 
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
@@ -112,10 +118,4 @@ MonoBehaviour:
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  Pattern: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28, type: 3}
+  Pattern: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7, type: 3}
