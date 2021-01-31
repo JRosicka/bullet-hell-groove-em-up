@@ -23,6 +23,9 @@ public class Player : MonoBehaviour {
 	private const string PAUSE_NAME = "ctr_pause";
 	private const string SHOOT_NAME = "ctr_shoot";
 	private const string QUIT_NAME = "ctr_quit";
+
+	private float quitButtonHeldDownLength;
+	private const float REQUIRED_TIME_TO_QUIT = 1;
 	
 	/// <summary>
 	/// Checks to see the desired direction, and updates the player position and velocity based on this,
@@ -43,8 +46,13 @@ public class Player : MonoBehaviour {
 		
 		// Check to see if we should quit
 		if (playerControls.GetButton(QUIT_NAME)) {
-			Debug.Log("Quitting");
-			Application.Quit();
+			quitButtonHeldDownLength += Time.deltaTime;
+			if (quitButtonHeldDownLength >= REQUIRED_TIME_TO_QUIT) {
+				Debug.Log("Quitting");
+				Application.Quit();
+			}
+		} else {
+			quitButtonHeldDownLength = 0;
 		}
 
 		float moveHorizontal = playerControls.GetAxis(HORIZONTAL_MOVEMENT_NAME);
