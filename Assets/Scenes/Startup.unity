@@ -404,9 +404,9 @@ TextMesh:
   m_Text: 'Press the SLOW button to begin grooving.
 
     SLOW button is SHIFT (keyboard)
-    or A (most controllers).
+    or A (gamepad).
 
-    ESC (keyboard) or RIGHT BUMPER to quit.'
+    ESC (keyboard) or RIGHT BUMPER (gamepad) to quit.'
   m_OffsetZ: 0
   m_CharacterSize: 0.2
   m_LineSpacing: 1

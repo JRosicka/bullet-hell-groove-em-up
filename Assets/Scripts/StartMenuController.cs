@@ -24,7 +24,6 @@ public class StartMenuController : MonoBehaviour {
         if (playerControls.GetButton(QUIT_NAME)) {
             quitButtonHeldDownLength += Time.deltaTime;
             if (quitButtonHeldDownLength >= REQUIRED_TIME_TO_QUIT) {
-                Debug.Log("Quitting");
                 Application.Quit();
             }
         } else {
