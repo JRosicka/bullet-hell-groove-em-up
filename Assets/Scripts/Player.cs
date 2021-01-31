@@ -32,18 +32,8 @@ public class Player : MonoBehaviour {
 	/// as long as it remains within the game bounds
 	/// </summary>
 	void FixedUpdate() {
-		if (GameController.Instance.IsResetting()) {
-			rb.velocity = Vector2.zero;
-			return;
-		}
-
 		Rewired.Player playerControls = ReInput.players.GetPlayer("SYSTEM");
 
-		if(playerControls.controllers.joystickCount == 0) {
-			Joystick joystick = ReInput.controllers.GetJoystick(0);
-			playerControls.controllers.AddController(joystick, true);
-		}
-		
 		// Check to see if we should quit
 		if (playerControls.GetButton(QUIT_NAME)) {
 			quitButtonHeldDownLength += Time.deltaTime;
@@ -55,6 +45,16 @@ public class Player : MonoBehaviour {
 			quitButtonHeldDownLength = 0;
 		}
 
+		if (GameController.Instance.IsResetting()) {
+			rb.velocity = Vector2.zero;
+			return;
+		}
+		
+		if(playerControls.controllers.joystickCount == 0) {
+			Joystick joystick = ReInput.controllers.GetJoystick(0);
+			playerControls.controllers.AddController(joystick, true);
+		}
+		
 		float moveHorizontal = playerControls.GetAxis(HORIZONTAL_MOVEMENT_NAME);
 		float moveVertical = playerControls.GetAxis(VERTICAL_MOVEMENT_NAME);
 		Vector2 movement = GameController.Instance.EvaluateMove(new Vector2(moveHorizontal, moveVertical), transform.position);
