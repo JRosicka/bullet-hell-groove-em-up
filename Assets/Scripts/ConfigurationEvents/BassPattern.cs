@@ -25,6 +25,7 @@ public class BassPattern : Pattern {
     public Transform Emitters;
     public Animator HorizontalSegments;
     public Animator VerticalSegments;
+    public Animator InnerSegments;
     
     [Header("Movement")] 
     public AnimationCurve MovementCurveRegular;
@@ -72,6 +73,8 @@ public class BassPattern : Pattern {
     public float speedInterruptionStartingSpeed;
     public AnimationCurve speedInterruptionCurve;
     private static readonly int Hook = Animator.StringToHash("Hook");
+    private static readonly int SpinCounterclockwise = Animator.StringToHash("SpinCounterclockwise");
+    private static readonly int SpinClockwise = Animator.StringToHash("SpinClockwise");
 
     private void Awake() {
         if (speedSubscriptionObject == null)
@@ -125,6 +128,18 @@ public class BassPattern : Pattern {
     [PatternActionAttribute]
     public void FireAnimationFlareVertical() {
         VerticalSegments.SetTrigger(MoveOut);
+    }
+    
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void InnerAnimationFlareClockwise() {
+        InnerSegments.SetTrigger(SpinClockwise);
+    }
+    
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void InnerAnimationFlareCounterclockwise() {
+        InnerSegments.SetTrigger(SpinCounterclockwise);
     }
     
     // ReSharper disable once UnusedMember.Global

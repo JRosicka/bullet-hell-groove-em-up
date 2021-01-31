@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PatternActionLists:
   - PatternActions:
-    - ID: 14
+    - ID: 16
       ActionName: BassShotM2B1N1
       type: 2
       Basic:
@@ -96,7 +96,7 @@ MonoBehaviour:
   - PatternActions: []
   - PatternActions: []
   - PatternActions:
-    - ID: 15
+    - ID: 17
       ActionName: BassShotM2B1N2
       type: 2
       Basic:
@@ -137,7 +137,7 @@ MonoBehaviour:
             m_Calls: []
   - PatternActions: []
   - PatternActions:
-    - ID: 16
+    - ID: 18
       ActionName: BassShotM2B1N3
       type: 2
       Basic:
@@ -225,7 +225,7 @@ MonoBehaviour:
   - PatternActions: []
   - PatternActions: []
   - PatternActions:
-    - ID: 23
+    - ID: 25
       ActionName: BassShotM4B3N1
       type: 2
       Basic:
@@ -342,7 +342,7 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-    - ID: 24
+    - ID: 26
       ActionName: BulletSlowdownEffect
       type: 2
       Basic:

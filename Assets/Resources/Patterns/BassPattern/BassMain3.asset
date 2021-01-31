@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PatternActionLists:
   - PatternActions:
-    - ID: 7
+    - ID: 9
       ActionName: BassShotM1B1N1
       type: 2
       Basic:
@@ -96,7 +96,7 @@ MonoBehaviour:
   - PatternActions: []
   - PatternActions: []
   - PatternActions:
-    - ID: 8
+    - ID: 10
       ActionName: BassShotM1B1N2
       type: 2
       Basic:
@@ -137,7 +137,7 @@ MonoBehaviour:
             m_Calls: []
   - PatternActions: []
   - PatternActions:
-    - ID: 9
+    - ID: 11
       ActionName: BassShotM1B1N3
       type: 2
       Basic:
@@ -223,7 +223,7 @@ MonoBehaviour:
   - PatternActions: []
   - PatternActions: []
   - PatternActions:
-    - ID: 10
+    - ID: 12
       ActionName: BassShotM1B3N1
       type: 2
       Basic:
@@ -305,7 +305,7 @@ MonoBehaviour:
             m_Calls: []
   - PatternActions: []
   - PatternActions:
-    - ID: 11
+    - ID: 13
       ActionName: BassShotM1B3N2
       type: 2
       Basic:
@@ -348,7 +348,7 @@ MonoBehaviour:
   - PatternActions: []
   - PatternActions: []
   - PatternActions:
-    - ID: 12
+    - ID: 14
       ActionName: BassShotM1B3N3
       type: 2
       Basic:
@@ -389,7 +389,7 @@ MonoBehaviour:
             m_Calls: []
   - PatternActions: []
   - PatternActions:
-    - ID: 13
+    - ID: 15
       ActionName: BassShotM1B3N4
       type: 2
       Basic:

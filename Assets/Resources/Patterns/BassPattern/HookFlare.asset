@@ -30,7 +30,7 @@ MonoBehaviour:
   - PatternActions: []
   - PatternActions: []
   - PatternActions:
-    - ID: 28
+    - ID: 30
       ActionName: HookFlare
       type: 2
       Basic:
