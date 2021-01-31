@@ -32,15 +32,14 @@ public class ColorOverTimeBulletLogic : BulletLogic {
     }
     
     public void UpdateColor(Bullet bullet, Color newColor) {
-        foreach (GameObject spriteObject in bullet.Sprites) {
-            SpriteRenderer renderer = spriteObject.GetComponent<SpriteRenderer>();
+        foreach (SpriteRenderer spriteObject in bullet.Sprites) {
             if (onlyAdjustAlpha) {
                 float alpha = newColor.a;
-                newColor = renderer.color;
+                newColor = spriteObject.color;
                 newColor.a = alpha;
             }
 
-            renderer.color = newColor;
+            spriteObject.color = newColor;
         }
     }
 

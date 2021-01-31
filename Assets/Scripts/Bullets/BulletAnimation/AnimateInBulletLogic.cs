@@ -16,7 +16,7 @@ public class AnimateInBulletLogic : BulletLogic {
     }
     
     public override void OnBulletSpawned(Bullet bullet) {
-        foreach (GameObject spriteObject in bullet.Sprites) {
+        foreach (SpriteRenderer spriteObject in bullet.Sprites) {
             // Spawn the view
             view = Object.Instantiate(viewPrefab, bullet.transform);
         
@@ -25,15 +25,18 @@ public class AnimateInBulletLogic : BulletLogic {
         
             // Set the view's sprite to match that of the bullet's sprite
             SpriteRenderer spawnedRenderer = view.Sprite.GetComponent<SpriteRenderer>();
-            spawnedRenderer.sprite = spriteObject.GetComponent<SpriteRenderer>().sprite;
+            spawnedRenderer.sprite = spriteObject.sprite;
 
             if (useWhiteShader) {
                 // Set the view's sprite's shader to be white
                 spawnedRenderer.material.shader = BulletAnimationUtil.ShaderGUIText;
                 spawnedRenderer.color = Color.white;
             } else {
-                spawnedRenderer.color = spriteObject.GetComponent<SpriteRenderer>().color;
+                spawnedRenderer.color = spriteObject.color;
             }
+
+            spawnedRenderer.sortingLayerName = "Bullets";
+            spawnedRenderer.sortingOrder = bullet.SortingOrder;
         }
     }
 

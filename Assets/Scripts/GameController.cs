@@ -115,4 +115,20 @@ public class GameController : MonoBehaviour {
             
         return finalMove;
     }
+
+    private const int MAX_SORTING_ORDER = 32767;
+    private int lastSortingOrder = 1;
+    /// <summary>
+    /// Generates and returns a new sorting order. Intended to give a higher value than all previously generated values,
+    /// but also loops back to 0 if the max is reached
+    /// </summary>
+    /// <returns></returns>
+    public int GetNewSortingOrder() {
+        lastSortingOrder++;
+        // Give a cushion of 100 in case we ever need it
+        if (lastSortingOrder >= MAX_SORTING_ORDER - 100)
+            lastSortingOrder = 1;
+        
+        return lastSortingOrder;
+    }
 }

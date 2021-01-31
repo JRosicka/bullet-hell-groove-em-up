@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7497343712616834882}
   - component: {fileID: 7497343712616834883}
   m_Layer: 0
-  m_Name: PianoBullet_1
+  m_Name: PianoBullet Black
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   Sprites:
-  - {fileID: 7497343712855042128}
+  - {fileID: 7497343712855042130}
+  IsFollowingSpline: 0
+  IsSpeedLogicInterrupted: 0
+  SortingOrder: 0
 --- !u!70 &7497343712616834883
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -131,9 +134,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingLayerID: 770419877
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 151acca6f8c3f8e4a999e5b07b889aa3, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0

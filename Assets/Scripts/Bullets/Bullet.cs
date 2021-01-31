@@ -4,14 +4,22 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class Bullet : MonoBehaviour {
     public float speed;
-    public List<GameObject> Sprites;
+    public List<SpriteRenderer> Sprites;
     public bool IsFollowingSpline;
     public bool IsSpeedLogicInterrupted;
 
-    // TODO: How do we apply this? Do we get any update info from each entry on Update(), or do we do something to apply
-    // the logic right when it is assigned?
     private List<BulletLogic> bulletLogic;
-    
+
+    public int SortingOrder;
+
+    private void Awake() {
+        SortingOrder = GameController.Instance.GetNewSortingOrder();
+        foreach (SpriteRenderer spriteObject in Sprites) {
+            // TODO: We should probably also assign the sortingLayer to "Bullets" here
+            spriteObject.sortingOrder = SortingOrder;
+        }
+    }
+
     void Update() {
         float deltaTime = Time.deltaTime;
         foreach (BulletLogic logicEntry in bulletLogic) {

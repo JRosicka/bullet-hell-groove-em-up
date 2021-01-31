@@ -99,8 +99,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 770419877
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2a0ca47fb53642f41806ec2c38b786c8, type: 3}
   m_Color: {r: 0.7764706, g: 0.24705882, b: 0.19607843, a: 1}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 1805425208293481139}
   - component: {fileID: 1805425208293481148}
   m_Layer: 0
-  m_Name: PianoBullet_3
+  m_Name: PianoBullet Red
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,8 +160,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   Sprites:
-  - {fileID: 1805425209074654615}
-  - {fileID: 1805425208103624066}
+  - {fileID: 1805425209074654613}
+  - {fileID: 1805425208103624065}
+  IsFollowingSpline: 0
+  IsSpeedLogicInterrupted: 0
+  SortingOrder: 0
 --- !u!61 &1805425208293481148
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -255,8 +258,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 770419877
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d94bfc16676ec72499c36f62e78533a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
