@@ -22,6 +22,7 @@ public class Player : MonoBehaviour {
 	private const string SLOW_NAME = "ctr_slow";
 	private const string PAUSE_NAME = "ctr_pause";
 	private const string SHOOT_NAME = "ctr_shoot";
+	private const string QUIT_NAME = "ctr_quit";
 	
 	/// <summary>
 	/// Checks to see the desired direction, and updates the player position and velocity based on this,
@@ -40,7 +41,12 @@ public class Player : MonoBehaviour {
 			playerControls.controllers.AddController(joystick, true);
 		}
 		
-		
+		// Check to see if we should quit
+		if (playerControls.GetButton(QUIT_NAME)) {
+			Debug.Log("Quitting");
+			Application.Quit();
+		}
+
 		float moveHorizontal = playerControls.GetAxis(HORIZONTAL_MOVEMENT_NAME);
 		float moveVertical = playerControls.GetAxis(VERTICAL_MOVEMENT_NAME);
 		Vector2 movement = GameController.Instance.EvaluateMove(new Vector2(moveHorizontal, moveVertical), transform.position);
