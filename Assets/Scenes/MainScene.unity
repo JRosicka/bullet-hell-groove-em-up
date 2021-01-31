@@ -1143,10 +1143,11 @@ TextMesh:
 
     Press the SLOW button to restart.
 
-    SLOW button is SHIFT
-    (keyboard) or A (gamepad).
+    SLOW button is LEFT
+    SHIFT (keyboard) or A (gamepad).
 
-    ESC (keyboard) or RIGHT BUMPER (gamepad) to quit.'
+    ESC (keyboard) or RIGHT BUMPER (gamepad)
+    to quit.'
   m_OffsetZ: 0
   m_CharacterSize: 0.2
   m_LineSpacing: 1
@@ -1373,7 +1374,7 @@ TextMesh:
   m_GameObject: {fileID: 1253254409}
   m_Text: 'Press the SLOW button to restart.
 
-    SLOW button is SHIFT (keyboard)
+    SLOW button is LEFT SHIFT (keyboard)
     or A (gamepad).
 
     ESC (keyboard) or RIGHT BUMPER (gamepad) to quit.'

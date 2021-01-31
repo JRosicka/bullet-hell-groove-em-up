@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 920705520}
   - component: {fileID: 920705519}
   m_Layer: 0
-  m_Name: Start Button Instructions
+  m_Name: Controls instructions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -403,8 +403,8 @@ TextMesh:
   m_GameObject: {fileID: 920705518}
   m_Text: 'Press the SLOW button to begin grooving.
 
-    SLOW button is SHIFT (keyboard)
-    or A (gamepad).
+    SLOW button is LEFT SHIFT
+    (keyboard) or A (gamepad).
 
     ESC (keyboard) or RIGHT BUMPER (gamepad) to quit.'
   m_OffsetZ: 0
