@@ -57,6 +57,8 @@ public class BassPattern : Pattern {
     public Emitter SynthEmitterClockwise;
     public Emitter SynthEmitterCounterclockwise;
 
+    public List<ParticleSystem> HookParticleSystems;
+
     
     private float currentTravelTime = -1;
     private Vector3 originWaypoint;
@@ -286,6 +288,8 @@ public class BassPattern : Pattern {
         HorizontalSegments.SetTrigger(Hook);
         VerticalSegments.ResetTrigger(MoveOut);
         VerticalSegments.SetTrigger(Hook);
+        
+        HookParticleSystems.ForEach(e => e.Play(false));
     }
 
     #endregion

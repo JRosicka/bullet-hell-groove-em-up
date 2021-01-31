@@ -42,6 +42,8 @@ public class PianoPattern : Pattern {
     public Emitter EmitterSmolOut;
     public Emitter EmitterSmolOutRotated;
     public Emitter EmitterLargeOut;
+
+    public List<ParticleSystem> HookParticleSystems;
     
     void Start() {
         gameController = GameController.Instance;
@@ -207,6 +209,8 @@ public class PianoPattern : Pattern {
     public void HookFlare() {
         OuterSegments.SetTrigger(Hook);
         OuterSegments.ResetTrigger(Spin);
+
+        HookParticleSystems.ForEach(e => e.Play(false));
     }
 
     #endregion
