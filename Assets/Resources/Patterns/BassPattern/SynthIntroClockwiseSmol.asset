@@ -24,7 +24,6 @@ MonoBehaviour:
   - PatternActions: []
   - PatternActions: []
   - PatternActions: []
-  - PatternActions: []
   - PatternActions:
     - ID: 5
       ActionName: MoveLeft
@@ -65,6 +64,7 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
+  - PatternActions: []
   - PatternActions: []
   - PatternActions:
     - ID: 25
@@ -291,9 +291,9 @@ MonoBehaviour:
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
-  - ChoiceParameters: []
   - ChoiceParameters:
     - 
+  - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
     - 

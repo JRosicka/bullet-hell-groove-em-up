@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PatternActionLists:
   - PatternActions:
-    - ID: 18
+    - ID: 19
       ActionName: Spawn
       type: 3
       Basic:
@@ -86,7 +86,7 @@ MonoBehaviour:
   - PatternActions: []
   ChoiceParameterLists:
   - ChoiceParameters:
-    - 0 2
+    - 0 1
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []

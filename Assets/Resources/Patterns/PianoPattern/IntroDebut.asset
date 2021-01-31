@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PatternActionLists:
   - PatternActions:
-    - ID: 15
+    - ID: 16
       ActionName: LargeShotOut
       type: 2
       Basic:

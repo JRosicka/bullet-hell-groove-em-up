@@ -59,7 +59,7 @@ MonoBehaviour:
   - PatternActions: []
   - PatternActions: []
   - PatternActions:
-    - ID: 16
+    - ID: 17
       ActionName: FireworkShot
       type: 2
       Basic:
@@ -198,7 +198,7 @@ MonoBehaviour:
   - PatternActions: []
   - PatternActions: []
   - PatternActions:
-    - ID: 13
+    - ID: 14
       ActionName: SmolShotOut
       type: 2
       Basic:
@@ -239,7 +239,7 @@ MonoBehaviour:
             m_Calls: []
   - PatternActions: []
   - PatternActions:
-    - ID: 14
+    - ID: 15
       ActionName: SmolShotOutRotated
       type: 2
       Basic:

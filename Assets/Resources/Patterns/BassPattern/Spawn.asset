@@ -86,7 +86,7 @@ MonoBehaviour:
   - PatternActions: []
   ChoiceParameterLists:
   - ChoiceParameters:
-    - 0.6 3
+    - 0.3 3.75
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []

@@ -1,18 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using Random = UnityEngine.Random;
 
 public class BassPattern : Pattern {
-    private static readonly Vector2 Origin = new Vector2(0, 3);
-    private static readonly float MaxDirectionalDistanceFromOrigin = .8f;
+    private static readonly float MaxDirectionalDistanceFromOrigin = .6f;
     private static readonly float MaxDirectionalMovementPerMove = .7f;
     private static readonly float MinDirectionalMovementPerMove = .2f;
-    float xMin => Origin.x - MaxDirectionalDistanceFromOrigin;
-    float xMax => Origin.x + MaxDirectionalDistanceFromOrigin;
-    float yMin => Origin.y - MaxDirectionalDistanceFromOrigin;
-    float yMax => Origin.y + MaxDirectionalDistanceFromOrigin;
+    private Vector2 origin;
+    private bool foundOrigin;
+
+    private float XMin => origin.x - MaxDirectionalDistanceFromOrigin;
+    private float XMax => origin.x + MaxDirectionalDistanceFromOrigin;
+    private float YMin => origin.y - MaxDirectionalDistanceFromOrigin;
+    private float YMax => origin.y + MaxDirectionalDistanceFromOrigin;
 
     private enum MoveDirections {
         MoveLeft = 201,
@@ -325,6 +326,11 @@ public class BassPattern : Pattern {
     }
 
     private Vector3 DetermineTargetTransform(MoveDirections moveEvent) {
+        if (!foundOrigin) {
+            origin = new Vector2(0, transform.position.y);
+            foundOrigin = true;
+        }
+
         Vector3 ret = Vector3.zero;
         Vector3 currentPosition = transform.position;
         float xTravel;
@@ -335,19 +341,19 @@ public class BassPattern : Pattern {
         switch (moveEvent) {
             case MoveDirections.MoveLeft:
                 xTravel =
-                    Random.Range(Mathf.Max(-MinDirectionalMovementPerMove, xMin - currentPosition.x),
+                    Random.Range(Mathf.Max(-MinDirectionalMovementPerMove, XMin - currentPosition.x),
                         Mathf.Min(-MaxDirectionalMovementPerMove, -MinDirectionalMovementPerMove));
                 yTravel =
-                    Random.Range(Mathf.Max(-MaxDirectionalMovementPerMove, yMin - currentPosition.y),
-                        Mathf.Min(MaxDirectionalMovementPerMove, yMax - currentPosition.y));
+                    Random.Range(Mathf.Max(-MaxDirectionalMovementPerMove, YMin - currentPosition.y),
+                        Mathf.Min(MaxDirectionalMovementPerMove, YMax - currentPosition.y));
                 ret = new Vector3(currentPosition.x + xTravel, currentPosition.y + yTravel);
                 break;
             case MoveDirections.MoveRight:
                 xTravel =
-                    Random.Range(Mathf.Max(MinDirectionalMovementPerMove, MinDirectionalMovementPerMove), Mathf.Min(MaxDirectionalMovementPerMove, xMax - currentPosition.x));
+                    Random.Range(Mathf.Max(MinDirectionalMovementPerMove, MinDirectionalMovementPerMove), Mathf.Min(MaxDirectionalMovementPerMove, XMax - currentPosition.x));
                 yTravel =
-                    Random.Range(Mathf.Max(-MaxDirectionalMovementPerMove, yMin - currentPosition.y),
-                        Mathf.Min(MaxDirectionalMovementPerMove, yMax - currentPosition.y));
+                    Random.Range(Mathf.Max(-MaxDirectionalMovementPerMove, YMin - currentPosition.y),
+                        Mathf.Min(MaxDirectionalMovementPerMove, YMax - currentPosition.y));
                 ret = new Vector3(currentPosition.x + xTravel, currentPosition.y + yTravel);
                 break;
             default:

@@ -20,12 +20,12 @@ public class PianoPattern : Pattern {
     private enum MoveType {
         NormalMove,
         MoveAway,
-        MoveTowards
+        MoveTowards,
+        MoveOppositeMiddle,
     }
 
     private List<Transform> waypoints = new List<Transform>();
     private List<Transform> nonComboWaypoints = new List<Transform>();
-    private List<Transform> middleWaypoints = new List<Transform>();
     
     private bool IsOnRightSide => transform.position.x > 0;
     private bool IsPlayerOnRightSide => playerController.GetPlayerPosition().x > 0;
@@ -161,6 +161,12 @@ public class PianoPattern : Pattern {
     public void MoveTowards() {
         MoveToWaypoint(DetermineTargetTransform(MoveType.MoveTowards));
     }
+    
+    // ReSharper disable once UnusedMember.Global
+    [PatternActionAttribute]
+    public void MoveOppositeMiddle() {
+        MoveToWaypoint(DetermineTargetTransform(MoveType.MoveOppositeMiddle));
+    }
 
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
@@ -252,23 +258,27 @@ public class PianoPattern : Pattern {
                 }
                 break;
             case MoveType.MoveAway:
-                List<Transform> sortedWayPointsFartherToPlayer = sortedWaypoints.Where(e =>
-                    (e.position - playerController.GetPlayerPosition()).magnitude >= enemyToPlayer).ToList();
-                if (sortedWayPointsFartherToPlayer.Count <= 0) {
-                    // If there are no waypoints left that are farther to the player than we currently are, then just go 
-                    // to the closest waypoint
-                    ret = sortedWaypoints[0];
+                if (IsOnRightSide) {
+                    ret = Random.Range(0, 2) == 0 ? waypointManager.TopLeft : waypointManager.BottomLeft;
                 } else {
-                    // Pick from one of the three closest waypoints that are farther to the player
-                    ret = sortedWayPointsFartherToPlayer[
-                        Random.Range(0, Math.Min(2, sortedWayPointsFartherToPlayer.Count))];
-
+                    ret = Random.Range(0, 2) == 0 ? waypointManager.TopRight : waypointManager.BottomRight;
                 }
+                // List<Transform> sortedWayPointsFartherToPlayer = sortedWaypoints.Where(e =>
+                //     (e.position - playerController.GetPlayerPosition()).magnitude >= enemyToPlayer).ToList();
+                // if (sortedWayPointsFartherToPlayer.Count <= 0) {
+                //     // If there are no waypoints left that are farther to the player than we currently are, then just go 
+                //     // to the closest waypoint
+                //     ret = sortedWaypoints[0];
+                // } else {
+                //     // Pick from one of the three closest waypoints that are farther to the player
+                //     ret = sortedWayPointsFartherToPlayer[
+                //         Random.Range(0, Math.Min(2, sortedWayPointsFartherToPlayer.Count))];
+                //
+                // }
                 break;
-            // case Values.MoveToMiddle:
-            //     // TODO: We never put anything in here lol ;)
-            //     ret = middleWaypoints[Random.Range(0, middleWaypoints.Count)];
-            //     break;
+            case MoveType.MoveOppositeMiddle:
+                ret = IsOnRightSide ? waypointManager.MiddleLeft : waypointManager.MiddleRight;
+                break;
             default:
                 Assert.IsTrue(false);
                 break;

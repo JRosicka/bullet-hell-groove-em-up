@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PatternActionLists:
   - PatternActions:
-    - ID: 17
+    - ID: 18
       ActionName: HookFlare
       type: 2
       Basic:

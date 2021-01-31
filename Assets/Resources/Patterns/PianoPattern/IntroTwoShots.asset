@@ -59,7 +59,7 @@ MonoBehaviour:
   - PatternActions: []
   - PatternActions: []
   - PatternActions:
-    - ID: 16
+    - ID: 17
       ActionName: FireworkShot
       type: 2
       Basic:

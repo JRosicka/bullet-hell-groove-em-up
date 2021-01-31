@@ -30,7 +30,7 @@ MonoBehaviour:
   - PatternActions: []
   - PatternActions: []
   - PatternActions:
-    - ID: 10
+    - ID: 11
       ActionName: MoveCombo1
       type: 2
       Basic:

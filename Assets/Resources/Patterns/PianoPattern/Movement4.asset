@@ -25,7 +25,7 @@ MonoBehaviour:
   - PatternActions: []
   - PatternActions: []
   - PatternActions:
-    - ID: 11
+    - ID: 12
       ActionName: MoveCombo2
       type: 2
       Basic:
@@ -80,7 +80,7 @@ MonoBehaviour:
   - PatternActions: []
   - PatternActions: []
   - PatternActions:
-    - ID: 12
+    - ID: 13
       ActionName: MoveCombo3
       type: 2
       Basic:

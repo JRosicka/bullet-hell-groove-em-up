@@ -53,7 +53,7 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-    - ID: 15
+    - ID: 16
       ActionName: LargeShotOut
       type: 2
       Basic:
@@ -176,7 +176,7 @@ MonoBehaviour:
   - PatternActions: []
   - PatternActions: []
   - PatternActions:
-    - ID: 16
+    - ID: 17
       ActionName: FireworkShot
       type: 2
       Basic:
@@ -260,7 +260,7 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-    - ID: 15
+    - ID: 16
       ActionName: LargeShotOut
       type: 2
       Basic:
@@ -387,7 +387,7 @@ MonoBehaviour:
   - PatternActions: []
   - PatternActions: []
   - PatternActions:
-    - ID: 16
+    - ID: 17
       ActionName: FireworkShot
       type: 2
       Basic:
