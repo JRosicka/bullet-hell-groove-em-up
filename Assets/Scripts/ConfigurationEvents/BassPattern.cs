@@ -282,10 +282,10 @@ public class BassPattern : Pattern {
     // ReSharper disable once UnusedMember.Global
     [PatternActionAttribute]
     public void HookFlare() {
-        HorizontalSegments.SetTrigger(Hook);
         HorizontalSegments.ResetTrigger(MoveOut);
-        VerticalSegments.SetTrigger(Hook);
+        HorizontalSegments.SetTrigger(Hook);
         VerticalSegments.ResetTrigger(MoveOut);
+        VerticalSegments.SetTrigger(Hook);
     }
 
     #endregion
