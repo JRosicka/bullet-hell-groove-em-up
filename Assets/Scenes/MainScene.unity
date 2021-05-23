@@ -1146,7 +1146,7 @@ TextMesh:
     SLOW button is LEFT
     SHIFT (keyboard) or A (gamepad).
 
-    ESC (keyboard) or RIGHT BUMPER (gamepad)
+    Hold ESC (keyboard) or RIGHT BUMPER (gamepad)
     to quit.'
   m_OffsetZ: 0
   m_CharacterSize: 0.2
@@ -1377,7 +1377,7 @@ TextMesh:
     SLOW button is LEFT SHIFT (keyboard)
     or A (gamepad).
 
-    ESC (keyboard) or RIGHT BUMPER (gamepad) to quit.'
+    Hold ESC (keyboard) or RIGHT BUMPER (gamepad) to quit.'
   m_OffsetZ: 0
   m_CharacterSize: 0.2
   m_LineSpacing: 1
