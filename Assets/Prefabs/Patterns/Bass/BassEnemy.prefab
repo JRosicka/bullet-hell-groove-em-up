@@ -6795,8 +6795,6 @@ MonoBehaviour:
       OnPatternAction:
         m_PersistentCalls:
           m_Calls: []
-  SynthShotPrefab: {fileID: 6218925459055046543, guid: c9409bc94a304f94abc4aee3871176a1,
-    type: 3}
   Emitters: {fileID: 7570076599585588651}
   HorizontalSegments: {fileID: 307805119396636354}
   VerticalSegments: {fileID: 9044093450781118051}

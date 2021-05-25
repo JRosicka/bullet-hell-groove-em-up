@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: SynthMainCounterClockwise
   m_EditorClassIdentifier: 
   PatternActionLists:
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 8
       ActionName: MoveRight
       type: 2
@@ -64,9 +64,9 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 6
       ActionName: FireSynthShotCounterClockwise
       type: 2
@@ -106,8 +106,8 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 3
       ActionName: InnerAnimationFlareClockwise
       type: 2
@@ -147,8 +147,8 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 6
       ActionName: FireSynthShotCounterClockwise
       type: 2
@@ -188,10 +188,10 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 6
       ActionName: FireSynthShotCounterClockwise
       type: 2
@@ -231,8 +231,8 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 3
       ActionName: InnerAnimationFlareClockwise
       type: 2
@@ -272,10 +272,10 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 6
       ActionName: FireSynthShotCounterClockwise
       type: 2
@@ -315,8 +315,8 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 6
       ActionName: FireSynthShotCounterClockwise
       type: 2
@@ -356,7 +356,7 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
+  - RumiaActions: []
   ChoiceParameterLists:
   - ChoiceParameters: []
   - ChoiceParameters: []

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IntroTwoShotsThenShortMixup
   m_EditorClassIdentifier: 
   PatternActionLists:
-  - PatternActions:
+  - RumiaActions:
     - ID: 1
       ActionName: FirstShot
       type: 2
@@ -53,12 +53,12 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 17
       ActionName: FireworkShot
       type: 2
@@ -176,28 +176,28 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 14
       ActionName: SmolShotOut
       type: 2
@@ -237,9 +237,9 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
   ChoiceParameterLists:
   - ChoiceParameters:
     - 

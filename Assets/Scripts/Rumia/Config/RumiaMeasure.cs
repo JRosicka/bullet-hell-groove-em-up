@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Rumia {
     /// <summary>
@@ -18,8 +19,8 @@ namespace Rumia {
         // TODO: Functionality for updating a shot that isn't necessarily the most recently fired one, maybe. Would require using ordered pairs (index, enum string) rather than just enum strings. 
         // Would also probably want to use a list per element instead of a single value since we'd want to be able to do multiple actions at once from a single RumiaMeasure
         [HideInInspector]
-        public PatternActionList[] PatternActionLists = new PatternActionList[SIZE];
-        // Collection of values to pass into the PatternActions' parameters, serialized as strings in order to allow for different types
+        public RumiaActionList[] PatternActionLists = new RumiaActionList[SIZE];
+        // Collection of values to pass into the RumiaActions' parameters, serialized as strings in order to allow for different types
         [HideInInspector]
         public ChoiceParameterList[] ChoiceParameterLists = new ChoiceParameterList[SIZE];
 
@@ -46,13 +47,15 @@ namespace Rumia {
                 // Draw the default inspector
                 DrawDefaultInspector();
                 RumiaMeasure measure = target as RumiaMeasure;
+                if (measure == null) 
+                    return;
                 Pattern pattern = measure.Pattern;
                 if (!pattern)
                     return;
 
                 // The only way this would generate a different result from last time is if the assembly was recompiled, 
                 // which would result in this dirtied flag getting reset to its default value (true). If this has happened, 
-                // regenerate the PatternActions for this RumiaMeasure's pattern
+                // regenerate the RumiaActions for this RumiaMeasure's pattern
                 if (dirtied) {
                     pattern.GeneratePatternActions();
                     dirtied = false;
@@ -65,13 +68,13 @@ namespace Rumia {
                 EditorGUIUtility.fieldWidth = 150;
                 Color defColor = GUI.color;
                 
-                // Handle each group of PatternActions to be scheduled for this instant in time
+                // Handle each group of RumiaActions to be scheduled for this instant in time
                 for (int i = 0; i < SIZE; i++) {
                     if (measure.PatternActionLists[i] == null)
-                        measure.PatternActionLists[i] = new PatternActionList();
+                        measure.PatternActionLists[i] = new RumiaActionList();
 
                     EditorGUILayout.BeginHorizontal();
-                    List<RumiaAction> patternActionList = measure.PatternActionLists[i].PatternActions;
+                    List<RumiaAction> patternActionList = measure.PatternActionLists[i].RumiaActions;
                     List<string> choiceParameterList = measure.ChoiceParameterLists[i].ChoiceParameters;
                     
                     // Button to add a new RumiaAction
@@ -121,7 +124,7 @@ namespace Rumia {
             }
 
             /// <summary>
-            /// Display the choices and any configurable parameters for this pattern's available PatternActions, and update
+            /// Display the choices and any configurable parameters for this pattern's available RumiaActions, and update
             /// with any changes we make
             /// </summary>
             private void DrawPatternActionField(List<RumiaAction> choices, ref RumiaAction rumiaAction, ref string choiceParameter) {
@@ -139,7 +142,7 @@ namespace Rumia {
                 // Get the ID of the currently selected RumiaAction
                 int currentIndex = choices.First(e => e.ActionName.Equals(currentName)).ID;
                     
-                // Present the PatternActions by a list of names and allow us to select a new one
+                // Present the RumiaActions by a list of names and allow us to select a new one
                 int chosenIndex = EditorGUILayout.Popup(currentIndex, 
                         choices.Select(e => e.ActionName).ToArray());
                 
@@ -201,12 +204,13 @@ namespace Rumia {
             /// Makes a slick grey horizontal line in the inspector
             /// </summary>
             private static void HorizontalLine() {
-                GUIStyle horizontalLine = new GUIStyle();
-                horizontalLine.normal.background = EditorGUIUtility.whiteTexture;
-                horizontalLine.margin = new RectOffset(0, 0, 4, 4);
-                horizontalLine.fixedHeight = 1;
+                GUIStyle horizontalLine = new GUIStyle {
+                    normal = {background = EditorGUIUtility.whiteTexture},
+                    margin = new RectOffset(0, 0, 4, 4),
+                    fixedHeight = 1
+                };
 
-                var c = GUI.color;
+                Color c = GUI.color;
                 GUI.color = Color.grey;
                 GUILayout.Box(GUIContent.none, horizontalLine);
                 GUI.color = c;
@@ -216,8 +220,9 @@ namespace Rumia {
     }
 
     [Serializable]
-    public class PatternActionList {
-        public List<RumiaAction> PatternActions = new List<RumiaAction>();
+    public class RumiaActionList {
+        [FormerlySerializedAs("PatternActions")] 
+        public List<RumiaAction> RumiaActions = new List<RumiaAction>();
     }
 
     [Serializable]

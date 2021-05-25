@@ -15,11 +15,11 @@ public class Emitter : MonoBehaviour {
     public List<Bullet> SpawnedBullets;
 
     /// <summary>
-    /// All of the details needed for firing a group of bullets, to be configured in the inspector. These config
+    /// All of the details needed for firing a group of bullets, to be configured in the inspector. These configuration
     /// details are used to set up individual <see cref="BulletConfig"/>s.
     /// </summary>
     [Serializable]
-    public struct EmissionConfig {
+    public struct EmissionConfiguration {
         /// <summary>
         /// The Bullet prefab to spawn
         /// </summary>
@@ -187,80 +187,80 @@ public class Emitter : MonoBehaviour {
     }
     
     /// <summary>
-    /// Create and schedule <see cref="BulletConfig"/>s for the given <see cref="EmissionConfig"/>, setting up the
+    /// Create and schedule <see cref="BulletConfig"/>s for the given <see cref="EmissionConfiguration"/>, setting up the
     /// fire positions, overall rotations and timings, passing in bullet logic, etc.
     /// </summary>
-    /// <param name="config"></param>
-    protected void ScheduleEmission(EmissionConfig config) {
+    /// <param name="configuration"></param>
+    protected void ScheduleEmission(EmissionConfiguration configuration) {
         // Determine rotations
         float startRotationDegrees;
         float endRotationDegrees;
-        int direction = config.RotateClockwise ? -1 : 1;
-        float startRotation = config.StartRotation;
-        if (config.Reverse) {
+        int direction = configuration.RotateClockwise ? -1 : 1;
+        float startRotation = configuration.StartRotation;
+        if (configuration.Reverse) {
             direction *= -1;
             startRotation *= -1;
         }
 
-        if (config.RotateFromCenter) {
-            startRotationDegrees = startRotation - direction * config.RotationArc / 2.0f;
-            endRotationDegrees = startRotation + direction * config.RotationArc / 2.0f;
+        if (configuration.RotateFromCenter) {
+            startRotationDegrees = startRotation - direction * configuration.RotationArc / 2.0f;
+            endRotationDegrees = startRotation + direction * configuration.RotationArc / 2.0f;
         } else {
             startRotationDegrees = startRotation;
-            endRotationDegrees = startRotation + direction * config.RotationArc;
+            endRotationDegrees = startRotation + direction * configuration.RotationArc;
         }
         
         List<BulletConfig> bullets = new List<BulletConfig>();
-        for (int i = 0; i < config.NumberOfShots; i++) {
+        for (int i = 0; i < configuration.NumberOfShots; i++) {
             float lerpValue;
-            if (config.NumberOfShots == 1)
+            if (configuration.NumberOfShots == 1)
                 lerpValue = 0;
             else
-                lerpValue = (float) i / (config.NumberOfShots - 1);
+                lerpValue = (float) i / (configuration.NumberOfShots - 1);
             
             // Add BulletLogic
             List<BulletLogic> logic = new List<BulletLogic>();
-            if (config.AdjustColorOverTime) {
-                logic.Add(new ColorOverTimeBulletLogic(config.InitialColor, config.EndColor, 
-                    config.BulletColorOverTime, config.ColorAdjustmentDuration, config.OnlyAdjustAlpha));
+            if (configuration.AdjustColorOverTime) {
+                logic.Add(new ColorOverTimeBulletLogic(configuration.InitialColor, configuration.EndColor, 
+                    configuration.BulletColorOverTime, configuration.ColorAdjustmentDuration, configuration.OnlyAdjustAlpha));
             }
-            if (config.AnimationPrefab != null)
-                logic.Add(new AnimateInBulletLogic(config.AnimationPrefab, config.UseWhiteShaderForAnimateIn));
-            logic.Add(new SpeedOverTimeBulletLogic(config.BulletStartSpeed, config.BulletSpeedOverTime));
-            if (config.UseSpline) {
-                logic.Add(new MoveAlongSplineBulletLogic(config.Spline, false, config.Reverse));
+            if (configuration.AnimationPrefab != null)
+                logic.Add(new AnimateInBulletLogic(configuration.AnimationPrefab, configuration.UseWhiteShaderForAnimateIn));
+            logic.Add(new SpeedOverTimeBulletLogic(configuration.BulletStartSpeed, configuration.BulletSpeedOverTime));
+            if (configuration.UseSpline) {
+                logic.Add(new MoveAlongSplineBulletLogic(configuration.Spline, false, configuration.Reverse));
             }
 
-            if (config.DestroyBulletAfterDuration)
-                logic.Add(new DestroyAfterDurationBulletLogic(config.DestructionTime));
-            if (config.UseTrail)
-                logic.Add(new TrailBulletLogic(config.Trail));
+            if (configuration.DestroyBulletAfterDuration)
+                logic.Add(new DestroyAfterDurationBulletLogic(configuration.DestructionTime));
+            if (configuration.UseTrail)
+                logic.Add(new TrailBulletLogic(configuration.Trail));
 
-            Vector2 startPositionOffset = config.StartPositionOffset;
+            Vector2 startPositionOffset = configuration.StartPositionOffset;
             startPositionOffset.x +=
-                UnityEngine.Random.Range(-config.StartPositionVariance.x / 2, config.StartPositionVariance.x / 2);
+                UnityEngine.Random.Range(-configuration.StartPositionVariance.x / 2, configuration.StartPositionVariance.x / 2);
             startPositionOffset.y +=
-                UnityEngine.Random.Range(-config.StartPositionVariance.y / 2, config.StartPositionVariance.y / 2);
-            if (config.Reverse)
+                UnityEngine.Random.Range(-configuration.StartPositionVariance.y / 2, configuration.StartPositionVariance.y / 2);
+            if (configuration.Reverse)
                 startPositionOffset.y *= -1;
 
             Quaternion localRotation =
                 Quaternion.AngleAxis(Mathf.Lerp(startRotationDegrees, endRotationDegrees, lerpValue), Vector3.forward);
             Vector3 eulerAngles = localRotation.eulerAngles;
             eulerAngles.z +=
-                UnityEngine.Random.Range(-config.StartRotationVariance / 2, config.StartRotationVariance / 2);
+                UnityEngine.Random.Range(-configuration.StartRotationVariance / 2, configuration.StartRotationVariance / 2);
             localRotation.eulerAngles = eulerAngles;
             
             if (subscriptionObject != null)
                 logic.Add(new SubscribeToSpeedControllerBulletLogic(subscriptionObject));
             
             bullets.Add(new BulletConfig {
-                Bullet = config.BulletPrefab,
+                Bullet = configuration.BulletPrefab,
                 Logic = logic,
                 LocalPosition = startPositionOffset,
                 LocalRotation = localRotation,
                 
-                EmissionTime = timeElapsed + config.DelayBeforeFirstShot + i * config.TimeBetweenShot
+                EmissionTime = timeElapsed + configuration.DelayBeforeFirstShot + i * configuration.TimeBetweenShot
             });
         }
         ScheduleBullets(bullets);
@@ -278,7 +278,7 @@ public class Emitter : MonoBehaviour {
     // TODO: Enforce somewhere that things tagged with [Emission] cannot have any parameters
     // TODO: Dummy examples, the BulletPrefab(s) and Shoot logic should be defined in subclasses of Emitter
     [FormerlySerializedAs("FarMoreComplexConfig")] 
-    public EmissionConfig Config;
+    public EmissionConfiguration Config;
     [Emission]
     // ReSharper disable once UnusedMember.Global
     public void Emit() {

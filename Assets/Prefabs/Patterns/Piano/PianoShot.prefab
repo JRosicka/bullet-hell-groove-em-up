@@ -105,8 +105,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7721102815681162639}
-  - component: {fileID: 7721102815681162638}
-  - component: {fileID: 5193424012709297097}
   - component: {fileID: 8939922885222053294}
   m_Layer: 0
   m_Name: PianoShot
@@ -130,36 +128,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7721102815681162638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7721102815681162633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9554a169ea579b148a841a2e1abec814, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StartFresh: 0
-  Play: 0
-  StopMakingNew: 0
-  Pause: 0
-  Clear: 0
---- !u!114 &5193424012709297097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7721102815681162633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdb29a5a14c86ab4cbf06bda8ec54cbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setSeedParticles: []
 --- !u!114 &8939922885222053294
 MonoBehaviour:
   m_ObjectHideFlags: 0

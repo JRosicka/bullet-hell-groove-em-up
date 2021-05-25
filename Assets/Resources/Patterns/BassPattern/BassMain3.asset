@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BassMain3
   m_EditorClassIdentifier: 
   PatternActionLists:
-  - PatternActions:
+  - RumiaActions:
     - ID: 9
       ActionName: BassShotM1B1N1
       type: 2
@@ -92,10 +92,10 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 10
       ActionName: BassShotM1B1N2
       type: 2
@@ -135,8 +135,8 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 11
       ActionName: BassShotM1B1N3
       type: 2
@@ -176,8 +176,8 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 2
       ActionName: FireAnimationFlareVertical
       type: 2
@@ -217,12 +217,12 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 12
       ActionName: BassShotM1B3N1
       type: 2
@@ -262,8 +262,8 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 1
       ActionName: FireAnimationFlareHorizontal
       type: 2
@@ -303,8 +303,8 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 13
       ActionName: BassShotM1B3N2
       type: 2
@@ -344,10 +344,10 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 14
       ActionName: BassShotM1B3N3
       type: 2
@@ -387,8 +387,8 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 15
       ActionName: BassShotM1B3N4
       type: 2
@@ -467,13 +467,13 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
   ChoiceParameterLists:
   - ChoiceParameters:
     - 

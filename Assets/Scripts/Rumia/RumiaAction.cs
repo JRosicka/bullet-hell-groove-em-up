@@ -19,9 +19,8 @@ namespace Rumia {
     [Serializable]
     public class RumiaAction {
         public static PatternActionType GetPatternActionType(Type keyType) {
-            PatternActionType ret;
             // The default value of Type is null, so we return null if we do not have a matching Type for keyType
-            _typesDict.TryGetValue(keyType, out ret);
+            _typesDict.TryGetValue(keyType, out PatternActionType ret);
             return ret;
         }
 
@@ -248,8 +247,7 @@ namespace Rumia {
             public static int DeserializeParameter(string serializedParameter) {
                 if (serializedParameter == null || serializedParameter.Equals(""))
                     return default;
-                int ret;
-                if (int.TryParse(serializedParameter, out ret))
+                if (int.TryParse(serializedParameter, out int ret))
                     return ret;
                 throw new Exception("IntSubPatternAction: Unexpected serialized parameter value '" + serializedParameter
                                                                                                    + "'");
@@ -289,8 +287,7 @@ namespace Rumia {
             public static float DeserializeParameter(string serializedParameter) {
                 if (serializedParameter == null || serializedParameter.Equals(""))
                     return default;
-                float ret;
-                if (float.TryParse(serializedParameter, out ret))
+                if (float.TryParse(serializedParameter, out float ret))
                     return ret;
                 throw new Exception("FloatSubPatternAction: Unexpected serialized parameter value '"
                                     + serializedParameter + "'");

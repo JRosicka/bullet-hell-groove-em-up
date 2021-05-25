@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BassMain4
   m_EditorClassIdentifier: 
   PatternActionLists:
-  - PatternActions:
+  - RumiaActions:
     - ID: 16
       ActionName: BassShotM2B1N1
       type: 2
@@ -92,10 +92,10 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 17
       ActionName: BassShotM2B1N2
       type: 2
@@ -135,8 +135,8 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 18
       ActionName: BassShotM2B1N3
       type: 2
@@ -176,8 +176,8 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 2
       ActionName: FireAnimationFlareVertical
       type: 2
@@ -217,14 +217,14 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 25
       ActionName: BassShotM4B3N1
       type: 2
@@ -381,14 +381,14 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions:
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions:
     - ID: 1
       ActionName: FireAnimationFlareHorizontal
       type: 2
@@ -467,13 +467,13 @@ MonoBehaviour:
         OnPatternAction:
           m_PersistentCalls:
             m_Calls: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
-  - PatternActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
   ChoiceParameterLists:
   - ChoiceParameters:
     - 
