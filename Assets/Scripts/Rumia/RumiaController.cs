@@ -3,13 +3,13 @@ using UnityEngine;
 using UnityEngine.Assertions;
 
 /// <summary>
-/// Parses through a PatternConfiguration and generates NoteActions based on the configured timings and action types.
+/// Parses through a <see cref="RumiaConfiguration"/> and generates NoteActions based on the configured timings and action types.
 /// NoteActions and instantiated and scheduled upon PatternController initialization. 
 /// </summary>
-public class PatternController : MonoBehaviour {
+public class RumiaController : MonoBehaviour {
     private const int ACTIONS_PER_MEASURE = 32;
 
-    public PatternConfiguration Config;
+    public RumiaConfiguration Config;
 
     private TimingController timingController;
     private float timeElapsed;
@@ -37,12 +37,12 @@ public class PatternController : MonoBehaviour {
     }
 
     /// <summary>
-    /// Parses through a PatternConfiguration and generates NoteActions based on the configured timings and action types.
+    /// Parses through a <see cref="RumiaConfiguration"/> and generates NoteActions based on the configured timings and action types.
     /// </summary>
     /// <returns>A list of scheduled NoteActions</returns>
     private List<NoteAction> ScheduleNoteActions() {
         List<NoteAction> ret = new List<NoteAction>();
-        List<PatternMeasureList> measureLists = Config.MeasuresList;
+        List<RumiaMeasureList> measureLists = Config.MeasuresList;
         
         // Iterate through each PatternMeasureList
         for (int i = 0; i < measureLists.Count; i++) {

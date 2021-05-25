@@ -119,186 +119,186 @@ public class BassPattern : Pattern {
     #region PatternActions
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void FireAnimationFlareHorizontal() {
         HorizontalSegments.SetTrigger(MoveOut);
     }
     
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void FireAnimationFlareVertical() {
         VerticalSegments.SetTrigger(MoveOut);
     }
     
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void InnerAnimationFlareClockwise() {
         InnerSegments.SetTrigger(SpinClockwise);
     }
     
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void InnerAnimationFlareCounterclockwise() {
         InnerSegments.SetTrigger(SpinCounterclockwise);
     }
     
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void FireSynthShotClockwise() {
         FireSynthShot(true);
     }
     
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void FireSynthShotCounterClockwise() {
         FireSynthShot(false);
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void MoveLeft() {
         MoveToWaypoint(DetermineTargetTransform(MoveDirections.MoveLeft));
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void MoveRight() {
         MoveToWaypoint(DetermineTargetTransform(MoveDirections.MoveRight));
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void BassShotM1B1N1() {
         RandomRotate();
         EmitterM1B1N1.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void BassShotM1B1N2() {
         EmitterM1B1N2.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void BassShotM1B1N3() {
         EmitterM1B1N3.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void BassShotM1B3N1() {
         RandomRotate();
         EmitterM1B3N1.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void BassShotM1B3N2() {
         EmitterM1B3N2.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void BassShotM1B3N3() {
         EmitterM1B3N3.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void BassShotM1B3N4() {
         EmitterM1B3N4.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void BassShotM2B1N1() {
         RandomRotate();
         EmitterM2B1N1.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void BassShotM2B1N2() {
         EmitterM2B1N2.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void BassShotM2B1N3() {
         EmitterM2B1N3.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void BassShotM2B3N1() {
         RandomRotate();
         EmitterM2B3N1.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void BassShotM2B3N2() {
         EmitterM2B3N2.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void BassShotM2B3N3() {
         EmitterM2B3N3.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void BassShotM2B3N4() {
         EmitterM2B3N4.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void BassShotM2B3N5() {
         EmitterM2B3N5.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void BassShotM2B3N6() {
         EmitterM2B3N6.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void BassShotM4B3N1() {
         RotateToDefault();
         EmitterM4B3N1.Emit();
     }
     
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void BulletSlowdownEffect() {
         speedSubscriptionObject.TriggerSpeedCurve();
     }
     
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void SynthShotSmolClockwise() {
         SynthEmitterIntroClockwiseSmol.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void SynthShotIntroClockwise() {
         SynthEmitterIntroClockwise.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void SynthShotIntroCounterClockwise() {
         SynthEmitterIntroCounterClockwise.Emit();
     }
     
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void HookFlare() {
         HorizontalSegments.ResetTrigger(MoveOut);
         HorizontalSegments.SetTrigger(Hook);

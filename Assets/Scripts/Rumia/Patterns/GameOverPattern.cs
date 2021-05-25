@@ -3,7 +3,7 @@
 /// </summary>
 public class GameOverPattern : Pattern {
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void GameOver() {
         GameController.Instance.ResetGame(true);
     }

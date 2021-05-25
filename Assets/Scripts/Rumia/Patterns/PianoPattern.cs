@@ -104,7 +104,7 @@ public class PianoPattern : Pattern {
     #region PatternActions
     
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void FirstShot() {
         Transform t = transform;
         lastShotInstance = Instantiate(ShotPrefab, t.position, t.rotation,
@@ -113,105 +113,105 @@ public class PianoPattern : Pattern {
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void SecondShot() {
         lastShotInstance.SecondShot();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void ThirdShot() {
         lastShotInstance.ThirdShot();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void FireAnimationFlare() {
         OuterSegments.SetTrigger(MoveOut);
     }
     
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void FireSecondaryAnimationFlare() {
         OuterSegments.SetTrigger(MoveOut);
         InnerSegments.SetTrigger(MoveOut);
     }
     
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void SpinAnimation() {
         OuterSegments.SetTrigger(Spin);
         InnerSegments.SetTrigger(Spin);
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void NormalMove() {
         MoveToWaypoint(DetermineTargetTransform(MoveType.NormalMove));
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void MoveAway() {
         MoveToWaypoint(DetermineTargetTransform(MoveType.MoveAway));
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void MoveTowards() {
         MoveToWaypoint(DetermineTargetTransform(MoveType.MoveTowards));
     }
     
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void MoveOppositeMiddle() {
         MoveToWaypoint(DetermineTargetTransform(MoveType.MoveOppositeMiddle));
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void MoveCombo1() {
         MoveToWaypoint(IsOnRightSide ? waypointManager.LeftCombo1 : waypointManager.RightCombo1);
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void MoveCombo2() {
         MoveToWaypoint(IsOnRightSide ? waypointManager.RightCombo2 : waypointManager.LeftCombo2);
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void MoveCombo3() {
         MoveToWaypoint(IsOnRightSide ? waypointManager.RightCombo3 : waypointManager.LeftCombo3);
     }
     
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void SmolShotOut() {
         EmitterSmolOut.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void SmolShotOutRotated() {
         EmitterSmolOutRotated.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void LargeShotOut() {
         EmitterLargeOut.Emit();
     }
 
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void FireworkShot() {
         lastShotInstance.FireworkShot();
     }
     
     // ReSharper disable once UnusedMember.Global
-    [PatternActionAttribute]
+    [RumiaAction]
     public void HookFlare() {
         OuterSegments.SetTrigger(Hook);
         OuterSegments.ResetTrigger(Spin);
