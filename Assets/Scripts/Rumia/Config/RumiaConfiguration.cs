@@ -21,6 +21,13 @@ namespace Rumia {
         // Amount of measures to delay before starting the pattern
         public int StartMeasure;
 
+        /// <summary>
+        /// Guaranteed to be invoked right at the start of gameplay before any <see cref="MeasuresList"/> measures are invoked.
+        /// Also accounts for <see cref="GameController.SecondsToSkip"/>.
+        /// Things like spawning are good to include here.
+        /// </summary>
+        public List<RumiaMeasure> StartMeasures;
+        
         // Measures. It's hard to transcribe sheet music to scriptable objects, okay?
         [Header("Measures list")] public List<RumiaMeasureList> MeasuresList;
 
@@ -36,6 +43,12 @@ namespace Rumia {
                 if (!pattern)
                     return;
 
+                foreach (RumiaMeasure measure in config.StartMeasures) {
+                    if (measure == null)
+                        continue;
+                    measure.SetPattern(pattern);
+                }
+                
                 foreach (RumiaMeasureList measures in config.MeasuresList) {
                     foreach (RumiaMeasure measure in measures.Measures) {
                         if (measure == null)

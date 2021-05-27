@@ -2,7 +2,7 @@
 using UnityEngine;
 
 /// <summary>
-/// Handler of song playback
+/// Handler of song and other audio clip playback. Currently only allows one audio clip to play at once.
 /// </summary>
 public class SongController : MonoBehaviour {
     // Sound that's currently playing. Only one at a time, lads.
@@ -17,19 +17,14 @@ public class SongController : MonoBehaviour {
     }
 
     public void PlayVictorySoundEffect() {
-        PlaySong(VictorySoundEffect);
+        PlaySoundClip(VictorySoundEffect);
     }
 
-    public void PlaySong() {
-        PlaySong(Music);
+    public void PlaySong(int startMeasure) {
+        PlaySoundClip(Music, timingController.GetWholeNoteTime() * startMeasure);
     }
-
-    private IEnumerator QueueSongStart() {
-        yield return new WaitForSeconds(timingController.GetStartDelay());
-        PlaySong(Music);
-    }
-
-    private void PlaySong(AudioSource sound) {
+    
+    private void PlaySoundClip(AudioSource sound, float startTime = 0f) {
         if (!soundsToggled)
             return;
 
@@ -41,6 +36,7 @@ public class SongController : MonoBehaviour {
 
         currentlyPlayingBackground = sound;
         sound.loop = false;
+        sound.time = startTime;
         sound.Play();
     }
 }

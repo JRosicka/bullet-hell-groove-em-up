@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1927324465295092763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6636553894346788517}
+  - component: {fileID: 4522126730572846138}
+  m_Layer: 0
+  m_Name: SongStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6636553894346788517
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927324465295092763}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4522126730572846138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927324465295092763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e6be39d938499983add0f9f29088dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PatternActions:
+  - ID: 0
+    ActionName: None
+    type: 1
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 1
+    ActionName: StartSong
+    type: 2
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 4522126730572846138}
+            m_MethodName: StartSong
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 2
+    ActionName: Spawn
+    type: 3
+    Basic:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Vector:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 4522126730572846138}
+            m_MethodName: Spawn
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Bool:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnPatternAction:
+        m_PersistentCalls:
+          m_Calls: []

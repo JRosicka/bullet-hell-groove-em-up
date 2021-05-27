@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3963231376662199355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6247405907326112781}
+  - component: {fileID: 5329654976822418723}
+  m_Layer: 0
+  m_Name: SongStartPattern
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6247405907326112781
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3963231376662199355}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6121429862932770821}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5329654976822418723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3963231376662199355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40634865fe8156642ab105621e446844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Config: {fileID: 11400000, guid: b1943890c18759f41967ecea619dc6fc, type: 2}
 --- !u!1 &6121429862932770819
 GameObject:
   m_ObjectHideFlags: 0
@@ -36,6 +80,7 @@ Transform:
   - {fileID: 6121429863745279495}
   - {fileID: 6121429864756973932}
   - {fileID: 6121429863932697637}
+  - {fileID: 6247405907326112781}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -67,7 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  ShotBucket: {fileID: 0}
 --- !u!114 &6121429862932770823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +125,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BPM: 128
-  StartDelayBeats: 1
+  NumberOfBeatsToWaitBeforeStarting: 0
+  NumberOfMeasuresToSkipOnStart: 0
+  DelaySecondsBeforeAllowedToRestart: 2
 --- !u!114 &6121429862932770822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,10 +142,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SongController: {fileID: 6121429862932770818}
   EnemyManager: {fileID: 0}
+  ShotBucket: {fileID: 0}
   WaypointManager: {fileID: 0}
   RestartText: {fileID: 0}
   SuccessText: {fileID: 0}
-  DelayBeforeAllowedToRestart: 0.5
+  TimingController: {fileID: 0}
+  BoundaryRight: {fileID: 0}
+  BoundaryLeft: {fileID: 0}
+  BoundaryUp: {fileID: 0}
+  BoundaryDown: {fileID: 0}
 --- !u!1 &6121429863745279492
 GameObject:
   m_ObjectHideFlags: 0

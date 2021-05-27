@@ -13,7 +13,6 @@ public class GameController : MonoBehaviour {
     public TextMesh RestartText;
     public TextMesh SuccessText;
     public TimingController TimingController;
-    public float DelaySecondsBeforeAllowedToRestart = 2f;
     
     public static GameController Instance;
 
@@ -55,7 +54,6 @@ public class GameController : MonoBehaviour {
             elapsedStartDelayTime += Time.deltaTime;
         else if (!started) {
             started = true;
-            SongController.PlaySong(); // TODO: Gross. Make this a pattern we schedule
         }
             
     }
@@ -66,7 +64,7 @@ public class GameController : MonoBehaviour {
         // Fade out the music
         SongController.Music.volume -= .001f;
         
-        if (!(elapsedResetTime > DelaySecondsBeforeAllowedToRestart)) 
+        if (!(elapsedResetTime > TimingController.DelaySecondsBeforeAllowedToRestart)) 
             return;
 
         if (won) {
@@ -99,7 +97,7 @@ public class GameController : MonoBehaviour {
     }
 
     public bool IsWaitingForStart() {
-        return elapsedStartDelayTime < delaySecondsBeforeStart;
+        return !started;
     }
 
     public Vector2 EvaluateMove(Vector2 originalMove, Vector2 currentPosition) {

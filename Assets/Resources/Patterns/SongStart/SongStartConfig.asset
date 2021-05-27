@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 236bf94ffdcc7064a995775e6f45bc5e, type: 3}
-  m_Name: GameOverConfiguration
+  m_Name: SongStartConfig
   m_EditorClassIdentifier: 
-  Pattern: {fileID: 5479237732316806916, guid: e25fbc22a7a1328478aaa146c9e69b89, type: 3}
-  StartMeasure: 32
+  Pattern: {fileID: 4522126730572846138, guid: 4d941b7d27e90f84fb8b4dfd0888c8bc, type: 3}
+  StartMeasure: 0
   StartMeasures:
-  - {fileID: 11400000, guid: 425f2cd119bac424eaa3ed3bcf15f8ed, type: 2}
+  - {fileID: 11400000, guid: e5c4b2162555db445b914ca12537adb3, type: 2}
   MeasuresList: []

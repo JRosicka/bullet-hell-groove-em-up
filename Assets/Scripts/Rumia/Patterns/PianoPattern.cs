@@ -45,11 +45,13 @@ namespace Rumia {
 
         public List<ParticleSystem> HookParticleSystems;
 
-        void Start() {
+        private void Awake() {
             gameController = GameController.Instance;
             waypointManager = gameController.WaypointManager;
             playerController = FindObjectOfType<PlayerController>();
+        }
 
+        void Start() {
             waypoints.Add(waypointManager.BottomLeft);
             waypoints.Add(waypointManager.BottomRight);
             waypoints.Add(waypointManager.MiddleLeft);

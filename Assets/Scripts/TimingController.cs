@@ -6,7 +6,10 @@
 public class TimingController : MonoBehaviour {
     public int BPM;
     
-    public int StartDelayBeats;
+    public int NumberOfBeatsToWaitBeforeStarting;
+    public int NumberOfMeasuresToSkipOnStart;
+    public float DelaySecondsBeforeAllowedToRestart = 2f;
+
     private float BPS => BPM / 60f;
 
     public float GetWholeNoteTime() {
@@ -34,6 +37,6 @@ public class TimingController : MonoBehaviour {
     }
 
     public float GetStartDelay() {
-        return StartDelayBeats * GetQuarterNoteTime();
+        return NumberOfBeatsToWaitBeforeStarting * GetQuarterNoteTime();
     }
 }

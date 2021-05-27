@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Pattern: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7, type: 3}
   StartMeasure: 0
+  StartMeasures:
+  - {fileID: 11400000, guid: 38a610e071455fa4684f6c31cc8de87d, type: 2}
   MeasuresList:
   - Measures:
-    - {fileID: 11400000, guid: 38a610e071455fa4684f6c31cc8de87d, type: 2}
     - {fileID: 11400000, guid: 3d7abb1ab4bdbef409d9d1a040dac53d, type: 2}
     - {fileID: 11400000, guid: 970d712cc2b9f994b811fcb85089a641, type: 2}
   - Measures:
