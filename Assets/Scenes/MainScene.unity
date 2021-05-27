@@ -2224,5 +2224,20 @@ PrefabInstance:
       propertyPath: StartDelayBeats
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6121429862932770823, guid: 31427befc6d90614d9068da59e56bb7b,
+        type: 3}
+      propertyPath: NumberOfMeasuresToSkipOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6121429862932770823, guid: 31427befc6d90614d9068da59e56bb7b,
+        type: 3}
+      propertyPath: NumberOfBeatsToWaitBeforeStarting
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6121429862932770823, guid: 31427befc6d90614d9068da59e56bb7b,
+        type: 3}
+      propertyPath: DelaySecondsBeforeAllowedToRestart
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31427befc6d90614d9068da59e56bb7b, type: 3}
