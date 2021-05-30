@@ -336,7 +336,6 @@ namespace Rumia {
 
         [Serializable]
         public class VectorSubRumiaAction : ISubRumiaAction {
-            [FormerlySerializedAs("OnPatternAction")] 
             public VectorEvent OnRumiaAction;
 
             public void InvokeRumiaAction(string serializedParameter) {

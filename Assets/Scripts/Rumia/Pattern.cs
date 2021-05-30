@@ -14,7 +14,7 @@ namespace Rumia {
     /// in child classes to be easily invoked via <see cref="RumiaMeasure"/>s.
     /// </summary>
     public abstract class Pattern : MonoBehaviour {
-        [FormerlySerializedAs("PatternActions")] [SerializeField, HideInInspector] 
+        [SerializeField, HideInInspector] 
         private List<RumiaAction> RumiaActions;
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Rumia {
                 actionType = RumiaAction.GetRumiaActionType(parameterType);
                 if (actionType == RumiaAction.RumiaActionType.Undefined) {
                     Debug.LogError(
-                        "No RumiaPatternAction type assigned to typesDict for parameter type: " + parameterType);
+                        "No RumiaAction type assigned to typesDict for parameter type: " + parameterType);
                     return;
                 }
             }

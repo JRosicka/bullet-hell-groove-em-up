@@ -277,7 +277,6 @@ public class Emitter : MonoBehaviour {
     
     // TODO: Enforce somewhere that things tagged with [Emission] cannot have any parameters
     // TODO: Dummy examples, the BulletPrefab(s) and Shoot logic should be defined in subclasses of Emitter
-    [FormerlySerializedAs("FarMoreComplexConfig")] 
     public EmissionConfiguration Config;
     [Emission]
     // ReSharper disable once UnusedMember.Global
