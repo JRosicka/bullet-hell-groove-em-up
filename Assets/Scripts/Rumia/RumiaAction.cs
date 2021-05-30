@@ -155,7 +155,7 @@ namespace Rumia {
 
             public void InvokeRumiaAction(string serializedParameter) {
                 OnRumiaAction
-                    .Invoke(); // TODO: Not the most relevant place to put this, BUT when we have a RumiaConfiguration configured and then later add in a new rumia action type for that pattern, we currently need to look at all of the scripts in order to update the IDs to the correct values. This can be tough to catch sometimes. We should fix this so that the values are updated for everything whenever we add new rumia action methods (or whatever they're called)
+                    .Invoke();
             }
 
             public void GenerateRumiaActionEvent(MethodInfo method, Pattern target) {

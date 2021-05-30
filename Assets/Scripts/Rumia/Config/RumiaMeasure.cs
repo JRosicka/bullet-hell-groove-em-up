@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
+using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -18,13 +19,50 @@ namespace Rumia {
         // TODO: Hey this looks kinda neat https://stackoverflow.com/questions/60864308/how-to-make-an-enum-like-unity-inspector-drop-down-menu-from-a-string-array-with
         // TODO: Functionality for updating a shot that isn't necessarily the most recently fired one, maybe. Would require using ordered pairs (index, enum string) rather than just enum strings. 
         // Would also probably want to use a list per element instead of a single value since we'd want to be able to do multiple actions at once from a single RumiaMeasure
-        [HideInInspector]
+        [HideInInspector] [FormerlySerializedAs("PatternActionLists")]
         public RumiaActionList[] RumiaActionLists = new RumiaActionList[SIZE];
         // Collection of values to pass into the RumiaActions' parameters, serialized as strings in order to allow for different types
         [HideInInspector]
         public ChoiceParameterList[] ChoiceParameterLists = new ChoiceParameterList[SIZE];
 
         public Pattern Pattern;
+
+        public void UpdateRumiaActions() {
+            Pattern.GenerateRumiaActions();
+            
+            // Get all of the RumiaAction names
+            List<string> choiceNames = Pattern.GetAllRumiaActions().Select(e => e.ActionName).ToList();
+
+            for (int i = 0; i < SIZE; i++) {
+                if (RumiaActionLists[i] == null)
+                    RumiaActionLists[i] = new RumiaActionList();
+                
+                List<RumiaAction> rumiaActions = RumiaActionLists[i].RumiaActions;
+
+                // Handle each individual RumiaAction
+                for (int j = 0; j < rumiaActions.Count; j++) {
+                    string currentName = rumiaActions[j].ActionName;
+
+                    // If the currently chosen RumiaAction no longer exists, replace it with a NullAction
+                    if (!choiceNames.Contains(currentName))
+                        rumiaActions[j].ActionName = RumiaAction.NoneString;
+
+                    // Get the ID of the currently selected RumiaAction
+                    int currentIndex = Pattern.GetAllRumiaActions().First(e => e.ActionName.Equals(currentName)).ID;
+                    rumiaActions[j].ID = currentIndex;
+                    
+                    Type parameterType = rumiaActions[j].GetSubRumiaAction()?.GetParameterType();
+                    Type currentType = rumiaActions[j].GetSubRumiaAction()?.GetParameterType();
+                    
+                    // If we changed the parameter type, then set the choice parameter value back to null to avoid type weirdness
+                    if (parameterType != null && parameterType != currentType)
+                        ChoiceParameterLists[i].ChoiceParameters[j] = null;
+                }
+            }
+            
+            // Save the changes back to the object
+            EditorUtility.SetDirty(this);
+        }
 
         private void OnValidate() {
             if (RumiaActionLists.Length != SIZE) {
@@ -33,16 +71,23 @@ namespace Rumia {
             }
         }
 
+#if UNITY_EDITOR
         public void SetPattern(Pattern p) {
             Pattern = p;
         }
+        
+        /// <summary>
+        /// Update <see cref="RumiaAction"/> availability and indices in each <see cref="RumiaMeasure"/> asset
+        /// </summary>
+        [DidReloadScripts]
+        private static void OnScriptsReloaded() {
+            foreach (RumiaMeasure measure in ResourcesUtil.GetAllScriptableObjectInstances<RumiaMeasure>()) {
+                measure.UpdateRumiaActions();
+            }
+        }
 
-
-    #if UNITY_EDITOR
         [CustomEditor(typeof(RumiaMeasure))]
         public class RumiaMeasureEditor : Editor {
-            private bool dirtied = true;
-
             public override void OnInspectorGUI() {
                 // Draw the default inspector
                 DrawDefaultInspector();
@@ -52,14 +97,6 @@ namespace Rumia {
                 Pattern pattern = measure.Pattern;
                 if (!pattern)
                     return;
-
-                // The only way this would generate a different result from last time is if the assembly was recompiled, 
-                // which would result in this dirtied flag getting reset to its default value (true). If this has happened, 
-                // regenerate the RumiaActions for this RumiaMeasure's pattern
-                if (dirtied) {
-                    pattern.GenerateRumiaActions();
-                    dirtied = false;
-                }
                 
                 List<RumiaAction> choices = pattern.GetAllRumiaActions();
 
@@ -216,7 +253,7 @@ namespace Rumia {
                 GUI.color = c;
             }
         }
-    #endif
+#endif
     }
 
     [Serializable]

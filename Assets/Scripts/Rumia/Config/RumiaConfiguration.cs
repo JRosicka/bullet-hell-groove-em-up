@@ -31,6 +31,15 @@ namespace Rumia {
         // Measures. It's hard to transcribe sheet music to scriptable objects, okay?
         [Header("Measures list")] public List<RumiaMeasureList> MeasuresList;
 
+        public List<RumiaMeasure> GetAllMeasures() {
+            List<RumiaMeasure> ret = new List<RumiaMeasure>(StartMeasures);
+            foreach (RumiaMeasureList measureList in MeasuresList) {
+                ret.AddRange(measureList.Measures);
+            }
+
+            return ret;
+        }
+
 #if UNITY_EDITOR
         [CustomEditor(typeof(RumiaConfiguration))]
         public class RumiaConfigurationEditor : Editor {
