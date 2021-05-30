@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1dd65c84e7535488d11a270a4701de, type: 3}
   m_Name: Spawn
   m_EditorClassIdentifier: 
-  PatternActionLists:
+  RumiaActionLists:
   - RumiaActions:
     - ID: 19
       ActionName: Spawn
       type: 3
       Basic:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       Vector:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls:
             - m_Target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
@@ -38,19 +38,19 @@ MonoBehaviour:
                 m_BoolArgument: 0
               m_CallState: 2
       Bool:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       Int:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       Float:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       String:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
   - RumiaActions: []

@@ -85,16 +85,16 @@ namespace Rumia {
             foreach (RumiaMeasure measure in measures.Where(measure => measure != null)) {
                 // Iterate through each instant (32nd note) in the measure
                 for (int k = 0; k < ACTIONS_PER_MEASURE; k++) {
-                    RumiaActionList[] patternActionLists = measure.PatternActionLists;
+                    RumiaActionList[] rumiaActionLists = measure.RumiaActionLists;
                     ChoiceParameterList[] choiceParameterLists = measure.ChoiceParameterLists;
-                    if (patternActionLists[k] == null)
+                    if (rumiaActionLists[k] == null)
                         continue;
                     
                     // Iterate through each RumiaAction assigned to this instant
-                    List<RumiaAction> patternActions = patternActionLists[k].RumiaActions;
+                    List<RumiaAction> rumiaActions = rumiaActionLists[k].RumiaActions;
                     List<string> choiceParameters = choiceParameterLists[k].ChoiceParameters;
-                    for (int l = 0; l < patternActions.Count; l++) {
-                        RumiaAction rumiaAction = patternActions[l];
+                    for (int l = 0; l < rumiaActions.Count; l++) {
+                        RumiaAction rumiaAction = rumiaActions[l];
                         // Get the serialized parameter to pass into the RumiaAction when it comes time to invoke it
                         string parameter = choiceParameters[l];
 

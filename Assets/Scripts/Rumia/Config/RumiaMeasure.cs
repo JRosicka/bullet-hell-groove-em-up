@@ -18,8 +18,8 @@ namespace Rumia {
         // TODO: Hey this looks kinda neat https://stackoverflow.com/questions/60864308/how-to-make-an-enum-like-unity-inspector-drop-down-menu-from-a-string-array-with
         // TODO: Functionality for updating a shot that isn't necessarily the most recently fired one, maybe. Would require using ordered pairs (index, enum string) rather than just enum strings. 
         // Would also probably want to use a list per element instead of a single value since we'd want to be able to do multiple actions at once from a single RumiaMeasure
-        [HideInInspector]
-        public RumiaActionList[] PatternActionLists = new RumiaActionList[SIZE];
+        [FormerlySerializedAs("PatternActionLists")] [HideInInspector]
+        public RumiaActionList[] RumiaActionLists = new RumiaActionList[SIZE];
         // Collection of values to pass into the RumiaActions' parameters, serialized as strings in order to allow for different types
         [HideInInspector]
         public ChoiceParameterList[] ChoiceParameterLists = new ChoiceParameterList[SIZE];
@@ -27,9 +27,9 @@ namespace Rumia {
         public Pattern Pattern;
 
         private void OnValidate() {
-            if (PatternActionLists.Length != SIZE) {
+            if (RumiaActionLists.Length != SIZE) {
                 Debug.LogWarning("Don't change the size of 'Notes'!");
-                Array.Resize(ref PatternActionLists, SIZE);
+                Array.Resize(ref RumiaActionLists, SIZE);
             }
         }
 
@@ -57,11 +57,11 @@ namespace Rumia {
                 // which would result in this dirtied flag getting reset to its default value (true). If this has happened, 
                 // regenerate the RumiaActions for this RumiaMeasure's pattern
                 if (dirtied) {
-                    pattern.GeneratePatternActions();
+                    pattern.GenerateRumiaActions();
                     dirtied = false;
                 }
                 
-                List<RumiaAction> choices = pattern.GetAllPatternActions();
+                List<RumiaAction> choices = pattern.GetAllRumiaActions();
 
                 EditorGUILayout.LabelField("32nd note triggers", EditorStyles.boldLabel);
                 EditorGUIUtility.labelWidth = 80;
@@ -70,24 +70,24 @@ namespace Rumia {
                 
                 // Handle each group of RumiaActions to be scheduled for this instant in time
                 for (int i = 0; i < SIZE; i++) {
-                    if (measure.PatternActionLists[i] == null)
-                        measure.PatternActionLists[i] = new RumiaActionList();
+                    if (measure.RumiaActionLists[i] == null)
+                        measure.RumiaActionLists[i] = new RumiaActionList();
 
                     EditorGUILayout.BeginHorizontal();
-                    List<RumiaAction> patternActionList = measure.PatternActionLists[i].RumiaActions;
+                    List<RumiaAction> rumiaActionList = measure.RumiaActionLists[i].RumiaActions;
                     List<string> choiceParameterList = measure.ChoiceParameterLists[i].ChoiceParameters;
                     
                     // Button to add a new RumiaAction
                     GUI.color = Color.green;
                     if (GUILayout.Button("+", GUILayout.Width(30))) {
-                        patternActionList.Add(new RumiaAction());
+                        rumiaActionList.Add(new RumiaAction());
                         choiceParameterList.Add(null);
                     }
 
                     // Button to remove the last RumiaAction in the list
                     GUI.color = Color.red;
-                    if (GUILayout.Button("-", GUILayout.Width(30)) && patternActionList.Count > 0) {
-                        patternActionList.RemoveAt(patternActionList.Count - 1);
+                    if (GUILayout.Button("-", GUILayout.Width(30)) && rumiaActionList.Count > 0) {
+                        rumiaActionList.RemoveAt(rumiaActionList.Count - 1);
                         choiceParameterList.RemoveAt(choiceParameterList.Count - 1);
                     }
 
@@ -95,7 +95,7 @@ namespace Rumia {
                     GUILayout.Label(GetLabel(i), GUILayout.Width(50));
                     
                     // Handle each individual RumiaAction
-                    for (int j = 0; j < patternActionList.Count; j++) {
+                    for (int j = 0; j < rumiaActionList.Count; j++) {
                         // Formatting
                         if (j > 0) {
                             EditorGUILayout.EndHorizontal();
@@ -104,10 +104,10 @@ namespace Rumia {
                         }
 
                         // Draw the RumiaAction field
-                        RumiaAction updatedRumiaAction = patternActionList[j];
+                        RumiaAction updatedRumiaAction = rumiaActionList[j];
                         string updatedChoiceParameter = choiceParameterList[j];
-                        DrawPatternActionField(choices, ref updatedRumiaAction, ref updatedChoiceParameter);
-                        patternActionList[j] = updatedRumiaAction;
+                        DrawRumiaActionField(choices, ref updatedRumiaAction, ref updatedChoiceParameter);
+                        rumiaActionList[j] = updatedRumiaAction;
                         choiceParameterList[j] = updatedChoiceParameter;
                     }
 
@@ -127,10 +127,10 @@ namespace Rumia {
             /// Display the choices and any configurable parameters for this pattern's available RumiaActions, and update
             /// with any changes we make
             /// </summary>
-            private void DrawPatternActionField(List<RumiaAction> choices, ref RumiaAction rumiaAction, ref string choiceParameter) {
+            private void DrawRumiaActionField(List<RumiaAction> choices, ref RumiaAction rumiaAction, ref string choiceParameter) {
                 // Get the name of the currently selected RumiaAction
                 string currentName = rumiaAction.ActionName;
-                Type currentType = rumiaAction.GetSubPatternAction()?.GetParameterType();
+                Type currentType = rumiaAction.GetSubRumiaAction()?.GetParameterType();
                     
                 // Get all of the RumiaAction names
                 List<string> choiceNames = choices.Select(e => e.ActionName).ToList();
@@ -150,7 +150,7 @@ namespace Rumia {
                 rumiaAction = choices[chosenIndex];
 
                 // Handle presenting and updating the parameter value for the selected RumiaAction
-                Type parameterType = rumiaAction.GetSubPatternAction()?.GetParameterType();
+                Type parameterType = rumiaAction.GetSubRumiaAction()?.GetParameterType();
                 if (parameterType != null) {
                     // If we changed the parameter type, then set the choice parameter value back to null to avoid type weirdness
                     if (parameterType != currentType)
@@ -167,25 +167,25 @@ namespace Rumia {
                 // TODO: Might want to use some sort of JSON Serialization if this gets more complicated. 
                 // http://wiki.unity3d.com/index.php/SimpleJSON
                 switch (rumiaAction.type) {
-                    case RumiaAction.PatternActionType.Vector:
-                        choiceParameter = RumiaAction.VectorSubPatternAction.SerializeParameter(
-                            EditorGUILayout.Vector2Field("Parameter:", RumiaAction.VectorSubPatternAction.DeserializeParameter(choiceParameter)));
+                    case RumiaAction.RumiaActionType.Vector:
+                        choiceParameter = RumiaAction.VectorSubRumiaAction.SerializeParameter(
+                            EditorGUILayout.Vector2Field("Parameter:", RumiaAction.VectorSubRumiaAction.DeserializeParameter(choiceParameter)));
                         break;
-                    case RumiaAction.PatternActionType.Bool:
-                        choiceParameter = RumiaAction.BoolSubPatternAction.SerializeParameter(
-                            EditorGUILayout.Toggle("Parameter:", RumiaAction.BoolSubPatternAction.DeserializeParameter(choiceParameter)));
+                    case RumiaAction.RumiaActionType.Bool:
+                        choiceParameter = RumiaAction.BoolSubRumiaAction.SerializeParameter(
+                            EditorGUILayout.Toggle("Parameter:", RumiaAction.BoolSubRumiaAction.DeserializeParameter(choiceParameter)));
                         break;
-                    case RumiaAction.PatternActionType.Int:
-                        choiceParameter = RumiaAction.IntSubPatternAction.SerializeParameter(
-                            EditorGUILayout.IntField("Parameter:", RumiaAction.IntSubPatternAction.DeserializeParameter(choiceParameter)));
+                    case RumiaAction.RumiaActionType.Int:
+                        choiceParameter = RumiaAction.IntSubRumiaAction.SerializeParameter(
+                            EditorGUILayout.IntField("Parameter:", RumiaAction.IntSubRumiaAction.DeserializeParameter(choiceParameter)));
                         break;
-                    case RumiaAction.PatternActionType.Float:
-                        choiceParameter = RumiaAction.FloatSubPatternAction.SerializeParameter(
-                            EditorGUILayout.FloatField("Parameter:", RumiaAction.FloatSubPatternAction.DeserializeParameter(choiceParameter)));
+                    case RumiaAction.RumiaActionType.Float:
+                        choiceParameter = RumiaAction.FloatSubRumiaAction.SerializeParameter(
+                            EditorGUILayout.FloatField("Parameter:", RumiaAction.FloatSubRumiaAction.DeserializeParameter(choiceParameter)));
                         break;
-                    case RumiaAction.PatternActionType.String:
-                        choiceParameter = RumiaAction.StringSubPatternAction.SerializeParameter(
-                            EditorGUILayout.TextField("Parameter:", RumiaAction.StringSubPatternAction.DeserializeParameter(choiceParameter)));
+                    case RumiaAction.RumiaActionType.String:
+                        choiceParameter = RumiaAction.StringSubRumiaAction.SerializeParameter(
+                            EditorGUILayout.TextField("Parameter:", RumiaAction.StringSubRumiaAction.DeserializeParameter(choiceParameter)));
                         break;
                     default:
                         throw new Exception("Did not properly account for rumiaAction of type " + rumiaAction.type);

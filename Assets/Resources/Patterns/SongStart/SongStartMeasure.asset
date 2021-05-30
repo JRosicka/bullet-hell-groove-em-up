@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1dd65c84e7535488d11a270a4701de, type: 3}
   m_Name: SongStartMeasure
   m_EditorClassIdentifier: 
-  PatternActionLists:
+  RumiaActionLists:
   - RumiaActions:
     - ID: 2
       ActionName: Spawn
       type: 3
       Basic:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       Vector:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls:
             - m_Target: {fileID: 4522126730572846138, guid: 4d941b7d27e90f84fb8b4dfd0888c8bc,
@@ -38,26 +38,26 @@ MonoBehaviour:
                 m_BoolArgument: 0
               m_CallState: 2
       Bool:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       Int:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       Float:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       String:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
     - ID: 1
       ActionName: StartSong
       type: 2
       Basic:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls:
             - m_Target: {fileID: 4522126730572846138, guid: 4d941b7d27e90f84fb8b4dfd0888c8bc,
@@ -73,23 +73,23 @@ MonoBehaviour:
                 m_BoolArgument: 0
               m_CallState: 2
       Vector:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       Bool:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       Int:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       Float:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       String:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
   - RumiaActions: []

@@ -23,7 +23,7 @@ namespace Rumia {
 
         /// <summary>
         /// Guaranteed to be invoked right at the start of gameplay before any <see cref="MeasuresList"/> measures are invoked.
-        /// Also accounts for <see cref="GameController.SecondsToSkip"/>.
+        /// Also accounts for <see cref="TimingController.NumberOfMeasuresToSkipOnStart"/>.
         /// Things like spawning are good to include here.
         /// </summary>
         public List<RumiaMeasure> StartMeasures;

@@ -43,39 +43,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04edce695dad6b45a900cbee7b68b4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PatternActions:
+  RumiaActions:
   - ID: 0
     ActionName: None
     type: 1
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 1
     ActionName: GameOver
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 5479237732316806916}
@@ -90,34 +90,34 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 2
     ActionName: Spawn
     type: 3
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 5479237732316806916}
@@ -132,18 +132,18 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []

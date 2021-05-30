@@ -4,16 +4,18 @@ using System.Linq;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Rumia {
     /// <summary>
     /// An entity that we can schedule operations to be performed on via <see cref="RumiaMeasure"/>.
-    /// This keeps a collection of <see cref="PatternActions"/> that it creates based on its methods tagged with
+    /// This keeps a collection of <see cref="RumiaActions"/> that it creates based on its methods tagged with
     /// <see cref="RumiaActionAttribute"/>. This is for ease of use so that entity-specific behaviors can be defined
     /// in child classes to be easily invoked via <see cref="RumiaMeasure"/>s.
     /// </summary>
     public abstract class Pattern : MonoBehaviour {
-        [SerializeField, HideInInspector] private List<RumiaAction> PatternActions;
+        [FormerlySerializedAs("PatternActions")] [SerializeField, HideInInspector] 
+        private List<RumiaAction> RumiaActions;
 
         /// <summary>
         /// Spawn this pattern in the scene at the specified position.
@@ -30,83 +32,83 @@ namespace Rumia {
         /// <summary>
         /// Perform the <see cref="RumiaAction"/> that was scheduled
         /// </summary>
-        public void InvokePatternAction(int id, string serializedParameter) {
-            PatternActions.First(e => e.ID == id).GetSubPatternAction()?.InvokePatternAction(serializedParameter);
+        public void InvokeRumiaAction(int id, string serializedParameter) {
+            RumiaActions.First(e => e.ID == id).GetSubRumiaAction()?.InvokeRumiaAction(serializedParameter);
         }
 
-        public List<RumiaAction> GetAllPatternActions() {
-            List<RumiaAction> allPatternActions = new List<RumiaAction>(PatternActions);
+        public List<RumiaAction> GetAllRumiaActions() {
+            List<RumiaAction> allRumiaActions = new List<RumiaAction>(RumiaActions);
 
-            return allPatternActions;
+            return allRumiaActions;
         }
 
 #if UNITY_EDITOR
         /// <summary>
-        /// Delete whatever data we have in <see cref="PatternActions"/> and recreate it.
-        /// - The first RumiaAction in the list is a NullPatternAction
+        /// Delete whatever data we have in <see cref="RumiaActions"/> and recreate it.
+        /// - The first RumiaAction in the list is null
         /// - Additional entries are created and added for each method in this script with a
         ///   <see cref="RumiaActionAttribute"/> tag.
         ///
         /// Also sets the int IDs of each RumiaAction
         /// </summary>
-        public void GeneratePatternActions() {
-            PatternActions.Clear();
+        public void GenerateRumiaActions() {
+            RumiaActions.Clear();
 
             // Add the null RumiaAction if it is not present 
-            PatternActions.Add(RumiaAction.CreateNullPatternAction());
+            RumiaActions.Add(RumiaAction.CreateNullRumiaAction());
 
             MethodInfo[] methods = GetType()
                 .GetMethods()
                 .Where(t => t.GetCustomAttributes(typeof(RumiaActionAttribute), false).Length > 0)
                 .ToArray();
             foreach (MethodInfo method in methods) {
-                GeneratePatternActionForMethod(method);
+                GenerateRumiaActionForMethod(method);
             }
 
             // Update the IDs in case any entries were added/removed/reordered
-            for (int i = 0; i < PatternActions.Count; i++) {
-                PatternActions[i].ID = i;
+            for (int i = 0; i < RumiaActions.Count; i++) {
+                RumiaActions[i].ID = i;
             }
 
             EditorUtility.SetDirty(this);
         }
 
         /// <summary>
-        /// Create a pattern action for a single method. This determines what type of SubPatternAction to use based on the
+        /// Create a pattern action for a single method. This determines what type of <see cref="RumiaAction.ISubRumiaAction"/> to use based on the
         /// type of the method's parameter. Only accepts methods with a single parameter or no parameters.
-        /// Creates the new RumiaAction and adds it to <see cref="PatternActions"/>.
+        /// Creates the new RumiaAction and adds it to <see cref="RumiaActions"/>.
         /// </summary>
-        private void GeneratePatternActionForMethod(MethodInfo method) {
+        private void GenerateRumiaActionForMethod(MethodInfo method) {
             ParameterInfo[] parameters = method.GetParameters();
 
             // Only accept methods with zero or one parameter
             if (parameters.Length >= 2) {
-                Debug.LogError("Too many parameters for method " + method.Name
+                Debug.LogError("Too many parameters for method " + method.Name 
                                                                  + ". Methods with the [RumiaActionAttribute] can only have one parameter.");
                 return;
             }
 
-            RumiaAction.PatternActionType actionType;
+            RumiaAction.RumiaActionType actionType;
             if (parameters.Length == 0) {
-                // No parameters, so use a BasicSubPatternAction
-                actionType = RumiaAction.PatternActionType.Basic;
+                // No parameters, so use a BasicSubRumiaAction
+                actionType = RumiaAction.RumiaActionType.Basic;
             } else {
                 // Exactly one parameter. Get its mapped RumiaAction type.
                 Type parameterType = parameters[0].ParameterType;
-                actionType = RumiaAction.GetPatternActionType(parameterType);
-                if (actionType == RumiaAction.PatternActionType.Undefined) {
+                actionType = RumiaAction.GetRumiaActionType(parameterType);
+                if (actionType == RumiaAction.RumiaActionType.Undefined) {
                     Debug.LogError(
-                        "No SubPatternAction type assigned to typesDict for parameter type: " + parameterType);
+                        "No RumiaPatternAction type assigned to typesDict for parameter type: " + parameterType);
                     return;
                 }
             }
 
-            // Create the RumiaAction based on the per-SubPatternAction definition
-            RumiaAction rumiaAction = RumiaAction.CreatePatternAction(actionType);
+            // Create the RumiaAction based on the per-SubRumiaAction definition
+            RumiaAction rumiaAction = RumiaAction.CreateRumiaAction(actionType);
             rumiaAction.ActionName = method.Name;
-            rumiaAction.GetSubPatternAction()?.GeneratePatternActionEvent(method, this);
+            rumiaAction.GetSubRumiaAction()?.GenerateRumiaActionEvent(method, this);
 
-            PatternActions.Add(rumiaAction);
+            RumiaActions.Add(rumiaAction);
         }
 #endif
     }

@@ -5589,39 +5589,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c86aff6fc17f3d4c92b8a8bd244e6c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PatternActions:
+  RumiaActions:
   - ID: 0
     ActionName: None
     type: 1
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 1
     ActionName: FireAnimationFlareHorizontal
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -5636,30 +5636,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 2
     ActionName: FireAnimationFlareVertical
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -5674,30 +5674,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 3
     ActionName: InnerAnimationFlareClockwise
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -5712,30 +5712,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 4
     ActionName: InnerAnimationFlareCounterclockwise
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -5750,30 +5750,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 5
     ActionName: FireSynthShotClockwise
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -5788,30 +5788,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 6
     ActionName: FireSynthShotCounterClockwise
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -5826,30 +5826,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 7
     ActionName: MoveLeft
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -5864,30 +5864,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 8
     ActionName: MoveRight
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -5902,30 +5902,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 9
     ActionName: BassShotM1B1N1
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -5940,30 +5940,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 10
     ActionName: BassShotM1B1N2
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -5978,30 +5978,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 11
     ActionName: BassShotM1B1N3
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6016,30 +6016,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 12
     ActionName: BassShotM1B3N1
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6054,30 +6054,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 13
     ActionName: BassShotM1B3N2
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6092,30 +6092,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 14
     ActionName: BassShotM1B3N3
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6130,30 +6130,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 15
     ActionName: BassShotM1B3N4
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6168,30 +6168,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 16
     ActionName: BassShotM2B1N1
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6206,30 +6206,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 17
     ActionName: BassShotM2B1N2
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6244,30 +6244,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 18
     ActionName: BassShotM2B1N3
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6282,30 +6282,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 19
     ActionName: BassShotM2B3N1
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6320,30 +6320,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 20
     ActionName: BassShotM2B3N2
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6358,30 +6358,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 21
     ActionName: BassShotM2B3N3
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6396,30 +6396,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 22
     ActionName: BassShotM2B3N4
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6434,30 +6434,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 23
     ActionName: BassShotM2B3N5
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6472,30 +6472,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 24
     ActionName: BassShotM2B3N6
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6510,30 +6510,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 25
     ActionName: BassShotM4B3N1
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6548,30 +6548,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 26
     ActionName: BulletSlowdownEffect
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6586,30 +6586,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 27
     ActionName: SynthShotSmolClockwise
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6624,30 +6624,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 28
     ActionName: SynthShotIntroClockwise
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6662,30 +6662,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 29
     ActionName: SynthShotIntroCounterClockwise
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6700,30 +6700,30 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 30
     ActionName: HookFlare
     type: 2
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6738,34 +6738,34 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   - ID: 31
     ActionName: Spawn
     type: 3
     Basic:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Vector:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 1750994280144202701}
@@ -6780,19 +6780,19 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
     Bool:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Int:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     Float:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
     String:
-      OnPatternAction:
+      OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
   Emitters: {fileID: 7570076599585588651}

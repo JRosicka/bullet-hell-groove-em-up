@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.Events;
-
+using UnityEngine.Serialization;
 #if UNITY_EDITOR
 using UnityEditor.Events;
 #endif
@@ -12,15 +12,15 @@ namespace Rumia {
     /// <summary>
     /// A container used to assign a UnityEvent to be invoked later with optional specified parameters to invoke it with.
     ///
-    /// This contains a field of each type of <see cref="ISubPatternAction"/> in order to simulate polymorphism without
+    /// This contains a field of each type of <see cref="ISubRumiaAction"/> in order to simulate polymorphism without
     /// actually using polymorphism. Only one of these fields is relevant and is specified by the <see cref="type"/> value.
     /// The reason for this is because the Unity editor does not work well with serializing collections of polymorphic data. 
     /// </summary>
     [Serializable]
     public class RumiaAction {
-        public static PatternActionType GetPatternActionType(Type keyType) {
+        public static RumiaActionType GetRumiaActionType(Type keyType) {
             // The default value of Type is null, so we return null if we do not have a matching Type for keyType
-            _typesDict.TryGetValue(keyType, out PatternActionType ret);
+            _typesDict.TryGetValue(keyType, out RumiaActionType ret);
             return ret;
         }
 
@@ -28,11 +28,11 @@ namespace Rumia {
 
         [HideInInspector] public int ID;
         public string ActionName = NoneString;
-        public PatternActionType type = PatternActionType.None;
+        public RumiaActionType type = RumiaActionType.None;
 
         #region Type-specific definitions
 
-        public enum PatternActionType {
+        public enum RumiaActionType {
             Undefined, // Default type
             None,
             Basic,
@@ -43,128 +43,128 @@ namespace Rumia {
             String
         }
 
-        private static Dictionary<Type, PatternActionType> _typesDict = new Dictionary<Type, PatternActionType> {
-            {typeof(Vector2), PatternActionType.Vector},
-            {typeof(bool), PatternActionType.Bool},
-            {typeof(int), PatternActionType.Int},
-            {typeof(float), PatternActionType.Float},
-            {typeof(string), PatternActionType.String}
+        private static Dictionary<Type, RumiaActionType> _typesDict = new Dictionary<Type, RumiaActionType> {
+            {typeof(Vector2), RumiaActionType.Vector},
+            {typeof(bool), RumiaActionType.Bool},
+            {typeof(int), RumiaActionType.Int},
+            {typeof(float), RumiaActionType.Float},
+            {typeof(string), RumiaActionType.String}
         };
 
         /// <summary>
-        /// New <see cref="ISubPatternAction"/> fields be defined here.
+        /// New <see cref="ISubRumiaAction"/> fields be defined here.
         /// The field names must match their enum types. TODO enforce this.
         /// </summary>
-        public BasicSubPatternAction Basic;
-        public VectorSubPatternAction Vector;
-        public BoolSubPatternAction Bool;
-        public IntSubPatternAction Int;
-        public FloatSubPatternAction Float;
-        public StringSubPatternAction String;
+        public BasicSubRumiaAction Basic;
+        public VectorSubRumiaAction Vector;
+        public BoolSubRumiaAction Bool;
+        public IntSubRumiaAction Int;
+        public FloatSubRumiaAction Float;
+        public StringSubRumiaAction String;
 
-        public ISubPatternAction GetSubPatternAction() {
+        public ISubRumiaAction GetSubRumiaAction() {
             switch (type) {
-                case PatternActionType.Basic:
+                case RumiaActionType.Basic:
                     return Basic;
-                case PatternActionType.Vector:
+                case RumiaActionType.Vector:
                     return Vector;
-                case PatternActionType.Bool:
+                case RumiaActionType.Bool:
                     return Bool;
-                case PatternActionType.Int:
+                case RumiaActionType.Int:
                     return Int;
-                case PatternActionType.Float:
+                case RumiaActionType.Float:
                     return Float;
-                case PatternActionType.String:
+                case RumiaActionType.String:
                     return String;
-                case PatternActionType.None:
+                case RumiaActionType.None:
                     return null;
                 default:
                     throw new Exception("RumiaAction type is Undefined");
             }
         }
 
-        public static RumiaAction CreatePatternAction(PatternActionType patternActionType) {
-            switch (patternActionType) {
-                case PatternActionType.Basic:
-                    return CreateBasicPatternAction();
-                case PatternActionType.Vector:
-                    return CreateVectorPatternAction();
-                case PatternActionType.Bool:
-                    return CreateBoolPatternAction();
-                case PatternActionType.Int:
-                    return CreateIntPatternAction();
-                case PatternActionType.Float:
-                    return CreateFloatPatternAction();
-                case PatternActionType.String:
-                    return CreateStringPatternAction();
-                case PatternActionType.None:
-                    return CreateNullPatternAction();
+        public static RumiaAction CreateRumiaAction(RumiaActionType rumiaActionType) {
+            switch (rumiaActionType) {
+                case RumiaActionType.Basic:
+                    return CreateBasicRumiaAction();
+                case RumiaActionType.Vector:
+                    return CreateVectorRumiaAction();
+                case RumiaActionType.Bool:
+                    return CreateBoolRumiaAction();
+                case RumiaActionType.Int:
+                    return CreateIntRumiaAction();
+                case RumiaActionType.Float:
+                    return CreateFloatRumiaAction();
+                case RumiaActionType.String:
+                    return CreateStringRumiaAction();
+                case RumiaActionType.None:
+                    return CreateNullRumiaAction();
                 default:
-                    throw new Exception("Failed to create RumiaAction for type: " + patternActionType);
+                    throw new Exception("Failed to create RumiaAction for type: " + rumiaActionType);
             }
         }
 
-        private static RumiaAction CreateBasicPatternAction() {
-            RumiaAction act = new RumiaAction {type = PatternActionType.Basic, Basic = new BasicSubPatternAction()};
+        private static RumiaAction CreateBasicRumiaAction() {
+            RumiaAction act = new RumiaAction {type = RumiaActionType.Basic, Basic = new BasicSubRumiaAction()};
             return act;
         }
 
-        private static RumiaAction CreateVectorPatternAction() {
-            RumiaAction act = new RumiaAction {type = PatternActionType.Vector, Vector = new VectorSubPatternAction()};
+        private static RumiaAction CreateVectorRumiaAction() {
+            RumiaAction act = new RumiaAction {type = RumiaActionType.Vector, Vector = new VectorSubRumiaAction()};
             return act;
         }
 
-        private static RumiaAction CreateBoolPatternAction() {
-            RumiaAction act = new RumiaAction {type = PatternActionType.Bool, Bool = new BoolSubPatternAction()};
+        private static RumiaAction CreateBoolRumiaAction() {
+            RumiaAction act = new RumiaAction {type = RumiaActionType.Bool, Bool = new BoolSubRumiaAction()};
             return act;
         }
 
-        private static RumiaAction CreateIntPatternAction() {
-            RumiaAction act = new RumiaAction {type = PatternActionType.Int, Int = new IntSubPatternAction()};
+        private static RumiaAction CreateIntRumiaAction() {
+            RumiaAction act = new RumiaAction {type = RumiaActionType.Int, Int = new IntSubRumiaAction()};
             return act;
         }
 
-        private static RumiaAction CreateFloatPatternAction() {
-            RumiaAction act = new RumiaAction {type = PatternActionType.Float, Float = new FloatSubPatternAction()};
+        private static RumiaAction CreateFloatRumiaAction() {
+            RumiaAction act = new RumiaAction {type = RumiaActionType.Float, Float = new FloatSubRumiaAction()};
             return act;
         }
 
-        private static RumiaAction CreateStringPatternAction() {
-            RumiaAction act = new RumiaAction {type = PatternActionType.String, String = new StringSubPatternAction()};
+        private static RumiaAction CreateStringRumiaAction() {
+            RumiaAction act = new RumiaAction {type = RumiaActionType.String, String = new StringSubRumiaAction()};
             return act;
         }
 
-        public static RumiaAction CreateNullPatternAction() {
+        public static RumiaAction CreateNullRumiaAction() {
             RumiaAction act = new RumiaAction();
             return act;
         }
 
         #endregion
 
-        #region SubPatternActions
+        #region SubRumiaActions
 
-        public interface ISubPatternAction {
-            void InvokePatternAction(string serializedParameter);
-            void GeneratePatternActionEvent(MethodInfo method, Pattern target);
+        public interface ISubRumiaAction {
+            void InvokeRumiaAction(string serializedParameter);
+            void GenerateRumiaActionEvent(MethodInfo method, Pattern target);
             Type GetParameterType();
         }
 
         [Serializable]
-        public class BasicSubPatternAction : ISubPatternAction {
-            public UnityEvent OnPatternAction;
+        public class BasicSubRumiaAction : ISubRumiaAction {
+            public UnityEvent OnRumiaAction;
 
-            public void InvokePatternAction(string serializedParameter) {
-                OnPatternAction
-                    .Invoke(); // TODO: Not the most relevant place to put this, BUT when we have a RumiaConfiguration configured and then later add in a new pattern action type for that pattern, we currently need to look at all of the scripts in order to update the IDs to the correct values. This can be tough to catch sometimes. We should fix this so that the values are updated for everything whenever we add new pattern action methods (or whatever they're called)
+            public void InvokeRumiaAction(string serializedParameter) {
+                OnRumiaAction
+                    .Invoke(); // TODO: Not the most relevant place to put this, BUT when we have a RumiaConfiguration configured and then later add in a new rumia action type for that pattern, we currently need to look at all of the scripts in order to update the IDs to the correct values. This can be tough to catch sometimes. We should fix this so that the values are updated for everything whenever we add new rumia action methods (or whatever they're called)
             }
 
-            public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
+            public void GenerateRumiaActionEvent(MethodInfo method, Pattern target) {
 #if UNITY_EDITOR
                 UnityEvent newEvent = new UnityEvent();
                 UnityAction action = (UnityAction) method.CreateDelegate(typeof(UnityAction), target);
                 UnityEventTools.AddPersistentListener(newEvent, action);
 
-                OnPatternAction = newEvent;
+                OnRumiaAction = newEvent;
 #endif
             }
 
@@ -178,20 +178,20 @@ namespace Rumia {
         public class BoolEvent : UnityEvent<bool> { }
 
         [Serializable]
-        public class BoolSubPatternAction : ISubPatternAction {
-            public BoolEvent OnPatternAction;
+        public class BoolSubRumiaAction : ISubRumiaAction {
+            public BoolEvent OnRumiaAction;
 
-            public void InvokePatternAction(string serializedParameter) {
-                OnPatternAction.Invoke(DeserializeParameter(serializedParameter));
+            public void InvokeRumiaAction(string serializedParameter) {
+                OnRumiaAction.Invoke(DeserializeParameter(serializedParameter));
             }
 
-            public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
+            public void GenerateRumiaActionEvent(MethodInfo method, Pattern target) {
 #if UNITY_EDITOR
                 BoolEvent newEvent = new BoolEvent();
                 UnityAction<bool> action = (UnityAction<bool>) method.CreateDelegate(typeof(UnityAction<bool>), target);
                 UnityEventTools.AddPersistentListener(newEvent, action);
 
-                OnPatternAction = newEvent;
+                OnRumiaAction = newEvent;
 #endif
             }
 
@@ -210,7 +210,7 @@ namespace Rumia {
                     return true;
                 if (serializedParameter.Equals("False"))
                     return false;
-                throw new Exception("BoolSubPatternAction: Unexpected serialized parameter value '"
+                throw new Exception("BoolSubRumiaAction: Unexpected serialized parameter value '"
                                     + serializedParameter + "'");
             }
         }
@@ -219,20 +219,20 @@ namespace Rumia {
         public class IntEvent : UnityEvent<int> { }
 
         [Serializable]
-        public class IntSubPatternAction : ISubPatternAction {
-            public IntEvent OnPatternAction;
+        public class IntSubRumiaAction : ISubRumiaAction {
+            public IntEvent OnRumiaAction;
 
-            public void InvokePatternAction(string serializedParameter) {
-                OnPatternAction.Invoke(DeserializeParameter(serializedParameter));
+            public void InvokeRumiaAction(string serializedParameter) {
+                OnRumiaAction.Invoke(DeserializeParameter(serializedParameter));
             }
 
-            public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
+            public void GenerateRumiaActionEvent(MethodInfo method, Pattern target) {
 #if UNITY_EDITOR
                 IntEvent newEvent = new IntEvent();
                 UnityAction<int> action = (UnityAction<int>) method.CreateDelegate(typeof(UnityAction<int>), target);
                 UnityEventTools.AddPersistentListener(newEvent, action);
 
-                OnPatternAction = newEvent;
+                OnRumiaAction = newEvent;
 #endif
             }
 
@@ -249,7 +249,7 @@ namespace Rumia {
                     return default;
                 if (int.TryParse(serializedParameter, out int ret))
                     return ret;
-                throw new Exception("IntSubPatternAction: Unexpected serialized parameter value '" + serializedParameter
+                throw new Exception("IntSubRumiaAction: Unexpected serialized parameter value '" + serializedParameter
                                                                                                    + "'");
             }
         }
@@ -258,21 +258,21 @@ namespace Rumia {
         public class FloatEvent : UnityEvent<float> { }
 
         [Serializable]
-        public class FloatSubPatternAction : ISubPatternAction {
-            public FloatEvent OnPatternAction;
+        public class FloatSubRumiaAction : ISubRumiaAction {
+            public FloatEvent OnRumiaAction;
 
-            public void InvokePatternAction(string serializedParameter) {
-                OnPatternAction.Invoke(DeserializeParameter(serializedParameter));
+            public void InvokeRumiaAction(string serializedParameter) {
+                OnRumiaAction.Invoke(DeserializeParameter(serializedParameter));
             }
 
-            public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
+            public void GenerateRumiaActionEvent(MethodInfo method, Pattern target) {
 #if UNITY_EDITOR
                 FloatEvent newEvent = new FloatEvent();
                 UnityAction<float> action =
                     (UnityAction<float>) method.CreateDelegate(typeof(UnityAction<float>), target);
                 UnityEventTools.AddPersistentListener(newEvent, action);
 
-                OnPatternAction = newEvent;
+                OnRumiaAction = newEvent;
 #endif
             }
 
@@ -289,7 +289,7 @@ namespace Rumia {
                     return default;
                 if (float.TryParse(serializedParameter, out float ret))
                     return ret;
-                throw new Exception("FloatSubPatternAction: Unexpected serialized parameter value '"
+                throw new Exception("FloatSubRumiaAction: Unexpected serialized parameter value '"
                                     + serializedParameter + "'");
             }
         }
@@ -298,21 +298,21 @@ namespace Rumia {
         public class StringEvent : UnityEvent<string> { }
 
         [Serializable]
-        public class StringSubPatternAction : ISubPatternAction {
-            public StringEvent OnPatternAction;
+        public class StringSubRumiaAction : ISubRumiaAction {
+            public StringEvent OnRumiaAction;
 
-            public void InvokePatternAction(string serializedParameter) {
-                OnPatternAction.Invoke(DeserializeParameter(serializedParameter));
+            public void InvokeRumiaAction(string serializedParameter) {
+                OnRumiaAction.Invoke(DeserializeParameter(serializedParameter));
             }
 
-            public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
+            public void GenerateRumiaActionEvent(MethodInfo method, Pattern target) {
 #if UNITY_EDITOR
                 StringEvent newEvent = new StringEvent();
                 UnityAction<string> action =
                     (UnityAction<string>) method.CreateDelegate(typeof(UnityAction<string>), target);
                 UnityEventTools.AddPersistentListener(newEvent, action);
 
-                OnPatternAction = newEvent;
+                OnRumiaAction = newEvent;
 #endif
             }
 
@@ -335,21 +335,22 @@ namespace Rumia {
         public class VectorEvent : UnityEvent<Vector2> { }
 
         [Serializable]
-        public class VectorSubPatternAction : ISubPatternAction {
-            public VectorEvent OnPatternAction;
+        public class VectorSubRumiaAction : ISubRumiaAction {
+            [FormerlySerializedAs("OnPatternAction")] 
+            public VectorEvent OnRumiaAction;
 
-            public void InvokePatternAction(string serializedParameter) {
-                OnPatternAction.Invoke(DeserializeParameter(serializedParameter));
+            public void InvokeRumiaAction(string serializedParameter) {
+                OnRumiaAction.Invoke(DeserializeParameter(serializedParameter));
             }
 
-            public void GeneratePatternActionEvent(MethodInfo method, Pattern target) {
+            public void GenerateRumiaActionEvent(MethodInfo method, Pattern target) {
 #if UNITY_EDITOR
                 VectorEvent newEvent = new VectorEvent();
                 UnityAction<Vector2> action =
                     (UnityAction<Vector2>) method.CreateDelegate(typeof(UnityAction<Vector2>), target);
                 UnityEventTools.AddPersistentListener(newEvent, action);
 
-                OnPatternAction = newEvent;
+                OnRumiaAction = newEvent;
 #endif
             }
 

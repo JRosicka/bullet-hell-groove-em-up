@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1dd65c84e7535488d11a270a4701de, type: 3}
   m_Name: MovementBeforeHook
   m_EditorClassIdentifier: 
-  PatternActionLists:
+  RumiaActionLists:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions: []
@@ -34,7 +34,7 @@ MonoBehaviour:
       ActionName: MoveOppositeMiddle
       type: 2
       Basic:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls:
             - m_Target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
@@ -50,30 +50,30 @@ MonoBehaviour:
                 m_BoolArgument: 0
               m_CallState: 2
       Vector:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       Bool:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       Int:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       Float:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       String:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
     - ID: 6
       ActionName: SpinAnimation
       type: 2
       Basic:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls:
             - m_Target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
@@ -89,23 +89,23 @@ MonoBehaviour:
                 m_BoolArgument: 0
               m_CallState: 2
       Vector:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       Bool:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       Int:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       Float:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       String:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
   - RumiaActions: []
@@ -120,7 +120,7 @@ MonoBehaviour:
       ActionName: SpinAnimation
       type: 2
       Basic:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls:
             - m_Target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
@@ -136,23 +136,23 @@ MonoBehaviour:
                 m_BoolArgument: 0
               m_CallState: 2
       Vector:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       Bool:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       Int:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       Float:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
       String:
-        OnPatternAction:
+        OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
   - RumiaActions: []

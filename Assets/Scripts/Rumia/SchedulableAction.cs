@@ -25,7 +25,7 @@ namespace Rumia {
         /// </summary>
         public void PerformAction() {
             Pattern patternInstance = patternInstanceGetter.Invoke();
-            patternInstance.InvokePatternAction(rumiaAction.ID, serializedParameter);
+            patternInstance.InvokeRumiaAction(rumiaAction.ID, serializedParameter);
         }
     }
 }

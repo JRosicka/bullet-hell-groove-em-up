@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Handler of song and other audio clip playback. Currently only allows one audio clip to play at once.
