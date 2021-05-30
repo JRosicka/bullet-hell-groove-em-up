@@ -1,6 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PianoShot : MonoBehaviour {
+    private const float DEATH_TIMER = 15f;
+    
     [Header("Spawns")]
     public Transform Spawner1;
     public Transform Spawner2;
@@ -15,11 +18,20 @@ public class PianoShot : MonoBehaviour {
     private PlayerController playerController;
 
     private bool lastShotWasFirework;
-    
+
     void Awake() {
         playerController = FindObjectOfType<PlayerController>();
     }
-    
+
+    private void Start() {
+        StartCoroutine(DestroyAfterSeconds(DEATH_TIMER));
+    }
+
+    private IEnumerator DestroyAfterSeconds(float time) {
+        yield return new WaitForSeconds(time);
+        Destroy(gameObject);
+    }
+
     public void FirstShot() {
         Shoot(Spawner1, Emitter1);
         lastShotWasFirework = false;
