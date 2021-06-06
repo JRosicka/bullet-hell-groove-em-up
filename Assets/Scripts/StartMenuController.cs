@@ -6,6 +6,8 @@ public class StartMenuController : MonoBehaviour {
     private const string SLOW_NAME = "ctr_slow";
     private const string QUIT_NAME = "ctr_quit";
 
+    public string GameplayScene;
+
     private float quitButtonHeldDownLength;
     private const float REQUIRED_TIME_TO_QUIT = 1;
 
@@ -18,7 +20,7 @@ public class StartMenuController : MonoBehaviour {
         }
 
         if (playerControls.GetButton(SLOW_NAME))
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene(GameplayScene);
         
         // Check to see if we should quit
         if (playerControls.GetButton(QUIT_NAME)) {

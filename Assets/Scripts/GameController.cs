@@ -80,7 +80,7 @@ public class GameController : MonoBehaviour {
 
         Rewired.Player playerControls = ReInput.players.GetPlayer("SYSTEM");
         if (playerControls.GetButton(RESTART_NAME))
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ResetGame(bool won) {

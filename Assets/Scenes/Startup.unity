@@ -339,6 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a84cda6b558bb4b823ea79e2ec412d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameplayScene: MainScene - Full Game
 --- !u!4 &291288891
 Transform:
   m_ObjectHideFlags: 0

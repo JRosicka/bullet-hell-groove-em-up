@@ -25,7 +25,7 @@ namespace Rumia {
         [RumiaAction]
         // ReSharper disable once UnusedMember.Global
         public void Spawn(Vector2 position) {
-            transform.position = position;
+            transform.localPosition = position;
             gameObject.SetActive(true);
         }
 
