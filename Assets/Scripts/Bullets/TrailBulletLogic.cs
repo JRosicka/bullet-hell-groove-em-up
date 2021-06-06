@@ -2,7 +2,7 @@
 
 public class TrailBulletLogic : BulletLogic {
     private TrailRendererWith2DCollider originalTrail;
-    private TrailRendererWith2DCollider trail;
+    private TrailRendererWith2DCollider trailRenderer;
     
     public TrailBulletLogic(TrailRendererWith2DCollider originalTrail) {
         this.originalTrail = originalTrail;
@@ -10,10 +10,10 @@ public class TrailBulletLogic : BulletLogic {
 
     public override void OnBulletSpawned(Bullet bullet) {
         Transform bulletTransform = bullet.transform;
-        trail = Object.Instantiate(originalTrail, bulletTransform);
-        trail.Initialize();
-        // trail.transform.SetParent(bulletTransform);
-        // trail.transform.SetParent(GameController.Instance.ShotBucket);
+        trailRenderer = Object.Instantiate(originalTrail, bulletTransform);
+        trailRenderer.Initialize();
+        // trailRenderer.transform.SetParent(bulletTransform);
+        // trailRenderer.transform.SetParent(GameController.Instance.ShotBucket);
     }
 
     public override void BulletLogicUpdate(Bullet bullet, float deltaTime) {
@@ -21,8 +21,8 @@ public class TrailBulletLogic : BulletLogic {
     }
     
     public override void OnBulletDestroyed(Bullet bullet) {
-        if (trail != null) {
-            Object.Destroy(trail.GetTrail());
+        if (trailRenderer != null) {
+            Object.Destroy(trailRenderer.GetTrail());
         }
     }
 }
