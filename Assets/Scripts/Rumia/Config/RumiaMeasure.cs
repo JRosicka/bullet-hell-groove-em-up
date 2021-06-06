@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor;
-using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEditor;
+#if UNITY_EDITOR
+using UnityEditor.Callbacks;
+#endif
 
 namespace Rumia {
     /// <summary>
@@ -27,7 +29,29 @@ namespace Rumia {
 
         public Pattern Pattern;
 
-        public void UpdateRumiaActions() {
+        private void OnValidate() {
+            if (RumiaActionLists.Length != SIZE) {
+                Debug.LogWarning("Don't change the size of 'Notes'!");
+                Array.Resize(ref RumiaActionLists, SIZE);
+            }
+        }
+
+#if UNITY_EDITOR
+        public void SetPattern(Pattern p) {
+            Pattern = p;
+        }
+        
+        /// <summary>
+        /// Update <see cref="RumiaAction"/> availability and indices in each <see cref="RumiaMeasure"/> asset
+        /// </summary>
+        [DidReloadScripts]
+        private static void OnScriptsReloaded() {
+            foreach (RumiaMeasure measure in ResourcesUtil.GetAllScriptableObjectInstances<RumiaMeasure>()) {
+                measure.UpdateRumiaActions();
+            }
+        }
+        
+        private void UpdateRumiaActions() {
             Pattern.GenerateRumiaActions();
             
             // Get all of the RumiaAction names
@@ -62,28 +86,6 @@ namespace Rumia {
             
             // Save the changes back to the object
             EditorUtility.SetDirty(this);
-        }
-
-        private void OnValidate() {
-            if (RumiaActionLists.Length != SIZE) {
-                Debug.LogWarning("Don't change the size of 'Notes'!");
-                Array.Resize(ref RumiaActionLists, SIZE);
-            }
-        }
-
-#if UNITY_EDITOR
-        public void SetPattern(Pattern p) {
-            Pattern = p;
-        }
-        
-        /// <summary>
-        /// Update <see cref="RumiaAction"/> availability and indices in each <see cref="RumiaMeasure"/> asset
-        /// </summary>
-        [DidReloadScripts]
-        private static void OnScriptsReloaded() {
-            foreach (RumiaMeasure measure in ResourcesUtil.GetAllScriptableObjectInstances<RumiaMeasure>()) {
-                measure.UpdateRumiaActions();
-            }
         }
 
         [CustomEditor(typeof(RumiaMeasure))]

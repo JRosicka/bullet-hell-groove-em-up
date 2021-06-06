@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+using UnityEditor;
 using UnityEngine;
 
 public static class ResourcesUtil {
@@ -13,3 +14,4 @@ public static class ResourcesUtil {
         return a;
     }
 }
+#endif
