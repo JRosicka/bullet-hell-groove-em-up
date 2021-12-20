@@ -59,7 +59,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 17
+    - ID: 18
       ActionName: FireworkShot
       type: 2
       Basic:
@@ -198,7 +198,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 14
+    - ID: 15
       ActionName: SmolShotOut
       type: 2
       Basic:
@@ -239,7 +239,7 @@ MonoBehaviour:
             m_Calls: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 15
+    - ID: 16
       ActionName: SmolShotOutRotated
       type: 2
       Basic:

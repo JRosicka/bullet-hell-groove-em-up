@@ -141,6 +141,11 @@ namespace Rumia {
             InnerSegments.SetTrigger(MoveOut);
         }
 
+        [RumiaAction]
+        public void BoolMethod(bool val) {
+            
+        }
+
         // ReSharper disable once UnusedMember.Global
         [RumiaAction]
         public void SpinAnimation() {

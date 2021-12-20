@@ -15999,6 +15999,44 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
   - ID: 6
+    ActionName: BoolMethod
+    type: 4
+    Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Vector:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 7224286281906343752}
+            m_MethodName: BoolMethod
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Int:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 7
     ActionName: SpinAnimation
     type: 2
     Basic:
@@ -16036,7 +16074,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 7
+  - ID: 8
     ActionName: NormalMove
     type: 2
     Basic:
@@ -16074,7 +16112,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 8
+  - ID: 9
     ActionName: MoveAway
     type: 2
     Basic:
@@ -16112,7 +16150,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 9
+  - ID: 10
     ActionName: MoveTowards
     type: 2
     Basic:
@@ -16150,7 +16188,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 10
+  - ID: 11
     ActionName: MoveOppositeMiddle
     type: 2
     Basic:
@@ -16188,7 +16226,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 11
+  - ID: 12
     ActionName: MoveCombo1
     type: 2
     Basic:
@@ -16226,7 +16264,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 12
+  - ID: 13
     ActionName: MoveCombo2
     type: 2
     Basic:
@@ -16264,7 +16302,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 13
+  - ID: 14
     ActionName: MoveCombo3
     type: 2
     Basic:
@@ -16302,7 +16340,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 14
+  - ID: 15
     ActionName: SmolShotOut
     type: 2
     Basic:
@@ -16340,7 +16378,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 15
+  - ID: 16
     ActionName: SmolShotOutRotated
     type: 2
     Basic:
@@ -16378,7 +16416,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 16
+  - ID: 17
     ActionName: LargeShotOut
     type: 2
     Basic:
@@ -16416,7 +16454,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 17
+  - ID: 18
     ActionName: FireworkShot
     type: 2
     Basic:
@@ -16454,7 +16492,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 18
+  - ID: 19
     ActionName: HookFlare
     type: 2
     Basic:
@@ -16492,7 +16530,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 19
+  - ID: 20
     ActionName: Spawn
     type: 3
     Basic:

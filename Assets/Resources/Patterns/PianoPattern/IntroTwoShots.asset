@@ -59,7 +59,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 17
+    - ID: 18
       ActionName: FireworkShot
       type: 2
       Basic:

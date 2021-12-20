@@ -30,7 +30,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 8
+    - ID: 9
       ActionName: MoveAway
       type: 2
       Basic:
@@ -69,7 +69,7 @@ MonoBehaviour:
         OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
-    - ID: 6
+    - ID: 7
       ActionName: SpinAnimation
       type: 2
       Basic:
@@ -116,7 +116,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 6
+    - ID: 7
       ActionName: SpinAnimation
       type: 2
       Basic:

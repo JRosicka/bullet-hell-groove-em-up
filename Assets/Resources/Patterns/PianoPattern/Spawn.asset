@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RumiaActionLists:
   - RumiaActions:
-    - ID: 19
+    - ID: 20
       ActionName: Spawn
       type: 3
       Basic:

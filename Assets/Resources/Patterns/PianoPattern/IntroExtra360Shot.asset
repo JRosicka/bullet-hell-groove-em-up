@@ -20,7 +20,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 16
+    - ID: 17
       ActionName: LargeShotOut
       type: 2
       Basic:

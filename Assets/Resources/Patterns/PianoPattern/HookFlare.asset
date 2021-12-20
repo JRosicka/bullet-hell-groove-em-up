@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RumiaActionLists:
   - RumiaActions:
-    - ID: 18
+    - ID: 19
       ActionName: HookFlare
       type: 2
       Basic:

@@ -53,7 +53,7 @@ MonoBehaviour:
         OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
-    - ID: 16
+    - ID: 17
       ActionName: LargeShotOut
       type: 2
       Basic:
@@ -176,7 +176,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 17
+    - ID: 18
       ActionName: FireworkShot
       type: 2
       Basic:
@@ -260,7 +260,7 @@ MonoBehaviour:
         OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
-    - ID: 16
+    - ID: 17
       ActionName: LargeShotOut
       type: 2
       Basic:
@@ -387,7 +387,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 17
+    - ID: 18
       ActionName: FireworkShot
       type: 2
       Basic:
