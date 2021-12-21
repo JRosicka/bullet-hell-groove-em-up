@@ -1,0 +1,10 @@
+Overall aspect ratio 16x9.
+Wider aspect ratios will just show more of the background left and right, shorter ones will just cover more of the background. 
+
+-----
+
+In Unity units, the space is 18.3x10.3. That's 2560x1440 (on my monitor).
+
+-----
+
+In Unity units, the play area is 10x9. That's 1399x1259 (on my monitor). For a 1080p monitor, that's 1049x944.
