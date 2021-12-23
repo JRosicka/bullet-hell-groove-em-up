@@ -23,6 +23,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
                 type: 3}
+              m_TargetAssemblyTypeName: 
               m_MethodName: BassShotM2B1N1
               m_Mode: 0
               m_Arguments:
@@ -62,6 +63,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
                 type: 3}
+              m_TargetAssemblyTypeName: 
               m_MethodName: FireAnimationFlareHorizontal
               m_Mode: 0
               m_Arguments:
@@ -105,6 +107,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
                 type: 3}
+              m_TargetAssemblyTypeName: 
               m_MethodName: BassShotM2B1N2
               m_Mode: 0
               m_Arguments:
@@ -146,6 +149,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
                 type: 3}
+              m_TargetAssemblyTypeName: 
               m_MethodName: BassShotM2B1N3
               m_Mode: 0
               m_Arguments:
@@ -187,6 +191,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
                 type: 3}
+              m_TargetAssemblyTypeName: 
               m_MethodName: FireAnimationFlareVertical
               m_Mode: 0
               m_Arguments:
@@ -234,6 +239,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
                 type: 3}
+              m_TargetAssemblyTypeName: 
               m_MethodName: BassShotM4B3N1
               m_Mode: 0
               m_Arguments:
@@ -273,6 +279,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
                 type: 3}
+              m_TargetAssemblyTypeName: 
               m_MethodName: FireAnimationFlareHorizontal
               m_Mode: 0
               m_Arguments:
@@ -312,6 +319,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
                 type: 3}
+              m_TargetAssemblyTypeName: 
               m_MethodName: FireAnimationFlareVertical
               m_Mode: 0
               m_Arguments:
@@ -351,6 +359,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
                 type: 3}
+              m_TargetAssemblyTypeName: 
               m_MethodName: BulletSlowdownEffect
               m_Mode: 0
               m_Arguments:
@@ -398,6 +407,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
                 type: 3}
+              m_TargetAssemblyTypeName: 
               m_MethodName: FireAnimationFlareHorizontal
               m_Mode: 0
               m_Arguments:
@@ -437,6 +447,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
                 type: 3}
+              m_TargetAssemblyTypeName: 
               m_MethodName: FireAnimationFlareVertical
               m_Mode: 0
               m_Arguments:

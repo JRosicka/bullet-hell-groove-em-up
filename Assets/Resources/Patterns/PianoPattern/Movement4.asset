@@ -34,6 +34,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
                 type: 3}
+              m_TargetAssemblyTypeName: 
               m_MethodName: MoveCombo2
               m_Mode: 0
               m_Arguments:
@@ -89,6 +90,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 7224286281906343752, guid: 5fc1e2ef3e7b6a347bdbc64f49ac09e7,
                 type: 3}
+              m_TargetAssemblyTypeName: 
               m_MethodName: MoveCombo3
               m_Mode: 0
               m_Arguments:

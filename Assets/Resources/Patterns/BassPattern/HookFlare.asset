@@ -39,6 +39,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 1750994280144202701, guid: 2fac89d9f0758b9499f0768d4438be28,
                 type: 3}
+              m_TargetAssemblyTypeName: 
               m_MethodName: HookFlare
               m_Mode: 0
               m_Arguments:

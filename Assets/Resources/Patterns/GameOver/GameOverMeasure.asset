@@ -27,6 +27,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 5479237732316806916, guid: e25fbc22a7a1328478aaa146c9e69b89,
                 type: 3}
+              m_TargetAssemblyTypeName: 
               m_MethodName: Spawn
               m_Mode: 0
               m_Arguments:
@@ -62,6 +63,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 5479237732316806916, guid: e25fbc22a7a1328478aaa146c9e69b89,
                 type: 3}
+              m_TargetAssemblyTypeName: 
               m_MethodName: GameOver
               m_Mode: 0
               m_Arguments:

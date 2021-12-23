@@ -27,6 +27,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 4522126730572846138, guid: 4d941b7d27e90f84fb8b4dfd0888c8bc,
                 type: 3}
+              m_TargetAssemblyTypeName: 
               m_MethodName: Spawn
               m_Mode: 0
               m_Arguments:
@@ -62,6 +63,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 4522126730572846138, guid: 4d941b7d27e90f84fb8b4dfd0888c8bc,
                 type: 3}
+              m_TargetAssemblyTypeName: 
               m_MethodName: StartSong
               m_Mode: 0
               m_Arguments:
