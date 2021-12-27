@@ -30,7 +30,7 @@ public class GameBackgroundController : MonoBehaviour {
             DrawDefaultInspector();
             GameBackgroundController controller = target as GameBackgroundController;
 
-            if (controller == null)
+            if (controller == null || controller.Backgrounds == null)
                 return;
 
             int i = 0;
