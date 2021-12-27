@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// Scrolls a background by rotating it about its z axis. 
@@ -11,6 +13,9 @@ public class RadialBackgroundScroller : MonoBehaviour {
     public int NumberOfTiles = 1;
     public GameObject BackgroundTile;
 
+    [SerializeField] [HideInInspector]
+    private int serializedNumberOfTiles;
+    
     private void Start() {
         SetTiles();
     }
@@ -18,13 +23,29 @@ public class RadialBackgroundScroller : MonoBehaviour {
     private void Update() {
         transform.Rotate(0, 0, Time.deltaTime * RotateSpeed * (ScrollCounterClockwise ? -1 : 1));
     }
-    
+
+    private void OnValidate() {
+        if (NumberOfTiles != serializedNumberOfTiles) {
+            serializedNumberOfTiles = NumberOfTiles;
+            StartCoroutine(SetTilesInABit());
+        }
+    }
+
+    private IEnumerator SetTilesInABit() {
+        yield return new WaitForSeconds(.05f);
+        SetTiles();
+    }
+
     public void SetTiles() {
-        foreach (Transform trans in transform) {
+        List<Transform> transforms = new List<Transform>();
+        for (int i = 0; i < transform.childCount; i++) {
+            transforms.Add(transform.GetChild(i));
+        }
+        foreach (Transform trans in transforms) {
             if (gameObject.transform.GetChild(0) == trans) {
                 continue;
             }
-            Destroy(trans);
+            DestroyImmediate(trans.gameObject, true);
         }
         
         // Make clones of the tile object which get picked up by the layout group - creates the infinite rotation effect

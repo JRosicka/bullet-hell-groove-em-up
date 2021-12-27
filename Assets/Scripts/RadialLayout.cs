@@ -25,7 +25,7 @@ public class RadialLayout : LayoutGroup {
     public float fChildScale = 1;
     [Range(0f,360f)]
     public float MinAngle, MaxAngle, StartAngle;
-   protected override void OnEnable() { base.OnEnable(); CalculateRadial(); }
+    protected override void OnEnable() { base.OnEnable(); CalculateRadial(); }
     public override void SetLayoutHorizontal()
     {
     }
@@ -63,7 +63,7 @@ public class RadialLayout : LayoutGroup {
         m_Tracker.Clear();
         if (activeChildCount == 0)
             return;
-        float fOffsetAngle = ((MaxAngle - MinAngle)) / (activeChildCount - 1);
+        float fOffsetAngle = ((MaxAngle - MinAngle)) / (activeChildCount);
  
  
         float fAngle = StartAngle;

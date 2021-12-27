@@ -496,7 +496,7 @@ MonoBehaviour:
   fAngleOffset: 0
   fChildScale: 1
   MinAngle: 0
-  MaxAngle: 180
+  MaxAngle: 360
   StartAngle: 0
 --- !u!95 &307805119396636354
 Animator:
@@ -5607,7 +5607,7 @@ MonoBehaviour:
   fAngleOffset: 0
   fChildScale: 1
   MinAngle: 0
-  MaxAngle: 180
+  MaxAngle: 360
   StartAngle: 0
 --- !u!1 &2676997595005644572
 GameObject:
@@ -13228,7 +13228,7 @@ MonoBehaviour:
   fAngleOffset: 0
   fChildScale: 1
   MinAngle: 0
-  MaxAngle: 180
+  MaxAngle: 360
   StartAngle: 90
 --- !u!95 &9044093450781118051
 Animator:
@@ -13309,7 +13309,7 @@ MonoBehaviour:
   fAngleOffset: 0
   fChildScale: 1
   MinAngle: 0
-  MaxAngle: 180
+  MaxAngle: 360
   StartAngle: 90
 --- !u!1 &8475636267325610843
 GameObject:
