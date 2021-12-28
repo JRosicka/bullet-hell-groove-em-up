@@ -24,7 +24,7 @@ public class VerticalBackgroundScroller : BackgroundScroller {
             transform.position += new Vector3(0, backgroundHeight, 0);
         }
         startPosition = transform.position;
-        allBackgroundImages = transform.GetComponentsInChildren<Image>().ToList();
+        backgroundElements = transform.GetComponentsInChildren<IBackgroundElement>().ToList();
     }
     
     private void Update() {

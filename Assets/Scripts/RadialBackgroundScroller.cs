@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 
 /// <summary>
 /// Scrolls a background by rotating it about its z axis. 
@@ -21,6 +20,7 @@ public class RadialBackgroundScroller : BackgroundScroller {
         transform.Rotate(0, 0, Time.deltaTime * ScrollSpeed * (ScrollCounterClockwise ? -1 : 1));
     }
 
+#if UNITY_EDITOR
     private void OnValidate() {
         if (NumberOfTiles != serializedNumberOfTiles) {
             serializedNumberOfTiles = NumberOfTiles;
@@ -32,7 +32,8 @@ public class RadialBackgroundScroller : BackgroundScroller {
         yield return new WaitForSeconds(.05f);
         SetTiles();
     }
-
+#endif
+    
     public void SetTiles() {
         List<Transform> transforms = new List<Transform>();
         for (int i = 0; i < transform.childCount; i++) {
@@ -54,7 +55,7 @@ public class RadialBackgroundScroller : BackgroundScroller {
     public override void Initialize() {
         SetTiles();
         startRotation = transform.localRotation;
-        allBackgroundImages = transform.GetComponentsInChildren<Image>().ToList();
+        backgroundElements = transform.GetComponentsInChildren<IBackgroundElement>().ToList();
     }
 
     public override void ResetBackground() {
