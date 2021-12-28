@@ -12,6 +12,7 @@ public class GameBackgroundController : MonoBehaviour {
 
     public void Start() {
         Backgrounds.ForEach(bg => {
+            bg.gameObject.SetActive(true);
             bg.Initialize();
             if (bg.ActiveAtStart) {
                 if (activeBackground != null) {
