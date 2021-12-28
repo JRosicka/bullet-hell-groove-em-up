@@ -1,35 +1,36 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
 /// Represents a collection of background sprites and textures and stuff that can move around in a coordinated manner
 /// </summary>
 public class GameBackground : MonoBehaviour {
-    private const string BACKGROUND_START_ANIMATION_NAME = "background_start";
-    
     // List of every GameObject that is a part of this background
-    public List<GameObject> BackgroundElements;
+    public List<BackgroundScroller> BackgroundElements;
+    public bool ActiveAtStart;
 
-    public List<Animator> Animators;
+    public void Initialize() {
+        BackgroundElements.ForEach(bg => bg.Initialize());
+    }
     
-    public void Activate() {
-        foreach (GameObject element in BackgroundElements) {
-            element.SetActive(true);
-        }
-
-        foreach (Animator animator in Animators) {
-            animator.Play(BACKGROUND_START_ANIMATION_NAME);
+    public void Activate(bool fadeIn) {
+        foreach (BackgroundScroller scroller in BackgroundElements) {
+            if (fadeIn) {
+                // scroller.AllOff();
+                scroller.FadeIn();
+            } else {
+                scroller.AllOn();
+            }
         }
     }
 
-    public void Deactivate() {
-        foreach (Animator animator in Animators) {
-            animator.StopPlayback();
-        }
-
-        foreach (GameObject element in BackgroundElements) {
-            element.SetActive(false);
+    public void Deactivate(bool fadeOut) {
+        foreach (BackgroundScroller scroller in BackgroundElements) {
+            if (fadeOut) {
+                scroller.FadeOut();
+            } else {
+                scroller.AllOff();
+            }
         }
     }
 }

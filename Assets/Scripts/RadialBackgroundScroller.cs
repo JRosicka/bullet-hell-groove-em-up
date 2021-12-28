@@ -1,27 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Scrolls a background by rotating it about its z axis. 
 /// </summary>
 [RequireComponent(typeof(RadialLayout))]
-public class RadialBackgroundScroller : MonoBehaviour {
-    public float RotateSpeed = 1f;
+public class RadialBackgroundScroller : BackgroundScroller {
     public bool ScrollCounterClockwise;
     [Range(1, 20)]
     public int NumberOfTiles = 1;
-    public GameObject BackgroundTile;
+    private Quaternion startRotation;
 
     [SerializeField] [HideInInspector]
     private int serializedNumberOfTiles;
     
-    private void Start() {
-        SetTiles();
-    }
-
     private void Update() {
-        transform.Rotate(0, 0, Time.deltaTime * RotateSpeed * (ScrollCounterClockwise ? -1 : 1));
+        transform.Rotate(0, 0, Time.deltaTime * ScrollSpeed * (ScrollCounterClockwise ? -1 : 1));
     }
 
     private void OnValidate() {
@@ -52,5 +49,15 @@ public class RadialBackgroundScroller : MonoBehaviour {
         for (int i = 1; i < NumberOfTiles; i++) {
             Instantiate(BackgroundTile, transform);
         }
+    }
+
+    public override void Initialize() {
+        SetTiles();
+        startRotation = transform.localRotation;
+        allBackgroundImages = transform.GetComponentsInChildren<Image>().ToList();
+    }
+
+    public override void ResetBackground() {
+        transform.localRotation = startRotation;
     }
 }
