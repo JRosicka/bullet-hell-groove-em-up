@@ -15,6 +15,9 @@ public class GameBackground : MonoBehaviour {
     
     public void Activate(bool fadeIn) {
         foreach (BackgroundScroller scroller in BackgroundElements) {
+            if (!scroller.isActiveAndEnabled) {
+                continue;
+            }
             if (fadeIn) {
                 // scroller.AllOff();
                 scroller.FadeIn();
@@ -26,6 +29,9 @@ public class GameBackground : MonoBehaviour {
 
     public void Deactivate(bool fadeOut) {
         foreach (BackgroundScroller scroller in BackgroundElements) {
+            if (!scroller.isActiveAndEnabled) {
+                continue;
+            }
             if (fadeOut) {
                 scroller.FadeOut();
             } else {

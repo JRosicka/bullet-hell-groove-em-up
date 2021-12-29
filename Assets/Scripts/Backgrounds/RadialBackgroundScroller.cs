@@ -17,7 +17,7 @@ public class RadialBackgroundScroller : BackgroundScroller {
     private int serializedNumberOfTiles;
     
     private void Update() {
-        transform.Rotate(0, 0, Time.deltaTime * ScrollSpeed * (ScrollCounterClockwise ? -1 : 1));
+        transform.Rotate(0, 0, Time.deltaTime * ScrollSpeed * (ScrollCounterClockwise ? 1 : -1));
     }
 
 #if UNITY_EDITOR
