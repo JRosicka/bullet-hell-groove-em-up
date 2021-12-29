@@ -1,22 +1,27 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// An <see cref="IBackgroundElement"/> with a particle system
+/// An <see cref="IBackgroundElement"/> with an image or set of images
 /// </summary>
-[RequireComponent(typeof(Image))]
 public class ImageBackgroundElement : MonoBehaviour, IBackgroundElement {
-    private Image image;
+    private List<Image> images;
 
     private void Awake() {
-        image = GetComponent<Image>();
+        images = GetComponentsInChildren<Image>().ToList();
     }
 
     public void FadeOut(float fadeOutTime) {
-        image.CrossFadeAlpha(0, fadeOutTime, false);
+        images.ForEach(image => {
+            image.CrossFadeAlpha(0, fadeOutTime, false);
+        });
     }
 
     public void FadeIn(float fadeInTime) {
-        image.CrossFadeAlpha(1, fadeInTime, false);
+        images.ForEach(image => {
+            image.CrossFadeAlpha(1, fadeInTime, false);
+        });
     }
 }

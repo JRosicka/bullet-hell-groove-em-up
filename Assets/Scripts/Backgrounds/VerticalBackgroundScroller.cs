@@ -19,7 +19,7 @@ public class VerticalBackgroundScroller : BackgroundScroller {
         // Make a clone of the tile object which gets picked up by the layout group - creates the infinite scroll effect
         Instantiate(BackgroundTile, transform);
         backgroundHeight = BackgroundTile.GetComponent<RectTransform>().rect.height;
-        if (ScrollBottomToTop) {
+        if (!ScrollBottomToTop) {
             // We need to move the whole thing up so that the cloned tile appears at the bottom
             transform.position += new Vector3(0, backgroundHeight, 0);
         }
@@ -29,7 +29,7 @@ public class VerticalBackgroundScroller : BackgroundScroller {
     
     private void Update() {
         float newPosition = Mathf.Repeat((Time.time + timeOffset) * ScrollSpeed, backgroundHeight) 
-                            * (ScrollBottomToTop ? -1 : 1);
+                            * (ScrollBottomToTop ? 1 : -1);
         transform.position = startPosition + Vector3.up * newPosition;
     }
     

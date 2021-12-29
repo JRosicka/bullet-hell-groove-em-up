@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -6,10 +7,11 @@ using UnityEngine;
 /// </summary>
 public class GameBackground : MonoBehaviour {
     // List of every GameObject that is a part of this background
-    public List<BackgroundScroller> BackgroundElements;
+    private List<BackgroundScroller> BackgroundElements;
     public bool ActiveAtStart;
 
     public void Initialize() {
+        BackgroundElements = GetComponentsInChildren<BackgroundScroller>().ToList();
         BackgroundElements.ForEach(bg => bg.Initialize());
     }
     
