@@ -18,15 +18,14 @@ public class ProgressBar : MonoBehaviour {
     // The amount of space between the start and end locations (YMin and YMax) for the marker and the edges of the 
     // progress bar. We need to fill this extra space by extending the first and last sections of the bar. 
     public float ExtraSpaceBetweenMarkerAndEdges;
-    private float totalYLength;
     private float startTime;
     private float stageTimeLength;
     private float elapsedTime;
+    
+    private float TotalYLength => YMax - YMin;
+    private float ProgressBarOffset => ((RectTransform) transform).rect.height / 2;
 
     void Start() {
-        totalYLength = YMax - YMin;
-        ProgressMarker.transform.localPosition = new Vector2(0, YMin - ((RectTransform)transform).rect.height / 2);
-         
         SetUpProgressBar(new List<float> {
             6f, 10f, 12.2f, 15f, 19.5f, 23f, 25.1f
         });
@@ -38,14 +37,16 @@ public class ProgressBar : MonoBehaviour {
     /// <param name="transitionTimes">Timestamp of each section of the song where a transition occurs,
     /// including the start and end times.</param>
     public void SetUpProgressBar(List<float> transitionTimes) {
+        ProgressMarker.transform.localPosition = new Vector2(0, YMin - ProgressBarOffset);
+
         startTime = transitionTimes.First();
         stageTimeLength = transitionTimes.Last() - startTime;
         // Instantiate, translate, and stretch each section piece
         for (int i = 1; i < transitionTimes.Count; i++) {
             float sectionTimeLength = transitionTimes[i] - transitionTimes[i - 1];
-            float yLength = sectionTimeLength / stageTimeLength * totalYLength;
+            float yLength = sectionTimeLength / stageTimeLength * TotalYLength;
             float yLocation = (transitionTimes[i - 1] - transitionTimes.First()) 
-                / stageTimeLength * totalYLength
+                / stageTimeLength * TotalYLength
                 + ExtraSpaceBetweenMarkerAndEdges;
 
             // Account for the added space for the first and last pieces
@@ -78,12 +79,11 @@ public class ProgressBar : MonoBehaviour {
 
         // Update the progress marker's location and darken the elapsed part of the progress bar
         float stageCompletionProgress = (elapsedTime - startTime) / stageTimeLength;
-        float transformOffset = ((RectTransform) transform).rect.height / 2;
-        float newPosition = Mathf.Lerp(YMin, YMax, stageCompletionProgress) - transformOffset;
+        float newPosition = Mathf.Lerp(YMin, YMax, stageCompletionProgress) - ProgressBarOffset;
         ProgressMarker.transform.localPosition = new Vector2(0, newPosition);
         ClearedProgressBar.sizeDelta = new Vector2(ClearedProgressBar.rect.width, 
                 newPosition 
                 + ExtraSpaceBetweenMarkerAndEdges / 2
-                + transformOffset);
+                + ProgressBarOffset);
     }
 }

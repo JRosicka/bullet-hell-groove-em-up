@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour {
     public EnemyManager EnemyManager;
     public Transform ShotBucket;
     public WaypointManager WaypointManager;
+    public ProgressBar ProgressBar;
     public TextMesh RestartText;
     public TextMesh SuccessText;
     public TimingController TimingController;

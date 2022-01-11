@@ -5,8 +5,8 @@ using UnityEngine.Assertions;
 
 namespace Rumia {
     /// <summary>
-    /// Parses through a <see cref="RumiaConfiguration"/> and generates <see cref="ScheduleActions"/> based on the configured timings and action types.
-    /// <see cref="ScheduleActions"/> are instantiated and scheduled upon this object's initialization. 
+    /// Parses through a <see cref="RumiaConfiguration"/> and generates <see cref="SchedulableAction"/>s based on the configured timings and action types.
+    /// <see cref="SchedulableAction"/>s are instantiated and scheduled upon this object's initialization. 
     /// </summary>
     public class RumiaController : MonoBehaviour {
         private const int ACTIONS_PER_MEASURE = 32;    // 32nd-notes
@@ -29,25 +29,25 @@ namespace Rumia {
         /// </summary>
         private Pattern patternInstance;
 
-        private static GameController gameController => GameController.Instance;
+        private static GameController GameController => GameController.Instance;
         
         private void Start() {
             timingController = FindObjectOfType<TimingController>();
             
             // We spawn the pattern instance right away but deactivate it. The pattern is responsible for setting it active 
             // again at its scheduled "spawn" time.
-            Transform spawner = gameController.EnemyManager.transform;
+            Transform spawner = GameController.EnemyManager.transform;
             patternInstance = Instantiate(Config.Pattern, Vector2.zero, Quaternion.identity, spawner);
             patternInstance.gameObject.SetActive(false);
             
-            SetStartMeasure(gameController.TimingController.NumberOfMeasuresToSkipOnStart);
+            SetStartMeasure(GameController.TimingController.NumberOfMeasuresToSkipOnStart);
 
             configuredActions = ScheduleActions();
             queuedActions = new List<SchedulableAction>(configuredActions);
         }
 
         /// <summary>
-        /// Parses through a <see cref="RumiaConfiguration"/> and generates NoteActions based on the configured timings and action types.
+        /// Parses through a <see cref="RumiaConfiguration"/> and generates <see cref="SchedulableAction"/>s based on the configured timings and action types.
         /// </summary>
         private List<SchedulableAction> ScheduleActions() {
             List<RumiaMeasure> startMeasures = Config.StartMeasures;
