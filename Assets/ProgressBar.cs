@@ -10,7 +10,9 @@ public class ProgressBar : MonoBehaviour {
     public GameObject ProgressMarker;
     public RectTransform ClearedProgressBar;
     public GameObject SectionPrefab;
+    public GameObject SectionDividerPrefab;
     public Transform ProgressSectionsBucket;
+    public Transform SectionDividersBucket;
     
     public float YMin, YMax;
     // The amount of space between the start and end locations (YMin and YMax) for the marker and the edges of the 
@@ -58,7 +60,12 @@ public class ProgressBar : MonoBehaviour {
             RectTransform rt = (RectTransform) newSection.transform;
             rt.sizeDelta = new Vector2(rt.rect.width, yLength);
             rt.localPosition = new Vector2(0, yLocation);
-            
+
+            if (i > 1) {
+                GameObject newSectionDivider = Instantiate(SectionDividerPrefab, SectionDividersBucket);
+                newSectionDivider.transform.localPosition = new Vector2(0, yLocation);
+            }
+
             // Set the piece's color
             newSection.GetComponent<Image>().color = Color.Lerp(Color.black, Color.blue, (i - 1f) / (transitionTimes.Count - 1f));
         }
