@@ -8,6 +8,7 @@ using UnityEngine.UI;
 /// </summary>
 public class ProgressBar : MonoBehaviour {
     public GameObject ProgressMarker;
+    public RectTransform ClearedProgressBar;
     public GameObject SectionPrefab;
     public Transform ProgressSectionsBucket;
     
@@ -23,9 +24,9 @@ public class ProgressBar : MonoBehaviour {
     void Start() {
         totalYLength = YMax - YMin;
         ProgressMarker.transform.localPosition = new Vector2(0, YMin - ((RectTransform)transform).rect.height / 2);
-        
+         
         SetUpProgressBar(new List<float> {
-            10f, 12.2f, 15f, 19.5f, 23f, 25.1f
+            6f, 10f, 12.2f, 15f, 19.5f, 23f, 25.1f
         });
     }
 
@@ -68,8 +69,14 @@ public class ProgressBar : MonoBehaviour {
         if (elapsedTime < startTime || elapsedTime - startTime > stageTimeLength) 
             return;
 
-        // Update the progress marker's location
+        // Update the progress marker's location and darken the elapsed part of the progress bar
         float stageCompletionProgress = (elapsedTime - startTime) / stageTimeLength;
-        ProgressMarker.transform.localPosition = new Vector2(0, Mathf.Lerp(YMin, YMax, stageCompletionProgress) - ((RectTransform)transform).rect.height / 2);
+        float transformOffset = ((RectTransform) transform).rect.height / 2;
+        float newPosition = Mathf.Lerp(YMin, YMax, stageCompletionProgress) - transformOffset;
+        ProgressMarker.transform.localPosition = new Vector2(0, newPosition);
+        ClearedProgressBar.sizeDelta = new Vector2(ClearedProgressBar.rect.width, 
+                newPosition 
+                + ExtraSpaceBetweenMarkerAndEdges / 2
+                + transformOffset);
     }
 }
