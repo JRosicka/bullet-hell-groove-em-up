@@ -10,12 +10,16 @@ public class Player : MonoBehaviour {
 	public float normalSpeed;
 	public float slowSpeed;
 	public bool Invincible;
+	public int StartExtraLifeCount;
+	public int StartBombCount;
 	
 	private bool onWallLeft;
 	private bool onWallRight;
 	private bool onWallUp;
 	private bool onWallDown;
 
+	private int extraLifeCount;
+	private int bombCount;
 
 	private const string HORIZONTAL_MOVEMENT_NAME = "ctr_move_horizontal";
 	private const string VERTICAL_MOVEMENT_NAME = "ctr_move_vertical";
@@ -26,7 +30,15 @@ public class Player : MonoBehaviour {
 
 	private float quitButtonHeldDownLength;
 	private const float REQUIRED_TIME_TO_QUIT = 1;
-	
+
+	private void Start() {
+		extraLifeCount = StartExtraLifeCount;
+		EventManager.LifeCountChangeEvent.Invoke(extraLifeCount);
+
+		bombCount = StartBombCount;
+		EventManager.BombCountChangeEvent.Invoke(bombCount);
+	}
+
 	/// <summary>
 	/// Checks to see the desired direction, and updates the player position and velocity based on this,
 	/// as long as it remains within the game bounds
@@ -72,16 +84,21 @@ public class Player : MonoBehaviour {
 		
 		if (other.gameObject.CompareTag("Bullet")) {
 			other.gameObject.SendMessage("DestroyBullet");
-			KillPlayer();
+			DamagePlayer();
 		} else if (other.gameObject.CompareTag("BulletTrail")) {
 			Destroy(other.gameObject);
-			KillPlayer();
+			DamagePlayer();
 		}
 	}
 
-	private void KillPlayer() {
-		// Add spin for no reason
-		rb.AddTorque(1f * (Random.Range(0, 2) == 0 ? 1 : -1));
-		GameController.Instance.ResetGame(false);
+	private void DamagePlayer() {
+		extraLifeCount--;
+		EventManager.LifeCountChangeEvent.Invoke(extraLifeCount);
+
+		if (extraLifeCount <= 0) {
+			// Add spin for no reason
+			rb.AddTorque(1f * (Random.Range(0, 2) == 0 ? 1 : -1));
+			GameController.Instance.ResetGame(false);
+		}
 	}
 }

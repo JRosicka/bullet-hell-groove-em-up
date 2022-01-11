@@ -49,6 +49,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -121,10 +122,8 @@ MonoBehaviour:
   normalSpeed: 6
   slowSpeed: 2.5
   Invincible: 0
-  WallLeft: {fileID: 0}
-  WallRight: {fileID: 0}
-  WallUp: {fileID: 0}
-  WallDown: {fileID: 0}
+  StartExtraLifeCount: 3
+  StartBombCount: 2
 --- !u!61 &2818877977326224438
 BoxCollider2D:
   m_ObjectHideFlags: 0
