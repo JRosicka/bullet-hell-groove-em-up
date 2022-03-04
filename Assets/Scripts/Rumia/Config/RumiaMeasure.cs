@@ -49,7 +49,7 @@ namespace Rumia {
             foreach (RumiaMeasure measure in ResourcesUtil.GetAllScriptableObjectInstances<RumiaMeasure>()) {
                 measure.UpdateRumiaActions();
             }
-        }
+        } 
         
         private void UpdateRumiaActions() {
             Pattern.GenerateRumiaActions();
