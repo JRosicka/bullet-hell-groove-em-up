@@ -13,6 +13,50 @@ MonoBehaviour:
   m_Name: Tswift configuration p8
   m_EditorClassIdentifier: 
   Pattern: {fileID: 1116746653346486956, guid: c131f7dff4b0b44439267d50e82f5361, type: 3}
-  StartMeasure: 0
+  StartMeasure: 64
   StartMeasures: []
-  MeasuresList: []
+  MeasuresList:
+  - Measures:
+    - {fileID: 11400000, guid: 04b72bbbef58aa0428366175d7c29621, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 04b72bbbef58aa0428366175d7c29621, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 04b72bbbef58aa0428366175d7c29621, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 1502feeda07f40949ac6a01e731ec546, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 05a99bd6cd058634785cdf6063c7d23c, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 07b2ddeda5aabce4fb09200d94197e1e, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a9fbb2e4052c5974cbdd2ab24d8dcf7b, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a1890fd8703c8834f8598a96d6851eb4, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: dd09b9288b31c7e4a9e7911b6715494a, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 07d4ed460f3e41a4491236fee698d691, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 3f2df416e9f5dd14e9a09a716cf30ac2, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: df13051fcf179f1468dbbaf234008c3b, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: d50f6ebbbe0bd2b46b1ce5eaa6a38bfc, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 5f6a6dec5e81a1343b922e8dbc098958, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 07584d366bbdf0a40a496bf8fa77565c, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 04b72bbbef58aa0428366175d7c29621, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 04b72bbbef58aa0428366175d7c29621, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 04b72bbbef58aa0428366175d7c29621, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 04b72bbbef58aa0428366175d7c29621, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 04b72bbbef58aa0428366175d7c29621, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 04b72bbbef58aa0428366175d7c29621, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 04b72bbbef58aa0428366175d7c29621, type: 2}

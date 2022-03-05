@@ -15953,7 +15953,151 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd168a8c2a240f4897d78739bbe7ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RumiaActions: []
+  RumiaActions:
+  - ID: 0
+    ActionName: None
+    type: 1
+    Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Vector:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 1
+    ActionName: Dummy
+    type: 2
+    Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1547636657261883480}
+            m_TargetAssemblyTypeName: ExileChantPattern, Assembly-CSharp
+            m_MethodName: Dummy
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 2
+    ActionName: Move
+    type: 2
+    Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1547636657261883480}
+            m_TargetAssemblyTypeName: ExileChantPattern, Assembly-CSharp
+            m_MethodName: Move
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 3
+    ActionName: Spawn
+    type: 3
+    Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Vector:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1547636657261883480}
+            m_TargetAssemblyTypeName: Rumia.Pattern, Assembly-CSharp
+            m_MethodName: Spawn
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Bool:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
 --- !u!1 &9105199752012817976
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,14 +10,99 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d1dd65c84e7535488d11a270a4701de, type: 3}
-  m_Name: Chant 1
+  m_Name: Biver 4
   m_EditorClassIdentifier: 
   RumiaActionLists:
+  - RumiaActions:
+    - ID: 0
+      ActionName: None
+      type: 1
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions: []
+  - RumiaActions:
+    - ID: 0
+      ActionName: None
+      type: 1
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+  - RumiaActions: []
+  - RumiaActions:
+    - ID: 0
+      ActionName: None
+      type: 1
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions: []
@@ -119,19 +204,22 @@ MonoBehaviour:
         OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions: []
   ChoiceParameterLists:
+  - ChoiceParameters:
+    - 
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
+  - ChoiceParameters:
+    - 
+  - ChoiceParameters: []
+  - ChoiceParameters:
+    - 
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
@@ -158,8 +246,4 @@ MonoBehaviour:
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  Pattern: {fileID: 1547636657261883480, guid: 3bb35dbacd1196446af36ea8026fde1c, type: 3}
+  Pattern: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333, type: 3}

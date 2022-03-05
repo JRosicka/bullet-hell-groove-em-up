@@ -13,6 +13,50 @@ MonoBehaviour:
   m_Name: Biver configuration p8
   m_EditorClassIdentifier: 
   Pattern: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333, type: 3}
-  StartMeasure: 0
+  StartMeasure: 64
   StartMeasures: []
-  MeasuresList: []
+  MeasuresList:
+  - Measures:
+    - {fileID: 11400000, guid: cbe9c5e52032ea14f854bd2a83372d20, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 9804bcbf6f5423742806c5cf61713dd1, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 0175a6055cf69664f89954f55022b5be, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: b26180e946c641143ba28ff90208f73f, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 898c94c8040201a4e97b578d271ff59f, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 8ec798ee2dd1de7408ac83b30cf27302, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 5e250a8099cae9c48991ad7fb7ccc2e7, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 3ed8f5129aba38e4e88859d3f5593b43, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 5197a47d9477d104ba693345492c784a, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: c519416befa603f4dbb6b25b7301b566, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 773adfda3c76c3a419298209745eb14d, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 680cc0693bb5fcd43af96e753a963126, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: aa071b4677fde0e4ebc46ea3ea00eefb, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 0dccae8f64415bc4f9a94944f7ca9426, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 008eb0f6093086a46a571930ab80bc9e, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: fdd81b74300fb2e4d8ebb677bd7b821b, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: febe8fb14a8068c47b87f44354be3ce5, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: febe8fb14a8068c47b87f44354be3ce5, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: febe8fb14a8068c47b87f44354be3ce5, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: febe8fb14a8068c47b87f44354be3ce5, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: febe8fb14a8068c47b87f44354be3ce5, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: febe8fb14a8068c47b87f44354be3ce5, type: 2}

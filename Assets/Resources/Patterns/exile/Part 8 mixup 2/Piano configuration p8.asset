@@ -13,6 +13,50 @@ MonoBehaviour:
   m_Name: Piano configuration p8
   m_EditorClassIdentifier: 
   Pattern: {fileID: 6695177157680198784, guid: 93fb98103f1cfb2438cb7f492d165717, type: 3}
-  StartMeasure: 0
+  StartMeasure: 64
   StartMeasures: []
-  MeasuresList: []
+  MeasuresList:
+  - Measures:
+    - {fileID: 11400000, guid: a292f410aba6bba479cd68b72f9d8139, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a292f410aba6bba479cd68b72f9d8139, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a292f410aba6bba479cd68b72f9d8139, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a292f410aba6bba479cd68b72f9d8139, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a292f410aba6bba479cd68b72f9d8139, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a292f410aba6bba479cd68b72f9d8139, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a292f410aba6bba479cd68b72f9d8139, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a292f410aba6bba479cd68b72f9d8139, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a292f410aba6bba479cd68b72f9d8139, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a292f410aba6bba479cd68b72f9d8139, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a292f410aba6bba479cd68b72f9d8139, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a292f410aba6bba479cd68b72f9d8139, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a292f410aba6bba479cd68b72f9d8139, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a292f410aba6bba479cd68b72f9d8139, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a292f410aba6bba479cd68b72f9d8139, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a292f410aba6bba479cd68b72f9d8139, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a292f410aba6bba479cd68b72f9d8139, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a292f410aba6bba479cd68b72f9d8139, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a292f410aba6bba479cd68b72f9d8139, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 5689c56903b74f34d87d7702b82faa76, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: bba218dd53db44046bf69b8f4902de9e, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 19dea54a4263a8241adffb536ec26956, type: 2}

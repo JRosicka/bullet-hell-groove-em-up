@@ -10,50 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d1dd65c84e7535488d11a270a4701de, type: 3}
-  m_Name: Chant spawn
+  m_Name: Piano 21
   m_EditorClassIdentifier: 
   RumiaActionLists:
-  - RumiaActions:
-    - ID: 3
-      ActionName: Spawn
-      type: 3
-      Basic:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Vector:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls:
-            - m_Target: {fileID: 6695177157680198784, guid: 3bb35dbacd1196446af36ea8026fde1c,
-                type: 3}
-              m_TargetAssemblyTypeName: Rumia.Pattern, Assembly-CSharp
-              m_MethodName: Spawn
-              m_Mode: 0
-              m_Arguments:
-                m_ObjectArgument: {fileID: 0}
-                m_ObjectArgumentAssemblyTypeName: 
-                m_IntArgument: 0
-                m_FloatArgument: 0
-                m_StringArgument: 
-                m_BoolArgument: 0
-              m_CallState: 2
-      Bool:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Int:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Float:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
+  - RumiaActions: []
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions: []
@@ -86,8 +46,6 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   ChoiceParameterLists:
-  - ChoiceParameters:
-    - 0 0
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
@@ -119,4 +77,5 @@ MonoBehaviour:
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
-  Pattern: {fileID: 1547636657261883480, guid: 3bb35dbacd1196446af36ea8026fde1c, type: 3}
+  - ChoiceParameters: []
+  Pattern: {fileID: 6695177157680198784, guid: 93fb98103f1cfb2438cb7f492d165717, type: 3}

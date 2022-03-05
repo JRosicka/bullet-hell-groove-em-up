@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 236bf94ffdcc7064a995775e6f45bc5e, type: 3}
   m_Name: Chant configuration p3
   m_EditorClassIdentifier: 
-  Pattern: {fileID: 6695177157680198784, guid: 3bb35dbacd1196446af36ea8026fde1c, type: 3}
+  Pattern: {fileID: 1547636657261883480, guid: 3bb35dbacd1196446af36ea8026fde1c, type: 3}
   StartMeasure: 20
   StartMeasures:
   - {fileID: 11400000, guid: 7f24ca0415d0d86498cf13ef19b8a389, type: 2}
