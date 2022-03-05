@@ -15,7 +15,7 @@ namespace Rumia {
     /// </summary>
     public abstract class Pattern : MonoBehaviour {
         [SerializeField, HideInInspector] 
-        private List<RumiaAction> RumiaActions;
+        private List<RumiaAction> RumiaActions = new List<RumiaAction>();
 
         /// <summary>
         /// Spawn this pattern in the scene at the specified position.
