@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Tswift configuration p3
   m_EditorClassIdentifier: 
   Pattern: {fileID: 1116746653346486956, guid: c131f7dff4b0b44439267d50e82f5361, type: 3}
-  StartMeasure: 0
+  StartMeasure: 20
   StartMeasures: []
   MeasuresList: []

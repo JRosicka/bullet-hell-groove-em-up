@@ -13,6 +13,22 @@ MonoBehaviour:
   m_Name: Tswift configuration p4
   m_EditorClassIdentifier: 
   Pattern: {fileID: 1116746653346486956, guid: c131f7dff4b0b44439267d50e82f5361, type: 3}
-  StartMeasure: 0
+  StartMeasure: 24
   StartMeasures: []
-  MeasuresList: []
+  MeasuresList:
+  - Measures:
+    - {fileID: 11400000, guid: 9b6a702e28afcdb44b82163a6482c2a6, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: f258c6ba43eaac44db67cb1700f289b3, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: b1fb27f94bad3ed4d92688e5dcf5a8b2, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: afdcef5508fae104fb3cb9ddaa06d29e, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 87847405db8a83c4fbfbd86e0012b223, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 23e3b18a0a1131844b2930c574f3aafd, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 66008faac3746534f8704dc0bdb363a6, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 7eb6d9af83960b449bd4514f15c76957, type: 2}

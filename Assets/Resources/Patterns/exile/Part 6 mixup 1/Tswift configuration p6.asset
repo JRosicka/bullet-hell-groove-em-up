@@ -13,6 +13,38 @@ MonoBehaviour:
   m_Name: Tswift configuration p6
   m_EditorClassIdentifier: 
   Pattern: {fileID: 1116746653346486956, guid: c131f7dff4b0b44439267d50e82f5361, type: 3}
-  StartMeasure: 0
+  StartMeasure: 40
   StartMeasures: []
-  MeasuresList: []
+  MeasuresList:
+  - Measures:
+    - {fileID: 11400000, guid: 126e5e4e4a97b4649bc7d3493d8359b2, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a113555c4fe194f43ad1538bf54cc289, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a336a173b8f5bce4c961fe2e41dd052e, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: e0d0cfa9b5562734db9a875d4171f0d6, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 979d49f4a4d91c7439e24c1380b95812, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 23e92bbfe99822840a5dde88611fed38, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: be4f582380e97e9449222402474800fc, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: ad1573e8905ecaf468476840a25abd0f, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 0d9b1904131bb5c41822e0ac1f54ae2b, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 3ddf538301fad8d4897d2b221f052382, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: b5313e396e1b37f4b82a4f1d5a4fd1d1, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 0d663830cf5b04e4094888f5f773ae37, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: d8fa44fd637eb834ba8ba4bd1213aaa8, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 70173230553c5c047ae4eb1c0145a407, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: effb8a8a186be664c90462a089684aee, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 3b25c694ad8c0424ca626cf3c67c93df, type: 2}

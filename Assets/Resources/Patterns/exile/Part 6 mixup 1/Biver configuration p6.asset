@@ -13,6 +13,38 @@ MonoBehaviour:
   m_Name: Biver configuration p6
   m_EditorClassIdentifier: 
   Pattern: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333, type: 3}
-  StartMeasure: 0
+  StartMeasure: 40
   StartMeasures: []
-  MeasuresList: []
+  MeasuresList:
+  - Measures:
+    - {fileID: 11400000, guid: 8c91ab866b2279a4d9db1768e05312f0, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 4e151cb8da2db1546a26411b06e9c806, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 83c2f1af2aff0b34b8d4210b2afe0627, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 247ec77dbf963434db84efe803585d0c, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 7abd2aee465f38c4bb24ff54cf8fd397, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 233692b09a82a204ea364f10dca34bcb, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: f37435fd164778c4d91243ebb962a414, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: d079f3e585a1d4f4eb0a06fc81c6e904, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 8baf6c8e10c97ab49a5f4b1c5965d310, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 414d91052c4772045a18cefcdb2c7154, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 13ea495e3b3571e48a91a0613c32a2e3, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 5313b6e3678e67942985c2939722a333, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: ab7869baee573ed49b6986472bbe4de8, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 1720748a08e7e5b4499edd0220809af0, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 16d518ca790870b4b8bf3a229c7ab2d7, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: f69dcb4f93f412f4b9721bf4a6b4a0e6, type: 2}

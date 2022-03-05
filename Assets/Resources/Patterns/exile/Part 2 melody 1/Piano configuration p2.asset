@@ -13,6 +13,22 @@ MonoBehaviour:
   m_Name: Piano configuration p2
   m_EditorClassIdentifier: 
   Pattern: {fileID: 6695177157680198784, guid: 93fb98103f1cfb2438cb7f492d165717, type: 3}
-  StartMeasure: 0
+  StartMeasure: 12
   StartMeasures: []
-  MeasuresList: []
+  MeasuresList:
+  - Measures:
+    - {fileID: 11400000, guid: bdf89f2c8768fa049ad35503437029ac, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 18dfd522a58c06c4d9914a07306d828b, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 487d6b1a755a7aa45a21408b6aa9f411, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 03211aa2de02e544c8df7fe99392fc30, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: bdf89f2c8768fa049ad35503437029ac, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a8e45795afc97c842b2c0a3f9c3abe0f, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 487d6b1a755a7aa45a21408b6aa9f411, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 515bfbebe0cb1be4890cac2bbaccc2ad, type: 2}

@@ -14,5 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Pattern: {fileID: 6695177157680198784, guid: 93fb98103f1cfb2438cb7f492d165717, type: 3}
   StartMeasure: 0
-  StartMeasures: []
-  MeasuresList: []
+  StartMeasures:
+  - {fileID: 11400000, guid: 57a3175351d1b2e4ea3368ec2ed2167f, type: 2}
+  MeasuresList:
+  - Measures:
+    - {fileID: 11400000, guid: e6f134e6a45ae594fa40851d3827eb37, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: fc225f8ff3bd4b94485cb039d78b0368, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: ff22b5b1697e29749b00b944bb6e2422, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 86df774c533faf24196e92e7e34aa415, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: e6f134e6a45ae594fa40851d3827eb37, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: fc225f8ff3bd4b94485cb039d78b0368, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 22230a94dbece384b8e556ca8cc14c82, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 86df774c533faf24196e92e7e34aa415, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: e6f134e6a45ae594fa40851d3827eb37, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: fc225f8ff3bd4b94485cb039d78b0368, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 22230a94dbece384b8e556ca8cc14c82, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 86df774c533faf24196e92e7e34aa415, type: 2}

@@ -13,6 +13,22 @@ MonoBehaviour:
   m_Name: Biver configuration p2
   m_EditorClassIdentifier: 
   Pattern: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333, type: 3}
-  StartMeasure: 0
+  StartMeasure: 12
   StartMeasures: []
-  MeasuresList: []
+  MeasuresList:
+  - Measures:
+    - {fileID: 11400000, guid: 2f236a78c207d7d4b870a9e526d29704, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 315bfd4d4fa7ac2448e59cceaa106268, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: a15eabaf5f62b844eadd569b6f8acddc, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: ec99600421362554d9710fc947532c53, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 9073680d859561e4d92ef5445db0da0e, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 5c39618976022e94ab8f4324cdafe7e3, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: ba67a748ead285f4d88c326fc273db38, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 040d159583093bc468e806953b05dbdd, type: 2}

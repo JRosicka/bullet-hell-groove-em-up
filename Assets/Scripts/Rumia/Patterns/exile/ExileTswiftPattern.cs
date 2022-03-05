@@ -22,13 +22,13 @@ public class ExileTswiftPattern : Pattern
     // ReSharper disable once UnusedMember.Global
     [RumiaAction]
     public void Dummy() {
-            
+        Debug.Log("Dummy pattern:                Tswift");
     }
 
     // ReSharper disable once UnusedMember.Global
     [RumiaAction]
     public void Move() {
-            
+        
     }
 
     #endregion

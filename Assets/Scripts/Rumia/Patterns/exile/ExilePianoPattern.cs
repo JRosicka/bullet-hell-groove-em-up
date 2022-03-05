@@ -22,7 +22,7 @@ public class ExilePianoPattern : Pattern
         // ReSharper disable once UnusedMember.Global
         [RumiaAction]
         public void Dummy() {
-            
+            Debug.Log("Dummy pattern: Piano");
         }
 
         // ReSharper disable once UnusedMember.Global

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Biver configuration p4
   m_EditorClassIdentifier: 
   Pattern: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333, type: 3}
-  StartMeasure: 0
+  StartMeasure: 24
   StartMeasures: []
   MeasuresList: []

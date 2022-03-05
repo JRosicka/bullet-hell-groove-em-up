@@ -22,13 +22,13 @@ public class ExileBiverPattern : Pattern
     // ReSharper disable once UnusedMember.Global
     [RumiaAction]
     public void Dummy() {
-            
+        Debug.Log("Dummy pattern:                                Biver");
     }
 
     // ReSharper disable once UnusedMember.Global
     [RumiaAction]
     public void Move() {
-            
+        
     }
 
     #endregion
