@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.Serialization;
 
 namespace Rumia {
@@ -65,6 +66,16 @@ namespace Rumia {
                 GenerateRumiaActionForMethod(method);
             }
 
+            FieldInfo[] fields = GetType()
+                .GetFields()
+                .Where(t => t.GetCustomAttributes(typeof(EmissionRumiaActionAttribute), false).Length > 0)
+                .ToArray();
+            // We only allow Emitters for this attribute
+            Assert.IsTrue(fields.All(e => e.FieldType == typeof(Emitter)));
+            foreach (FieldInfo field in fields) {
+                GenerateRumiaActionForEmitterField(field);
+            }
+            
             // Update the IDs in case any entries were added/removed/reordered
             for (int i = 0; i < RumiaActions.Count; i++) {
                 RumiaActions[i].ID = i;
@@ -108,6 +119,31 @@ namespace Rumia {
             rumiaAction.ActionName = method.Name;
             rumiaAction.GetSubRumiaAction()?.GenerateRumiaActionEvent(method, this);
 
+            RumiaActions.Add(rumiaAction);
+        }
+
+        /// <summary>
+        /// Create a pattern action for a single <see cref="Emitter"/> field. The generated RumiaAction always
+        /// just calls the Emitter's <see cref="Emitter.Emit"/> field. 
+        /// Creates the new RumiaAction and adds it to <see cref="RumiaActions"/>.
+        /// </summary>
+        private void GenerateRumiaActionForEmitterField(FieldInfo field) {
+            RumiaAction.RumiaActionType actionType = RumiaAction.RumiaActionType.Basic;
+            RumiaAction rumiaAction = RumiaAction.CreateRumiaAction(actionType);
+            rumiaAction.ActionName = $"{field.Name} emission";
+            
+            MethodInfo emissionMethod = typeof(Emitter).GetMethod("Emit");
+
+            Emitter emitter = (Emitter) field.GetValue(this);
+
+            if (emitter == null) {
+                Debug.LogWarning($"Field {field.Name} is null - did you forget to add "
+                                 + $"the prefab reference in the inspector for {this.name}?");
+                return;
+            }
+            
+            rumiaAction.GetSubRumiaAction()?.GenerateRumiaActionEvent(emissionMethod, emitter);
+            
             RumiaActions.Add(rumiaAction);
         }
 #endif

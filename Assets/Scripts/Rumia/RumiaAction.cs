@@ -145,7 +145,7 @@ namespace Rumia {
 
         public interface ISubRumiaAction {
             void InvokeRumiaAction(string serializedParameter);
-            void GenerateRumiaActionEvent(MethodInfo method, Pattern target);
+            void GenerateRumiaActionEvent(MethodInfo method, object target);
             Type GetParameterType();
         }
 
@@ -158,7 +158,7 @@ namespace Rumia {
                     .Invoke();
             }
 
-            public void GenerateRumiaActionEvent(MethodInfo method, Pattern target) {
+            public void GenerateRumiaActionEvent(MethodInfo method, object target) {
 #if UNITY_EDITOR
                 UnityEvent newEvent = new UnityEvent();
                 UnityAction action = (UnityAction) method.CreateDelegate(typeof(UnityAction), target);
@@ -185,7 +185,7 @@ namespace Rumia {
                 OnRumiaAction.Invoke(DeserializeParameter(serializedParameter));
             }
 
-            public void GenerateRumiaActionEvent(MethodInfo method, Pattern target) {
+            public void GenerateRumiaActionEvent(MethodInfo method, object target) {
 #if UNITY_EDITOR
                 BoolEvent newEvent = new BoolEvent();
                 UnityAction<bool> action = (UnityAction<bool>) method.CreateDelegate(typeof(UnityAction<bool>), target);
@@ -226,7 +226,7 @@ namespace Rumia {
                 OnRumiaAction.Invoke(DeserializeParameter(serializedParameter));
             }
 
-            public void GenerateRumiaActionEvent(MethodInfo method, Pattern target) {
+            public void GenerateRumiaActionEvent(MethodInfo method, object target) {
 #if UNITY_EDITOR
                 IntEvent newEvent = new IntEvent();
                 UnityAction<int> action = (UnityAction<int>) method.CreateDelegate(typeof(UnityAction<int>), target);
@@ -265,7 +265,7 @@ namespace Rumia {
                 OnRumiaAction.Invoke(DeserializeParameter(serializedParameter));
             }
 
-            public void GenerateRumiaActionEvent(MethodInfo method, Pattern target) {
+            public void GenerateRumiaActionEvent(MethodInfo method, object target) {
 #if UNITY_EDITOR
                 FloatEvent newEvent = new FloatEvent();
                 UnityAction<float> action =
@@ -305,7 +305,7 @@ namespace Rumia {
                 OnRumiaAction.Invoke(DeserializeParameter(serializedParameter));
             }
 
-            public void GenerateRumiaActionEvent(MethodInfo method, Pattern target) {
+            public void GenerateRumiaActionEvent(MethodInfo method, object target) {
 #if UNITY_EDITOR
                 StringEvent newEvent = new StringEvent();
                 UnityAction<string> action =
@@ -342,7 +342,7 @@ namespace Rumia {
                 OnRumiaAction.Invoke(DeserializeParameter(serializedParameter));
             }
 
-            public void GenerateRumiaActionEvent(MethodInfo method, Pattern target) {
+            public void GenerateRumiaActionEvent(MethodInfo method, object target) {
 #if UNITY_EDITOR
                 VectorEvent newEvent = new VectorEvent();
                 UnityAction<Vector2> action =
