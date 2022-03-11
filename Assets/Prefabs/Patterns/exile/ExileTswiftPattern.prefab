@@ -16141,7 +16141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnedBullets: []
   Config:
     BulletPrefab: {fileID: 7497343712616834882, guid: e91d4205e9e49e548aa598aeced97950,
       type: 3}
@@ -16219,6 +16218,8 @@ MonoBehaviour:
     UseTrail: 0
     Trail: {fileID: 0}
     Reverse: 0
+    SpeedChanges: []
+    AimChanges: []
 --- !u!1 &9105199752012817976
 GameObject:
   m_ObjectHideFlags: 0

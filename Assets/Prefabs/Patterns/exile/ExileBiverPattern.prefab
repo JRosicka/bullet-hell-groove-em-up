@@ -6084,7 +6084,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnedBullets: []
   Config:
     BulletPrefab: {fileID: 7497343712616834882, guid: e91d4205e9e49e548aa598aeced97950,
       type: 3}
@@ -6162,6 +6161,44 @@ MonoBehaviour:
     UseTrail: 0
     Trail: {fileID: 0}
     Reverse: 0
+    SpeedChanges:
+    - StartingSpeed: 8
+      SpeedCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: -3.0587585
+          outSlope: -3.0587585
+          tangentMode: 0
+          weightedMode: 3
+          inWeight: 0
+          outWeight: 0.742115
+        - serializedVersion: 3
+          time: 0.2
+          value: 0.5
+          inSlope: 0.00074176525
+          outSlope: 0.00074176525
+          tangentMode: 0
+          weightedMode: 3
+          inWeight: 0.33333334
+          outWeight: 0.8164245
+        - serializedVersion: 3
+          time: 10
+          value: 0.5
+          inSlope: -0.0001156523
+          outSlope: -0.0001156523
+          tangentMode: 0
+          weightedMode: 3
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+    AimChanges:
+    - RotationDegrees: 0
+      AimTowardsPlayer: 1
 --- !u!1 &2032573800094174281
 GameObject:
   m_ObjectHideFlags: 0
