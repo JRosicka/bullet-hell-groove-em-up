@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour {
     private const string RESTART_NAME = "ctr_slow";
 
     public SongController SongController;
-    public EnemyManager EnemyManager;
+    public PatternManager PatternManager;
     public Transform ShotBucket;
     public WaypointManager WaypointManager;
     public ProgressBar ProgressBar;

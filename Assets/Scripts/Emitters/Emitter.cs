@@ -147,11 +147,11 @@ public class Emitter : MonoBehaviour {
     private List<AimSubscriptionObject> aimSubscriptionObjects = new List<AimSubscriptionObject>();
 
     public SpeedSubscriptionObject GetSpeedSubscriptionObject(int index) {
-        Assert.IsTrue(speedSubscriptionObjects.Count > index);
+        Assert.IsTrue(speedSubscriptionObjects.Count > index, $"{name}: {nameof(speedSubscriptionObjects)} count ({speedSubscriptionObjects.Count}) greater than index ({index})");
         return speedSubscriptionObjects[index];
     }
     public AimSubscriptionObject GetAimSubscriptionObject(int index) {
-        Assert.IsTrue(aimSubscriptionObjects.Count > index);
+        Assert.IsTrue(aimSubscriptionObjects.Count > index, $"{name}: {nameof(aimSubscriptionObjects)} count ({aimSubscriptionObjects.Count}) greater than index ({index})");
         return aimSubscriptionObjects[index];
     }
 

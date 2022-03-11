@@ -12,6 +12,7 @@ namespace Rumia {
         private const int ACTIONS_PER_MEASURE = 32;    // 32nd-notes
 
         public RumiaConfiguration Config;
+        public bool UseAlreadyInstantiatedPatternInstanceIfItExists;
 
         private TimingController timingController;
         private float timeElapsed;
@@ -33,12 +34,15 @@ namespace Rumia {
         
         private void Start() {
             timingController = FindObjectOfType<TimingController>();
-            
-            // We spawn the pattern instance right away but deactivate it. The pattern is responsible for setting it active 
-            // again at its scheduled "spawn" time.
-            Transform spawner = GameController.EnemyManager.transform;
-            patternInstance = Instantiate(Config.Pattern, Vector2.zero, Quaternion.identity, spawner);
-            patternInstance.gameObject.SetActive(false);
+            PatternManager patternManager = GameController.Instance.PatternManager;
+            patternInstance = patternManager.GetPatternOfType(Config.Pattern);
+            if (patternInstance == null) {
+                // We spawn the pattern instance right away but deactivate it. The pattern is responsible for setting it active 
+                // again at its scheduled "spawn" time.
+                patternInstance = Instantiate(Config.Pattern, Vector2.zero, Quaternion.identity, patternManager.transform);
+                patternInstance.gameObject.SetActive(false);
+                patternManager.RegisterPattern(patternInstance);
+            }
             
             SetStartMeasure(GameController.TimingController.NumberOfMeasuresToSkipOnStart);
 
