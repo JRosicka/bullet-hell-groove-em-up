@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Rumia;
 using SplineMesh;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.Serialization;
 using Random = System.Random;
 
@@ -12,7 +14,20 @@ using Random = System.Random;
 /// Emits <see cref="Bullet"/>s and gives them behaviors (bezier curves to follow, specific properties, etc)
 /// </summary>
 public class Emitter : MonoBehaviour {
-    public List<Bullet> SpawnedBullets;
+    private List<Bullet> SpawnedBullets;
+
+    [Serializable]
+    public struct SpeedChange {
+        public float StartingSpeed;
+        public AnimationCurve SpeedCurve;
+    }
+
+    [Serializable]
+    public struct AimChange {
+        public float RotationDegrees;
+        // If true, will ignore RotationDegrees value TODO: Change to disallow RotationDegrees value if true
+        public bool AimTowardsPlayer;
+    }
 
     /// <summary>
     /// All of the details needed for firing a group of bullets, to be configured in the inspector. These configuration
@@ -105,6 +120,9 @@ public class Emitter : MonoBehaviour {
         public bool UseTrail;
         public TrailRendererWith2DCollider Trail;
         public bool Reverse;
+
+        public SpeedChange[] SpeedChanges;
+        public AimChange[] AimChanges;
     }
     
     /// <summary>
@@ -124,8 +142,17 @@ public class Emitter : MonoBehaviour {
     private float timeElapsed;
 
     private bool hasScheduledAnyEmissions;
-    private SpeedSubscriptionObject speedSubscriptionObject;
-    private AimSubscriptionObject aimSubscriptionObject;
+    private List<SpeedSubscriptionObject> speedSubscriptionObjects = new List<SpeedSubscriptionObject>();
+    private List<AimSubscriptionObject> aimSubscriptionObjects = new List<AimSubscriptionObject>();
+
+    public SpeedSubscriptionObject GetSpeedSubscriptionObject(int index) {
+        Assert.IsTrue(speedSubscriptionObjects.Count > index);
+        return speedSubscriptionObjects[index];
+    }
+    public AimSubscriptionObject GetAimSubscriptionObject(int index) {
+        Assert.IsTrue(aimSubscriptionObjects.Count > index);
+        return aimSubscriptionObjects[index];
+    }
 
     public void Awake() {
         SpawnedBullets = new List<Bullet>();
@@ -186,10 +213,15 @@ public class Emitter : MonoBehaviour {
         SpawnedBullets.Add(spawnedBullet);
         spawnedBullet.AssignBulletLogic(logic);
     }
-    
+
     /// <summary>
     /// Create and schedule <see cref="BulletConfig"/>s for the given <see cref="EmissionConfiguration"/>, setting up the
-    /// fire positions, overall rotations and timings, passing in bullet logic, etc.
+    /// fire positions, overall rotations and timings, passing in bullet logic, etc.\
+    ///
+    /// TODO: Document the following somewhere better
+    /// Subscription objects can be configured here (type subscription object structs) in an array, and so we can define them
+    /// in the config instead of having to do so in the code. Then when scheduling the emission here, we can add matching bullet logic.
+    /// The order in the array should probably be roughly chronological for convenience, but doesn't necessarily have to be. 
     /// </summary>
     /// <param name="configuration"></param>
     protected void ScheduleEmission(EmissionConfiguration configuration) {
@@ -209,6 +241,13 @@ public class Emitter : MonoBehaviour {
         } else {
             startRotationDegrees = startRotation;
             endRotationDegrees = startRotation + direction * configuration.RotationArc;
+        }
+        
+        foreach (SpeedChange change in configuration.SpeedChanges) {
+            speedSubscriptionObjects.Add(new SpeedSubscriptionObject(change.StartingSpeed, change.SpeedCurve));
+        }
+        foreach (AimChange change in configuration.AimChanges) {
+            aimSubscriptionObjects.Add(new AimSubscriptionObject(change.AimTowardsPlayer, change.RotationDegrees));
         }
         
         List<BulletConfig> bullets = new List<BulletConfig>();
@@ -251,12 +290,9 @@ public class Emitter : MonoBehaviour {
             eulerAngles.z +=
                 UnityEngine.Random.Range(-configuration.StartRotationVariance / 2, configuration.StartRotationVariance / 2);
             localRotation.eulerAngles = eulerAngles;
-            
-            if (speedSubscriptionObject != null)
-                logic.Add(new SubscribeToSpeedControllerBulletLogic(speedSubscriptionObject));
-            
-            if (aimSubscriptionObject != null)
-                logic.Add(new SubscribeToAimControllerBulletLogic(aimSubscriptionObject));
+
+            logic.AddRange(speedSubscriptionObjects.Select(speed => new SubscribeToSpeedControllerBulletLogic(speed)));
+            logic.AddRange(aimSubscriptionObjects.Select(aim => new SubscribeToAimControllerBulletLogic(aim)));
             
             bullets.Add(new BulletConfig {
                 Bullet = configuration.BulletPrefab,
@@ -272,16 +308,16 @@ public class Emitter : MonoBehaviour {
         hasScheduledAnyEmissions = true;
     }
 
-    public void AssignSpeedSubscriptionObject(SpeedSubscriptionObject speedSubscriptionObject) {
-        // if (hasScheduledAnyEmissions)
-        //     throw new Exception("We assigned a SpeedSubscriptionObject too late, emissions were already scheduled! Gotta get on that AP train!");
-        
-        this.speedSubscriptionObject = speedSubscriptionObject;
-    }
-
-    public void AssignAimSubscriptionObject(AimSubscriptionObject aimSubscriptionObject) {
-        this.aimSubscriptionObject = aimSubscriptionObject;
-    }
+    // public void AssignSpeedSubscriptionObject(SpeedSubscriptionObject speedSubscriptionObject) {
+    //     // if (hasScheduledAnyEmissions)
+    //     //     throw new Exception("We assigned a SpeedSubscriptionObject too late, emissions were already scheduled! Gotta get on that AP train!");
+    //     
+    //     this.speedSubscriptionObjects = speedSubscriptionObject;
+    // }
+    //
+    // public void AssignAimSubscriptionObject(AimSubscriptionObject aimSubscriptionObject) {
+    //     this.aimSubscriptionObjects = aimSubscriptionObject;
+    // }
     
     // TODO: Enforce somewhere that things tagged with [Emission] cannot have any parameters
     // TODO: Dummy examples, the BulletPrefab(s) and Shoot logic should be defined in subclasses of Emitter

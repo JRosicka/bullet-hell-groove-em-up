@@ -7,37 +7,27 @@ using UnityEngine;
 public class ExileBiverPattern : Pattern {
     [EmissionRumiaAction]
     public Emitter Melody1;
-    public SpeedSubscriptionObject Melody1SpeedSubscription;
-    public AimSubscriptionObject Melody1AimSubscription;
-    public float Melody1Phase2StartSpeed;
-    public AnimationCurve Melody1Phase2SpeedCurve;
     
-    // Start is called before the first frame update
     void Start() {
-        Melody1SpeedSubscription = new SpeedSubscriptionObject(Melody1Phase2StartSpeed, Melody1Phase2SpeedCurve);
-        Melody1.AssignSpeedSubscriptionObject(Melody1SpeedSubscription);
-        Melody1AimSubscription = new AimSubscriptionObject();
-        Melody1.AssignAimSubscriptionObject(Melody1AimSubscription);
+        
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
-    private void ReAimAndMoveBullet(SpeedSubscriptionObject speed, AimSubscriptionObject aim) {
-        speed.TriggerSpeedCurve();
-        aim.TriggerRotationTowardsPlayer();
-        
+    private void ReAimAndMoveEmittedBullet(Emitter emitter, int index) {
+        emitter.GetSpeedSubscriptionObject(index).TriggerSpeedCurve();
+        emitter.GetAimSubscriptionObject(index).TriggerRotation();
     }
     
     #region RumiaActions
 
     [RumiaAction]
     [Button]
-    public void Melody1Phase2() {
-        ReAimAndMoveBullet(Melody1SpeedSubscription, Melody1AimSubscription);
+    public void Melody1ChangePhase(int phaseIndex) {
+        ReAimAndMoveEmittedBullet(Melody1, phaseIndex);
     }
     
     // ReSharper disable once UnusedMember.Global

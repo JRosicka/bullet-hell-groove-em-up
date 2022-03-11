@@ -3,6 +3,13 @@ using UnityEngine;
 
 public class AimSubscriptionObject {
     private List<SubscribeToAimControllerBulletLogic> subscribers = new List<SubscribeToAimControllerBulletLogic>();
+    private bool aimAtPlayer;
+    private float newRotationDegrees;
+
+    public AimSubscriptionObject(bool aimAtPlayer, float newRotationDegrees) {
+        this.aimAtPlayer = aimAtPlayer;
+        this.newRotationDegrees = newRotationDegrees;
+    }
     
     public void SubscribeBullet(SubscribeToAimControllerBulletLogic bullet) {
         subscribers.Add(bullet);
@@ -12,13 +19,21 @@ public class AimSubscriptionObject {
         subscribers.Remove(bullet);
     }
 
-    public void TriggerRotation(Quaternion newRotation) {
+    public void TriggerRotation() {
+        if (aimAtPlayer) {
+            TriggerRotationTowardsPlayer();
+        } else {
+            TriggerRotation(newRotationDegrees);
+        }
+    }
+    
+    private void TriggerRotation(float degrees) {
         foreach (SubscribeToAimControllerBulletLogic logic in subscribers) {
-            logic.TriggerRotation(newRotation);
+            logic.TriggerRotation(Quaternion.Euler(0, 0, degrees));
         }
     }
 
-    public void TriggerRotationTowardsPlayer() {
+    private void TriggerRotationTowardsPlayer() {
         foreach (SubscribeToAimControllerBulletLogic logic in subscribers) {
             logic.TriggerRotationTowardsPlayer();
         }

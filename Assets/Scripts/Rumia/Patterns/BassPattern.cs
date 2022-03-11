@@ -75,9 +75,11 @@ namespace Rumia {
         private static readonly int SpinClockwise = Animator.StringToHash("SpinClockwise");
 
         private void Awake() {
-            if (speedSubscriptionObject == null)
-                speedSubscriptionObject =
-                    new SpeedSubscriptionObject(speedInterruptionStartingSpeed, speedInterruptionCurve);
+            
+            // TODO commented out after changing subscription objects to be configured via emitter config rather than in code
+            // if (speedSubscriptionObject == null)
+                // speedSubscriptionObject =
+                //     new SpeedSubscriptionObject(speedInterruptionStartingSpeed, speedInterruptionCurve);
         }
 
         private void Start() {
@@ -91,9 +93,10 @@ namespace Rumia {
                 EmitterM2B3N3, EmitterM2B3N4, EmitterM2B3N5, EmitterM2B3N6
             };
 
-            foreach (Emitter emitter in emittersToSubscribeToSpeedController) {
-                emitter.AssignSpeedSubscriptionObject(speedSubscriptionObject);
-            }
+            // TODO commented out after changing subscription objects to be configured via emitter config rather than in code
+            // foreach (Emitter emitter in emittersToSubscribeToSpeedController) {
+            //     emitter.AssignSpeedSubscriptionObject(speedSubscriptionObject);
+            // }
         }
 
         private void Update() {
