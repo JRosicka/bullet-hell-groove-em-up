@@ -18,6 +18,10 @@ public class AimSubscriptionObject {
     public void UnsubscribeBullet(SubscribeToAimControllerBulletLogic bullet) {
         subscribers.Remove(bullet);
     }
+    
+    public void UnsubscribeAllBullets() {
+        subscribers.Clear();
+    }
 
     public void TriggerRotation() {
         if (aimAtPlayer) {

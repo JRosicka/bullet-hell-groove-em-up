@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using Rumia;
 using Sirenix.OdinInspector;
+using Sirenix.Utilities;
 using SplineMesh;
 using UnityEditor;
 using UnityEngine;
@@ -146,13 +147,24 @@ public class Emitter : MonoBehaviour {
     private List<SpeedSubscriptionObject> speedSubscriptionObjects = new List<SpeedSubscriptionObject>();
     private List<AimSubscriptionObject> aimSubscriptionObjects = new List<AimSubscriptionObject>();
 
-    public SpeedSubscriptionObject GetSpeedSubscriptionObject(int index) {
-        Assert.IsTrue(speedSubscriptionObjects.Count > index, $"{name}: {nameof(speedSubscriptionObjects)} count ({speedSubscriptionObjects.Count}) greater than index ({index})");
-        return speedSubscriptionObjects[index];
+    [Button]
+    // TODO: Currently this depends on the speed subscriptions and aim subscriptions being synchronized by index, that's probably not good to assume
+    public void TriggerSpeedAndAimChange(int index) {
+        TriggerSpeedChange(index);
+        TriggerAimChange(index);
     }
-    public AimSubscriptionObject GetAimSubscriptionObject(int index) {
+    public void TriggerSpeedChange(int index) {
+        Assert.IsTrue(speedSubscriptionObjects.Count > index, $"{name}: {nameof(speedSubscriptionObjects)} count ({speedSubscriptionObjects.Count}) greater than index ({index})");
+        speedSubscriptionObjects[index].TriggerSpeedCurve();
+    }
+    public void TriggerAimChange(int index) {
         Assert.IsTrue(aimSubscriptionObjects.Count > index, $"{name}: {nameof(aimSubscriptionObjects)} count ({aimSubscriptionObjects.Count}) greater than index ({index})");
-        return aimSubscriptionObjects[index];
+        aimSubscriptionObjects[index].TriggerRotation();
+    }
+
+    public void UnsubscribeAllSpeedAndAimChangeObjects() {
+        speedSubscriptionObjects.ForEach(o => o.UnsubscribeAllBullets());
+        aimSubscriptionObjects.ForEach(o => o.UnsubscribeAllBullets());
     }
 
     public void Awake() {

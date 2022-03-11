@@ -18,8 +18,8 @@ public class ExileBiverPattern : Pattern {
     }
 
     private void ReAimAndMoveEmittedBullet(Emitter emitter, int index) {
-        emitter.GetSpeedSubscriptionObject(index).TriggerSpeedCurve();
-        emitter.GetAimSubscriptionObject(index).TriggerRotation();
+        emitter.TriggerSpeedChange(index);
+        emitter.TriggerAimChange(index);
     }
     
     #region RumiaActions
@@ -28,6 +28,7 @@ public class ExileBiverPattern : Pattern {
     [Button]
     public void Melody1ChangePhase(int phaseIndex) {
         ReAimAndMoveEmittedBullet(Melody1, phaseIndex);
+        Melody1.UnsubscribeAllSpeedAndAimChangeObjects();
     }
     
     // ReSharper disable once UnusedMember.Global

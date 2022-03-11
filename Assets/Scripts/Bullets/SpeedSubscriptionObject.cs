@@ -20,6 +20,10 @@ public class SpeedSubscriptionObject {
         subscribers.Remove(bullet);
     }
 
+    public void UnsubscribeAllBullets() {
+        subscribers.Clear();
+    }
+
     public void TriggerSpeedCurve() {
         foreach (SubscribeToSpeedControllerBulletLogic logic in subscribers) {
             logic.TriggerSpeedCurve(startingSpeed, speedCurve);
