@@ -124,7 +124,8 @@ public class Emitter : MonoBehaviour {
     private float timeElapsed;
 
     private bool hasScheduledAnyEmissions;
-    private SpeedSubscriptionObject subscriptionObject;
+    private SpeedSubscriptionObject speedSubscriptionObject;
+    private AimSubscriptionObject aimSubscriptionObject;
 
     public void Awake() {
         SpawnedBullets = new List<Bullet>();
@@ -251,8 +252,11 @@ public class Emitter : MonoBehaviour {
                 UnityEngine.Random.Range(-configuration.StartRotationVariance / 2, configuration.StartRotationVariance / 2);
             localRotation.eulerAngles = eulerAngles;
             
-            if (subscriptionObject != null)
-                logic.Add(new SubscribeToSpeedControllerBulletLogic(subscriptionObject));
+            if (speedSubscriptionObject != null)
+                logic.Add(new SubscribeToSpeedControllerBulletLogic(speedSubscriptionObject));
+            
+            if (aimSubscriptionObject != null)
+                logic.Add(new SubscribeToAimControllerBulletLogic(aimSubscriptionObject));
             
             bullets.Add(new BulletConfig {
                 Bullet = configuration.BulletPrefab,
@@ -268,11 +272,15 @@ public class Emitter : MonoBehaviour {
         hasScheduledAnyEmissions = true;
     }
 
-    public void AssignSpeedSubscriptionObject(SpeedSubscriptionObject subscriptionObject) {
+    public void AssignSpeedSubscriptionObject(SpeedSubscriptionObject speedSubscriptionObject) {
         // if (hasScheduledAnyEmissions)
         //     throw new Exception("We assigned a SpeedSubscriptionObject too late, emissions were already scheduled! Gotta get on that AP train!");
         
-        this.subscriptionObject = subscriptionObject;
+        this.speedSubscriptionObject = speedSubscriptionObject;
+    }
+
+    public void AssignAimSubscriptionObject(AimSubscriptionObject aimSubscriptionObject) {
+        this.aimSubscriptionObject = aimSubscriptionObject;
     }
     
     // TODO: Enforce somewhere that things tagged with [Emission] cannot have any parameters

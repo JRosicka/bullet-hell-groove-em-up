@@ -44,6 +44,7 @@ public class SubscribeToSpeedControllerBulletLogic : BulletLogic {
                 bullet.speed = speedCurve.Evaluate(elapsedTimeSinceTrigger) * startingSpeed;
 
             // Do not move the bullet here - let other BulletLogic handle that
+            // TODO: It would be nice to modify the normal bullet move logic to optionally *not* go back to the original movement logic but instead stay at whatever speed the interrupting speed ends at
         }
     }
 

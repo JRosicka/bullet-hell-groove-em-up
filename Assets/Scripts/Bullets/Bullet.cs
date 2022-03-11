@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour {
     public List<SpriteRenderer> Sprites;
     public bool IsFollowingSpline;
     public bool IsSpeedLogicInterrupted;
+    public bool IsRotationInterrupted;
 
     private List<BulletLogic> bulletLogic;
 
