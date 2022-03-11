@@ -51,6 +51,7 @@ namespace Rumia {
             }
         } 
         
+        // TODO: I should probably change this to just be a button I click somewhere rather than from OnScriptsReloaded...
         private void UpdateRumiaActions() {
             Pattern.GenerateRumiaActions();
             

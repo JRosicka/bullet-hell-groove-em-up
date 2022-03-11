@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Rumia;
+using Sirenix.OdinInspector;
 using SplineMesh;
 using UnityEditor;
 using UnityEngine;
@@ -224,7 +225,7 @@ public class Emitter : MonoBehaviour {
     /// The order in the array should probably be roughly chronological for convenience, but doesn't necessarily have to be. 
     /// </summary>
     /// <param name="configuration"></param>
-    protected void ScheduleEmission(EmissionConfiguration configuration) {
+    protected void ScheduleEmission(EmissionConfiguration configuration, int startBulletIndex = 0, int endBulletIndex = -1) {
         // Determine rotations
         float startRotationDegrees;
         float endRotationDegrees;
@@ -251,7 +252,10 @@ public class Emitter : MonoBehaviour {
         }
         
         List<BulletConfig> bullets = new List<BulletConfig>();
-        for (int i = 0; i < configuration.NumberOfShots; i++) {
+        if (endBulletIndex == -1) {
+            endBulletIndex = configuration.NumberOfShots - 1;
+        }
+        for (int i = startBulletIndex; i <= endBulletIndex; i++) {
             float lerpValue;
             if (configuration.NumberOfShots == 1)
                 lerpValue = 0;
@@ -322,34 +326,50 @@ public class Emitter : MonoBehaviour {
     // TODO: Enforce somewhere that things tagged with [Emission] cannot have any parameters
     // TODO: Dummy examples, the BulletPrefab(s) and Shoot logic should be defined in subclasses of Emitter
     public EmissionConfiguration Config;
-    [Emission]
+    [Button]
     // ReSharper disable once UnusedMember.Global
     public void Emit() {
+        if (!Application.IsPlaying(this)) {
+            Debug.LogWarning("Must be in play mode in order to test bullets");
+            return;
+        }
+
         ScheduleEmission(Config);
     }
     
-    #if UNITY_EDITOR
-    [CustomEditor(typeof(Emitter))]
-    public class EmitterEditor : Editor {
-        public override void OnInspectorGUI() {
-            DrawDefaultInspector();
-            Emitter emitter = target as Emitter;
-
-            MethodInfo[] methods = emitter.GetType()
-                .GetMethods()
-                .Where(t => t.GetCustomAttributes(typeof(Emission), false).Length > 0)
-                .ToArray();
-            
-            // Create a button for each method on this Emitter with the [Emission] attribute
-            foreach (MethodInfo method in methods) {
-                if (GUILayout.Button(method.Name)) {
-                    if (!Application.IsPlaying(emitter))
-                        Debug.LogWarning("Must be in play mode in order to test bullets");
-                    else
-                        method.Invoke(emitter, null);
-                }
-            }
+    [Button]
+    public void EmitStepwise(int bulletIndex) {
+        if (!Application.IsPlaying(this)) {
+            Debug.LogWarning("Must be in play mode in order to test bullets");
+            return;
         }
+        
+        Assert.IsTrue(Config.NumberOfShots > bulletIndex);
+        ScheduleEmission(Config, bulletIndex, bulletIndex);
     }
+    
+    #if UNITY_EDITOR
+    // [CustomEditor(typeof(Emitter))]
+    // public class EmitterEditor : Editor {
+    //     public override void OnInspectorGUI() {
+    //         DrawDefaultInspector();
+    //         Emitter emitter = target as Emitter;
+    //         // TODO: Maybe just use button attributes for emit instead of doing all of this
+    //         MethodInfo[] methods = emitter.GetType()
+    //             .GetMethods()
+    //             .Where(t => t.GetCustomAttributes(typeof(Emission), false).Length > 0)
+    //             .ToArray();
+    //         
+    //         // Create a button for each method on this Emitter with the [Emission] attribute
+    //         foreach (MethodInfo method in methods) {
+    //             if (GUILayout.Button(method.Name)) {
+    //                 if (!Application.IsPlaying(emitter))
+    //                     Debug.LogWarning("Must be in play mode in order to test bullets");
+    //                 else
+    //                     method.Invoke(emitter, null);
+    //             }
+    //         }
+    //     }
+    // }
     #endif
 }
