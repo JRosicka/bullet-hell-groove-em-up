@@ -5,7 +5,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class ExileBiverPattern : Pattern {
-    [EmissionRumiaAction]
+    [StepwiseEmissionRumiaAction]
     public Emitter Melody1;
     
     void Start() {

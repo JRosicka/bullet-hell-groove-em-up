@@ -66,6 +66,7 @@ namespace Rumia {
                 GenerateRumiaActionForMethod(method);
             }
 
+            // Non-stepwise emissions
             FieldInfo[] fields = GetType()
                 .GetFields()
                 .Where(t => t.GetCustomAttributes(typeof(EmissionRumiaActionAttribute), false).Length > 0)
@@ -73,7 +74,18 @@ namespace Rumia {
             // We only allow Emitters for this attribute
             Assert.IsTrue(fields.All(e => e.FieldType == typeof(Emitter)));
             foreach (FieldInfo field in fields) {
-                GenerateRumiaActionForEmitterField(field);
+                GenerateRumiaActionForEmitterField(field, false);
+            }
+            
+            // Stepwise emissions
+            fields = GetType()
+                .GetFields()
+                .Where(t => t.GetCustomAttributes(typeof(StepwiseEmissionRumiaActionAttribute), false).Length > 0)
+                .ToArray();
+            // We only allow Emitters for this attribute
+            Assert.IsTrue(fields.All(e => e.FieldType == typeof(Emitter)));
+            foreach (FieldInfo field in fields) {
+                GenerateRumiaActionForEmitterField(field, true);
             }
             
             // Update the IDs in case any entries were added/removed/reordered
@@ -127,12 +139,14 @@ namespace Rumia {
         /// just calls the Emitter's <see cref="Emitter.Emit"/> field. 
         /// Creates the new RumiaAction and adds it to <see cref="RumiaActions"/>.
         /// </summary>
-        private void GenerateRumiaActionForEmitterField(FieldInfo field) {
-            RumiaAction.RumiaActionType actionType = RumiaAction.RumiaActionType.Basic;
+        private void GenerateRumiaActionForEmitterField(FieldInfo field, bool stepwise) {
+            RumiaAction.RumiaActionType actionType = stepwise 
+                ? RumiaAction.RumiaActionType.Int 
+                : RumiaAction.RumiaActionType.Basic;
             RumiaAction rumiaAction = RumiaAction.CreateRumiaAction(actionType);
-            rumiaAction.ActionName = $"{field.Name} emission";
+            rumiaAction.ActionName = $"{field.Name} emission" + (stepwise ? " stepwise" : "");
             
-            MethodInfo emissionMethod = typeof(Emitter).GetMethod("Emit");
+            MethodInfo emissionMethod = typeof(Emitter).GetMethod(stepwise ? "EmitStepwise" : "Emit");
 
             Emitter emitter = (Emitter) field.GetValue(this);
 

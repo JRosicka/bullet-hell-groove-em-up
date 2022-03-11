@@ -356,7 +356,7 @@ public class Emitter : MonoBehaviour {
             return;
         }
         
-        Assert.IsTrue(Config.NumberOfShots > bulletIndex);
+        Assert.IsTrue(Config.NumberOfShots > bulletIndex, $"{name}: Tried to emit stepwise with an invalid index:{bulletIndex} for emitter with number of shots:{Config.NumberOfShots}");
         ScheduleEmission(Config, bulletIndex, bulletIndex);
     }
     
