@@ -18,8 +18,8 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 5
-      ActionName: Melody1 emission
+    - ID: 0
+      ActionName: None
       type: 2
       Basic:
         OnRumiaAction:
