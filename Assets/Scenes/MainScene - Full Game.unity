@@ -702,6 +702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 6d90f52361467d2469de7ce02af87704, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &44398953
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,7 +784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &57355435
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1134,6 +1135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: a9ee41402af219945bc9265d8b2a0ece, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &98207154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,7 +1316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &112845435
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2478,7 +2480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &205644619
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2703,6 +2705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 1b77ba538c70d514faf7c8d7d4e76643, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &215228623
 GameObject:
   m_ObjectHideFlags: 0
@@ -3529,6 +3532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 0273f12382143ba48bcdaa1f8be5817a, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &254417144
 GameObject:
   m_ObjectHideFlags: 0
@@ -4812,6 +4816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: b1943890c18759f41967ecea619dc6fc, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &390930092
 GameObject:
   m_ObjectHideFlags: 0
@@ -5466,6 +5471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: ed6222969b8281a45809548359929c5d, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &475720976
 GameObject:
   m_ObjectHideFlags: 0
@@ -5510,6 +5516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 1c55e7c218f59c44d8bf0a2edc238c2e, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &503421720
 GameObject:
   m_ObjectHideFlags: 0
@@ -5642,6 +5649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 5f421f2855fc7a9458640b1135721991, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &504721172
 GameObject:
   m_ObjectHideFlags: 0
@@ -5934,6 +5942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 9a36a68482a201a4c81614c7fedb77cd, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &513943077
 GameObject:
   m_ObjectHideFlags: 0
@@ -6235,7 +6244,7 @@ GameObject:
   - component: {fileID: 529497437}
   - component: {fileID: 529497436}
   m_Layer: 0
-  m_Name: EnemyManager
+  m_Name: PatternManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6311,6 +6320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 2e003a67259fbad41870064444d45d71, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &541933171
 GameObject:
   m_ObjectHideFlags: 0
@@ -6355,6 +6365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: f0148a80723ec78439d5c78fe3117266, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &542236506
 GameObject:
   m_ObjectHideFlags: 0
@@ -7677,6 +7688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 4002f95b7bf8c1846870a565585ba804, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &670976968
 GameObject:
   m_ObjectHideFlags: 0
@@ -8569,6 +8581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 5575b62af77c85a4390117959a6bae21, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &773376083
 GameObject:
   m_ObjectHideFlags: 0
@@ -8694,6 +8707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 072d7a33d2fd9b34a83fa76100f462e4, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &790548166
 GameObject:
   m_ObjectHideFlags: 0
@@ -8888,6 +8902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 1771fb762f5946a44b782a5251a96364, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &838446865
 GameObject:
   m_ObjectHideFlags: 0
@@ -9213,6 +9228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: a6f6baf7c58997c44a0de004e9df2f32, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &862009392
 GameObject:
   m_ObjectHideFlags: 0
@@ -10233,6 +10249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 6ab0070758c2bc74392d47088aa3f4b0, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &1031251085
 GameObject:
   m_ObjectHideFlags: 0
@@ -11426,6 +11443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: a79f4e4ee96211d44b7d3f207cb1bb0d, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &1117095487
 GameObject:
   m_ObjectHideFlags: 0
@@ -11558,6 +11576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: b501ba9333ec434409954f5a59a8aafa, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &1126634039
 GameObject:
   m_ObjectHideFlags: 0
@@ -12120,6 +12139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: d28db6ef70645a64bb45fa2f04d0ac4d, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &1158102230
 GameObject:
   m_ObjectHideFlags: 0
@@ -12164,6 +12184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 455bc914347b2424285a9ea22f9e7ec4, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1001 &1158280397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12725,6 +12746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 378eba52e64c6fc44a5239c9f9c9b2eb, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &1201393670
 GameObject:
   m_ObjectHideFlags: 0
@@ -14025,7 +14047,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1359245901
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14213,7 +14235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1396414431
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14297,7 +14319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1398591034
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14939,6 +14961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: c8502fe8082e6454fb78c84f93258174, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &1461966056
 GameObject:
   m_ObjectHideFlags: 0
@@ -15381,6 +15404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 3a135bb747d1ec041b18d5ace6c0ce84, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &1493406516
 GameObject:
   m_ObjectHideFlags: 0
@@ -15575,6 +15599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: c5997cf8bc22a6447bea4f15057f4c94, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &1516269811
 GameObject:
   m_ObjectHideFlags: 0
@@ -18558,6 +18583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 8c29ebddb055ac14ba7f427d5f4557e2, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &1763593381
 GameObject:
   m_ObjectHideFlags: 0
@@ -20251,6 +20277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 754726967b72a4648bc91853036868f7, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &1909118069
 GameObject:
   m_ObjectHideFlags: 0
@@ -20343,7 +20370,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1910048258
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20868,7 +20895,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1948796242
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20980,6 +21007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: f3fa4f0cf9ae48845a6a75c81a7df416, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &1971310859
 GameObject:
   m_ObjectHideFlags: 0
@@ -23358,6 +23386,11 @@ PrefabInstance:
       objectReference: {fileID: 758908065}
     - target: {fileID: 6121429862932770822, guid: 31427befc6d90614d9068da59e56bb7b,
         type: 3}
+      propertyPath: PatternManager
+      value: 
+      objectReference: {fileID: 529497436}
+    - target: {fileID: 6121429862932770822, guid: 31427befc6d90614d9068da59e56bb7b,
+        type: 3}
       propertyPath: WaypointManager
       value: 
       objectReference: {fileID: 1091893433}
@@ -23379,7 +23412,7 @@ PrefabInstance:
     - target: {fileID: 6121429862932770823, guid: 31427befc6d90614d9068da59e56bb7b,
         type: 3}
       propertyPath: BPM
-      value: 76
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 6121429862932770823, guid: 31427befc6d90614d9068da59e56bb7b,
         type: 3}
@@ -23394,7 +23427,7 @@ PrefabInstance:
     - target: {fileID: 6121429862932770823, guid: 31427befc6d90614d9068da59e56bb7b,
         type: 3}
       propertyPath: NumberOfBeatsToWaitBeforeStarting
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6121429862932770823, guid: 31427befc6d90614d9068da59e56bb7b,
         type: 3}
