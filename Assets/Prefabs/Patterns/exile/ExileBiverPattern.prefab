@@ -16138,24 +16138,12 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
   - ID: 1
-    ActionName: Melody1Phase2
-    type: 2
+    ActionName: Melody1ChangePhase
+    type: 5
     Basic:
       OnRumiaAction:
         m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 6107999007795148978}
-            m_TargetAssemblyTypeName: ExileBiverPattern, Assembly-CSharp
-            m_MethodName: Melody1Phase2
-            m_Mode: 0
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: 
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+          m_Calls: []
     Vector:
       OnRumiaAction:
         m_PersistentCalls:
@@ -16167,7 +16155,19 @@ MonoBehaviour:
     Int:
       OnRumiaAction:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 6107999007795148978}
+            m_TargetAssemblyTypeName: ExileBiverPattern, Assembly-CSharp
+            m_MethodName: Melody1ChangePhase
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
     Float:
       OnRumiaAction:
         m_PersistentCalls:
@@ -16293,41 +16293,46 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
+  - ID: 5
+    ActionName: Melody1 emission
+    type: 2
+    Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1737658378167586826}
+            m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+            m_MethodName: Emit
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
   Melody1: {fileID: 1737658378167586826}
-  Melody1Phase2StartSpeed: 8
-  Melody1Phase2SpeedCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: -4.4062753
-      outSlope: -4.4062753
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0
-      outWeight: 0.50692725
-    - serializedVersion: 3
-      time: 0.2
-      value: 0.5012207
-      inSlope: -0.23089255
-      outSlope: -0.23089255
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0.4651685
-      outWeight: 0
-    - serializedVersion: 3
-      time: 10
-      value: 0.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &9105199752012817976
 GameObject:
   m_ObjectHideFlags: 0
