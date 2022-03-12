@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RumiaActionLists:
   - RumiaActions:
-    - ID: 9
+    - ID: 10
       ActionName: Melody4 emission
       type: 2
       Basic:
@@ -58,7 +58,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 9
+    - ID: 10
       ActionName: Melody4 emission
       type: 2
       Basic:
@@ -270,7 +270,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 9
+    - ID: 10
       ActionName: Melody4 emission
       type: 2
       Basic:

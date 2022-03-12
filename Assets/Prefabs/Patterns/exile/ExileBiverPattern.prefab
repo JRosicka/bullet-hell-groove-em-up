@@ -16213,15 +16213,19 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
   - ID: 6
-    ActionName: Move
-    type: 2
+    ActionName: MoveSlow
+    type: 3
     Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Vector:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 6107999007795148978}
             m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
-            m_MethodName: Move
+            m_MethodName: MoveSlow
             m_Mode: 0
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -16231,10 +16235,6 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-    Vector:
-      OnRumiaAction:
-        m_PersistentCalls:
-          m_Calls: []
     Bool:
       OnRumiaAction:
         m_PersistentCalls:
@@ -16252,6 +16252,45 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
   - ID: 7
+    ActionName: MoveFast
+    type: 3
+    Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Vector:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 6107999007795148978}
+            m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
+            m_MethodName: MoveFast
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Bool:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 8
     ActionName: Spawn
     type: 3
     Basic:
@@ -16290,7 +16329,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 8
+  - ID: 9
     ActionName: Verse1Emitter4 emission
     type: 2
     Basic:
@@ -16329,7 +16368,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 9
+  - ID: 10
     ActionName: Melody4 emission
     type: 2
     Basic:
@@ -16368,7 +16407,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 10
+  - ID: 11
     ActionName: Melody1 emission stepwise
     type: 5
     Basic:
@@ -16407,7 +16446,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 11
+  - ID: 12
     ActionName: Melody2 emission stepwise
     type: 5
     Basic:
@@ -16446,6 +16485,56 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
+  SlowMoveCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.41174692
+      outSlope: 0.41174692
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.043599248
+    - serializedVersion: 3
+      time: 3
+      value: 1
+      inSlope: 0.023845086
+      outSlope: 0.023845086
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.076994576
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  SlowMoveTimeLength: 3
+  FastMoveCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2.1028917
+      outSlope: 2.1028917
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.059369203
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  FastMoveTimeLength: 0.8
   Verse1Emitter1: {fileID: 3907975822085565021}
   Verse1Emitter2: {fileID: 4718226546777428134}
   Verse1Emitter3: {fileID: 5562891763471766890}

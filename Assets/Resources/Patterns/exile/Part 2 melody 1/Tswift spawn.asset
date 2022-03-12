@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RumiaActionLists:
   - RumiaActions:
-    - ID: 7
+    - ID: 8
       ActionName: Spawn
       type: 3
       Basic:
@@ -87,7 +87,7 @@ MonoBehaviour:
   - RumiaActions: []
   ChoiceParameterLists:
   - ChoiceParameters:
-    - 3 2
+    - 5 3
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []

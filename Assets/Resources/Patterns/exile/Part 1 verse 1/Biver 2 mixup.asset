@@ -56,11 +56,9 @@ MonoBehaviour:
         OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
-  - RumiaActions: []
-  - RumiaActions:
-    - ID: 2
-      ActionName: Verse1MainStepwiseEmission
-      type: 5
+    - ID: 6
+      ActionName: MoveSlow
+      type: 3
       Basic:
         OnRumiaAction:
           m_PersistentCalls:
@@ -68,19 +66,11 @@ MonoBehaviour:
       Vector:
         OnRumiaAction:
           m_PersistentCalls:
-            m_Calls: []
-      Bool:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Int:
-        OnRumiaAction:
-          m_PersistentCalls:
             m_Calls:
             - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
                 type: 3}
               m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
-              m_MethodName: Verse1MainStepwiseEmission
+              m_MethodName: MoveSlow
               m_Mode: 0
               m_Arguments:
                 m_ObjectArgument: {fileID: 0}
@@ -90,6 +80,14 @@ MonoBehaviour:
                 m_StringArgument: 
                 m_BoolArgument: 0
               m_CallState: 2
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
       Float:
         OnRumiaAction:
           m_PersistentCalls:
@@ -183,6 +181,48 @@ MonoBehaviour:
           m_PersistentCalls:
             m_Calls: []
   - RumiaActions: []
+  - RumiaActions:
+    - ID: 2
+      ActionName: Verse1MainStepwiseEmission
+      type: 5
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
+                type: 3}
+              m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
+              m_MethodName: Verse1MainStepwiseEmission
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+  - RumiaActions: []
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
@@ -228,7 +268,7 @@ MonoBehaviour:
             m_Calls: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 8
+    - ID: 9
       ActionName: Verse1Emitter4 emission
       type: 2
       Basic:
@@ -360,7 +400,7 @@ MonoBehaviour:
             m_Calls: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 8
+    - ID: 9
       ActionName: Verse1Emitter4 emission
       type: 2
       Basic:
@@ -409,16 +449,17 @@ MonoBehaviour:
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 8
+    - 0
+    - -3.5 0.6
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 7
+    - 1
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 6
+    - 2
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 5
+    - 3
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
@@ -433,12 +474,12 @@ MonoBehaviour:
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 2
+    - 6
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 1
+    - 7
   - ChoiceParameters: []
   - ChoiceParameters:
     - 

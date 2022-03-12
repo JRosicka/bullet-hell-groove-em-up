@@ -1,8 +1,14 @@
+using System;
 using Rumia;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class ExileSingerPattern : Pattern {
+    public AnimationCurve SlowMoveCurve;
+    public float SlowMoveTimeLength;
+    public AnimationCurve FastMoveCurve;
+    public float FastMoveTimeLength;
+    
     public Emitter Verse1Emitter1;
     public Emitter Verse1Emitter2;
     public Emitter Verse1Emitter3;
@@ -25,7 +31,23 @@ public class ExileSingerPattern : Pattern {
         emitter.TriggerSpeedChange(index);
         emitter.TriggerAimChange(index);
     }
-    
+
+    private Vector2 moveOrigin;
+    private Vector2 moveDestination;
+    private AnimationCurve moveCurve;
+    private float moveEndTime;
+    private float moveCurrentTimeAmount;
+    private void Update() {
+        if (Time.time > moveEndTime || moveCurve == null) {
+            moveCurve = null;
+            return;
+        }
+
+        moveCurrentTimeAmount += Time.deltaTime;
+        float moveProgress = moveCurve.Evaluate(moveCurrentTimeAmount);
+        transform.localPosition = Vector2.Lerp(moveOrigin, moveDestination, moveProgress);
+    } 
+
     #region RumiaActions
     
     [RumiaAction]
@@ -65,13 +87,29 @@ public class ExileSingerPattern : Pattern {
         // currentMelody3Target = Vector2.zero;
         Melody4EmitterAimer.rotation = Quaternion.identity;
         melody3TargetIsCurrentlySet = false;
+    } 
+    
+    // ReSharper disable once UnusedMember.Global
+    [RumiaAction]
+    [Button]
+    public void MoveSlow(Vector2 destination) {
+        moveOrigin = transform.localPosition;
+        moveDestination = destination;
+        moveCurve = SlowMoveCurve;
+        moveEndTime = Time.time + SlowMoveTimeLength;
+        moveCurrentTimeAmount = 0;
     }
     
     // ReSharper disable once UnusedMember.Global
     [RumiaAction]
-    public void Move() {
-        
-    }
+    [Button]
+    public void MoveFast(Vector2 destination) {
+        moveOrigin = transform.localPosition;
+        moveDestination = destination;
+        moveCurve = FastMoveCurve;
+        moveEndTime = Time.time + FastMoveTimeLength;
+        moveCurrentTimeAmount = 0;
+    } 
 
     #endregion
 }

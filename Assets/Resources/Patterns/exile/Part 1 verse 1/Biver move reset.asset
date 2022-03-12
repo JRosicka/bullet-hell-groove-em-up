@@ -10,12 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d1dd65c84e7535488d11a270a4701de, type: 3}
-  m_Name: Biver spawn
+  m_Name: Biver move reset
   m_EditorClassIdentifier: 
   RumiaActionLists:
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
   - RumiaActions:
-    - ID: 8
-      ActionName: Spawn
+    - ID: 7
+      ActionName: MoveFast
       type: 3
       Basic:
         OnRumiaAction:
@@ -27,8 +47,8 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
                 type: 3}
-              m_TargetAssemblyTypeName: Rumia.Pattern, Assembly-CSharp
-              m_MethodName: Spawn
+              m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
+              m_MethodName: MoveFast
               m_Mode: 0
               m_Arguments:
                 m_ObjectArgument: {fileID: 0}
@@ -65,49 +85,29 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
   ChoiceParameterLists:
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
   - ChoiceParameters:
-    - -5 0
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
+    - -2 0.6
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
