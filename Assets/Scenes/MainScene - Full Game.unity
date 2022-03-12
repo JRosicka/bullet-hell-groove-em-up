@@ -20276,7 +20276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40634865fe8156642ab105621e446844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Config: {fileID: 11400000, guid: 754726967b72a4648bc91853036868f7, type: 2}
+  Config: {fileID: 11400000, guid: f6b9df7d291150b4891dbdc284fd0e8f, type: 2}
   UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &1909118069
 GameObject:
@@ -23412,7 +23412,7 @@ PrefabInstance:
     - target: {fileID: 6121429862932770823, guid: 31427befc6d90614d9068da59e56bb7b,
         type: 3}
       propertyPath: BPM
-      value: 72
+      value: 72.1
       objectReference: {fileID: 0}
     - target: {fileID: 6121429862932770823, guid: 31427befc6d90614d9068da59e56bb7b,
         type: 3}
@@ -23427,7 +23427,7 @@ PrefabInstance:
     - target: {fileID: 6121429862932770823, guid: 31427befc6d90614d9068da59e56bb7b,
         type: 3}
       propertyPath: NumberOfBeatsToWaitBeforeStarting
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6121429862932770823, guid: 31427befc6d90614d9068da59e56bb7b,
         type: 3}

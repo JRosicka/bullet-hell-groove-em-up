@@ -4,7 +4,7 @@
 /// Git yer timing-related stuff here
 /// </summary>
 public class TimingController : MonoBehaviour {
-    public int BPM;
+    public float BPM;    // TODO: Wooooah pretty awful bug here - over time, the game slows down just a teensy bit, so I currently need to have the BPM here be sliiightly higher (<1) than the actual BPM. This should be fixed, and then I should make this into an int again instead of a float. 
     
     public int NumberOfBeatsToWaitBeforeStarting;
     public int NumberOfMeasuresToSkipOnStart;

@@ -26,9 +26,9 @@ public class ProgressBar : MonoBehaviour {
     private float ProgressBarOffset => ((RectTransform) transform).rect.height / 2;
 
     void Start() {
-        SetUpProgressBar(new List<float> {
-            6f, 10f, 12.2f, 15f, 19.5f, 23f, 25.1f
-        });
+        // SetUpProgressBar(new List<float> {
+        //     6f, 10f, 12.2f, 15f, 19.5f, 23f, 25.1f
+        // });
     }
 
     /// <summary>
