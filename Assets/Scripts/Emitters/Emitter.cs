@@ -56,6 +56,8 @@ public class Emitter : MonoBehaviour {
         /// </summary>
         [Range(0, 2)]
         public float DelayBeforeFirstShot;
+        // TODO: If true, you should probably have RotateFromCenter be true as well
+        public bool AimAtPlayer;
         /// <summary>
         /// The start rotation, in degrees, to initially aim at
         /// </summary>
@@ -237,7 +239,7 @@ public class Emitter : MonoBehaviour {
     /// The order in the array should probably be roughly chronological for convenience, but doesn't necessarily have to be. 
     /// </summary>
     /// <param name="configuration"></param>
-    protected void ScheduleEmission(EmissionConfiguration configuration, int startBulletIndex = 0, int endBulletIndex = -1) {
+    protected void ScheduleEmission(EmissionConfiguration configuration, int startBulletIndex = 0, int endBulletIndex = -1, float overrideAimOffset = 0) {
         // Determine rotations
         float startRotationDegrees;
         float endRotationDegrees;
@@ -254,6 +256,11 @@ public class Emitter : MonoBehaviour {
         } else {
             startRotationDegrees = startRotation;
             endRotationDegrees = startRotation + direction * configuration.RotationArc;
+        }
+
+        if (overrideAimOffset != 0) {
+            startRotationDegrees += overrideAimOffset;
+            endRotationDegrees += overrideAimOffset;
         }
         
         foreach (SpeedChange change in configuration.SpeedChanges) {
@@ -341,26 +348,24 @@ public class Emitter : MonoBehaviour {
     [Button]
     // ReSharper disable once UnusedMember.Global
     public void Emit() {
-        if (!Application.IsPlaying(this)) {
-            Debug.LogWarning("Must be in play mode in order to test bullets");
-            return;
-        }
-
-        ScheduleEmission(Config);
+        EmitDetailed(0, -1);
     }
     
     [Button]
     public void EmitStepwise(int bulletIndex) {
+        EmitDetailed(0, bulletIndex);
+    }
+
+    public void EmitDetailed(float rotationOffset, int bulletIndex) {
         if (!Application.IsPlaying(this)) {
             Debug.LogWarning("Must be in play mode in order to test bullets");
             return;
         }
-        
-        Assert.IsTrue(Config.NumberOfShots > bulletIndex, $"{name}: Tried to emit stepwise with an invalid index:{bulletIndex} for emitter with number of shots:{Config.NumberOfShots}");
-        ScheduleEmission(Config, bulletIndex, bulletIndex);
+        Assert.IsTrue(Config.NumberOfShots > bulletIndex, $"{name}: Tried to emit with an invalid index:{bulletIndex} for emitter with number of shots:{Config.NumberOfShots}");
+        ScheduleEmission(Config, bulletIndex, bulletIndex, rotationOffset);
     }
-    
-    #if UNITY_EDITOR
+
+#if UNITY_EDITOR
     // [CustomEditor(typeof(Emitter))]
     // public class EmitterEditor : Editor {
     //     public override void OnInspectorGUI() {
