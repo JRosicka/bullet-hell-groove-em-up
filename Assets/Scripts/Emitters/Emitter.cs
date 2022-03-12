@@ -271,6 +271,9 @@ public class Emitter : MonoBehaviour {
         }
         
         List<BulletConfig> bullets = new List<BulletConfig>();
+        if (startBulletIndex == -1) {
+            startBulletIndex = 0;
+        }
         if (endBulletIndex == -1) {
             endBulletIndex = configuration.NumberOfShots - 1;
         }
