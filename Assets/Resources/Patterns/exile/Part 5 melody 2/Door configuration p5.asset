@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 236bf94ffdcc7064a995775e6f45bc5e, type: 3}
-  m_Name: GameOverConfiguration
+  m_Name: Door configuration p5
   m_EditorClassIdentifier: 
-  Pattern: {fileID: 5479237732316806916, guid: e25fbc22a7a1328478aaa146c9e69b89, type: 3}
-  StartMeasure: 40
+  Pattern: {fileID: 4357834461842583108, guid: 8c26bfd9b6bfa2444b5ba885317ff453, type: 3}
+  StartMeasure: 39
   StartMeasures:
-  - {fileID: 11400000, guid: 28646d2762f949a4eae28f465eafb85a, type: 2}
-  MeasuresList: []
+  - {fileID: 11400000, guid: 76b3d6683cfebd94f8b1c84a58c8fbd7, type: 2}
+  MeasuresList:
+  - Measures:
+    - {fileID: 11400000, guid: d24d02831f73769489bba9641d124c0a, type: 2}
