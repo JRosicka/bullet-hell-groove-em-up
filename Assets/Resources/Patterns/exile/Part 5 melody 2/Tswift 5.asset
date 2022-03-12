@@ -14,13 +14,283 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RumiaActionLists:
   - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
+    - ID: 17
+      ActionName: SecondMelody2 emission stepwise
+      type: 5
       Basic:
         OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 3511773047108047237, guid: c131f7dff4b0b44439267d50e82f5361,
+                type: 3}
+              m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+              m_MethodName: EmitStepwise
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions:
+    - ID: 3
+      ActionName: SecondMelody3EmissionStepwise
+      type: 5
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 1116746653346486956, guid: c131f7dff4b0b44439267d50e82f5361,
+                type: 3}
+              m_TargetAssemblyTypeName: ExileTswiftPattern, Assembly-CSharp
+              m_MethodName: SecondMelody3EmissionStepwise
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+  - RumiaActions: []
+  - RumiaActions:
+    - ID: 3
+      ActionName: SecondMelody3EmissionStepwise
+      type: 5
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 1116746653346486956, guid: c131f7dff4b0b44439267d50e82f5361,
+                type: 3}
+              m_TargetAssemblyTypeName: ExileTswiftPattern, Assembly-CSharp
+              m_MethodName: SecondMelody3EmissionStepwise
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+  - RumiaActions: []
+  - RumiaActions:
+    - ID: 3
+      ActionName: SecondMelody3EmissionStepwise
+      type: 5
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 1116746653346486956, guid: c131f7dff4b0b44439267d50e82f5361,
+                type: 3}
+              m_TargetAssemblyTypeName: ExileTswiftPattern, Assembly-CSharp
+              m_MethodName: SecondMelody3EmissionStepwise
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions:
+    - ID: 12
+      ActionName: SecondMelody4 emission
+      type: 2
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 3020541352258002198, guid: c131f7dff4b0b44439267d50e82f5361,
+                type: 3}
+              m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+              m_MethodName: Emit
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+    - ID: 10
+      ActionName: MoveFast
+      type: 3
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 1116746653346486956, guid: c131f7dff4b0b44439267d50e82f5361,
+                type: 3}
+              m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
+              m_MethodName: MoveFast
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+  - RumiaActions:
+    - ID: 8
+      ActionName: ResetMelody3Target
+      type: 2
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 1116746653346486956, guid: c131f7dff4b0b44439267d50e82f5361,
+                type: 3}
+              m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
+              m_MethodName: ResetMelody3Target
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
       Vector:
         OnRumiaAction:
           m_PersistentCalls:
@@ -47,11 +317,10 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions: []
-  - RumiaActions: []
   - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
+    - ID: 3
+      ActionName: SecondMelody3EmissionStepwise
+      type: 5
       Basic:
         OnRumiaAction:
           m_PersistentCalls:
@@ -67,7 +336,20 @@ MonoBehaviour:
       Int:
         OnRumiaAction:
           m_PersistentCalls:
-            m_Calls: []
+            m_Calls:
+            - m_Target: {fileID: 1116746653346486956, guid: c131f7dff4b0b44439267d50e82f5361,
+                type: 3}
+              m_TargetAssemblyTypeName: ExileTswiftPattern, Assembly-CSharp
+              m_MethodName: SecondMelody3EmissionStepwise
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
       Float:
         OnRumiaAction:
           m_PersistentCalls:
@@ -78,9 +360,9 @@ MonoBehaviour:
             m_Calls: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
+    - ID: 3
+      ActionName: SecondMelody3EmissionStepwise
+      type: 5
       Basic:
         OnRumiaAction:
           m_PersistentCalls:
@@ -96,7 +378,20 @@ MonoBehaviour:
       Int:
         OnRumiaAction:
           m_PersistentCalls:
-            m_Calls: []
+            m_Calls:
+            - m_Target: {fileID: 1116746653346486956, guid: c131f7dff4b0b44439267d50e82f5361,
+                type: 3}
+              m_TargetAssemblyTypeName: ExileTswiftPattern, Assembly-CSharp
+              m_MethodName: SecondMelody3EmissionStepwise
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
       Float:
         OnRumiaAction:
           m_PersistentCalls:
@@ -107,9 +402,9 @@ MonoBehaviour:
             m_Calls: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
+    - ID: 3
+      ActionName: SecondMelody3EmissionStepwise
+      type: 5
       Basic:
         OnRumiaAction:
           m_PersistentCalls:
@@ -125,131 +420,20 @@ MonoBehaviour:
       Int:
         OnRumiaAction:
           m_PersistentCalls:
-            m_Calls: []
-      Float:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
-      Basic:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Vector:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Bool:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Int:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Float:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
-      Basic:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Vector:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Bool:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Int:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Float:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-  - RumiaActions: []
-  - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
-      Basic:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Vector:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Bool:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Int:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Float:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-  - RumiaActions: []
-  - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
-      Basic:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Vector:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Bool:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Int:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
+            m_Calls:
+            - m_Target: {fileID: 1116746653346486956, guid: c131f7dff4b0b44439267d50e82f5361,
+                type: 3}
+              m_TargetAssemblyTypeName: ExileTswiftPattern, Assembly-CSharp
+              m_MethodName: SecondMelody3EmissionStepwise
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
       Float:
         OnRumiaAction:
           m_PersistentCalls:
@@ -263,7 +447,7 @@ MonoBehaviour:
   - RumiaActions: []
   ChoiceParameterLists:
   - ChoiceParameters:
-    - 
+    - 0
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
@@ -272,33 +456,35 @@ MonoBehaviour:
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 
+    - 0
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 
+    - 1
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters:
-    - 
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
+    - 2
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
     - 
-  - ChoiceParameters: []
+    - 2 1
   - ChoiceParameters:
     - 
   - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
   - ChoiceParameters:
-    - 
+    - 2
+  - ChoiceParameters: []
+  - ChoiceParameters:
+    - 1
+  - ChoiceParameters: []
+  - ChoiceParameters:
+    - 0
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []

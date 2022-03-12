@@ -22,7 +22,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 4
+    - ID: 7
       ActionName: Melody3EmissionStepwise
       type: 5
       Basic:
@@ -64,7 +64,7 @@ MonoBehaviour:
             m_Calls: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 4
+    - ID: 7
       ActionName: Melody3EmissionStepwise
       type: 5
       Basic:
@@ -106,7 +106,7 @@ MonoBehaviour:
             m_Calls: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 4
+    - ID: 7
       ActionName: Melody3EmissionStepwise
       type: 5
       Basic:
@@ -150,7 +150,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 10
+    - ID: 15
       ActionName: Melody4 emission
       type: 2
       Basic:
@@ -191,7 +191,7 @@ MonoBehaviour:
           m_PersistentCalls:
             m_Calls: []
   - RumiaActions:
-    - ID: 5
+    - ID: 8
       ActionName: ResetMelody3Target
       type: 2
       Basic:
@@ -238,7 +238,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 4
+    - ID: 7
       ActionName: Melody3EmissionStepwise
       type: 5
       Basic:
@@ -280,7 +280,7 @@ MonoBehaviour:
             m_Calls: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 4
+    - ID: 7
       ActionName: Melody3EmissionStepwise
       type: 5
       Basic:
@@ -322,7 +322,7 @@ MonoBehaviour:
             m_Calls: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 4
+    - ID: 7
       ActionName: Melody3EmissionStepwise
       type: 5
       Basic:

@@ -22,8 +22,8 @@ public class ExileSingerPattern : Pattern {
     public Emitter Melody3;
     [EmissionRumiaAction]
     public Emitter Melody4;
-    private Vector2 currentMelody3Target = new Vector2(0, 0);
-    private bool melody3TargetIsCurrentlySet = false;
+    protected Vector2 currentMelody3Target = new Vector2(0, 0);
+    protected bool melody3TargetIsCurrentlySet = false;
     public Transform Melody4EmitterAimer;
     
 
@@ -57,7 +57,7 @@ public class ExileSingerPattern : Pattern {
         Verse1Emitter3.EmitStepwise(step);
     }
 
-    private void ChangePhaseForMelody(Emitter emitter, int phaseIndex) {
+    protected void ChangePhaseForMelody(Emitter emitter, int phaseIndex) {
         ReAimAndMoveEmittedBullet(emitter, phaseIndex);
         emitter.UnsubscribeAllSpeedAndAimChangeObjects();
     }
