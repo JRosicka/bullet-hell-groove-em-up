@@ -16147,6 +16147,7 @@ MonoBehaviour:
     NumberOfShots: 1
     TimeBetweenShot: 0
     DelayBeforeFirstShot: 0
+    AimAtPlayer: 0
     StartRotation: -148
     StartRotationVariance: 0
     RotationArc: 0

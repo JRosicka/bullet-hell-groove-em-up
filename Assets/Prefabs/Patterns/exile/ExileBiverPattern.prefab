@@ -2764,6 +2764,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2717623150737416731}
+  - {fileID: 7261965204123749631}
+  - {fileID: 2658321734324440736}
+  - {fileID: 8046953658554777330}
   m_Father: {fileID: 7224286281906343753}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6041,6 +6044,129 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &475353206151688870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8649462547762166209}
+  - component: {fileID: 137777465330364358}
+  m_Layer: 0
+  m_Name: Biver melody 4 emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8649462547762166209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475353206151688870}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.65, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8046953658554777330}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &137777465330364358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475353206151688870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Config:
+    BulletPrefab: {fileID: 7497343712616834882, guid: e91d4205e9e49e548aa598aeced97950,
+      type: 3}
+    NumberOfShots: 8
+    TimeBetweenShot: 0
+    DelayBeforeFirstShot: 0
+    AimAtPlayer: 0
+    StartRotation: 0
+    StartRotationVariance: 0
+    RotationArc: 315
+    RotateClockwise: 0
+    RotateFromCenter: 0
+    StartPositionOffset: {x: 0, y: 0}
+    StartPositionVariance: {x: 0, y: 0}
+    AnimationPrefab: {fileID: 7284957164868078736, guid: 7537a5d5486013b4bb27ab6b997f381c,
+      type: 3}
+    UseWhiteShaderForAnimateIn: 1
+    BulletStartSpeed: 7.6
+    BulletSpeedOverTime:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: -7.455858
+        outSlope: -7.455858
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 0
+        outWeight: 0.42022264
+      - serializedVersion: 3
+        time: 0.19922471
+        value: 0.3
+        inSlope: -0.09143327
+        outSlope: -0.09143327
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 0.46582654
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    UseSpline: 0
+    Spline: {fileID: 0}
+    AdjustColorOverTime: 1
+    OnlyAdjustAlpha: 1
+    InitialColor: {r: 0, g: 0, b: 0, a: 1}
+    EndColor: {r: 0, g: 0, b: 0, a: 0}
+    ColorAdjustmentDuration: 3
+    BulletColorOverTime:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0.0114702685
+        outSlope: 0.0114702685
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 0
+        outWeight: 0.554452
+      - serializedVersion: 3
+        time: 3
+        value: 1
+        inSlope: 11.839785
+        outSlope: 11.839785
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 0.024146399
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    DestroyBulletAfterDuration: 1
+    DestructionTime: 9
+    UseTrail: 0
+    Trail: {fileID: 0}
+    Reverse: 0
+    SpeedChanges: []
+    AimChanges: []
 --- !u!1 &1017370765220404068
 GameObject:
   m_ObjectHideFlags: 0
@@ -6090,6 +6216,7 @@ MonoBehaviour:
     NumberOfShots: 4
     TimeBetweenShot: 0
     DelayBeforeFirstShot: 0
+    AimAtPlayer: 0
     StartRotation: -159
     StartRotationVariance: 0
     RotationArc: 129
@@ -6232,6 +6359,129 @@ Transform:
   m_Father: {fileID: 7224286281906343753}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2075888673065218899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2658321734324440736}
+  - component: {fileID: 1584620339297963914}
+  m_Layer: 0
+  m_Name: Biver melody 3 emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2658321734324440736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075888673065218899}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 940173278}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1584620339297963914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075888673065218899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Config:
+    BulletPrefab: {fileID: 7497343712616834882, guid: e91d4205e9e49e548aa598aeced97950,
+      type: 3}
+    NumberOfShots: 3
+    TimeBetweenShot: 0
+    DelayBeforeFirstShot: 0
+    AimAtPlayer: 0
+    StartRotation: -360
+    StartRotationVariance: 0
+    RotationArc: 20
+    RotateClockwise: 0
+    RotateFromCenter: 1
+    StartPositionOffset: {x: 0.8, y: 0}
+    StartPositionVariance: {x: 0, y: 0}
+    AnimationPrefab: {fileID: 7284957164868078736, guid: 7537a5d5486013b4bb27ab6b997f381c,
+      type: 3}
+    UseWhiteShaderForAnimateIn: 1
+    BulletStartSpeed: 6.4
+    BulletSpeedOverTime:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: -1.8508552
+        outSlope: -1.8508552
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 0
+        outWeight: 0.61405486
+      - serializedVersion: 3
+        time: 0.6912291
+        value: 0.11231691
+        inSlope: -0.09143327
+        outSlope: -0.09143327
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 0.46582654
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    UseSpline: 0
+    Spline: {fileID: 0}
+    AdjustColorOverTime: 1
+    OnlyAdjustAlpha: 1
+    InitialColor: {r: 0, g: 0, b: 0, a: 1}
+    EndColor: {r: 0, g: 0, b: 0, a: 0}
+    ColorAdjustmentDuration: 1
+    BulletColorOverTime:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0.016688665
+        outSlope: 0.016688665
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 0
+        outWeight: 0.9515834
+      - serializedVersion: 3
+        time: 0.9995117
+        value: 0.9999924
+        inSlope: 58.104786
+        outSlope: 58.104786
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 0.0130348075
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    DestroyBulletAfterDuration: 1
+    DestructionTime: 1
+    UseTrail: 0
+    Trail: {fileID: 0}
+    Reverse: 0
+    SpeedChanges: []
+    AimChanges: []
 --- !u!1 &2582054129425033344
 GameObject:
   m_ObjectHideFlags: 0
@@ -11107,6 +11357,37 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1 &5431748888360146762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8046953658554777330}
+  m_Layer: 0
+  m_Name: Melody 4 emitter aimer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8046953658554777330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5431748888360146762}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8649462547762166209}
+  m_Father: {fileID: 940173278}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7055912307921399889
 GameObject:
   m_ObjectHideFlags: 0
@@ -16177,6 +16458,84 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
   - ID: 2
+    ActionName: Melody3EmissionStepwise
+    type: 5
+    Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Vector:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 6107999007795148978}
+            m_TargetAssemblyTypeName: ExileBiverPattern, Assembly-CSharp
+            m_MethodName: Melody3EmissionStepwise
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Float:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 3
+    ActionName: ResetMelody3Target
+    type: 2
+    Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 6107999007795148978}
+            m_TargetAssemblyTypeName: ExileBiverPattern, Assembly-CSharp
+            m_MethodName: ResetMelody3Target
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 4
     ActionName: Dummy
     type: 2
     Basic:
@@ -16215,7 +16574,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 3
+  - ID: 5
     ActionName: Move
     type: 2
     Basic:
@@ -16254,7 +16613,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 4
+  - ID: 6
     ActionName: Spawn
     type: 3
     Basic:
@@ -16293,7 +16652,46 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 5
+  - ID: 7
+    ActionName: Melody4 emission
+    type: 2
+    Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 137777465330364358}
+            m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+            m_MethodName: Emit
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 8
     ActionName: Melody1 emission stepwise
     type: 5
     Basic:
@@ -16332,7 +16730,173 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
+  - ID: 9
+    ActionName: Melody2 emission stepwise
+    type: 5
+    Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Vector:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 8084536448568775358}
+            m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+            m_MethodName: EmitStepwise
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Float:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
   Melody1: {fileID: 1737658378167586826}
+  Melody2: {fileID: 8084536448568775358}
+  Melody3: {fileID: 1584620339297963914}
+  Melody4: {fileID: 137777465330364358}
+  Melody4EmitterAimer: {fileID: 8046953658554777330}
+--- !u!1 &8603424493753372920
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7261965204123749631}
+  - component: {fileID: 8084536448568775358}
+  m_Layer: 0
+  m_Name: Biver melody 2 emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7261965204123749631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8603424493753372920}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 940173278}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8084536448568775358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8603424493753372920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Config:
+    BulletPrefab: {fileID: 7497343712616834882, guid: e91d4205e9e49e548aa598aeced97950,
+      type: 3}
+    NumberOfShots: 8
+    TimeBetweenShot: 0
+    DelayBeforeFirstShot: 0
+    AimAtPlayer: 0
+    StartRotation: -145
+    StartRotationVariance: 0
+    RotationArc: 129
+    RotateClockwise: 0
+    RotateFromCenter: 0
+    StartPositionOffset: {x: 0.8, y: 0}
+    StartPositionVariance: {x: 0, y: 0}
+    AnimationPrefab: {fileID: 7284957164868078736, guid: 7537a5d5486013b4bb27ab6b997f381c,
+      type: 3}
+    UseWhiteShaderForAnimateIn: 1
+    BulletStartSpeed: 7.6
+    BulletSpeedOverTime:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: -7.455858
+        outSlope: -7.455858
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 0
+        outWeight: 0.42022264
+      - serializedVersion: 3
+        time: 0.19922471
+        value: 0.3
+        inSlope: -0.09143327
+        outSlope: -0.09143327
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 0.46582654
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    UseSpline: 0
+    Spline: {fileID: 0}
+    AdjustColorOverTime: 1
+    OnlyAdjustAlpha: 1
+    InitialColor: {r: 0, g: 0, b: 0, a: 1}
+    EndColor: {r: 0, g: 0, b: 0, a: 0}
+    ColorAdjustmentDuration: 3
+    BulletColorOverTime:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0.0114702685
+        outSlope: 0.0114702685
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 0
+        outWeight: 0.554452
+      - serializedVersion: 3
+        time: 3
+        value: 1
+        inSlope: 11.839785
+        outSlope: 11.839785
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 0.024146399
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    DestroyBulletAfterDuration: 1
+    DestructionTime: 9
+    UseTrail: 0
+    Trail: {fileID: 0}
+    Reverse: 0
+    SpeedChanges: []
+    AimChanges: []
 --- !u!1 &9105199752012817976
 GameObject:
   m_ObjectHideFlags: 0

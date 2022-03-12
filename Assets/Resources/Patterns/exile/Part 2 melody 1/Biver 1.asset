@@ -18,7 +18,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 5
+    - ID: 8
       ActionName: Melody1 emission stepwise
       type: 5
       Basic:
@@ -106,7 +106,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 5
+    - ID: 8
       ActionName: Melody1 emission stepwise
       type: 5
       Basic:
@@ -194,7 +194,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 5
+    - ID: 8
       ActionName: Melody1 emission stepwise
       type: 5
       Basic:
@@ -282,7 +282,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 5
+    - ID: 8
       ActionName: Melody1 emission stepwise
       type: 5
       Basic:
@@ -381,7 +381,7 @@ MonoBehaviour:
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 3
+    - 2
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
@@ -401,7 +401,7 @@ MonoBehaviour:
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 2
+    - 3
   - ChoiceParameters: []
   - ChoiceParameters:
     - 0

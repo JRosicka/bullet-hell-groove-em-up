@@ -18,26 +18,13 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 2
+    - ID: 8
+      ActionName: Melody1 emission stepwise
+      type: 5
       Basic:
         OnRumiaAction:
           m_PersistentCalls:
-            m_Calls:
-            - m_Target: {fileID: 1737658378167586826, guid: 21f9e738d13f6264c93373f359170333,
-                type: 3}
-              m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
-              m_MethodName: Emit
-              m_Mode: 0
-              m_Arguments:
-                m_ObjectArgument: {fileID: 0}
-                m_ObjectArgumentAssemblyTypeName: 
-                m_IntArgument: 0
-                m_FloatArgument: 0
-                m_StringArgument: 
-                m_BoolArgument: 0
-              m_CallState: 2
+            m_Calls: []
       Vector:
         OnRumiaAction:
           m_PersistentCalls:
@@ -49,7 +36,20 @@ MonoBehaviour:
       Int:
         OnRumiaAction:
           m_PersistentCalls:
-            m_Calls: []
+            m_Calls:
+            - m_Target: {fileID: 1737658378167586826, guid: 21f9e738d13f6264c93373f359170333,
+                type: 3}
+              m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+              m_MethodName: EmitStepwise
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
       Float:
         OnRumiaAction:
           m_PersistentCalls:
@@ -106,9 +106,9 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
+    - ID: 8
+      ActionName: Melody1 emission stepwise
+      type: 5
       Basic:
         OnRumiaAction:
           m_PersistentCalls:
@@ -124,7 +124,20 @@ MonoBehaviour:
       Int:
         OnRumiaAction:
           m_PersistentCalls:
-            m_Calls: []
+            m_Calls:
+            - m_Target: {fileID: 1737658378167586826, guid: 21f9e738d13f6264c93373f359170333,
+                type: 3}
+              m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+              m_MethodName: EmitStepwise
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
       Float:
         OnRumiaAction:
           m_PersistentCalls:
@@ -137,9 +150,9 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
+    - ID: 1
+      ActionName: Melody1ChangePhase
+      type: 5
       Basic:
         OnRumiaAction:
           m_PersistentCalls:
@@ -155,7 +168,20 @@ MonoBehaviour:
       Int:
         OnRumiaAction:
           m_PersistentCalls:
-            m_Calls: []
+            m_Calls:
+            - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
+                type: 3}
+              m_TargetAssemblyTypeName: ExileBiverPattern, Assembly-CSharp
+              m_MethodName: Melody1ChangePhase
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
       Float:
         OnRumiaAction:
           m_PersistentCalls:
@@ -168,9 +194,9 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
+    - ID: 8
+      ActionName: Melody1 emission stepwise
+      type: 5
       Basic:
         OnRumiaAction:
           m_PersistentCalls:
@@ -186,7 +212,20 @@ MonoBehaviour:
       Int:
         OnRumiaAction:
           m_PersistentCalls:
-            m_Calls: []
+            m_Calls:
+            - m_Target: {fileID: 1737658378167586826, guid: 21f9e738d13f6264c93373f359170333,
+                type: 3}
+              m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+              m_MethodName: EmitStepwise
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
       Float:
         OnRumiaAction:
           m_PersistentCalls:
@@ -199,9 +238,9 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
+    - ID: 1
+      ActionName: Melody1ChangePhase
+      type: 5
       Basic:
         OnRumiaAction:
           m_PersistentCalls:
@@ -217,7 +256,20 @@ MonoBehaviour:
       Int:
         OnRumiaAction:
           m_PersistentCalls:
-            m_Calls: []
+            m_Calls:
+            - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
+                type: 3}
+              m_TargetAssemblyTypeName: ExileBiverPattern, Assembly-CSharp
+              m_MethodName: Melody1ChangePhase
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
       Float:
         OnRumiaAction:
           m_PersistentCalls:
@@ -230,9 +282,9 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
+    - ID: 8
+      ActionName: Melody1 emission stepwise
+      type: 5
       Basic:
         OnRumiaAction:
           m_PersistentCalls:
@@ -248,7 +300,20 @@ MonoBehaviour:
       Int:
         OnRumiaAction:
           m_PersistentCalls:
-            m_Calls: []
+            m_Calls:
+            - m_Target: {fileID: 1737658378167586826, guid: 21f9e738d13f6264c93373f359170333,
+                type: 3}
+              m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+              m_MethodName: EmitStepwise
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
       Float:
         OnRumiaAction:
           m_PersistentCalls:
@@ -259,9 +324,9 @@ MonoBehaviour:
             m_Calls: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
+    - ID: 1
+      ActionName: Melody1ChangePhase
+      type: 5
       Basic:
         OnRumiaAction:
           m_PersistentCalls:
@@ -277,7 +342,20 @@ MonoBehaviour:
       Int:
         OnRumiaAction:
           m_PersistentCalls:
-            m_Calls: []
+            m_Calls:
+            - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
+                type: 3}
+              m_TargetAssemblyTypeName: ExileBiverPattern, Assembly-CSharp
+              m_MethodName: Melody1ChangePhase
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
       Float:
         OnRumiaAction:
           m_PersistentCalls:
@@ -293,7 +371,7 @@ MonoBehaviour:
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 
+    - 3
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
@@ -303,29 +381,29 @@ MonoBehaviour:
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 
+    - 1
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 
+    - 0
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 
+    - 2
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 
+    - 0
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 
+    - 0
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 
+    - 0
   - ChoiceParameters: []
   Pattern: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333, type: 3}

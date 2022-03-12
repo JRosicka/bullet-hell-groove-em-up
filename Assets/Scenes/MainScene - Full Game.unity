@@ -23422,7 +23422,7 @@ PrefabInstance:
     - target: {fileID: 6121429862932770823, guid: 31427befc6d90614d9068da59e56bb7b,
         type: 3}
       propertyPath: NumberOfMeasuresToSkipOnStart
-      value: 12
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6121429862932770823, guid: 31427befc6d90614d9068da59e56bb7b,
         type: 3}
