@@ -3,7 +3,8 @@
 /// <summary>
 /// <see cref="BulletLogic"/> for animating the fade-in effect of a bullet as it is spawning. This instantiates a copy
 /// of the passed-in <see cref="AnimateInBulletView"/> and attaches it to the bullet. The animator of the passed-in
-/// <see cref="AnimateInBulletView"/> is used as the fade-in animation. 
+/// <see cref="AnimateInBulletView"/> is used as the fade-in animation.
+/// TODO: So, either when we apply an offset to a bullet in the emitter or when we use a spline and offset that (not sure which one), the animated-in sprite does not properly adopt the offset. Let's fix that!
 /// </summary>
 public class AnimateInBulletLogic : BulletLogic {
     private AnimateInBulletView view;

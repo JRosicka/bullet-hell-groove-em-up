@@ -5,6 +5,7 @@ using Object = UnityEngine.Object;
 
 /// <summary>
 /// Moves a Bullet along a spline over time
+/// TODO: So, using splines with a rotation in the emission just doesn't really work. It doesn't look right. Fix that. 
 /// </summary>
 public class MoveAlongSplineBulletLogic : BulletLogic {
     private Spline originalSpline;
