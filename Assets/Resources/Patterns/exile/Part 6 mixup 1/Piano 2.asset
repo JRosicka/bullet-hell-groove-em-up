@@ -14,6 +14,126 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RumiaActionLists:
   - RumiaActions:
+    - ID: 4
+      ActionName: Rhythm1Emitter1 emission
+      type: 2
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 7271845357536719445, guid: 93fb98103f1cfb2438cb7f492d165717,
+                type: 3}
+              m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+              m_MethodName: Emit
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+    - ID: 5
+      ActionName: Rhythm1Emitter2 emission
+      type: 2
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 1168502996084628754, guid: 93fb98103f1cfb2438cb7f492d165717,
+                type: 3}
+              m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+              m_MethodName: Emit
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+    - ID: 6
+      ActionName: Rhythm1Emitter3 emission
+      type: 2
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 2299594495961151330, guid: 93fb98103f1cfb2438cb7f492d165717,
+                type: 3}
+              m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+              m_MethodName: Emit
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
     - ID: 7
       ActionName: Rhythm1Emitter4 emission
       type: 2
@@ -141,18 +261,27 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
   - RumiaActions:
-    - ID: 10
-      ActionName: Rhythm2Emitter emission stepwise
-      type: 5
+    - ID: 7
+      ActionName: Rhythm1Emitter4 emission
+      type: 2
       Basic:
         OnRumiaAction:
           m_PersistentCalls:
-            m_Calls: []
+            m_Calls:
+            - m_Target: {fileID: 187995587864742003, guid: 93fb98103f1cfb2438cb7f492d165717,
+                type: 3}
+              m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+              m_MethodName: Emit
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
       Vector:
         OnRumiaAction:
           m_PersistentCalls:
@@ -164,11 +293,26 @@ MonoBehaviour:
       Int:
         OnRumiaAction:
           m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+    - ID: 8
+      ActionName: Rhythm1Emitter5 emission
+      type: 2
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
             m_Calls:
-            - m_Target: {fileID: 1571401999399255692, guid: 93fb98103f1cfb2438cb7f492d165717,
+            - m_Target: {fileID: 6386582352306132484, guid: 93fb98103f1cfb2438cb7f492d165717,
                 type: 3}
               m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
-              m_MethodName: EmitStepwise
+              m_MethodName: Emit
               m_Mode: 0
               m_Arguments:
                 m_ObjectArgument: {fileID: 0}
@@ -178,23 +322,6 @@ MonoBehaviour:
                 m_StringArgument: 
                 m_BoolArgument: 0
               m_CallState: 2
-      Float:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-  - RumiaActions: []
-  - RumiaActions:
-    - ID: 10
-      ActionName: Rhythm2Emitter emission stepwise
-      type: 5
-      Basic:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
       Vector:
         OnRumiaAction:
           m_PersistentCalls:
@@ -206,11 +333,26 @@ MonoBehaviour:
       Int:
         OnRumiaAction:
           m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+    - ID: 9
+      ActionName: Rhythm1Emitter6 emission
+      type: 2
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
             m_Calls:
-            - m_Target: {fileID: 1571401999399255692, guid: 93fb98103f1cfb2438cb7f492d165717,
+            - m_Target: {fileID: 89218600719778394, guid: 93fb98103f1cfb2438cb7f492d165717,
                 type: 3}
               m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
-              m_MethodName: EmitStepwise
+              m_MethodName: Emit
               m_Mode: 0
               m_Arguments:
                 m_ObjectArgument: {fileID: 0}
@@ -220,27 +362,6 @@ MonoBehaviour:
                 m_StringArgument: 
                 m_BoolArgument: 0
               m_CallState: 2
-      Float:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions:
-    - ID: 10
-      ActionName: Rhythm2Emitter emission stepwise
-      type: 5
-      Basic:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
       Vector:
         OnRumiaAction:
           m_PersistentCalls:
@@ -252,20 +373,7 @@ MonoBehaviour:
       Int:
         OnRumiaAction:
           m_PersistentCalls:
-            m_Calls:
-            - m_Target: {fileID: 1571401999399255692, guid: 93fb98103f1cfb2438cb7f492d165717,
-                type: 3}
-              m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
-              m_MethodName: EmitStepwise
-              m_Mode: 0
-              m_Arguments:
-                m_ObjectArgument: {fileID: 0}
-                m_ObjectArgumentAssemblyTypeName: 
-                m_IntArgument: 0
-                m_FloatArgument: 0
-                m_StringArgument: 
-                m_BoolArgument: 0
-              m_CallState: 2
+            m_Calls: []
       Float:
         OnRumiaAction:
           m_PersistentCalls:
@@ -277,14 +385,31 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
   - RumiaActions:
-    - ID: 10
-      ActionName: Rhythm2Emitter emission stepwise
-      type: 5
+    - ID: 7
+      ActionName: Rhythm1Emitter4 emission
+      type: 2
       Basic:
         OnRumiaAction:
           m_PersistentCalls:
-            m_Calls: []
+            m_Calls:
+            - m_Target: {fileID: 187995587864742003, guid: 93fb98103f1cfb2438cb7f492d165717,
+                type: 3}
+              m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+              m_MethodName: Emit
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
       Vector:
         OnRumiaAction:
           m_PersistentCalls:
@@ -296,11 +421,26 @@ MonoBehaviour:
       Int:
         OnRumiaAction:
           m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+    - ID: 8
+      ActionName: Rhythm1Emitter5 emission
+      type: 2
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
             m_Calls:
-            - m_Target: {fileID: 1571401999399255692, guid: 93fb98103f1cfb2438cb7f492d165717,
+            - m_Target: {fileID: 6386582352306132484, guid: 93fb98103f1cfb2438cb7f492d165717,
                 type: 3}
               m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
-              m_MethodName: EmitStepwise
+              m_MethodName: Emit
               m_Mode: 0
               m_Arguments:
                 m_ObjectArgument: {fileID: 0}
@@ -310,23 +450,6 @@ MonoBehaviour:
                 m_StringArgument: 
                 m_BoolArgument: 0
               m_CallState: 2
-      Float:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-  - RumiaActions: []
-  - RumiaActions:
-    - ID: 10
-      ActionName: Rhythm2Emitter emission stepwise
-      type: 5
-      Basic:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
       Vector:
         OnRumiaAction:
           m_PersistentCalls:
@@ -338,11 +461,26 @@ MonoBehaviour:
       Int:
         OnRumiaAction:
           m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+    - ID: 9
+      ActionName: Rhythm1Emitter6 emission
+      type: 2
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
             m_Calls:
-            - m_Target: {fileID: 1571401999399255692, guid: 93fb98103f1cfb2438cb7f492d165717,
+            - m_Target: {fileID: 89218600719778394, guid: 93fb98103f1cfb2438cb7f492d165717,
                 type: 3}
               m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
-              m_MethodName: EmitStepwise
+              m_MethodName: Emit
               m_Mode: 0
               m_Arguments:
                 m_ObjectArgument: {fileID: 0}
@@ -352,6 +490,18 @@ MonoBehaviour:
                 m_StringArgument: 
                 m_BoolArgument: 0
               m_CallState: 2
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
       Float:
         OnRumiaAction:
           m_PersistentCalls:
@@ -360,6 +510,136 @@ MonoBehaviour:
         OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions:
+    - ID: 7
+      ActionName: Rhythm1Emitter4 emission
+      type: 2
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 187995587864742003, guid: 93fb98103f1cfb2438cb7f492d165717,
+                type: 3}
+              m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+              m_MethodName: Emit
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+    - ID: 8
+      ActionName: Rhythm1Emitter5 emission
+      type: 2
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 6386582352306132484, guid: 93fb98103f1cfb2438cb7f492d165717,
+                type: 3}
+              m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+              m_MethodName: Emit
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+    - ID: 9
+      ActionName: Rhythm1Emitter6 emission
+      type: 2
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 89218600719778394, guid: 93fb98103f1cfb2438cb7f492d165717,
+                type: 3}
+              m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+              m_MethodName: Emit
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+  - RumiaActions: []
+  - RumiaActions: []
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions: []
@@ -370,10 +650,9 @@ MonoBehaviour:
     - 
     - 
     - 
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
+    - 
+    - 
+    - 
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
@@ -382,25 +661,33 @@ MonoBehaviour:
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 3
-  - ChoiceParameters: []
-  - ChoiceParameters:
-    - 2
-  - ChoiceParameters: []
+    - 
+    - 
+    - 
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
-  - ChoiceParameters:
-    - 2
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 3
+    - 
+    - 
+    - 
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 2
+    - 
+    - 
+    - 
+  - ChoiceParameters: []
+  - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
