@@ -329,6 +329,7 @@ Transform:
   - {fileID: 1191320065}
   - {fileID: 853598617}
   - {fileID: 655100357}
+  - {fileID: 920776190}
   m_Father: {fileID: 1904238329}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9663,6 +9664,51 @@ MonoBehaviour:
   ToggleableImage: {fileID: 447552167}
   ActiveColor: {r: 0.827451, g: 1, b: 0.8352941, a: 0.8627451}
   InactiveColor: {r: 0.043137256, g: 0.13333334, b: 0, a: 0.8627451}
+--- !u!1 &920776189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 920776190}
+  - component: {fileID: 920776191}
+  m_Layer: 0
+  m_Name: Door p5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &920776190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920776189}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 14212767}
+  m_RootOrder: 28
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &920776191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920776189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40634865fe8156642ab105621e446844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Config: {fileID: 11400000, guid: 2f3270e32c12ccd42ae35554c5728e78, type: 2}
+  UseAlreadyInstantiatedPatternInstanceIfItExists: 1
 --- !u!1 &937176931
 GameObject:
   m_ObjectHideFlags: 0
@@ -23238,7 +23284,7 @@ PrefabInstance:
     - target: {fileID: 2818877977326224435, guid: f186c163eb7eb6843a01861288b5575a,
         type: 3}
       propertyPath: Invincible
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2818877977326224435, guid: f186c163eb7eb6843a01861288b5575a,
         type: 3}
@@ -23427,7 +23473,7 @@ PrefabInstance:
     - target: {fileID: 6121429862932770823, guid: 31427befc6d90614d9068da59e56bb7b,
         type: 3}
       propertyPath: NumberOfBeatsToWaitBeforeStarting
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6121429862932770823, guid: 31427befc6d90614d9068da59e56bb7b,
         type: 3}

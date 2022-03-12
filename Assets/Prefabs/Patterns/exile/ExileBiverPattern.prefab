@@ -15582,6 +15582,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7100267294724268968, guid: 9950d62fa1bb18142a114ddf966dde37,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: e708ddfbd766dfe4fbd68aeb4ecf474d,
+        type: 3}
     - target: {fileID: 7347771892999093960, guid: 9950d62fa1bb18142a114ddf966dde37,
         type: 3}
       propertyPath: m_Name
@@ -15619,6 +15625,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Biver melody 1 emitter 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2805945718595876357, guid: 03e6d28990f6f124b899923bd25d15a0,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 450011613308136013, guid: 5f28acd2ece0fd440a22c885667074aa,
+        type: 3}
     - target: {fileID: 6850207305491161090, guid: 03e6d28990f6f124b899923bd25d15a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -15761,6 +15773,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Biver melody 1 emitter 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3933611546947417580, guid: 9ce3ae5b493c8c54e9b41b9e444df1d6,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: e708ddfbd766dfe4fbd68aeb4ecf474d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce3ae5b493c8c54e9b41b9e444df1d6, type: 3}
 --- !u!114 &1737658378167586826 stripped
@@ -15843,6 +15861,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8699675835774418156, guid: 1f282cfadc5531c4f98761a61e456874,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: e708ddfbd766dfe4fbd68aeb4ecf474d,
+        type: 3}
     - target: {fileID: 9208390037474926988, guid: 1f282cfadc5531c4f98761a61e456874,
         type: 3}
       propertyPath: m_Name
@@ -15880,6 +15904,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Biver verse 1 emitter 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1148568580585229939, guid: 11d48a80d8cb4194a8c970e487055b91,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: e708ddfbd766dfe4fbd68aeb4ecf474d,
+        type: 3}
     - target: {fileID: 8507548779703720052, guid: 11d48a80d8cb4194a8c970e487055b91,
         type: 3}
       propertyPath: m_RootOrder
@@ -16022,6 +16052,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Biver verse 1 emitter 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6669183538807830393, guid: c3b45865fe99d8b47a0c0a1253cd5e46,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: e708ddfbd766dfe4fbd68aeb4ecf474d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3b45865fe99d8b47a0c0a1253cd5e46, type: 3}
 --- !u!4 &5754334569608313946 stripped
@@ -16109,6 +16145,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Biver melody 1 emitter 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7531552487068758074, guid: 2348f9f7fd197744daa93be981acb49f,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: e708ddfbd766dfe4fbd68aeb4ecf474d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2348f9f7fd197744daa93be981acb49f, type: 3}
 --- !u!114 &1584620339297963914 stripped
@@ -16141,6 +16183,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Biver melody 1 emitter 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1105043052491371680, guid: 50e4262cb02f4404b863c970d713eb74,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: e708ddfbd766dfe4fbd68aeb4ecf474d,
+        type: 3}
     - target: {fileID: 1990664966464219873, guid: 50e4262cb02f4404b863c970d713eb74,
         type: 3}
       propertyPath: m_RootOrder

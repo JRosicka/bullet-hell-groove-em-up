@@ -15821,6 +15821,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tswift melody 3 emitter
       objectReference: {fileID: 0}
+    - target: {fileID: 1761539288867329234, guid: 2106eeec7b3bf0a428b107d8231ba940,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: 1fb69868b92742546979d6545d3abe83,
+        type: 3}
     - target: {fileID: 2984704455682414072, guid: 2106eeec7b3bf0a428b107d8231ba940,
         type: 3}
       propertyPath: m_RootOrder
@@ -15963,6 +15969,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tswift second melody emitter 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7531552487068758074, guid: 2348f9f7fd197744daa93be981acb49f,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: 1fb69868b92742546979d6545d3abe83,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2348f9f7fd197744daa93be981acb49f, type: 3}
 --- !u!4 &6617426585601281031 stripped
@@ -15995,6 +16007,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Tswift verse 2 emitter 4 '
       objectReference: {fileID: 0}
+    - target: {fileID: 1148568580585229939, guid: 11d48a80d8cb4194a8c970e487055b91,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: 1fb69868b92742546979d6545d3abe83,
+        type: 3}
     - target: {fileID: 8507548779703720052, guid: 11d48a80d8cb4194a8c970e487055b91,
         type: 3}
       propertyPath: m_RootOrder
@@ -16082,6 +16100,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tswift second melody emitter 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2805945718595876357, guid: 03e6d28990f6f124b899923bd25d15a0,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 1805425208293481139, guid: 8095d821eef62f9479a0b8db5b75b5e3,
+        type: 3}
     - target: {fileID: 6850207305491161090, guid: 03e6d28990f6f124b899923bd25d15a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -16219,6 +16243,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4736997404358099334, guid: b28710eb50db3e94f83801141cbdfb2b,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: 1fb69868b92742546979d6545d3abe83,
+        type: 3}
     - target: {fileID: 5101596435412163814, guid: b28710eb50db3e94f83801141cbdfb2b,
         type: 3}
       propertyPath: m_Name
@@ -16256,6 +16286,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tswift melody 4 emitter
       objectReference: {fileID: 0}
+    - target: {fileID: 444368779468178257, guid: 3a1551a8d7c8149479679c072c2a25b4,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 1805425208293481139, guid: 8095d821eef62f9479a0b8db5b75b5e3,
+        type: 3}
     - target: {fileID: 9208414896444724566, guid: 3a1551a8d7c8149479679c072c2a25b4,
         type: 3}
       propertyPath: m_RootOrder
@@ -16398,6 +16434,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tswift verse 2 emitter 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6680604005127878447, guid: 07922f24c8743be43b181973c82c8cf3,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: 1fb69868b92742546979d6545d3abe83,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07922f24c8743be43b181973c82c8cf3, type: 3}
 --- !u!4 &681536552039230866 stripped
@@ -16480,6 +16522,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2486465893025188356, guid: b072f89b65151d244bd26fa3cfa9c9fd,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: 1fb69868b92742546979d6545d3abe83,
+        type: 3}
     - target: {fileID: 3783790918232523114, guid: b072f89b65151d244bd26fa3cfa9c9fd,
         type: 3}
       propertyPath: m_Name
@@ -16572,6 +16620,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tswift verse 2 emitter 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6680604005127878447, guid: 07922f24c8743be43b181973c82c8cf3,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: 1fb69868b92742546979d6545d3abe83,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07922f24c8743be43b181973c82c8cf3, type: 3}
 --- !u!4 &1794385524011264417 stripped
@@ -16604,6 +16658,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tswift second melody emitter 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1105043052491371680, guid: 50e4262cb02f4404b863c970d713eb74,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: 1fb69868b92742546979d6545d3abe83,
+        type: 3}
     - target: {fileID: 1990664966464219873, guid: 50e4262cb02f4404b863c970d713eb74,
         type: 3}
       propertyPath: m_RootOrder
@@ -16686,6 +16746,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 940173278}
     m_Modifications:
+    - target: {fileID: 2441980870642781354, guid: 38610e0854d5a3c4d91dfad25e7c60c2,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: 1fb69868b92742546979d6545d3abe83,
+        type: 3}
     - target: {fileID: 2779310647528395210, guid: 38610e0854d5a3c4d91dfad25e7c60c2,
         type: 3}
       propertyPath: m_Name
@@ -16773,6 +16839,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 940173278}
     m_Modifications:
+    - target: {fileID: 2384207902523870486, guid: 893619207f7367f4fbac60edf4e0bbc4,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: 1fb69868b92742546979d6545d3abe83,
+        type: 3}
     - target: {fileID: 2767418624331157622, guid: 893619207f7367f4fbac60edf4e0bbc4,
         type: 3}
       propertyPath: m_Name
@@ -16865,6 +16937,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tswift melody 2 emitter
       objectReference: {fileID: 0}
+    - target: {fileID: 7207170787780830500, guid: 9e439472d50b7224f9f953964cbbc747,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: 1fb69868b92742546979d6545d3abe83,
+        type: 3}
     - target: {fileID: 8138187411409042277, guid: 9e439472d50b7224f9f953964cbbc747,
         type: 3}
       propertyPath: m_RootOrder
@@ -17007,6 +17085,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tswift verse 1 emitter 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7868873591506571992, guid: 9da1127ca7adf60498cd24ea73735dc3,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: 1fb69868b92742546979d6545d3abe83,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9da1127ca7adf60498cd24ea73735dc3, type: 3}
 --- !u!114 &838031812055880424 stripped
@@ -17039,6 +17123,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tswift melody 1 emitter
       objectReference: {fileID: 0}
+    - target: {fileID: 6585574556658854598, guid: 02859c39fd5528c44aaac96ab6674b70,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: 1fb69868b92742546979d6545d3abe83,
+        type: 3}
     - target: {fileID: 7408177188559493335, guid: 02859c39fd5528c44aaac96ab6674b70,
         type: 3}
       propertyPath: m_RootOrder
@@ -17181,6 +17271,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tswift verse 2 emitter 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6680604005127878447, guid: 07922f24c8743be43b181973c82c8cf3,
+        type: 3}
+      propertyPath: Config.BulletPrefab
+      value: 
+      objectReference: {fileID: 7497343712616834882, guid: 1fb69868b92742546979d6545d3abe83,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07922f24c8743be43b181973c82c8cf3, type: 3}
 --- !u!4 &6776503246368654174 stripped
