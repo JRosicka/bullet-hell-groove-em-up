@@ -15,4 +15,12 @@ MonoBehaviour:
   Pattern: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333, type: 3}
   StartMeasure: 20
   StartMeasures: []
-  MeasuresList: []
+  MeasuresList:
+  - Measures:
+    - {fileID: 11400000, guid: 4f42bbc7b7a6fd24f89c2c63847314f3, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 7cbf8742a7b291e4bbef82f68cc3ec4a, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: fbd4500ef5e9521468f7ea0401d15121, type: 2}
+  - Measures:
+    - {fileID: 11400000, guid: 893d946fbb119494e86eba5fc6bc9e20, type: 2}
