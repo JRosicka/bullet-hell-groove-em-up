@@ -62,7 +62,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 1
+    - ID: 2
       ActionName: Melody1ChangePhase
       type: 5
       Basic:
@@ -83,7 +83,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
                 type: 3}
-              m_TargetAssemblyTypeName: ExileBiverPattern, Assembly-CSharp
+              m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
               m_MethodName: Melody1ChangePhase
               m_Mode: 0
               m_Arguments:
@@ -150,7 +150,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 1
+    - ID: 2
       ActionName: Melody1ChangePhase
       type: 5
       Basic:
@@ -171,7 +171,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
                 type: 3}
-              m_TargetAssemblyTypeName: ExileBiverPattern, Assembly-CSharp
+              m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
               m_MethodName: Melody1ChangePhase
               m_Mode: 0
               m_Arguments:
@@ -238,7 +238,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 1
+    - ID: 2
       ActionName: Melody1ChangePhase
       type: 5
       Basic:
@@ -259,7 +259,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
                 type: 3}
-              m_TargetAssemblyTypeName: ExileBiverPattern, Assembly-CSharp
+              m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
               m_MethodName: Melody1ChangePhase
               m_Mode: 0
               m_Arguments:
@@ -324,7 +324,7 @@ MonoBehaviour:
             m_Calls: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 1
+    - ID: 2
       ActionName: Melody1ChangePhase
       type: 5
       Basic:
@@ -345,7 +345,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
                 type: 3}
-              m_TargetAssemblyTypeName: ExileBiverPattern, Assembly-CSharp
+              m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
               m_MethodName: Melody1ChangePhase
               m_Mode: 0
               m_Arguments:

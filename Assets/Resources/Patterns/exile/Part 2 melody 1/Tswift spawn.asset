@@ -13,7 +13,47 @@ MonoBehaviour:
   m_Name: Tswift spawn
   m_EditorClassIdentifier: 
   RumiaActionLists:
-  - RumiaActions: []
+  - RumiaActions:
+    - ID: 6
+      ActionName: Spawn
+      type: 3
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 1116746653346486956, guid: c131f7dff4b0b44439267d50e82f5361,
+                type: 3}
+              m_TargetAssemblyTypeName: Rumia.Pattern, Assembly-CSharp
+              m_MethodName: Spawn
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions: []
@@ -46,7 +86,8 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   ChoiceParameterLists:
-  - ChoiceParameters: []
+  - ChoiceParameters:
+    - 3 2
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []

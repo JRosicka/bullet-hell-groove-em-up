@@ -3,19 +3,7 @@ using System.Collections.Generic;
 using Rumia;
 using UnityEngine;
 
-public class ExileTswiftPattern : Pattern
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public class ExileTswiftPattern : ExileSingerPattern {
     
     #region RumiaActions
 
@@ -23,12 +11,6 @@ public class ExileTswiftPattern : Pattern
     [RumiaAction]
     public void Dummy() {
         Debug.Log("Dummy pattern:                Tswift");
-    }
-
-    // ReSharper disable once UnusedMember.Global
-    [RumiaAction]
-    public void Move() {
-        
     }
 
     #endregion

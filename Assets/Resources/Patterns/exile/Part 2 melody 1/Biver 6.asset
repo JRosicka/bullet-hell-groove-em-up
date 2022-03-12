@@ -99,7 +99,7 @@ MonoBehaviour:
           m_PersistentCalls:
             m_Calls: []
   - RumiaActions:
-    - ID: 3
+    - ID: 4
       ActionName: ResetMelody3Target
       type: 2
       Basic:
@@ -108,7 +108,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
                 type: 3}
-              m_TargetAssemblyTypeName: ExileBiverPattern, Assembly-CSharp
+              m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
               m_MethodName: ResetMelody3Target
               m_Mode: 0
               m_Arguments:
@@ -142,7 +142,7 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 2
+    - ID: 3
       ActionName: Melody3EmissionStepwise
       type: 5
       Basic:
@@ -163,7 +163,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
                 type: 3}
-              m_TargetAssemblyTypeName: ExileBiverPattern, Assembly-CSharp
+              m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
               m_MethodName: Melody3EmissionStepwise
               m_Mode: 0
               m_Arguments:
@@ -184,7 +184,7 @@ MonoBehaviour:
             m_Calls: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 2
+    - ID: 3
       ActionName: Melody3EmissionStepwise
       type: 5
       Basic:
@@ -205,7 +205,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
                 type: 3}
-              m_TargetAssemblyTypeName: ExileBiverPattern, Assembly-CSharp
+              m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
               m_MethodName: Melody3EmissionStepwise
               m_Mode: 0
               m_Arguments:
@@ -226,7 +226,7 @@ MonoBehaviour:
             m_Calls: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 2
+    - ID: 3
       ActionName: Melody3EmissionStepwise
       type: 5
       Basic:
@@ -247,7 +247,7 @@ MonoBehaviour:
             m_Calls:
             - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
                 type: 3}
-              m_TargetAssemblyTypeName: ExileBiverPattern, Assembly-CSharp
+              m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
               m_MethodName: Melody3EmissionStepwise
               m_Mode: 0
               m_Arguments:
@@ -310,7 +310,47 @@ MonoBehaviour:
         OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
-  - RumiaActions: []
+  - RumiaActions:
+    - ID: 4
+      ActionName: ResetMelody3Target
+      type: 2
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
+                type: 3}
+              m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
+              m_MethodName: ResetMelody3Target
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions: []
@@ -350,7 +390,8 @@ MonoBehaviour:
   - ChoiceParameters: []
   - ChoiceParameters:
     - 
-  - ChoiceParameters: []
+  - ChoiceParameters:
+    - 
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
