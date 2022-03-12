@@ -2425,81 +2425,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520439916}
   m_CullTransparentMesh: 1
---- !u!1 &544992495
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 544992496}
-  - component: {fileID: 544992497}
-  m_Layer: 0
-  m_Name: Spline
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &544992496
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 544992495}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 778274955}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &544992497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 544992495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a85c5879d519aa4ab2ebbf42591149a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodes:
-  - position: {x: 0, y: 0, z: 0}
-    direction: {x: 1.7728729, y: -1.725805, z: 0}
-    up: {x: 0, y: 1, z: 0}
-    scale: {x: 1, y: 1}
-    roll: 0
-  - position: {x: 16.563507, y: -5.612531, z: 0}
-    direction: {x: 20.55152, y: -5.6347933, z: 0}
-    up: {x: 0, y: 1, z: 0}
-    scale: {x: 1, y: 1}
-    roll: 0
-  curves:
-  - n1:
-      position: {x: 0, y: 0, z: 0}
-      direction: {x: 1.7728729, y: -1.725805, z: 0}
-      up: {x: 0, y: 1, z: 0}
-      scale: {x: 1, y: 1}
-      roll: 0
-    n2:
-      position: {x: 16.563507, y: -5.612531, z: 0}
-      direction: {x: 20.55152, y: -5.6347933, z: 0}
-      up: {x: 0, y: 1, z: 0}
-      scale: {x: 1, y: 1}
-      roll: 0
-    Changed:
-      m_PersistentCalls:
-        m_Calls: []
-  Length: 17.639591
-  isLoop: 0
-  CurveChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &563369598
 GameObject:
   m_ObjectHideFlags: 0
@@ -3344,6 +3269,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1943988767610156341, guid: 93fb98103f1cfb2438cb7f492d165717,
+        type: 3}
+      propertyPath: m_Name
+      value: Piano first rhythm emitter 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343753, guid: 93fb98103f1cfb2438cb7f492d165717,
         type: 3}
       propertyPath: m_RootOrder
@@ -3403,6 +3333,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ExilePianoPattern
+      objectReference: {fileID: 0}
+    - target: {fileID: 8323780923460251909, guid: 93fb98103f1cfb2438cb7f492d165717,
+        type: 3}
+      propertyPath: m_Name
+      value: Piano first rhythm emitter 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8748425900615453496, guid: 93fb98103f1cfb2438cb7f492d165717,
+        type: 3}
+      propertyPath: m_Name
+      value: Piano first rhythm emitter 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93fb98103f1cfb2438cb7f492d165717, type: 3}
@@ -3965,129 +3905,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777177148}
   m_CullTransparentMesh: 1
---- !u!1 &778274954
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 778274955}
-  - component: {fileID: 778274956}
-  m_Layer: 0
-  m_Name: Piano first rhythm 1 emitter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &778274955
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778274954}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 544992496}
-  m_Father: {fileID: 1403920880}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &778274956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778274954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Config:
-    BulletPrefab: {fileID: 7497343712616834882, guid: e91d4205e9e49e548aa598aeced97950,
-      type: 3}
-    NumberOfShots: 1
-    TimeBetweenShot: 0
-    DelayBeforeFirstShot: 0
-    AimAtPlayer: 0
-    StartRotation: 0
-    StartRotationVariance: 6
-    RotationArc: 0
-    RotateClockwise: 0
-    RotateFromCenter: 0
-    StartPositionOffset: {x: -4.34, y: 4.1}
-    StartPositionVariance: {x: 0, y: 0}
-    AnimationPrefab: {fileID: 0}
-    UseWhiteShaderForAnimateIn: 0
-    BulletStartSpeed: 4.1
-    BulletSpeedOverTime:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    UseSpline: 1
-    Spline: {fileID: 544992497}
-    AdjustColorOverTime: 0
-    OnlyAdjustAlpha: 0
-    InitialColor: {r: 0, g: 0, b: 0, a: 1}
-    EndColor: {r: 0, g: 0, b: 0, a: 0}
-    ColorAdjustmentDuration: 3
-    BulletColorOverTime:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0.0114702685
-        outSlope: 0.0114702685
-        tangentMode: 0
-        weightedMode: 3
-        inWeight: 0
-        outWeight: 0.554452
-      - serializedVersion: 3
-        time: 3
-        value: 1
-        inSlope: 11.839785
-        outSlope: 11.839785
-        tangentMode: 0
-        weightedMode: 3
-        inWeight: 0.024146399
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    DestroyBulletAfterDuration: 0
-    DestructionTime: 9
-    UseTrail: 0
-    Trail: {fileID: 0}
-    Reverse: 0
-    SpeedChanges: []
-    AimChanges: []
 --- !u!1 &795185752
 GameObject:
   m_ObjectHideFlags: 0
@@ -7897,12 +7714,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386796458}
   m_CullTransparentMesh: 0
---- !u!4 &1403920880 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 940173278, guid: 93fb98103f1cfb2438cb7f492d165717,
-    type: 3}
-  m_PrefabInstance: {fileID: 589398796}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1410357439
 GameObject:
   m_ObjectHideFlags: 0
@@ -11225,6 +11036,11 @@ PrefabInstance:
     - target: {fileID: 2001886812, guid: 21f9e738d13f6264c93373f359170333, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508848908145191818, guid: 21f9e738d13f6264c93373f359170333,
+        type: 3}
+      propertyPath: m_Name
+      value: Biver verse 1 emitter 4
       objectReference: {fileID: 0}
     - target: {fileID: 7224286281906343753, guid: 21f9e738d13f6264c93373f359170333,
         type: 3}

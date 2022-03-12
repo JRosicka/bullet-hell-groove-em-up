@@ -20,7 +20,7 @@ namespace Rumia {
 
         // Amount of measures to delay before starting the pattern
         public int StartMeasure;
-
+        // TODO: We should really change the setup of RumiaActions from happening during recompilation to instead happening with a button press somewhere
         /// <summary>
         /// Guaranteed to be invoked right at the start of gameplay before any <see cref="MeasuresList"/> measures are invoked.
         /// Also accounts for <see cref="TimingController.NumberOfMeasuresToSkipOnStart"/>.

@@ -3,6 +3,12 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class ExileSingerPattern : Pattern {
+    public Emitter Verse1Emitter1;
+    public Emitter Verse1Emitter2;
+    public Emitter Verse1Emitter3;
+    [EmissionRumiaAction]
+    public Emitter Verse1Emitter4;
+
     [StepwiseEmissionRumiaAction]
     public Emitter Melody1;
     [StepwiseEmissionRumiaAction]
@@ -21,6 +27,13 @@ public class ExileSingerPattern : Pattern {
     }
     
     #region RumiaActions
+    
+    [RumiaAction]
+    public void Verse1MainStepwiseEmission(int step) {
+        Verse1Emitter1.EmitStepwise(step);
+        Verse1Emitter2.EmitStepwise(step);
+        Verse1Emitter3.EmitStepwise(step);
+    }
 
     private void ChangePhaseForMelody(Emitter emitter, int phaseIndex) {
         ReAimAndMoveEmittedBullet(emitter, phaseIndex);

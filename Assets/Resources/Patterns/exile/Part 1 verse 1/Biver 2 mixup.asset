@@ -16,13 +16,238 @@ MonoBehaviour:
   - RumiaActions: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
+    - ID: 2
+      ActionName: Verse1MainStepwiseEmission
+      type: 5
       Basic:
         OnRumiaAction:
           m_PersistentCalls:
             m_Calls: []
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
+                type: 3}
+              m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
+              m_MethodName: Verse1MainStepwiseEmission
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+  - RumiaActions: []
+  - RumiaActions:
+    - ID: 2
+      ActionName: Verse1MainStepwiseEmission
+      type: 5
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
+                type: 3}
+              m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
+              m_MethodName: Verse1MainStepwiseEmission
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+  - RumiaActions: []
+  - RumiaActions:
+    - ID: 2
+      ActionName: Verse1MainStepwiseEmission
+      type: 5
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
+                type: 3}
+              m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
+              m_MethodName: Verse1MainStepwiseEmission
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+  - RumiaActions: []
+  - RumiaActions:
+    - ID: 2
+      ActionName: Verse1MainStepwiseEmission
+      type: 5
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
+                type: 3}
+              m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
+              m_MethodName: Verse1MainStepwiseEmission
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions:
+    - ID: 2
+      ActionName: Verse1MainStepwiseEmission
+      type: 5
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Vector:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Bool:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      Int:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
+                type: 3}
+              m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
+              m_MethodName: Verse1MainStepwiseEmission
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+      Float:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+      String:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls: []
+  - RumiaActions: []
+  - RumiaActions:
+    - ID: 8
+      ActionName: Verse1Emitter4 emission
+      type: 2
+      Basic:
+        OnRumiaAction:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 4171202790258161386, guid: 21f9e738d13f6264c93373f359170333,
+                type: 3}
+              m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+              m_MethodName: Emit
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
       Vector:
         OnRumiaAction:
           m_PersistentCalls:
@@ -44,10 +269,14 @@ MonoBehaviour:
           m_PersistentCalls:
             m_Calls: []
   - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
   - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
+    - ID: 2
+      ActionName: Verse1MainStepwiseEmission
+      type: 5
       Basic:
         OnRumiaAction:
           m_PersistentCalls:
@@ -63,7 +292,20 @@ MonoBehaviour:
       Int:
         OnRumiaAction:
           m_PersistentCalls:
-            m_Calls: []
+            m_Calls:
+            - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
+                type: 3}
+              m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
+              m_MethodName: Verse1MainStepwiseEmission
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
       Float:
         OnRumiaAction:
           m_PersistentCalls:
@@ -73,10 +315,12 @@ MonoBehaviour:
           m_PersistentCalls:
             m_Calls: []
   - RumiaActions: []
+  - RumiaActions: []
+  - RumiaActions: []
   - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
+    - ID: 2
+      ActionName: Verse1MainStepwiseEmission
+      type: 5
       Basic:
         OnRumiaAction:
           m_PersistentCalls:
@@ -92,7 +336,20 @@ MonoBehaviour:
       Int:
         OnRumiaAction:
           m_PersistentCalls:
-            m_Calls: []
+            m_Calls:
+            - m_Target: {fileID: 6107999007795148978, guid: 21f9e738d13f6264c93373f359170333,
+                type: 3}
+              m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
+              m_MethodName: Verse1MainStepwiseEmission
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
       Float:
         OnRumiaAction:
           m_PersistentCalls:
@@ -103,166 +360,26 @@ MonoBehaviour:
             m_Calls: []
   - RumiaActions: []
   - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
+    - ID: 8
+      ActionName: Verse1Emitter4 emission
+      type: 2
       Basic:
         OnRumiaAction:
           m_PersistentCalls:
-            m_Calls: []
-      Vector:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Bool:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Int:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Float:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
-      Basic:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Vector:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Bool:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Int:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Float:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-  - RumiaActions: []
-  - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
-      Basic:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Vector:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Bool:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Int:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Float:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
-      Basic:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Vector:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Bool:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Int:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Float:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions: []
-  - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
-      Basic:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Vector:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Bool:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Int:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      Float:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-      String:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
-  - RumiaActions: []
-  - RumiaActions:
-    - ID: 0
-      ActionName: None
-      type: 1
-      Basic:
-        OnRumiaAction:
-          m_PersistentCalls:
-            m_Calls: []
+            m_Calls:
+            - m_Target: {fileID: 4171202790258161386, guid: 21f9e738d13f6264c93373f359170333,
+                type: 3}
+              m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+              m_MethodName: Emit
+              m_Mode: 0
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: 
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
       Vector:
         OnRumiaAction:
           m_PersistentCalls:
@@ -292,36 +409,36 @@ MonoBehaviour:
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 
+    - 8
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 
+    - 7
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 
+    - 6
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 
+    - 5
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters:
-    - 
-  - ChoiceParameters: []
-  - ChoiceParameters:
-    - 
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
-  - ChoiceParameters: []
+    - 4
   - ChoiceParameters: []
   - ChoiceParameters:
     - 
   - ChoiceParameters: []
   - ChoiceParameters: []
   - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
   - ChoiceParameters:
-    - 
+    - 2
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters: []
+  - ChoiceParameters:
+    - 1
   - ChoiceParameters: []
   - ChoiceParameters:
     - 

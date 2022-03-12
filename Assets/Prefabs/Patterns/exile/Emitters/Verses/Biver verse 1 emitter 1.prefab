@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6628177084669209113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2697049883423842686}
+  - component: {fileID: 6669183538807830393}
+  m_Layer: 0
+  m_Name: Biver verse 1 emitter 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2697049883423842686
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6628177084669209113}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6669183538807830393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6628177084669209113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Config:
+    BulletPrefab: {fileID: 7497343712616834882, guid: e91d4205e9e49e548aa598aeced97950,
+      type: 3}
+    NumberOfShots: 9
+    TimeBetweenShot: 0
+    DelayBeforeFirstShot: 0
+    AimAtPlayer: 0
+    StartRotation: -90
+    StartRotationVariance: 0
+    RotationArc: 30
+    RotateClockwise: 0
+    RotateFromCenter: 1
+    StartPositionOffset: {x: 2.8, y: 0}
+    StartPositionVariance: {x: 0, y: 0}
+    AnimationPrefab: {fileID: 7284957164868078736, guid: 7537a5d5486013b4bb27ab6b997f381c,
+      type: 3}
+    UseWhiteShaderForAnimateIn: 1
+    BulletStartSpeed: 8.4
+    BulletSpeedOverTime:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: -7.455858
+        outSlope: -7.455858
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 0
+        outWeight: 0.42022264
+      - serializedVersion: 3
+        time: 0.19922471
+        value: 0.3
+        inSlope: -0.09143327
+        outSlope: -0.09143327
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 0.46582654
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    UseSpline: 0
+    Spline: {fileID: 0}
+    AdjustColorOverTime: 0
+    OnlyAdjustAlpha: 1
+    InitialColor: {r: 0, g: 0, b: 0, a: 1}
+    EndColor: {r: 0, g: 0, b: 0, a: 0}
+    ColorAdjustmentDuration: 3
+    BulletColorOverTime:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0.0114702685
+        outSlope: 0.0114702685
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 0
+        outWeight: 0.554452
+      - serializedVersion: 3
+        time: 3
+        value: 1
+        inSlope: 11.839785
+        outSlope: 11.839785
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 0.024146399
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    DestroyBulletAfterDuration: 0
+    DestructionTime: 9
+    UseTrail: 0
+    Trail: {fileID: 0}
+    Reverse: 0
+    SpeedChanges: []
+    AimChanges: []

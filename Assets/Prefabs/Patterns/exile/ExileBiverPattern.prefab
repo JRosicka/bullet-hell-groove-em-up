@@ -2763,6 +2763,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 5754334569608313946}
+  - {fileID: 4078829184540329633}
+  - {fileID: 3806446679630480237}
+  - {fileID: 4612668251024777453}
   - {fileID: 2717623150737416731}
   - {fileID: 7261965204123749631}
   - {fileID: 2658321734324440736}
@@ -10981,7 +10985,7 @@ Transform:
   m_Children:
   - {fileID: 8649462547762166209}
   m_Father: {fileID: 940173278}
-  m_RootOrder: 3
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7055912307921399889
 GameObject:
@@ -16053,6 +16057,45 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
   - ID: 2
+    ActionName: Verse1MainStepwiseEmission
+    type: 5
+    Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Vector:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 6107999007795148978}
+            m_TargetAssemblyTypeName: ExileSingerPattern, Assembly-CSharp
+            m_MethodName: Verse1MainStepwiseEmission
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Float:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 3
     ActionName: Melody1ChangePhase
     type: 5
     Basic:
@@ -16091,7 +16134,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 3
+  - ID: 4
     ActionName: Melody3EmissionStepwise
     type: 5
     Basic:
@@ -16130,7 +16173,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 4
+  - ID: 5
     ActionName: ResetMelody3Target
     type: 2
     Basic:
@@ -16169,7 +16212,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 5
+  - ID: 6
     ActionName: Move
     type: 2
     Basic:
@@ -16208,7 +16251,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 6
+  - ID: 7
     ActionName: Spawn
     type: 3
     Basic:
@@ -16247,7 +16290,46 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 7
+  - ID: 8
+    ActionName: Verse1Emitter4 emission
+    type: 2
+    Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 4171202790258161386}
+            m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+            m_MethodName: Emit
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 9
     ActionName: Melody4 emission
     type: 2
     Basic:
@@ -16286,7 +16368,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 8
+  - ID: 10
     ActionName: Melody1 emission stepwise
     type: 5
     Basic:
@@ -16325,7 +16407,7 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
-  - ID: 9
+  - ID: 11
     ActionName: Melody2 emission stepwise
     type: 5
     Basic:
@@ -16364,6 +16446,10 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
+  Verse1Emitter1: {fileID: 3907975822085565021}
+  Verse1Emitter2: {fileID: 4718226546777428134}
+  Verse1Emitter3: {fileID: 5562891763471766890}
+  Verse1Emitter4: {fileID: 4171202790258161386}
   Melody1: {fileID: 1737658378167586826}
   Melody2: {fileID: 8084536448568775358}
   Melody3: {fileID: 1584620339297963914}
@@ -21253,6 +21339,93 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1001 &2590613735825584910
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 940173278}
+    m_Modifications:
+    - target: {fileID: 1975212165994673583, guid: 9950d62fa1bb18142a114ddf966dde37,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975212165994673583, guid: 9950d62fa1bb18142a114ddf966dde37,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975212165994673583, guid: 9950d62fa1bb18142a114ddf966dde37,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975212165994673583, guid: 9950d62fa1bb18142a114ddf966dde37,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975212165994673583, guid: 9950d62fa1bb18142a114ddf966dde37,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975212165994673583, guid: 9950d62fa1bb18142a114ddf966dde37,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975212165994673583, guid: 9950d62fa1bb18142a114ddf966dde37,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975212165994673583, guid: 9950d62fa1bb18142a114ddf966dde37,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975212165994673583, guid: 9950d62fa1bb18142a114ddf966dde37,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975212165994673583, guid: 9950d62fa1bb18142a114ddf966dde37,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975212165994673583, guid: 9950d62fa1bb18142a114ddf966dde37,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347771892999093960, guid: 9950d62fa1bb18142a114ddf966dde37,
+        type: 3}
+      propertyPath: m_Name
+      value: Biver verse 1 emitter 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9950d62fa1bb18142a114ddf966dde37, type: 3}
+--- !u!4 &4078829184540329633 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1975212165994673583, guid: 9950d62fa1bb18142a114ddf966dde37,
+    type: 3}
+  m_PrefabInstance: {fileID: 2590613735825584910}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4718226546777428134 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7100267294724268968, guid: 9950d62fa1bb18142a114ddf966dde37,
+    type: 3}
+  m_PrefabInstance: {fileID: 2590613735825584910}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2817497568416537027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21263,7 +21436,7 @@ PrefabInstance:
     - target: {fileID: 2414219828836248421, guid: 03e6d28990f6f124b899923bd25d15a0,
         type: 3}
       propertyPath: m_Name
-      value: Biver melody 4 emitter
+      value: Biver melody 1 emitter 4
       objectReference: {fileID: 0}
     - target: {fileID: 6850207305491161090, guid: 03e6d28990f6f124b899923bd25d15a0,
         type: 3}
@@ -21322,12 +21495,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03e6d28990f6f124b899923bd25d15a0, type: 3}
---- !u!4 &8649462547762166209 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6850207305491161090, guid: 03e6d28990f6f124b899923bd25d15a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 2817497568416537027}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &137777465330364358 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2805945718595876357, guid: 03e6d28990f6f124b899923bd25d15a0,
@@ -21340,6 +21507,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &8649462547762166209 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6850207305491161090, guid: 03e6d28990f6f124b899923bd25d15a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2817497568416537027}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3353943444656874982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21350,7 +21523,7 @@ PrefabInstance:
     - target: {fileID: 809933325976274941, guid: 9ce3ae5b493c8c54e9b41b9e444df1d6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 809933325976274941, guid: 9ce3ae5b493c8c54e9b41b9e444df1d6,
         type: 3}
@@ -21405,7 +21578,7 @@ PrefabInstance:
     - target: {fileID: 2348051718279904898, guid: 9ce3ae5b493c8c54e9b41b9e444df1d6,
         type: 3}
       propertyPath: m_Name
-      value: Biver melody 1 emitter
+      value: Biver melody 1 emitter 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce3ae5b493c8c54e9b41b9e444df1d6, type: 3}
@@ -21427,6 +21600,267 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &3857378717853313414
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 940173278}
+    m_Modifications:
+    - target: {fileID: 97705454064069355, guid: 1f282cfadc5531c4f98761a61e456874,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 97705454064069355, guid: 1f282cfadc5531c4f98761a61e456874,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 97705454064069355, guid: 1f282cfadc5531c4f98761a61e456874,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 97705454064069355, guid: 1f282cfadc5531c4f98761a61e456874,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 97705454064069355, guid: 1f282cfadc5531c4f98761a61e456874,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 97705454064069355, guid: 1f282cfadc5531c4f98761a61e456874,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 97705454064069355, guid: 1f282cfadc5531c4f98761a61e456874,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 97705454064069355, guid: 1f282cfadc5531c4f98761a61e456874,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 97705454064069355, guid: 1f282cfadc5531c4f98761a61e456874,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 97705454064069355, guid: 1f282cfadc5531c4f98761a61e456874,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 97705454064069355, guid: 1f282cfadc5531c4f98761a61e456874,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208390037474926988, guid: 1f282cfadc5531c4f98761a61e456874,
+        type: 3}
+      propertyPath: m_Name
+      value: Biver verse 1 emitter 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1f282cfadc5531c4f98761a61e456874, type: 3}
+--- !u!4 &3806446679630480237 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 97705454064069355, guid: 1f282cfadc5531c4f98761a61e456874,
+    type: 3}
+  m_PrefabInstance: {fileID: 3857378717853313414}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5562891763471766890 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8699675835774418156, guid: 1f282cfadc5531c4f98761a61e456874,
+    type: 3}
+  m_PrefabInstance: {fileID: 3857378717853313414}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &3896633885190109337
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 940173278}
+    m_Modifications:
+    - target: {fileID: 612834722848396051, guid: 11d48a80d8cb4194a8c970e487055b91,
+        type: 3}
+      propertyPath: m_Name
+      value: Biver verse 1 emitter 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507548779703720052, guid: 11d48a80d8cb4194a8c970e487055b91,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507548779703720052, guid: 11d48a80d8cb4194a8c970e487055b91,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507548779703720052, guid: 11d48a80d8cb4194a8c970e487055b91,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507548779703720052, guid: 11d48a80d8cb4194a8c970e487055b91,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507548779703720052, guid: 11d48a80d8cb4194a8c970e487055b91,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507548779703720052, guid: 11d48a80d8cb4194a8c970e487055b91,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507548779703720052, guid: 11d48a80d8cb4194a8c970e487055b91,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507548779703720052, guid: 11d48a80d8cb4194a8c970e487055b91,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507548779703720052, guid: 11d48a80d8cb4194a8c970e487055b91,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507548779703720052, guid: 11d48a80d8cb4194a8c970e487055b91,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507548779703720052, guid: 11d48a80d8cb4194a8c970e487055b91,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 11d48a80d8cb4194a8c970e487055b91, type: 3}
+--- !u!114 &4171202790258161386 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1148568580585229939, guid: 11d48a80d8cb4194a8c970e487055b91,
+    type: 3}
+  m_PrefabInstance: {fileID: 3896633885190109337}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &4612668251024777453 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8507548779703720052, guid: 11d48a80d8cb4194a8c970e487055b91,
+    type: 3}
+  m_PrefabInstance: {fileID: 3896633885190109337}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7689430557196573988
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 940173278}
+    m_Modifications:
+    - target: {fileID: 2697049883423842686, guid: c3b45865fe99d8b47a0c0a1253cd5e46,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697049883423842686, guid: c3b45865fe99d8b47a0c0a1253cd5e46,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697049883423842686, guid: c3b45865fe99d8b47a0c0a1253cd5e46,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697049883423842686, guid: c3b45865fe99d8b47a0c0a1253cd5e46,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697049883423842686, guid: c3b45865fe99d8b47a0c0a1253cd5e46,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697049883423842686, guid: c3b45865fe99d8b47a0c0a1253cd5e46,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697049883423842686, guid: c3b45865fe99d8b47a0c0a1253cd5e46,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697049883423842686, guid: c3b45865fe99d8b47a0c0a1253cd5e46,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697049883423842686, guid: c3b45865fe99d8b47a0c0a1253cd5e46,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697049883423842686, guid: c3b45865fe99d8b47a0c0a1253cd5e46,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2697049883423842686, guid: c3b45865fe99d8b47a0c0a1253cd5e46,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6628177084669209113, guid: c3b45865fe99d8b47a0c0a1253cd5e46,
+        type: 3}
+      propertyPath: m_Name
+      value: Biver verse 1 emitter 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c3b45865fe99d8b47a0c0a1253cd5e46, type: 3}
+--- !u!114 &3907975822085565021 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6669183538807830393, guid: c3b45865fe99d8b47a0c0a1253cd5e46,
+    type: 3}
+  m_PrefabInstance: {fileID: 7689430557196573988}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &5754334569608313946 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2697049883423842686, guid: c3b45865fe99d8b47a0c0a1253cd5e46,
+    type: 3}
+  m_PrefabInstance: {fileID: 7689430557196573988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9041188289335771056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21437,7 +21871,7 @@ PrefabInstance:
     - target: {fileID: 6457178149499990288, guid: 2348f9f7fd197744daa93be981acb49f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6457178149499990288, guid: 2348f9f7fd197744daa93be981acb49f,
         type: 3}
@@ -21492,7 +21926,7 @@ PrefabInstance:
     - target: {fileID: 7041317987341077731, guid: 2348f9f7fd197744daa93be981acb49f,
         type: 3}
       propertyPath: m_Name
-      value: Biver melody 3 emitter
+      value: Biver melody 1 emitter 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2348f9f7fd197744daa93be981acb49f, type: 3}
@@ -21524,12 +21958,12 @@ PrefabInstance:
     - target: {fileID: 577143700857140966, guid: 50e4262cb02f4404b863c970d713eb74,
         type: 3}
       propertyPath: m_Name
-      value: Biver melody 2 emitter
+      value: Biver melody 1 emitter 2
       objectReference: {fileID: 0}
     - target: {fileID: 1990664966464219873, guid: 50e4262cb02f4404b863c970d713eb74,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1990664966464219873, guid: 50e4262cb02f4404b863c970d713eb74,
         type: 3}

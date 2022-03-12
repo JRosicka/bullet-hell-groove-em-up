@@ -26,10 +26,139 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1426535470697013237}
+  - {fileID: 7426860095074857138}
+  - {fileID: 7552281086032239298}
+  - {fileID: 8484005843428943315}
+  - {fileID: 3424820868228004772}
+  - {fileID: 8510164442656141306}
+  - {fileID: 770342325397721410}
   m_Father: {fileID: 7224286281906343753}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1242460070976766087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 770342325397721410}
+  - component: {fileID: 1571401999399255692}
+  m_Layer: 0
+  m_Name: Piano second rhythm emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &770342325397721410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242460070976766087}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 5.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 940173278}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1571401999399255692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242460070976766087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Config:
+    BulletPrefab: {fileID: 7497343712616834882, guid: e91d4205e9e49e548aa598aeced97950,
+      type: 3}
+    NumberOfShots: 4
+    TimeBetweenShot: 0
+    DelayBeforeFirstShot: 0
+    AimAtPlayer: 0
+    StartRotation: 270
+    StartRotationVariance: 6
+    RotationArc: 68
+    RotateClockwise: 0
+    RotateFromCenter: 1
+    StartPositionOffset: {x: 0, y: 0}
+    StartPositionVariance: {x: 0.5, y: 1.41}
+    AnimationPrefab: {fileID: 0}
+    UseWhiteShaderForAnimateIn: 0
+    BulletStartSpeed: 5
+    BulletSpeedOverTime:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: -1.1825585
+        outSlope: -1.1825585
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 0
+        outWeight: 0.5185529
+      - serializedVersion: 3
+        time: 1
+        value: 0.3
+        inSlope: -0.029595332
+        outSlope: -0.029595332
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 0.19851577
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    UseSpline: 0
+    Spline: {fileID: 0}
+    AdjustColorOverTime: 1
+    OnlyAdjustAlpha: 0
+    InitialColor: {r: 0, g: 0, b: 0, a: 1}
+    EndColor: {r: 0, g: 0, b: 0, a: 0}
+    ColorAdjustmentDuration: 3.5
+    BulletColorOverTime:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: -0
+        outSlope: -0
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 0
+        outWeight: 1
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 7.4675884
+        outSlope: 7.4675884
+        tangentMode: 0
+        weightedMode: 3
+        inWeight: 0.1307978
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    DestroyBulletAfterDuration: 1
+    DestructionTime: 3.5
+    UseTrail: 0
+    Trail: {fileID: 0}
+    Reverse: 0
+    SpeedChanges: []
+    AimChanges: []
 --- !u!1 &2032573800094174281
 GameObject:
   m_ObjectHideFlags: 0
@@ -10083,6 +10212,286 @@ MonoBehaviour:
       OnRumiaAction:
         m_PersistentCalls:
           m_Calls: []
+  - ID: 4
+    ActionName: Rhythm1Emitter1 emission
+    type: 2
+    Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 7271845357536719445}
+            m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+            m_MethodName: Emit
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 5
+    ActionName: Rhythm1Emitter2 emission
+    type: 2
+    Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1168502996084628754}
+            m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+            m_MethodName: Emit
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 6
+    ActionName: Rhythm1Emitter3 emission
+    type: 2
+    Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 2299594495961151330}
+            m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+            m_MethodName: Emit
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 7
+    ActionName: Rhythm1Emitter4 emission
+    type: 2
+    Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 187995587864742003}
+            m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+            m_MethodName: Emit
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 8
+    ActionName: Rhythm1Emitter5 emission
+    type: 2
+    Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 6386582352306132484}
+            m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+            m_MethodName: Emit
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 9
+    ActionName: Rhythm1Emitter6 emission
+    type: 2
+    Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 89218600719778394}
+            m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+            m_MethodName: Emit
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Vector:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Float:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+  - ID: 10
+    ActionName: Rhythm2Emitter emission stepwise
+    type: 5
+    Basic:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Vector:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Bool:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    Int:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1571401999399255692}
+            m_TargetAssemblyTypeName: Emitter, Assembly-CSharp
+            m_MethodName: EmitStepwise
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: 
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    Float:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+    String:
+      OnRumiaAction:
+        m_PersistentCalls:
+          m_Calls: []
+  Rhythm1Emitter1: {fileID: 7271845357536719445}
+  Rhythm1Emitter2: {fileID: 1168502996084628754}
+  Rhythm1Emitter3: {fileID: 2299594495961151330}
+  Rhythm1Emitter4: {fileID: 187995587864742003}
+  Rhythm1Emitter5: {fileID: 6386582352306132484}
+  Rhythm1Emitter6: {fileID: 89218600719778394}
+  Rhythm2Emitter: {fileID: 1571401999399255692}
 --- !u!1 &9105199752012817976
 GameObject:
   m_ObjectHideFlags: 0
@@ -14967,3 +15376,675 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1001 &2680681285436374686
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 940173278}
+    m_Modifications:
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248660692820135835, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Piano first rhythm emitter 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af49471f4bc735b4aac2ab79eec183e0, type: 3}
+--- !u!4 &7426860095074857138 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2680681285436374686}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1168502996084628754 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3820435831485784972, guid: af49471f4bc735b4aac2ab79eec183e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2680681285436374686}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &3093171567762822382
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 940173278}
+    m_Modifications:
+    - target: {fileID: 3820435831485784972, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: Config.BulletStartSpeed
+      value: 4.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3820435831485784972, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: Config.StartPositionOffset.y
+      value: 5.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248660692820135835, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Piano first rhythm emitter 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af49471f4bc735b4aac2ab79eec183e0, type: 3}
+--- !u!114 &2299594495961151330 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3820435831485784972, guid: af49471f4bc735b4aac2ab79eec183e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 3093171567762822382}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &7552281086032239298 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 3093171567762822382}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3762790463642329558
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 940173278}
+    m_Modifications:
+    - target: {fileID: 3820435831485784972, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: Config.BulletStartSpeed
+      value: 4.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3820435831485784972, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: Config.StartPositionOffset.x
+      value: 4.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 3820435831485784972, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: Config.StartPositionOffset.y
+      value: 5.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248660692820135835, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Piano first rhythm emitter 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: Length
+      value: 17.639595
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: nodes.Array.data[1].position.x
+      value: -16.56351
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: nodes.Array.data[0].direction.x
+      value: -1.772873
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: nodes.Array.data[1].direction.x
+      value: -20.55152
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: curves.Array.data[0].n2.position.x
+      value: -16.56351
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: curves.Array.data[0].n1.direction.x
+      value: -1.772873
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: curves.Array.data[0].n2.direction.x
+      value: -20.55152
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af49471f4bc735b4aac2ab79eec183e0, type: 3}
+--- !u!114 &89218600719778394 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3820435831485784972, guid: af49471f4bc735b4aac2ab79eec183e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 3762790463642329558}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &8510164442656141306 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 3762790463642329558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4007938514609417215
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 940173278}
+    m_Modifications:
+    - target: {fileID: 3820435831485784972, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: Config.StartPositionOffset.x
+      value: 4.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 3820435831485784972, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: Config.StartPositionOffset.y
+      value: 3.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248660692820135835, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Piano first rhythm emitter 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: Length
+      value: 17.639595
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: nodes.Array.data[1].position.x
+      value: -16.56351
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: nodes.Array.data[0].direction.x
+      value: -1.772873
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: nodes.Array.data[1].direction.x
+      value: -20.55152
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: curves.Array.data[0].n2.position.x
+      value: -16.56351
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: curves.Array.data[0].n1.direction.x
+      value: -1.772873
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: curves.Array.data[0].n2.direction.x
+      value: -20.55152
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af49471f4bc735b4aac2ab79eec183e0, type: 3}
+--- !u!114 &187995587864742003 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3820435831485784972, guid: af49471f4bc735b4aac2ab79eec183e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 4007938514609417215}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &8484005843428943315 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 4007938514609417215}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5903694603825893849
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 940173278}
+    m_Modifications:
+    - target: {fileID: 3820435831485784972, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: Config.StartPositionOffset.y
+      value: 3.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248660692820135835, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Piano first rhythm emitter
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af49471f4bc735b4aac2ab79eec183e0, type: 3}
+--- !u!4 &1426535470697013237 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 5903694603825893849}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7271845357536719445 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3820435831485784972, guid: af49471f4bc735b4aac2ab79eec183e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 5903694603825893849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &7900818885402572168
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 940173278}
+    m_Modifications:
+    - target: {fileID: 3820435831485784972, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: Config.StartPositionOffset.x
+      value: 4.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248660692820135835, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Piano first rhythm emitter 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: Length
+      value: 17.639595
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: nodes.Array.data[1].position.x
+      value: -16.56351
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: nodes.Array.data[0].direction.x
+      value: -1.772873
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: nodes.Array.data[1].direction.x
+      value: -20.55152
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: curves.Array.data[0].n2.position.x
+      value: -16.56351
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: curves.Array.data[0].n1.direction.x
+      value: -1.772873
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078896099159378796, guid: af49471f4bc735b4aac2ab79eec183e0,
+        type: 3}
+      propertyPath: curves.Array.data[0].n2.direction.x
+      value: -20.55152
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af49471f4bc735b4aac2ab79eec183e0, type: 3}
+--- !u!114 &6386582352306132484 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3820435831485784972, guid: af49471f4bc735b4aac2ab79eec183e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 7900818885402572168}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb79fa0f7d346514d9453e4a0c3d7310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &3424820868228004772 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4765424705061326380, guid: af49471f4bc735b4aac2ab79eec183e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 7900818885402572168}
+  m_PrefabAsset: {fileID: 0}

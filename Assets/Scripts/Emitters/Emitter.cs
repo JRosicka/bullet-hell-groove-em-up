@@ -123,6 +123,7 @@ public class Emitter : MonoBehaviour {
         public float DestructionTime;
         public bool UseTrail;
         public TrailRendererWith2DCollider Trail;
+        // TODO: Make a way to mirror across y axis, not just x axis
         public bool Reverse;
 
         public SpeedChange[] SpeedChanges;
